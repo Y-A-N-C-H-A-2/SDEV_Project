@@ -6,7 +6,7 @@
 > | Student Number | Name |
 > |----------------|------|
 > | C24490782 | Yana Chulovska |
-> | C24329646 | Livia Ferreira Guimaraes Neves |
+> | C24329646 | Lívia Ferreira Guimarães Neves |
 > | D24125557 | Kashish Kakran |
 > | D24125357 | Simphiwe Klassen |
  
