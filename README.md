@@ -17,7 +17,9 @@
 ## PART 1. Project Overview
 
 **Target Context - Type of App:** Culturally Adaptive Speed-Friending Platform
+
 **Purpose:** CrossPaths supports the social integration of international newcomers in Dublin by providing a culturally adaptive interface for discovering, joining, and engaging with speed-friending events. The platform adapts its layout, tone, imagery, and interaction patterns based on the user's cultural locale.
+
 **Main Audience:** International newcomers (students, professionals, migrants) living in Dublin — specifically targeting Ukrainian and Brazilian communities, with English (Ireland) as the default locale.
 
 ---
