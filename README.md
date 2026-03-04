@@ -1,4 +1,6 @@
-# Group [NUMBER] – [Project Name: GIVE PROJECT NAME]
+# Group 4 – CrossPaths
+
+> *Where cultures meet and friendships begin.*
 
 > **Module:** SDEV2004 Software for Global Market
 > **Academic Year:** 2025–2026, Semester 2
@@ -9,14 +11,15 @@
 > | C24329646 | Lívia Ferreira Guimarães Neves |
 > | D24125557 | Kashish Kakran |
 > | D24125357 | Simphiwe Klassen |
- 
 
 ---
+
 ## PART 1. Project Overview
 
-**Target Context - Type of App:** Globe Sights Website - Tourist Sight Attractions
-Purpose: [write]
-Main Audience: [write]
+**Target Context - Type of App:** Culturally Adaptive Speed-Friending Platform
+**Purpose:** CrossPaths supports the social integration of international newcomers in Dublin by providing a culturally adaptive interface for discovering, joining, and engaging with speed-friending events. The platform adapts its layout, tone, imagery, and interaction patterns based on the user's cultural locale.
+**Main Audience:** International newcomers (students, professionals, migrants) living in Dublin — specifically targeting Ukrainian and Brazilian communities, with English (Ireland) as the default locale.
+
 ---
 
 ## 2. Cultural Scope
@@ -25,63 +28,139 @@ Main Audience: [write]
 |-----------|---------|
 | **Supported Languages** | English (en), Ukrainian (uk), Portuguese – Brazilian (pt_BR) |
 | **Target Culture / Market** | Ireland (en_IE), Ukraine (uk_UA), Brazil (pt_BR) |
-| **Cultural Models Applied** | [e.g. Hofstede's Cultural Dimensions, Hall's High/Low Context Communication] |
-| **Cultural Dimension 1** | [Dimension name] – Ireland/UK scores [X], Ukraine scores [Y], Brazil scores [Z] |
-| **Cultural Dimension 2** | [Dimension name] – Ireland/UK scores [X], Ukraine scores [Y], Brazil scores [Z] |
+| **Cultural Models Applied** | Hofstede's Cultural Dimensions, Hall's High/Low Context Communication |
+| **Cultural Dimension 1** | Uncertainty Avoidance (UA) – Ireland scores 35, Ukraine scores 95, Brazil scores 76 |
+| **Cultural Dimension 2** | Individualism vs Collectivism (IDV) – Ireland scores 70, Ukraine scores 25, Brazil scores 38 |
 
 ---
 
 ## 3. Design Rationale
 
+### Personas
+
+#### Persona 1 — Oksana (Ukrainian, 28, High UA / Low IDV)
+
+A recently relocated Ukrainian professional in Dublin. Cautious, detail-oriented, and deliberate in decision-making. She comes from a culture with very high uncertainty avoidance (~95) and strong collectivism (~25 IDV).
+
+**Cultural Influence:**
+- **Trust:** Earned slowly through verified credentials — host badges, institutional backing, official indicators
+- **Authority:** Expects clear roles and hierarchy — who is the host? what is the agenda?
+- **Uncertainty:** Very low tolerance for ambiguity — needs exact event details (time, location, agenda, attendees, safety)
+- **Communication:** Prefers explicit, formal, written instructions; dislikes vague or overly casual language
+- **Decision-making:** Deliberate — researches all details before committing to an event
+
+**Goals:**
+1. Find safe, structured meetup events to build a social circle in Dublin
+2. Know exactly what to expect before attending (agenda, host details, attendee list)
+3. Connect with other Ukrainian speakers or people who understand her cultural background
+4. Build a small, trusted friend group rather than a large network
+
+**Frustrations:**
+1. Events with no clear agenda or host information feel unsafe and unprofessional
+2. Vague event descriptions ("Come hang out!") provide no useful information
+3. No way to verify who the organiser is or whether the event is legitimate
+4. Overly casual, emoji-heavy interfaces feel untrustworthy and juvenile
+
+**Behaviour Patterns:**
+1. Guidance over autonomy — wants step-by-step flows and clear CTAs
+2. Detail over speed — reads all event details, FAQs, and host bios before committing
+3. Structure over flexibility — prefers timed agendas, conversation prompts, fixed schedules
+4. Individual caution — joins events alone but researches thoroughly; small-group preference
+5. Low risk tolerance — avoids unknown locations or unverified hosts
+6. Formal digital behaviour — expects professional tone, clear typography, minimal clutter
+
+**Persona Hypothesis:**
+> We believe there is a user type in **Ukrainian culture** who is a recently relocated professional seeking social connections in Dublin. They behave like a cautious, detail-oriented planner who researches every aspect of an event before committing. They struggle with ambiguity, lack of structure, and unverified social platforms that offer no safety cues or formal event details.
+
+---
+
+#### Persona 2 — Rafael (Brazilian, 24, Moderate UA / Higher IDV)
+
+A recently arrived Brazilian newcomer in Dublin. Energetic, socially driven, and spontaneous. He comes from a culture with high (but lower than Ukraine) uncertainty avoidance (~76) and moderate collectivism (~38 IDV).
+
+**Cultural Influence:**
+- **Trust:** Relational — built through warmth, shared humour, and mutual connections; social proof is the trust signal
+- **Authority:** Comfortable with flat, informal dynamics; prefers egalitarian open group settings
+- **Uncertainty:** Moderate tolerance — fine with spontaneity and "let's see what happens"
+- **Communication:** High-context and expressive; communicates through emotion and enthusiasm; prefers warm, conversational, emoji-friendly tone
+- **Decision-making:** Spontaneous and social — decides based on who else is going and how the event feels
+
+**Goals:**
+1. Quickly find fun, lively social events with other international newcomers
+2. See who else is attending and connect with people before the event
+3. Express his personality through his profile and find people with similar energy
+4. Build a wide and diverse social network as fast as possible
+
+**Frustrations:**
+1. Platforms that feel clinical, corporate, or impersonal — "like filling out a government form"
+2. Not being able to see other attendees' personalities or interests before the event
+3. Events that are too rigid or scripted — feels like a job interview, not friendship
+4. Slow onboarding processes that require too much reading before you can do anything
+
+**Behaviour Patterns:**
+1. Autonomy over guidance — wants to explore freely, browse, and discover
+2. Speed over detail — skims visuals, checks attendee photos, makes gut decisions
+3. Flexibility over structure — prefers open-ended events, spontaneous chat, loose timelines
+4. Social-first — checks if friends are going, joins group chats, prefers large groups
+5. High risk tolerance — willing to try new events, new people, new neighbourhoods
+6. Expressive digital behaviour — wants colour, personality, reactions, and visual energy
+
+**Persona Hypothesis:**
+> We believe there is a user type in **Brazilian culture** who is an energetic, socially-driven newcomer seeking community in Dublin. They behave like a spontaneous, visually-oriented social explorer who makes fast, feeling-based decisions. They struggle with cold, overly structured platforms that suppress personal expression and social warmth.
+
+---
+
 ### Problem Statements (Point of View)
 
 > _This section explains **why** the app behaves as it does — not a restatement of the UI._
 
-**PoV 1 – [Cultural dimension / country]:**  
-[e.g. Ukrainian users, coming from a high uncertainty-avoidance culture, need clear structure, explicit instructions, and formal language because ambiguity in UI design reduces trust and engagement.]
+**PoV 1 – Uncertainty Avoidance / Ukraine:**
+A recently relocated Ukrainian professional in Dublin needs to feel safe and informed before attending social events with strangers because her high uncertainty-avoidance cultural background means that ambiguity and lack of structure erode trust and prevent social engagement.
 
-**PoV 2 – [Cultural dimension / country]:**  
-[e.g. Brazilian users, operating in a high-context, collectivist culture, need social proof, warm imagery, and community-oriented language because decisions are often influenced by group identity and relationship-building.]
+**PoV 2 – Individualism–Collectivism / Brazil:**
+A recently arrived Brazilian newcomer in Dublin needs to feel socially energised and personally connected through the platform because his relationally-driven, expressive cultural background means that impersonal or rigid interfaces suppress the social motivation he needs to engage.
 
-**PoV 3 – [Cultural dimension / country]:**  
-[e.g. Irish/English users, in a low-context, individualist culture, need concise, direct content and minimal visual noise because they prefer efficiency and self-directed navigation.]
+**PoV 3 – Low UA, High IDV / Ireland:**
+Irish/English-speaking users in Dublin need concise, direct content and efficient self-directed navigation because their low uncertainty-avoidance and high individualism culture prioritises personal autonomy, speed, and minimal friction in digital interactions.
 
 ### Shared Hypotheses
 
 | # | Hypothesis | Pages Affected |
 |---|-----------|----------------|
-| H1 | We believe that [Ukrainian/pt_BR/en_IE] users will [expected behaviour] if we [design change], because [cultural rationale]. | [Page(s)] |
-| H2 | We believe that … | [Page(s)] |
-| H3 | We believe that … | [Page(s)] |
-| H4 | We believe that … | [Page(s)] |
+| H1 | We believe that Ukrainian users will trust the platform more and RSVP to events if we include verified host badges and structured event agendas, because high uncertainty avoidance demands explicit safety and credibility cues. | Events, Event Detail |
+| H2 | We believe that Brazilian users will engage more frequently if we include a visual social feed showing attendee photos and personality-first profiles, because relational cultures prioritise social proof and warmth. | Home, Profiles, Events |
+| H3 | We believe that Ukrainian users will feel less social anxiety if we provide conversation prompts and timed ice-breaker structures, because structured interaction reduces ambiguity for high-UA users. | Event Detail, During Event |
+| H4 | We believe that Brazilian users will attend more events if we enable open group chat and "happening now" spontaneous events, because spontaneous social engagement aligns with lower structure preference. | Events, Chat |
+| H5 | We believe that Irish users will complete onboarding faster if we use a minimal, direct UI with concise copy and self-directed navigation, because individualist cultures prefer efficiency and autonomy. | Onboarding, Home |
+| H6 | We believe that a culturally adaptive UI (switching layout, tone, and imagery by locale) will increase overall engagement across all three cultures without fragmenting the community. | All Pages |
 
 ### How Cultural Considerations Influenced Design
 
 | Element | Ireland (en_IE) | Ukraine (uk_UA) | Brazil (pt_BR) |
 |---------|----------------|----------------|----------------|
-| **Layout** | [e.g. Clean, minimal, LTR] | [e.g. Structured, formal, LTR] | [e.g. Warm, layered, LTR] |
-| **Navigation** | [description] | [description] | [description] |
-| **Colour Palette** | [description] | [description] | [description] |
-| **Imagery** | [description] | [description] | [description] |
-| **Language / Tone** | [e.g. Direct, informal] | [e.g. Formal, explicit] | [e.g. Warm, relational] |
-| **Symbols / Icons** | [description] | [description] | [description] |
+| **Layout** | Clean, minimal, direct — card-based with whitespace | Structured, grid-based, clear sections with explicit labels | Warm, layered, social-feed style with visual density |
+| **Navigation** | Self-directed, tab-based, minimal hand-holding | Step-by-step, linear, breadcrumb-guided with clear CTAs | Explorative, browse-first, swipe-friendly |
+| **Colour Palette** | Muted, neutral tones — professional and calm | Muted blues and greys — trustworthy and formal | Vibrant, warm palette — yellows, greens, oranges |
+| **Imagery** | Minimal — functional icons, Dublin landmarks | Verified host photos, venue images, maps, safety icons | Personality photos, group shots, expressive graphics |
+| **Language / Tone** | Direct, informal, concise | Formal, explicit, reassuring | Warm, conversational, enthusiastic |
+| **Symbols / Icons** | Functional UI icons (search, filter, calendar) | Verified badges ✓, lock icons 🔒, agenda icons 📋 | Social icons (hearts, reactions, group indicators) |
 
 ---
 
 ## 4. Architecture and Structure
 
 ```
-Group[NUMBER]-Phase2/
+Group4-Phase2/
 ├── app/
 │   ├── __init__.py          # App factory, Flask config, Babel setup
 │   ├── routes.py            # All route definitions
 │   └── utils.py             # Helper functions (locale detection, etc.)
 ├── templates/
 │   ├── base.html            # Master template – shared layout, nav, lang switcher
-│   ├── index.html           # Home page (Member X)
-│   ├── [page2].html         # [Member Y's page]
-│   ├── [page3].html         # [Member Z's page]
-│   └── [page4].html         # [Member W's page]
+│   ├── index.html           # Home page (Yana)
+│   ├── events.html          # Events listing page (Lívia)
+│   ├── profile.html         # User profile page (Kashish)
+│   └── about.html           # About / community page (Simphiwe)
 ├── static/
 │   ├── css/
 │   │   └── main.css
@@ -99,7 +178,7 @@ Group[NUMBER]-Phase2/
 │   ├── uk_UA/
 │   │   └── LC_MESSAGES/
 │   │       ├── messages.po
-│   │       └── messages.mo
+��   │       └── messages.mo
 │   └── pt_BR/
 │       └── LC_MESSAGES/
 │           ├── messages.po
@@ -117,18 +196,41 @@ All pages extend `base.html` using Jinja's `{% extends %}` directive. `base.html
 - Common `<head>` metadata, CSS links, and JS includes
 - A `{% block content %}` placeholder for page-specific content
 - A `{% block title %}` placeholder for page-specific titles
+- Locale-aware CSS class on `<body>` (e.g., `class="locale-uk_UA"`) to enable culture-specific styling
 
 ### Static File Management
 
-[Describe how static files are organised — e.g. locale-specific images stored in subfolders, shared CSS in root of css/]
+Static files are organised with locale-specific images stored in subfolders under `static/img/` (e.g., `static/img/uk_UA/hero.jpg`). Shared CSS lives in `static/css/main.css` with locale-specific overrides triggered by body class (e.g., `.locale-pt_BR .hero { ... }`). JavaScript is shared across all locales in `static/js/main.js`.
 
 ### Dynamic Behaviour
 
-[Describe how the app detects/stores the user's selected locale — e.g. URL prefix `/en_IE/`, session variable, or query parameter `?lang=uk_UA`]
+The app stores the user's selected locale in a Flask session variable (`session['lang']`). When a user clicks a locale option in the navigation bar, a route sets `session['lang']` to the chosen locale and redirects to the same page. All templates and route handlers reference `get_locale()` to determine the active locale for translations, imagery, and cultural layout switching.
 
----
+```python
+# Example: passing locale to template context
+@app.context_processor
+def inject_locale():
+    return dict(locale=get_locale())
+```
 
-## 5. Internationalisation and Localisation Strategy
+```html
+<!-- Example: Jinja conditional for cultural layout -->
+{% if locale == 'pt_BR' %}
+  <div class="layout-warm">
+    <!-- Visual social feed, personality-first profiles, warm imagery -->
+  </div>
+{% elif locale == 'uk_UA' %}
+  <div class="layout-formal">
+    <!-- Structured event agenda, verified host badges, conversation prompts -->
+  </div>
+{% else %}
+  <div class="layout-minimal">
+    <!-- Clean, direct, self-directed navigation -->
+  </div>
+{% endif %}
+```
+
+### Internationalisation and Localisation Strategy
 
 ### GNU gettext Usage
 
@@ -147,196 +249,19 @@ def get_locale():
 
 ```html
 <!-- templates/base.html -->
-<title>{{ _('Site Title') }}</title>
+<title>{{ _('CrossPaths – Where cultures meet and friendships begin') }}</title>
 ```
 
 ### Language Switching Mechanism
 
-[Describe how users switch language — e.g. clicking a flag/button in the nav sets `session['lang']` and redirects to the same page]
+Users switch language by clicking a flag/label button in the navigation bar. This triggers a POST request to a `/set-language` route, which sets `session['lang']` to the selected locale (`en_IE`, `uk_UA`, or `pt_BR`) and redirects the user back to their current page. The language switcher is visible and accessible on every page.
 
-### Default Language and Fallback
-
-- **Default locale:** `en_IE` (English – Ireland)  
-- **Fallback:** If a translation string is missing in `uk_UA` or `pt_BR`, the app falls back to `en_IE`.
-
-### Translation File Management
-
-| Command | Purpose |
-|---------|---------|
-| `pybabel extract -F babel.cfg -o messages.pot .` | Extract all translatable strings |
-| `pybabel init -i messages.pot -d translations -l uk_UA` | Initialise Ukrainian translations |
-| `pybabel init -i messages.pot -d translations -l pt_BR` | Initialise Brazilian Portuguese translations |
-| `pybabel update -i messages.pot -d translations` | Update .po files after adding new strings |
-| `pybabel compile -d translations` | Compile .po → .mo (required to take effect) |
-
-All `.po` files are committed to the repository. `.mo` files are compiled locally before submission.
-
----
-
-## 6. Cultural Adaptation Mechanisms
-
-### How Cultural Differences Are Implemented
-
-[Describe the technical approach — e.g. Jinja conditionals based on `g.locale`, context variables passed from routes, locale-specific CSS classes, config dictionaries]
-
-```python
-# Example: passing locale to template context
-@app.context_processor
-def inject_locale():
-    return dict(locale=get_locale())
-```
-
-```html
-<!-- Example: Jinja conditional for cultural layout -->
-{% if locale == 'pt_BR' %}
-  <div class="layout-warm">...</div>
-{% elif locale == 'uk_UA' %}
-  <div class="layout-formal">...</div>
-{% else %}
-  <div class="layout-minimal">...</div>
-{% endif %}
-```
-
-### UI Elements That Change by Culture
-
-| UI Element | Changes Based On | Hypothesis Addressed |
-|-----------|-----------------|----------------------|
-| Layout direction / density | Locale | H[X] |
-| Navigation style | Locale | H[X] |
-| Colour scheme / CSS class | Locale | H[X] |
-| Hero imagery | Locale (locale-specific image folders) | H[X] |
-| Tone of body text | Language translation | H[X] |
-| Date / number formatting | Locale (Flask-Babel `format_date`) | H[X] |
-| [Add more as implemented] | | |
-
----
-
-## 7. Individual Contributions
-
-> Each subsection below documents one student's contribution as required by the Phase 2 specification.
-
----
-
-### 7.1 [Member 1 Name] – [Student Number]
-
-**Pages / Features Implemented:**  
-[e.g. Home page (`index.html`), language switcher logic in `routes.py`]
-
-**Cultural Dimensions Addressed:**  
-[e.g. Hofstede's Individualism/Collectivism – Ireland vs Brazil]
-
-**Hypotheses Implemented:**  
-| Hypothesis | Where in UI |
-|-----------|-------------|
-| H1 | [e.g. Hero image changes by locale – line 34 of index.html] |
-| H2 | [e.g. CTA button text and colour – index.html lines 50–60] |
-
-**Deviations from Group Guidelines (if any):**  
-[None / or describe and justify any deviation]
-
----
-
-### 7.2 [Member 2 Name] – [Student Number]
-
-**Pages / Features Implemented:**  
-[Page name and files]
-
-**Cultural Dimensions Addressed:**  
-[Dimension and countries]
-
-**Hypotheses Implemented:**  
-| Hypothesis | Where in UI |
-|-----------|-------------|
-| H[X] | [Location in code/UI] |
-
-**Deviations from Group Guidelines (if any):**  
-[None / justification]
-
----
-
-### 7.3 [Member 3 Name] – [Student Number]
-
-**Pages / Features Implemented:**  
-[Page name and files]
-
-**Cultural Dimensions Addressed:**  
-[Dimension and countries]
-
-**Hypotheses Implemented:**  
-| Hypothesis | Where in UI |
-|-----------|-------------|
-| H[X] | [Location in code/UI] |
-
-**Deviations from Group Guidelines (if any):**  
-[None / justification]
-
----
-
-### 7.4 [Member 4 Name] – [Student Number]
-
-**Pages / Features Implemented:**  
-[Page name and files]
-
-**Cultural Dimensions Addressed:**  
-[Dimension and countries]
-
-**Hypotheses Implemented:**  
-| Hypothesis | Where in UI |
-|-----------|-------------|
-| H[X] | [Location in code/UI] |
-
-**Deviations from Group Guidelines (if any):**  
-[None / justification]
-
----
-
-## 8. Setup and Execution Instructions
-
-### Environment Requirements
-
-- Python 3.10+
-- pip
-- Flask, Flask-Babel (see `requirements.txt`)
-
-### Installation
-
-```bash
-# 1. Clone the repository
-git clone [repo URL]
-cd Group[NUMBER]-Phase2
-
-# 2. Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate        # macOS / Linux
-.venv\Scripts\activate           # Windows
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Compile translations
-pybabel compile -d translations
-
-# 5. Run the application
-flask run
-# or
-python app.py
-```
-
-### Testing Language / Cultural Switching
-
-The language switcher is accessible via the navigation bar on every page.
-
-| Locale | Language | Flag / Label |
-|--------|----------|-------------|
-| `en_IE` | English (Ireland) | 🇮🇪 English |
-| `uk_UA` | Ukrainian | 🇺🇦 Українська |
-| `pt_BR` | Portuguese (Brazil) | 🇧🇷 Português |
-
-To manually test a locale, click the corresponding option in the nav. The page will reload with translated content and cultural UI adaptations applied.
+**What to look for when switching locales:**
+- **uk_UA:** Structured layouts, verified badges, formal tone, event agendas, safety reassurance
+- **pt_BR:** Visual social feed, warm imagery, personality-first profiles, expressive UI tone, group chat indicators
+- **en_IE:** Clean minimal layout, direct concise copy, self-directed navigation, neutral colour palette
 
 ### Configuration Notes
-
-[Any additional config — e.g. setting `FLASK_APP`, `SECRET_KEY`, Babel config path, etc.]
 
 ```bash
 export FLASK_APP=app
@@ -346,11 +271,34 @@ export SECRET_KEY=dev-secret-key
 
 ---
 
-## 9. Limitations
+## 9. Design Thinking Deliverables (Week 5 Lab – Part B)
 
-- [e.g. Translations are not exhaustive — some dynamic content (e.g. error messages) may remain in English]
-- [e.g. Cultural adaptations are applied at the locale level; sub-regional differences within Ukraine or Brazil are not addressed]
-- [e.g. Images are locale-specific but sourced from static files — no CDN or dynamic image fetching]
-- [e.g. Right-to-left (RTL) layout not required for current locales but architecture does not yet support it]
-- [e.g. Application has not been tested on mobile devices]
-- [Add any known bugs or incomplete features here before submission]
+### Emerging Design Tensions
+
+| # | Tension | Description |
+|---|---------|-------------|
+| 1 | **Structure vs. Spontaneity** | Oksana needs a timed agenda, conversation prompts, and clear event flow. Rafael wants open-ended, free-flowing social events. The UI must accommodate both without forcing one model. |
+| 2 | **Verification vs. Warmth** | Oksana looks for authority cues — verified host badges, official logos, attendee caps. Rafael looks for warmth cues — photos, emojis, group energy. Balancing these signals in a single event card is a core design challenge. |
+| 3 | **Detail-first vs. Visual-first** | Oksana's decision flow is: read details → evaluate safety → commit. Rafael's is: see vibe → check people → jump in. The information architecture must serve both scanning styles. |
+
+### Key Assumptions
+
+1. Ukrainian newcomers in Dublin experience higher social anxiety around unstructured meetup events compared to Brazilian newcomers, and this is culturally driven (not just personality).
+2. Brazilian newcomers make attendance decisions primarily based on social/visual cues (who's going, how it looks) rather than informational cues (agenda, host credentials).
+3. A single platform can serve both user types through culturally adaptive UI (locale-based layout switching) without fragmenting the community into separate experiences.
+4. Users will self-identify their cultural preferences through locale selection, and this is a reliable-enough proxy for serving culturally appropriate UI patterns.
+5. Providing structured conversation prompts and ice-breakers will not feel patronising to Brazilian users, and open group chat will not feel unsafe to Ukrainian users — or these features can be selectively shown.
+
+**Riskiest Assumption:** #3 — That a single adaptive platform can genuinely serve both user types without one cultural mode feeling like a "lesser" or "default" version. If the adaptive switching feels superficial (just colour changes) rather than structural (different information architecture, different flows), both personas may feel underserved.
+
+---
+
+## 10. Limitations
+
+- Translations are not exhaustive — some dynamic content (e.g., error messages) may remain in English
+- Cultural adaptations are applied at the locale level; sub-regional differences within Ukraine or Brazil are not addressed
+- Images are locale-specific but sourced from static files — no CDN or dynamic image fetching
+- Right-to-left (RTL) layout not required for current locales but architecture does not yet support it
+- Application has not been tested on mobile devices
+- Persona-based design is grounded in Hofstede's cultural dimensions, which are national-level generalisations — individual users may not align perfectly with their culture's average scores
+- The culturally adaptive UI relies on user-selected locale as a proxy for cultural preference, which may not always be accurate.
