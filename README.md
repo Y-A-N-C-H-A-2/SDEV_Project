@@ -1,7 +1,7 @@
-# Group [NUMBER] – SDEV2004 Culturally Adaptive Web Application
+# Group [NUMBER] – [Project Name: GIVE PROJECT NAME]
 
-> **Module:** SDEV2004 Software for the Global Market  
-> **Academic Year:** 2025–2026, Semester 2  
+> **Module:** SDEV2004 Software for Global Market
+> **Academic Year:** 2025–2026, Semester 2
 > **Group Members:**
 > | Student Number | Name |
 > |----------------|------|
@@ -12,15 +12,11 @@
  
 
 ---
+## PART 1. Project Overview
 
-## 1. Project Overview
-
-**Target Area:** [e.g. Online News / E-Commerce / Travel / Healthcare – TO BE AGREED]
-
-[2–3 sentences describing the application and its purpose. What does it do? Who is it for?]
-
-> _Example: This application is a culturally adaptive news portal designed to present current affairs content in a way that reflects the communication styles, values, and visual preferences of users from Ireland, Ukraine, and Brazil._
-
+**Target Context - Type of App:** Globe Sights Website - Tourist Sight Attractions
+Purpose: [write]
+Main Audience: [write]
 ---
 
 ## 2. Cultural Scope
@@ -28,7 +24,7 @@
 | Attribute | Details |
 |-----------|---------|
 | **Supported Languages** | English (en), Ukrainian (uk), Portuguese – Brazilian (pt_BR) |
-| **Supported Countries / Locales** | Ireland (en_IE), Ukraine (uk_UA), Brazil (pt_BR) |
+| **Target Culture / Market** | Ireland (en_IE), Ukraine (uk_UA), Brazil (pt_BR) |
 | **Cultural Models Applied** | [e.g. Hofstede's Cultural Dimensions, Hall's High/Low Context Communication] |
 | **Cultural Dimension 1** | [Dimension name] – Ireland/UK scores [X], Ukraine scores [Y], Brazil scores [Z] |
 | **Cultural Dimension 2** | [Dimension name] – Ireland/UK scores [X], Ukraine scores [Y], Brazil scores [Z] |
