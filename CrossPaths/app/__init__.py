@@ -22,7 +22,7 @@ def get_locale():
 
 def create_app():
     """Create and configure the Flask application"""
-app = Flask(__name__, template_folder='../templates', static_folder='../static')    
+    app = Flask(__name__, template_folder='../templates', static_folder='../static')
     # Configuration
     app.config['SECRET_KEY'] = 'dev-secret-key'
     app.config['BABEL_DEFAULT_LOCALE'] = 'en_IE'
