@@ -1,15 +1,11 @@
-# CrossPaths Dependencies
-# Flask application requirements
-
-# Core Framework
-Flask==3.0.0
-Werkzeug==3.0.1
-
-# Internationalization
-Flask-Babel==4.0.0
 Babel==2.14.0
-
-# Development Tools (optional but recommended)
+blinker==1.9.0
+click==8.3.1
+Flask==3.0.0
+flask-babel==4.0.0
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
 python-dotenv==1.0.0
-
-# Python Version: 3.8+
+pytz==2026.1.post1
+Werkzeug==3.0.1
