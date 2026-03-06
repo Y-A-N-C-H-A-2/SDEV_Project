@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('CrossPaths – Home') }}{% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ _('Welcome to CrossPaths') }}</h1>
+            <p class="hero-subtitle">{{ _('Where cultures meet and friendships begin') }}</p>
+            
+            {% if locale == 'uk_UA' %}
+            <!-- Ukrainian: Formal, structured, reassuring -->
+            <div class="hero-description formal">
+                <p>{{ _('CrossPaths is a verified platform for meeting new friends in Dublin through structured speed-friending events.') }}</p>
+                <p>{{ _('All events are hosted by verified organizers in safe, public locations.') }}</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="{{ url_for('main.events') }}" class="btn btn-primary">
+                    {{ _('Browse Verified Events') }} ✓
+                </a>
+                <a href="{{ url_for('main.about') }}" class="btn btn-secondary">
+                    {{ _('Learn More About Safety') }}
+                </a>
+            </div>
+            
+            {% elif locale == 'pt_BR' %}
+            <!-- Brazilian: Warm, visual, social-first -->
+            <div class="hero-description warm">
+                <p>{{ _('Make new friends in Dublin! Join fun speed-friending events and meet amazing people from around the world.') }}</p>
+                <p>{{ _('See who\'s going, chat before you meet, and find your tribe! 🎉') }}</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="{{ url_for('main.events') }}" class="btn btn-primary warm">
+                    {{ _('See Events & People') }} 🌟
+                </a>
+                <a href="{{ url_for('main.profile') }}" class="btn btn-secondary warm">
+                    {{ _('Create Your Profile') }}
+                </a>
+            </div>
+            
+            {% else %}
+            <!-- Irish/English: Clean, direct, minimal -->
+            <div class="hero-description minimal">
+                <p>{{ _('Connect with international newcomers in Dublin through speed-friending events.') }}</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="{{ url_for('main.events') }}" class="btn btn-primary">
+                    {{ _('Browse Events') }}
+                </a>
+                <a href="{{ url_for('main.about') }}" class="btn btn-secondary">
+                    {{ _('Learn More') }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>{{ _('How It Works') }}</h2>
+        
+        {% if locale == 'uk_UA' %}
+        <!-- Ukrainian: Step-by-step, structured, detailed -->
+        <div class="features-grid formal">
+            <div class="feature-card">
+                <span class="feature-number">1</span>
+                <h3>{{ _('Browse Verified Events') }}</h3>
+                <p>{{ _('Review detailed event information including agenda, host credentials, and safety details.') }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-number">2</span>
+                <h3>{{ _('Register Securely') }}</h3>
+                <p>{{ _('RSVP with confirmed details. Receive event reminders and location information.') }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-number">3</span>
+                <h3>{{ _('Follow Structured Ice-Breakers') }}</h3>
+                <p>{{ _('Participate in timed conversation rounds with prepared topics and prompts.') }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-number">4</span>
+                <h3>{{ _('Build Your Network') }}</h3>
+                <p>{{ _('Connect with people you met and attend future events with your new friends.') }}</p>
+            </div>
+        </div>
+        
+        {% elif locale == 'pt_BR' %}
+        <!-- Brazilian: Visual, social, flexible -->
+        <div class="features-grid warm">
+            <div class="feature-card">
+                <span class="feature-icon">🎉</span>
+                <h3>{{ _('Discover Fun Events') }}</h3>
+                <p>{{ _('Browse exciting meetups and see who else is going!') }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💬</span>
+                <h3>{{ _('Chat Before You Meet') }}</h3>
+                <p>{{ _('Join event group chats and break the ice online first.') }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🤝</span>
+                <h3>{{ _('Make Real Connections') }}</h3>
+                <p>{{ _('Meet face-to-face in fun, relaxed settings around Dublin.') }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">❤️</span>
+                <h3>{{ _('Find Your Tribe') }}</h3>
+                <p>{{ _('Build your social circle and never feel alone in a new city!') }}</p>
+            </div>
+        </div>
+        
+        {% else %}
+        <!-- Irish/English: Concise, direct, minimal -->
+        <div class="features-grid minimal">
+            <div class="feature-card">
+                <h3>{{ _('Browse Events') }}</h3>
+                <p>{{ _('Find speed-friending events near you.') }}</p>
+            </div>
+            <div class="feature-card">
+                <h3>{{ _('RSVP') }}</h3>
+                <p>{{ _('Register for events that interest you.') }}</p>
+            </div>
+            <div class="feature-card">
+                <h3>{{ _('Attend') }}</h3>
+                <p>{{ _('Meet new people in structured settings.') }}</p>
+            </div>
+            <div class="feature-card">
+                <h3>{{ _('Connect') }}</h3>
+                <p>{{ _('Build your social network in Dublin.') }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <h2>{{ _('Ready to Meet New Friends?') }}</h2>
+        <a href="{{ url_for('main.events') }}" class="btn btn-large btn-primary">
+            {{ _('View Upcoming Events') }}
+        </a>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,218 @@
+# Brazilian Portuguese Translations
+# CrossPaths - Plataforma de Speed-Friending
+msgid ""
+msgstr ""
+"Project-Id-Version: CrossPaths 1.0\n"
+"POT-Creation-Date: 2026-03-06 12:00+0000\n"
+"PO-Revision-Date: 2026-03-06 12:00+0000\n"
+"Last-Translator: CrossPaths Team\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Navigation & Brand
+msgid "CrossPaths – Where cultures meet and friendships begin"
+msgstr "CrossPaths – Onde culturas se encontram e amizades começam"
+
+msgid "Home"
+msgstr "Início"
+
+msgid "Events"
+msgstr "Eventos"
+
+msgid "Profile"
+msgstr "Perfil"
+
+msgid "About"
+msgstr "Sobre"
+
+msgid "Where cultures meet and friendships begin."
+msgstr "Onde culturas se encontram e amizades começam."
+
+msgid "A culturally adaptive platform for international newcomers in Dublin"
+msgstr "Uma plataforma culturalmente adaptativa para recém-chegados internacionais em Dublin"
+
+# Home Page
+msgid "CrossPaths – Home"
+msgstr "CrossPaths – Início"
+
+msgid "Welcome to CrossPaths"
+msgstr "Bem-vindo ao CrossPaths"
+
+msgid "Where cultures meet and friendships begin"
+msgstr "Onde culturas se encontram e amizades começam"
+
+msgid "Make new friends in Dublin! Join fun speed-friending events and meet amazing people from around the world."
+msgstr "Faça novos amigos em Dublin! Participe de eventos divertidos de speed-friending e conheça pessoas incríveis de todo o mundo."
+
+msgid "See who's going, chat before you meet, and find your tribe! 🎉"
+msgstr "Veja quem está indo, converse antes de se encontrar e encontre sua turma! 🎉"
+
+msgid "See Events & People"
+msgstr "Ver Eventos e Pessoas 🌟"
+
+msgid "Create Your Profile"
+msgstr "Criar Seu Perfil"
+
+msgid "How It Works"
+msgstr "Como Funciona"
+
+msgid "Discover Fun Events"
+msgstr "Descubra Eventos Divertidos"
+
+msgid "Browse exciting meetups and see who else is going!"
+msgstr "Navegue por encontros emocionantes e veja quem mais está indo!"
+
+msgid "Chat Before You Meet"
+msgstr "Converse Antes de Conhecer"
+
+msgid "Join event group chats and break the ice online first."
+msgstr "Participe de chats em grupo do evento e quebre o gelo online primeiro."
+
+msgid "Make Real Connections"
+msgstr "Faça Conexões Reais"
+
+msgid "Meet face-to-face in fun, relaxed settings around Dublin."
+msgstr "Conheça pessoalmente em ambientes divertidos e descontraídos em Dublin."
+
+msgid "Find Your Tribe"
+msgstr "Encontre Sua Turma"
+
+msgid "Build your social circle and never feel alone in a new city!"
+msgstr "Construa seu círculo social e nunca se sinta sozinho em uma cidade nova!"
+
+msgid "Ready to Meet New Friends?"
+msgstr "Pronto para Conhecer Novos Amigos?"
+
+msgid "View Upcoming Events"
+msgstr "Ver Próximos Eventos"
+
+# Events Page
+msgid "Events – CrossPaths"
+msgstr "Eventos – CrossPaths"
+
+msgid "Upcoming Events"
+msgstr "Próximos Eventos"
+
+msgid "Find your next adventure and see who's going! 🎉"
+msgstr "Encontre sua próxima aventura e veja quem está indo! 🎉"
+
+msgid "Friday Night Speed-Friending"
+msgstr "Speed-Friending de Sexta à Noite"
+
+msgid "Coffee Connections"
+msgstr "Conexões com Café"
+
+msgid "people going"
+msgstr "pessoas indo"
+
+msgid "Hosted by"
+msgstr "Organizado por"
+
+msgid "Join us for a fun evening! Chat, laugh, and make new friends!"
+msgstr "Junte-se a nós para uma noite divertida! Converse, ria e faça novos amigos!"
+
+msgid "I'm Going!"
+msgstr "Eu Vou! ❤️"
+
+msgid "See Who's Attending"
+msgstr "Ver Quem Está Indo"
+
+msgid "No upcoming events at the moment. Check back soon!"
+msgstr "Nenhum evento próximo no momento. Volte em breve!"
+
+# Profile Page
+msgid "Profile – CrossPaths"
+msgstr "Perfil – CrossPaths"
+
+msgid "Your Profile"
+msgstr "Seu Perfil"
+
+msgid "Show your personality and let people know the real you! ✨"
+msgstr "Mostre sua personalidade e deixe as pessoas conhecerem o verdadeiro você! ✨"
+
+msgid "Hey, I'm"
+msgstr "Oi, eu sou"
+
+msgid "years old"
+msgstr "anos"
+
+msgid "My Interests"
+msgstr "Meus Interesses ❤️"
+
+msgid "I speak"
+msgstr "Eu falo 💬"
+
+msgid "Looking to meet new friends in Dublin!"
+msgstr "Procurando conhecer novos amigos em Dublin!"
+
+msgid "Edit My Profile"
+msgstr "Editar Meu Perfil ✏️"
+
+msgid "Share Profile"
+msgstr "Compartilhar Perfil"
+
+msgid "Events Attended"
+msgstr "Eventos Participados"
+
+msgid "No events yet. Browse upcoming events to get started!"
+msgstr "Nenhum evento ainda. Navegue pelos próximos eventos para começar!"
+
+# About Page
+msgid "About – CrossPaths"
+msgstr "Sobre – CrossPaths"
+
+msgid "About CrossPaths"
+msgstr "Sobre o CrossPaths"
+
+msgid "Welcome to Our Community! 🎉"
+msgstr "Bem-vindo à Nossa Comunidade! 🎉"
+
+msgid "CrossPaths connects international newcomers in Dublin through fun, friendly speed-friending events. We're all about bringing people together and building a vibrant, diverse community!"
+msgstr "O CrossPaths conecta recém-chegados internacionais em Dublin através de eventos divertidos e amigáveis de speed-friending. Somos todos sobre unir pessoas e construir uma comunidade vibrante e diversa!"
+
+msgid "Why CrossPaths?"
+msgstr "Por Que CrossPaths? ❤️"
+
+msgid "Celebrate Diversity"
+msgstr "Celebre a Diversidade"
+
+msgid "Meet people from all over the world!"
+msgstr "Conheça pessoas de todo o mundo!"
+
+msgid "Make Real Friends"
+msgstr "Faça Amigos de Verdade"
+
+msgid "Not just networking — genuine connections!"
+msgstr "Não apenas networking — conexões genuínas!"
+
+msgid "Have Fun!"
+msgstr "Divirta-se!"
+
+msgid "No boring meetings — just good times!"
+msgstr "Sem reuniões chatas — apenas bons momentos!"
+
+msgid "Join the Fun! 🌟"
+msgstr "Junte-se à Diversão! 🌟"
+
+msgid "Whether you just arrived in Dublin or have been here for years, CrossPaths is your gateway to an amazing social circle. Come as you are, meet incredible people, and build friendships that last!"
+msgstr "Seja você recém-chegado em Dublin ou está aqui há anos, o CrossPaths é sua porta de entrada para um círculo social incrível. Venha como você é, conheça pessoas incríveis e construa amizades duradouras!"
+
+msgid "Members"
+msgstr "Membros"
+
+msgid "Countries"
+msgstr "Países"
+
+msgid "Get in Touch"
+msgstr "Entre em Contato"
+
+msgid "Questions or feedback? We'd love to hear from you!"
+msgstr "Perguntas ou feedback? Adoraríamos ouvir de você!"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Based in:"
+msgstr "Baseado em:"

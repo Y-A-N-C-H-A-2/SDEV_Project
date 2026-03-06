@@ -1,0 +1,705 @@
+/*
+ * CrossPaths - Main Stylesheet
+ * Culturally adaptive styling for en_IE, uk_UA, and pt_BR locales
+ */
+
+/* ==========================================
+   GLOBAL STYLES & RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ==========================================
+   NAVIGATION BAR
+   ========================================== */
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.locale-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.locale-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.locale-btn:hover {
+    border-color: #3498db;
+}
+
+.locale-btn.active {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.main-content {
+    min-height: calc(100vh - 200px);
+    padding: 2rem;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-credits {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.btn-secondary:hover {
+    background-color: #d0d6d9;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+   PAGE HEADERS
+   ========================================== */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* ==========================================
+   HOME PAGE STYLES
+   ========================================== */
+
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Features Section */
+.features {
+    margin: 4rem 0;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.feature-number,
+.feature-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem;
+    background: #ecf0f1;
+    border-radius: 12px;
+}
+
+.cta-section h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+/* ==========================================
+   EVENTS PAGE STYLES
+   ========================================== */
+
+.events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.verified-badge {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+}
+
+.event-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.no-events {
+    text-align: center;
+    padding: 4rem;
+    color: #7f8c8d;
+}
+
+/* ==========================================
+   PROFILE PAGE STYLES
+   ========================================== */
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background: #ecf0f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.profile-events {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+/* ==========================================
+   ABOUT PAGE STYLES
+   ========================================== */
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about-container h2 {
+    color: #2c3e50;
+    margin: 2rem 0 1rem;
+    font-size: 1.8rem;
+}
+
+.about-container p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.contact-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #ecf0f1;
+}
+
+/* ==========================================
+   LOCALE-SPECIFIC STYLES: UKRAINIAN (uk_UA)
+   High Uncertainty Avoidance - Formal, Structured
+   ========================================== */
+
+.locale-uk_UA .hero {
+    background: linear-gradient(135deg, #5B7C99 0%, #2C4A63 100%);
+}
+
+.locale-uk_UA .feature-number {
+    background: #5B7C99;
+    color: white;
+    font-weight: bold;
+}
+
+.locale-uk_UA .btn-primary {
+    background-color: #2C4A63;
+}
+
+.locale-uk_UA .btn-primary:hover {
+    background-color: #1a2d3d;
+}
+
+.locale-uk_UA .event-card-formal .event-details {
+    border-left: 4px solid #5B7C99;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+
+.locale-uk_UA .event-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.locale-uk_UA .detail-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.locale-uk_UA .safety-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.locale-uk_UA .safety-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f0f3f5;
+    border-radius: 8px;
+}
+
+.locale-uk_UA .safety-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.locale-uk_UA .profile-section-formal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.locale-uk_UA .profile-field {
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+    display: flex;
+    gap: 1rem;
+}
+
+.locale-uk_UA .profile-field label {
+    font-weight: 600;
+    min-width: 150px;
+    color: #2c3e50;
+}
+
+/* ==========================================
+   LOCALE-SPECIFIC STYLES: BRAZILIAN (pt_BR)
+   Lower Uncertainty Avoidance - Warm, Social
+   ========================================== */
+
+.locale-pt_BR .hero {
+    background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+}
+
+.locale-pt_BR .feature-icon {
+    font-size: 2.5rem;
+}
+
+.locale-pt_BR .btn-primary.warm {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.locale-pt_BR .btn-primary.warm:hover {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.locale-pt_BR .event-card-warm {
+    border-left: 5px solid #f39c12;
+}
+
+.locale-pt_BR .event-header-warm h2 {
+    color: #e67e22;
+}
+
+.locale-pt_BR .attendee-count {
+    background: #f39c12;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.locale-pt_BR .event-info-warm {
+    margin: 1rem 0;
+    font-size: 1.05rem;
+}
+
+.locale-pt_BR .event-vibe {
+    background: #fff3cd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.locale-pt_BR .profile-section-warm {
+    background: linear-gradient(to bottom, #fff5e6 0%, white 30%);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.locale-pt_BR .profile-avatar-placeholder-warm {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.locale-pt_BR .profile-badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.locale-pt_BR .badge {
+    background: #f39c12;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.locale-pt_BR .interests-tags,
+.locale-pt_BR .languages-list {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.locale-pt_BR .interest-tag {
+    background: #fff3cd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 2px solid #f39c12;
+}
+
+.locale-pt_BR .language-badge {
+    background: #e8f5e9;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 2px solid #27ae60;
+}
+
+.locale-pt_BR .community-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fff5e6 0%, white 100%);
+    border-radius: 12px;
+}
+
+.locale-pt_BR .stat-item {
+    text-align: center;
+}
+
+.locale-pt_BR .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.locale-pt_BR .stat-label {
+    display: block;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.locale-pt_BR .why-items-warm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.locale-pt_BR .why-item {
+    text-align: center;
+}
+
+.locale-pt_BR .why-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   LOCALE-SPECIFIC STYLES: IRISH (en_IE)
+   Low Uncertainty Avoidance, High Individualism - Minimal, Direct
+   ========================================== */
+
+.locale-en_IE .hero {
+    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+
+.locale-en_IE .feature-card {
+    border-top: 3px solid #3498db;
+}
+
+.locale-en_IE .btn-primary {
+    background-color: #3498db;
+}
+
+.locale-en_IE .event-card-minimal {
+    border-left: 3px solid #3498db;
+}
+
+.locale-en_IE .event-info-minimal {
+    margin: 1rem 0;
+}
+
+.locale-en_IE .event-info-minimal p {
+    margin: 0.5rem 0;
+}
+
+.locale-en_IE .profile-section-minimal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.locale-en_IE .profile-header-minimal {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.locale-en_IE .profile-details-minimal p {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .event-actions {
+        flex-direction: column;
+    }
+}

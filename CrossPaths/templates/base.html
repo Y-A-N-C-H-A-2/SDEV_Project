@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ locale[:2] }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ _('CrossPaths – Where cultures meet and friendships begin') }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body class="locale-{{ locale }}">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="{{ url_for('main.index') }}">
+                    <h1>CrossPaths</h1>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
+                <li><a href="{{ url_for('main.events') }}">{{ _('Events') }}</a></li>
+                <li><a href="{{ url_for('main.profile') }}">{{ _('Profile') }}</a></li>
+                <li><a href="{{ url_for('main.about') }}">{{ _('About') }}</a></li>
+            </ul>
+            
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <form method="POST" action="{{ url_for('main.set_language') }}" class="locale-form">
+                    <button type="submit" name="locale" value="en_IE" 
+                            class="locale-btn {% if locale == 'en_IE' %}active{% endif %}"
+                            title="English (Ireland)">
+                        🇮🇪 EN
+                    </button>
+                    <button type="submit" name="locale" value="uk_UA" 
+                            class="locale-btn {% if locale == 'uk_UA' %}active{% endif %}"
+                            title="Українська">
+                        🇺🇦 UK
+                    </button>
+                    <button type="submit" name="locale" value="pt_BR" 
+                            class="locale-btn {% if locale == 'pt_BR' %}active{% endif %}"
+                            title="Português (Brasil)">
+                        🇧🇷 PT
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 CrossPaths. {{ _('Where cultures meet and friendships begin.') }}</p>
+            <p class="footer-credits">
+                {{ _('A culturally adaptive platform for international newcomers in Dublin') }}
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

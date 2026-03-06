@@ -1,0 +1,242 @@
+# Ukrainian Translations
+# CrossPaths - Платформа для швидких знайомств
+msgid ""
+msgstr ""
+"Project-Id-Version: CrossPaths 1.0\n"
+"POT-Creation-Date: 2026-03-06 12:00+0000\n"
+"PO-Revision-Date: 2026-03-06 12:00+0000\n"
+"Last-Translator: CrossPaths Team\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Navigation & Brand
+msgid "CrossPaths – Where cultures meet and friendships begin"
+msgstr "CrossPaths – Де культури зустрічаються і дружба починається"
+
+msgid "Home"
+msgstr "Головна"
+
+msgid "Events"
+msgstr "Події"
+
+msgid "Profile"
+msgstr "Профіль"
+
+msgid "About"
+msgstr "Про нас"
+
+msgid "Where cultures meet and friendships begin."
+msgstr "Де культури зустрічаються і дружба починається."
+
+msgid "A culturally adaptive platform for international newcomers in Dublin"
+msgstr "Культурно адаптивна платформа для міжнародних новоприбулих у Дубліні"
+
+# Home Page
+msgid "CrossPaths – Home"
+msgstr "CrossPaths – Головна"
+
+msgid "Welcome to CrossPaths"
+msgstr "Ласкаво просимо до CrossPaths"
+
+msgid "Where cultures meet and friendships begin"
+msgstr "Де культури зустрічаються і дружба починається"
+
+msgid "CrossPaths is a verified platform for meeting new friends in Dublin through structured speed-friending events."
+msgstr "CrossPaths – це перевірена платформа для знайомства з новими друзями в Дубліні через структуровані події швидких знайомств."
+
+msgid "All events are hosted by verified organizers in safe, public locations."
+msgstr "Усі події проводяться перевіреними організаторами в безпечних публічних місцях."
+
+msgid "Browse Verified Events"
+msgstr "Переглянути перевірені події ✓"
+
+msgid "Learn More About Safety"
+msgstr "Дізнатися більше про безпеку"
+
+msgid "How It Works"
+msgstr "Як це працює"
+
+msgid "Browse Verified Events"
+msgstr "Переглянути перевірені події"
+
+msgid "Review detailed event information including agenda, host credentials, and safety details."
+msgstr "Переглянути детальну інформацію про подію, включаючи порядок денний, дані організатора та деталі безпеки."
+
+msgid "Register Securely"
+msgstr "Безпечна реєстрація"
+
+msgid "RSVP with confirmed details. Receive event reminders and location information."
+msgstr "Підтвердження реєстрації з деталями. Отримайте нагадування про подію та інформацію про місце."
+
+msgid "Follow Structured Ice-Breakers"
+msgstr "Слідуйте структурованим розминкам"
+
+msgid "Participate in timed conversation rounds with prepared topics and prompts."
+msgstr "Беріть участь у розмовах за розкладом із підготовленими темами та підказками."
+
+msgid "Build Your Network"
+msgstr "Розбудуйте свою мережу"
+
+msgid "Connect with people you met and attend future events with your new friends."
+msgstr "Зв'яжіться з людьми, яких ви зустріли, та відвідуйте майбутні події з новими друзями."
+
+msgid "Ready to Meet New Friends?"
+msgstr "Готові зустріти нових друзів?"
+
+msgid "View Upcoming Events"
+msgstr "Переглянути майбутні події"
+
+# Events Page
+msgid "Events – CrossPaths"
+msgstr "Події – CrossPaths"
+
+msgid "Upcoming Events"
+msgstr "Майбутні події"
+
+msgid "All events are verified and hosted in safe public locations"
+msgstr "Усі події перевірені та проводяться в безпечних публічних місцях"
+
+msgid "Friday Night Speed-Friending"
+msgstr "П'ятничні швидкі знайомства"
+
+msgid "Coffee Connections"
+msgstr "Кавові зустрічі"
+
+msgid "Verified Host"
+msgstr "Перевірений організатор"
+
+msgid "Date:"
+msgstr "Дата:"
+
+msgid "Time:"
+msgstr "Время:"
+
+msgid "Location:"
+msgstr "Місце:"
+
+msgid "Host:"
+msgstr "Організатор:"
+
+msgid "Capacity:"
+msgstr "Місткість:"
+
+msgid "registered"
+msgstr "зареєстровано"
+
+msgid "View Full Details & Agenda"
+msgstr "Переглянути повні деталі та порядок денний"
+
+msgid "View Safety Information"
+msgstr "Переглянути інформацію про безпеку"
+
+msgid "No upcoming events at the moment. Check back soon!"
+msgstr "Наразі немає майбутніх подій. Перевірте пізніше!"
+
+# Profile Page
+msgid "Profile – CrossPaths"
+msgstr "Профіль – CrossPaths"
+
+msgid "Your Profile"
+msgstr "Ваш профіль"
+
+msgid "Your information is private and only shared with event attendees"
+msgstr "Ваша інформація приватна та ділиться лише з учасниками подій"
+
+msgid "Member since"
+msgstr "Учасник з"
+
+msgid "March 2026"
+msgstr "березня 2026"
+
+msgid "Age:"
+msgstr "Вік:"
+
+msgid "Country of Origin:"
+msgstr "Країна походження:"
+
+msgid "Languages:"
+msgstr "Мови:"
+
+msgid "Interests:"
+msgstr "Інтереси:"
+
+msgid "About:"
+msgstr "Про себе:"
+
+msgid "Looking to meet new friends in Dublin!"
+msgstr "Шукаю нових друзів у Дубліні!"
+
+msgid "Edit Profile"
+msgstr "Редагувати профіль"
+
+msgid "Privacy Settings"
+msgstr "Налаштування приватності"
+
+msgid "Events Attended"
+msgstr "Відвідані події"
+
+msgid "No events yet. Browse upcoming events to get started!"
+msgstr "Ще немає подій. Перегляньте майбутні події, щоб почати!"
+
+# About Page
+msgid "About – CrossPaths"
+msgstr "Про нас – CrossPaths"
+
+msgid "About CrossPaths"
+msgstr "Про CrossPaths"
+
+msgid "Our Mission"
+msgstr "Наша місія"
+
+msgid "CrossPaths is a verified platform designed to support the social integration of international newcomers in Dublin through structured, safe speed-friending events."
+msgstr "CrossPaths – це перевірена платформа, призначена для підтримки соціальної інтеграції міжнародних новоприбулих у Дубліні через структуровані, безпечні події швидких знайомств."
+
+msgid "Safety & Verification"
+msgstr "Безпека та перевірка"
+
+msgid "All event hosts are verified by our team. Events take place in public venues with clear agendas and structured activities. Your safety is our priority."
+msgstr "Усі організатори подій перевірені нашою командою. Події відбуваються в публічних місцях з чітким порядком денним та структурованими активностями. Ваша безпека – наш пріоритет."
+
+msgid "Verified Hosts"
+msgstr "Перевірені організатори"
+
+msgid "All hosts undergo background verification"
+msgstr "Усі організатори проходять перевірку"
+
+msgid "Public Venues"
+msgstr "Публічні місця"
+
+msgid "Events are held in established public locations"
+msgstr "Події проводяться у встановлених публічних місцях"
+
+msgid "Clear Agendas"
+msgstr "Чіткий порядок денний"
+
+msgid "Know exactly what to expect before attending"
+msgstr "Знайте точно, чого очікувати перед відвідуванням"
+
+msgid "How We Protect Your Privacy"
+msgstr "Як ми захищаємо вашу приватність"
+
+msgid "Your personal information is never shared publicly. Profile details are only visible to confirmed event attendees. We comply with GDPR regulations."
+msgstr "Ваша особиста інформація ніколи не розголошується публічно. Деталі профілю видимі лише підтвердженим учасникам подій. Ми дотримуємося правил GDPR."
+
+msgid "Community Guidelines"
+msgstr "Правила спільноти"
+
+msgid "We maintain a respectful, inclusive community. All members must follow our code of conduct. Harassment or inappropriate behaviour results in immediate account suspension."
+msgstr "Ми підтримуємо шанобливу, інклюзивну спільноту. Усі учасники повинні дотримуватися нашого кодексу поведінки. Домагання або неналежна поведінка призводить до негайної блокування облікового запису."
+
+msgid "Get in Touch"
+msgstr "Зв'яжіться з нами"
+
+msgid "Questions or feedback? We'd love to hear from you!"
+msgstr "Питання чи відгуки? Ми раді почути від вас!"
+
+msgid "Email:"
+msgstr "Електронна пошта:"
+
+msgid "Based in:"
+msgstr "Розташовані в:"

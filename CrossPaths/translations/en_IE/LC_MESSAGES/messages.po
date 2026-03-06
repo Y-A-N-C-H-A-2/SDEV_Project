@@ -1,0 +1,206 @@
+# English (Ireland) Translations
+# CrossPaths - Speed-Friending Platform
+msgid ""
+msgstr ""
+"Project-Id-Version: CrossPaths 1.0\n"
+"POT-Creation-Date: 2026-03-06 12:00+0000\n"
+"PO-Revision-Date: 2026-03-06 12:00+0000\n"
+"Last-Translator: CrossPaths Team\n"
+"Language: en_IE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Navigation & Brand
+msgid "CrossPaths – Where cultures meet and friendships begin"
+msgstr "CrossPaths – Where cultures meet and friendships begin"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Events"
+msgstr "Events"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "About"
+msgstr "About"
+
+msgid "Where cultures meet and friendships begin."
+msgstr "Where cultures meet and friendships begin."
+
+msgid "A culturally adaptive platform for international newcomers in Dublin"
+msgstr "A culturally adaptive platform for international newcomers in Dublin"
+
+# Home Page
+msgid "CrossPaths – Home"
+msgstr "CrossPaths – Home"
+
+msgid "Welcome to CrossPaths"
+msgstr "Welcome to CrossPaths"
+
+msgid "Where cultures meet and friendships begin"
+msgstr "Where cultures meet and friendships begin"
+
+msgid "Connect with international newcomers in Dublin through speed-friending events."
+msgstr "Connect with international newcomers in Dublin through speed-friending events."
+
+msgid "Browse Events"
+msgstr "Browse Events"
+
+msgid "Learn More"
+msgstr "Learn More"
+
+msgid "How It Works"
+msgstr "How It Works"
+
+msgid "Find speed-friending events near you."
+msgstr "Find speed-friending events near you."
+
+msgid "RSVP"
+msgstr "RSVP"
+
+msgid "Register for events that interest you."
+msgstr "Register for events that interest you."
+
+msgid "Attend"
+msgstr "Attend"
+
+msgid "Meet new people in structured settings."
+msgstr "Meet new people in structured settings."
+
+msgid "Connect"
+msgstr "Connect"
+
+msgid "Build your social network in Dublin."
+msgstr "Build your social network in Dublin."
+
+msgid "Ready to Meet New Friends?"
+msgstr "Ready to Meet New Friends?"
+
+msgid "View Upcoming Events"
+msgstr "View Upcoming Events"
+
+# Events Page
+msgid "Events – CrossPaths"
+msgstr "Events – CrossPaths"
+
+msgid "Upcoming Events"
+msgstr "Upcoming Events"
+
+msgid "Speed-friending events in Dublin"
+msgstr "Speed-friending events in Dublin"
+
+msgid "Friday Night Speed-Friending"
+msgstr "Friday Night Speed-Friending"
+
+msgid "Coffee Connections"
+msgstr "Coffee Connections"
+
+msgid "Date:"
+msgstr "Date:"
+
+msgid "Time:"
+msgstr "Time:"
+
+msgid "Location:"
+msgstr "Location:"
+
+msgid "Host:"
+msgstr "Host:"
+
+msgid "When:"
+msgstr "When:"
+
+msgid "Where:"
+msgstr "Where:"
+
+msgid "Attendees:"
+msgstr "Attendees:"
+
+msgid "View Details"
+msgstr "View Details"
+
+msgid "No upcoming events at the moment. Check back soon!"
+msgstr "No upcoming events at the moment. Check back soon!"
+
+# Profile Page
+msgid "Profile – CrossPaths"
+msgstr "Profile – CrossPaths"
+
+msgid "Your Profile"
+msgstr "Your Profile"
+
+msgid "Manage your profile information"
+msgstr "Manage your profile information"
+
+msgid "Age:"
+msgstr "Age:"
+
+msgid "From:"
+msgstr "From:"
+
+msgid "Languages:"
+msgstr "Languages:"
+
+msgid "Interests:"
+msgstr "Interests:"
+
+msgid "About:"
+msgstr "About:"
+
+msgid "Looking to meet new friends in Dublin!"
+msgstr "Looking to meet new friends in Dublin!"
+
+msgid "Edit Profile"
+msgstr "Edit Profile"
+
+msgid "Events Attended"
+msgstr "Events Attended"
+
+msgid "No events yet. Browse upcoming events to get started!"
+msgstr "No events yet. Browse upcoming events to get started!"
+
+# About Page
+msgid "About – CrossPaths"
+msgstr "About – CrossPaths"
+
+msgid "About CrossPaths"
+msgstr "About CrossPaths"
+
+msgid "What is CrossPaths?"
+msgstr "What is CrossPaths?"
+
+msgid "CrossPaths is a platform for international newcomers in Dublin to meet new people through speed-friending events."
+msgstr "CrossPaths is a platform for international newcomers in Dublin to meet new people through speed-friending events."
+
+msgid "Who Can Join?"
+msgstr "Who Can Join?"
+
+msgid "CrossPaths is open to anyone living in Dublin who wants to expand their social circle. Our events are particularly popular with international students, professionals, and migrants."
+msgstr "CrossPaths is open to anyone living in Dublin who wants to expand their social circle. Our events are particularly popular with international students, professionals, and migrants."
+
+msgid "Get Started"
+msgstr "Get Started"
+
+msgid "Ready to meet new friends? Browse our upcoming events or create your profile to get started."
+msgstr "Ready to meet new friends? Browse our upcoming events or create your profile to get started."
+
+msgid "View Events"
+msgstr "View Events"
+
+msgid "Create Profile"
+msgstr "Create Profile"
+
+msgid "Get in Touch"
+msgstr "Get in Touch"
+
+msgid "Questions or feedback? We'd love to hear from you!"
+msgstr "Questions or feedback? We'd love to hear from you!"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Based in:"
+msgstr "Based in:"

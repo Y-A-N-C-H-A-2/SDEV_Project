@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the CrossPaths package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CrossPaths 1.0\n"
+"Report-Msgid-Bugs-To: hello@crosspaths.ie\n"
+"POT-Creation-Date: 2026-03-06 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/base.html:6
+msgid "CrossPaths – Where cultures meet and friendships begin"
+msgstr ""
+
+#: templates/base.html:15
+msgid "Home"
+msgstr ""
+
+#: templates/base.html:16
+msgid "Events"
+msgstr ""
+
+#: templates/base.html:17
+msgid "Profile"
+msgstr ""
+
+#: templates/base.html:18
+msgid "About"
+msgstr ""
+
+#: templates/index.html:8
+msgid "Welcome to CrossPaths"
+msgstr ""
+
+#: templates/index.html:9
+msgid "Where cultures meet and friendships begin"
+msgstr ""
+
+# Add more msgid entries as needed
+# This file is a template that should be updated using:
+# pybabel extract -F babel.cfg -o messages.pot .
