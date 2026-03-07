@@ -1,0 +1,24 @@
+<!-- Irish/English: Concise, direct, informative -->
+<section class="about-section-minimal">
+    <h2>{{ _('What is CrossPaths?') }}</h2>
+    <p>{{ _('CrossPaths is a platform for international newcomers in Dublin to meet new people through speed-friending events.') }}</p>
+
+    <h2>{{ _('How It Works') }}</h2>
+    <ol>
+        <li>{{ _('Browse upcoming events') }}</li>
+        <li>{{ _('RSVP to events that interest you') }}</li>
+        <li>{{ _('Attend and meet new people') }}</li>
+        <li>{{ _('Build your social network') }}</li>
+    </ol>
+
+    <h2>{{ _('Who Can Join?') }}</h2>
+    <p>{{ _('CrossPaths is open to anyone living in Dublin who wants to expand their social circle. Our events are particularly popular with international students, professionals, and migrants.') }}</p>
+
+    <h2>{{ _('Get Started') }}</h2>
+    <p>{{ _('Ready to meet new friends? Browse our upcoming events or create your profile to get started.') }}</p>
+
+    <div class="cta-buttons">
+        <a href="{{ url_for('main.events') }}" class="btn btn-primary">{{ _('View Events') }}</a>
+        <a href="{{ url_for('main.profile') }}" class="btn btn-secondary">{{ _('Create Profile') }}</a>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<!-- Brazilian: Visual, warm layout with social elements -->
+<div class="event-card-warm">
+    <div class="event-header-warm">
+        <h2 class="event-title">{{ event.title }} 🎊</h2>
+        <div class="event-social">
+            <span class="attendee-count">{{ event.attendees }} {{ _('people going') }}</span>
+        </div>
+    </div>
+
+    <div class="event-info-warm">
+        <p class="event-datetime">📅 {{ event.date }} · ⏰ {{ event.time }}</p>
+        <p class="event-location">📍 {{ event.location }}</p>
+        <p class="event-host">{{ _('Hosted by') }} {{ event.host }}</p>
+    </div>
+
+    <div class="event-vibe">
+        <p>{{ _('Join us for a fun evening! Chat, laugh, and make new friends!') }}</p>
+    </div>
+
+    <div class="event-actions-warm">
+        <button class="btn btn-primary warm">{{ _('I\'m Going!') }} ❤️</button>
+        <button class="btn btn-secondary warm">{{ _('See Who\'s Attending') }}</button>
+    </div>
+</div>

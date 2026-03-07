@@ -6,107 +6,18 @@
 <div class="events-page">
     <header class="page-header">
         <h1>{{ _('Upcoming Events') }}</h1>
-        
-        {% if locale == 'uk_UA' %}
-        <p class="page-subtitle">{{ _('All events are verified and hosted in safe public locations') }}</p>
-        {% elif locale == 'pt_BR' %}
-        <p class="page-subtitle">{{ _('Find your next adventure and see who\'s going!') }} 🎉</p>
-        {% else %}
-        <p class="page-subtitle">{{ _('Speed-friending events in Dublin') }}</p>
-        {% endif %}
+        {% include "partials/events/header_" ~ locale ~ ".html" %}
     </header>
 
     <!-- Events List -->
     <div class="events-container">
         {% for event in events %}
         <article class="event-card">
-            {% if locale == 'uk_UA' %}
-            <!-- Ukrainian: Formal layout with verification badges and detailed info -->
-            <div class="event-card-formal">
-                <div class="event-header">
-                    <h2 class="event-title">{{ event.title }}</h2>
-                    {% if event.verified %}
-                    <span class="verified-badge">✓ {{ _('Verified Host') }}</span>
-                    {% endif %}
-                </div>
-                
-                <div class="event-details">
-                    <div class="event-detail-row">
-                        <span class="detail-label">{{ _('Date:') }}</span>
-                        <span class="detail-value">{{ event.date }}</span>
-                    </div>
-                    <div class="event-detail-row">
-                        <span class="detail-label">{{ _('Time:') }}</span>
-                        <span class="detail-value">{{ event.time }}</span>
-                    </div>
-                    <div class="event-detail-row">
-                        <span class="detail-label">{{ _('Location:') }}</span>
-                        <span class="detail-value">{{ event.location }}</span>
-                    </div>
-                    <div class="event-detail-row">
-                        <span class="detail-label">{{ _('Host:') }}</span>
-                        <span class="detail-value">{{ event.host }}</span>
-                    </div>
-                    <div class="event-detail-row">
-                        <span class="detail-label">{{ _('Capacity:') }}</span>
-                        <span class="detail-value">{{ event.attendees }}/{{ event.max_attendees }} {{ _('registered') }}</span>
-                    </div>
-                </div>
-                
-                <div class="event-actions">
-                    <button class="btn btn-primary">{{ _('View Full Details & Agenda') }}</button>
-                    <button class="btn btn-secondary">{{ _('View Safety Information') }}</button>
-                </div>
-            </div>
-            
-            {% elif locale == 'pt_BR' %}
-            <!-- Brazilian: Visual, warm layout with social elements -->
-            <div class="event-card-warm">
-                <div class="event-header-warm">
-                    <h2 class="event-title">{{ event.title }} 🎊</h2>
-                    <div class="event-social">
-                        <span class="attendee-count">{{ event.attendees }} {{ _('people going') }}</span>
-                    </div>
-                </div>
-                
-                <div class="event-info-warm">
-                    <p class="event-datetime">📅 {{ event.date }} · ⏰ {{ event.time }}</p>
-                    <p class="event-location">📍 {{ event.location }}</p>
-                    <p class="event-host">{{ _('Hosted by') }} {{ event.host }}</p>
-                </div>
-                
-                <div class="event-vibe">
-                    <p>{{ _('Join us for a fun evening! Chat, laugh, and make new friends!') }}</p>
-                </div>
-                
-                <div class="event-actions-warm">
-                    <button class="btn btn-primary warm">{{ _('I\'m Going!') }} ❤️</button>
-                    <button class="btn btn-secondary warm">{{ _('See Who\'s Attending') }}</button>
-                </div>
-            </div>
-            
-            {% else %}
-            <!-- Irish/English: Clean, minimal layout -->
-            <div class="event-card-minimal">
-                <h2 class="event-title">{{ event.title }}</h2>
-                
-                <div class="event-info-minimal">
-                    <p><strong>{{ _('When:') }}</strong> {{ event.date }} at {{ event.time }}</p>
-                    <p><strong>{{ _('Where:') }}</strong> {{ event.location }}</p>
-                    <p><strong>{{ _('Host:') }}</strong> {{ event.host }}</p>
-                    <p><strong>{{ _('Attendees:') }}</strong> {{ event.attendees }}/{{ event.max_attendees }}</p>
-                </div>
-                
-                <div class="event-actions-minimal">
-                    <button class="btn btn-primary">{{ _('View Details') }}</button>
-                    <button class="btn btn-secondary">{{ _('RSVP') }}</button>
-                </div>
-            </div>
-            {% endif %}
+            {% include "partials/events/card_" ~ locale ~ ".html" %}
         </article>
         {% endfor %}
     </div>
-    
+
     {% if not events %}
     <div class="no-events">
         <p>{{ _('No upcoming events at the moment. Check back soon!') }}</p>
