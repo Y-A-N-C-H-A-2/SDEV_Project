@@ -2,7 +2,7 @@
 
 > *Where cultures meet and friendships begin.*
 
-A Flask-based web application supporting the social integration of international newcomers in Dublin through culturally adaptive speed-friending events. The platform adapts its interface based on user locale (English-Ireland, Ukrainian, Brazilian Portuguese) following Hofstede's Cultural Dimensions framework.
+A Flask-based web application supporting the social integration of international newcomers in Dublin through culturally adaptive community-based cultural events. The platform is designed for group gatherings that bring together people from multiple countries and cultural backgrounds — not one-on-one meetings. The platform adapts its interface based on user locale (English-Ireland, Ukrainian, Brazilian Portuguese) following Hofstede's Cultural Dimensions framework.
 
 ## 🌍 Supported Locales
 
@@ -121,9 +121,10 @@ The platform implements different UI patterns based on locale:
 - Detailed event agendas and schedules
 - Clear privacy and security messaging
 - Step-by-step guided flows
+- Soft pastel periwinkle/lavender color scheme
 
 ### **Brazilian Portuguese (pt_BR) - Relationally Driven**
-- Warm, vibrant color palette
+- Warm orange color palette inspired by Bumble BFF
 - Social feed with attendee photos
 - Expressive language with emojis
 - Group chat and social proof elements
@@ -134,7 +135,10 @@ The platform implements different UI patterns based on locale:
 - Direct, concise copy
 - Self-directed navigation
 - Fast, efficient interactions
-- Neutral, professional tone
+- Soft sage/mint pastel color palette
+
+### 🐝 Design Inspiration
+The visual style is inspired by [Bumble BFF](https://www.bumble.com/bff) — featuring rounded cards, pill-shaped buttons, generous whitespace, and a warm, approachable color palette. The focus is on community-based cultural events for groups rather than one-on-one meetings.
 
 ## 🛠️ Development
 

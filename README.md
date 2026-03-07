@@ -16,9 +16,9 @@
 
 ## PART 1. Project Overview
 
-**Target Context - Type of App:** Culturally Adaptive Speed-Friending Platform
+**Target Context - Type of App:** Culturally Adaptive Community Cultural Events Platform
 
-**Purpose:** CrossPaths supports the social integration of international newcomers in Dublin by providing a culturally adaptive interface for discovering, joining, and engaging with speed-friending events. The platform adapts its layout, tone, imagery, and interaction patterns based on the user's cultural locale.
+**Purpose:** CrossPaths supports the social integration of international newcomers in Dublin by providing a culturally adaptive interface for discovering, joining, and engaging with community-based cultural events designed for groups from multiple countries. The platform adapts its layout, tone, imagery, and interaction patterns based on the user's cultural locale.
 
 **Main Audience:** International newcomers (students, professionals, migrants) living in Dublin — specifically targeting Ukrainian and Brazilian communities, with English (Ireland) as the default locale.
 
@@ -142,7 +142,7 @@ Irish/English-speaking users in Dublin need concise, direct content and efficien
 |---------|----------------|----------------|----------------|
 | **Layout** | Clean, minimal, direct — card-based with whitespace | Structured, grid-based, clear sections with explicit labels | Warm, layered, social-feed style with visual density |
 | **Navigation** | Self-directed, tab-based, minimal hand-holding | Step-by-step, linear, breadcrumb-guided with clear CTAs | Explorative, browse-first, swipe-friendly |
-| **Colour Palette** | Muted, neutral tones — professional and calm | Muted blues and greys — trustworthy and formal | Vibrant, warm palette — yellows, greens, oranges |
+| **Colour Palette** | Soft sage/mint pastels — approachable and calm | Soft pastel periwinkle/lavender — trustworthy and gentle | Warm orange palette (Bumble BFF-inspired) — energetic and inviting |
 | **Imagery** | Minimal — functional icons, Dublin landmarks | Verified host photos, venue images, maps, safety icons | Personality photos, group shots, expressive graphics |
 | **Language / Tone** | Direct, informal, concise | Formal, explicit, reassuring | Warm, conversational, enthusiastic |
 | **Symbols / Icons** | Functional UI icons (search, filter, calendar) | Verified badges ✓, lock icons 🔒, agenda icons 📋 | Social icons (hearts, reactions, group indicators) |
