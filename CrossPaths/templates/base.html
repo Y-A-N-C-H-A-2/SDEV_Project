@@ -17,12 +17,23 @@
                     <h1>CrossPaths</h1>
                 </a>
             </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
             
             <ul class="nav-links">
                 <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
                 <li><a href="{{ url_for('main.events') }}">{{ _('Events') }}</a></li>
+                <li><a href="{{ url_for('main.communities') }}">{{ _('Communities') }}</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('main.create_event') }}">{{ _('Create Event') }}</a></li>
                 <li><a href="{{ url_for('main.profile') }}">{{ _('Profile') }}</a></li>
-                <li><a href="{{ url_for('main.about') }}">{{ _('About') }}</a></li>
+                <li><a href="{{ url_for('main.logout') }}">{{ _('Logout') }}</a></li>
+                {% else %}
+                <li><a href="{{ url_for('main.login') }}">{{ _('Login') }}</a></li>
+                <li><a href="{{ url_for('main.register') }}" class="btn btn-primary btn-nav">{{ _('Register') }}</a></li>
+                {% endif %}
             </ul>
             
             <!-- Language Switcher -->
@@ -48,6 +59,20 @@
         </div>
     </nav>
     {% endblock %}
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="flash-message flash-{{ category }}">
+            {{ message }}
+            <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
 
     {% block hero %}{% endblock %}
 

@@ -5,23 +5,100 @@
 {% block content %}
 <div class="home-page">
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero hero-large">
         <div class="hero-content">
-            <h1 class="hero-title">{{ _('Welcome to CrossPaths') }}</h1>
-            <p class="hero-subtitle">{{ _('Where cultures meet and friendships begin') }}</p>
-            {% include "partials/index/hero_" ~ locale ~ ".html" %}
+            <h1 class="hero-title">{{ _('Meet People. Attend Events. Explore Ireland.') }}</h1>
+            <p class="hero-subtitle">{{ _('A community platform for locals, expats, and travelers to connect through events across Ireland') }}</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('main.events') }}" class="btn btn-large btn-white">{{ _('Browse Events') }}</a>
+                {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('main.register') }}" class="btn btn-large btn-outline-white">{{ _('Join Now') }}</a>
+                {% endif %}
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <h2>{{ _('How It Works') }}</h2>
-        {% include "partials/index/features_" ~ locale ~ ".html" %}
+    <!-- Upcoming Events Section -->
+    {% if events %}
+    <section class="home-section">
+        <div class="section-header">
+            <h2>{{ _('Upcoming Events') }}</h2>
+            <a href="{{ url_for('main.events') }}" class="section-link">{{ _('View All →') }}</a>
+        </div>
+        <div class="cards-grid">
+            {% for event in events %}
+            <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="event-card">
+                <div class="event-card-image">
+                    {% if event.photo %}
+                    <div class="placeholder-img placeholder-event">📅</div>
+                    {% else %}
+                    <div class="placeholder-img placeholder-event">📅</div>
+                    {% endif %}
+                    {% if event.category %}
+                    <span class="event-category-badge">{{ event.category }}</span>
+                    {% endif %}
+                </div>
+                <div class="event-card-body">
+                    <h3 class="event-title">{{ event.title }}</h3>
+                    <p class="event-meta">📍 {{ event.city }} {% if event.venue %}· {{ event.venue }}{% endif %}</p>
+                    <p class="event-meta">🗓️ {{ event.date_time.strftime('%b %d, %Y at %H:%M') }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Featured Communities Section -->
+    {% if communities %}
+    <section class="home-section">
+        <div class="section-header">
+            <h2>{{ _('Featured Communities') }}</h2>
+            <a href="{{ url_for('main.communities') }}" class="section-link">{{ _('View All →') }}</a>
+        </div>
+        <div class="cards-grid">
+            {% for community in communities %}
+            <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="community-card">
+                <div class="community-card-image">
+                    <div class="placeholder-img placeholder-community">👥</div>
+                </div>
+                <div class="community-card-body">
+                    <h3>{{ community.name }}</h3>
+                    <p>{{ community.description[:100] }}{% if community.description|length > 100 %}...{% endif %}</p>
+                    <span class="member-count">{{ community.members.count() }} {{ _('members') }}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Discover Ireland Section -->
+    <section class="home-section discover-section">
+        <h2>{{ _('Discover Ireland Experiences') }}</h2>
+        <div class="discover-grid">
+            <div class="discover-card">
+                <div class="placeholder-img placeholder-nature">🏔️</div>
+                <h3>{{ _('Outdoor Adventures') }}</h3>
+                <p>{{ _('Explore mountains, coastlines, and stunning landscapes across Ireland') }}</p>
+            </div>
+            <div class="discover-card">
+                <div class="placeholder-img placeholder-city">🏙️</div>
+                <h3>{{ _('City Life') }}</h3>
+                <p>{{ _('Discover vibrant cities from Dublin to Galway, Cork to Limerick') }}</p>
+            </div>
+            <div class="discover-card">
+                <div class="placeholder-img placeholder-social">🎶</div>
+                <h3>{{ _('Culture & Social') }}</h3>
+                <p>{{ _('Experience traditional music, arts, festivals and Irish hospitality') }}</p>
+            </div>
+        </div>
     </section>
 
     <!-- Call to Action -->
     <section class="cta-section">
         <h2>{{ _('Ready to Meet New Friends?') }}</h2>
+        <p>{{ _('Join thousands of people connecting through events across Ireland') }}</p>
         <a href="{{ url_for('main.events') }}" class="btn btn-large btn-primary">
             {{ _('View Upcoming Events') }}
         </a>

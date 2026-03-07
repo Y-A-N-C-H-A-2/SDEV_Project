@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event.title }} – CrossPaths{% endblock %}
+
+{% block content %}
+<div class="detail-page">
+    <div class="detail-container">
+        <div class="detail-image">
+            {% if event.photo and not event.photo.startswith('placeholder') %}
+            <img src="{{ url_for('static', filename='uploads/' + event.photo) }}" alt="{{ event.title }}">
+            {% else %}
+            <div class="placeholder-img placeholder-event-large">📅</div>
+            {% endif %}
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-header">
+                {% if event.category %}
+                <span class="event-category-badge">{{ event.category }}</span>
+                {% endif %}
+                <h1>{{ event.title }}</h1>
+            </div>
+
+            <div class="detail-meta">
+                <div class="meta-item">
+                    <span class="meta-icon">🗓️</span>
+                    <span>{{ event.date_time.strftime('%A, %B %d, %Y at %H:%M') }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">📍</span>
+                    <span>{{ event.city }}{% if event.venue %} · {{ event.venue }}{% endif %}</span>
+                </div>
+                {% if event.organizer %}
+                <div class="meta-item">
+                    <span class="meta-icon">👤</span>
+                    <span>{{ _('Organized by') }} {{ event.organizer.name }}</span>
+                </div>
+                {% endif %}
+                <div class="meta-item">
+                    <span class="meta-icon">👥</span>
+                    <span>{{ event.attendees.count() }} {{ _('people attending') }}</span>
+                </div>
+            </div>
+
+            {% if event.description %}
+            <div class="detail-description">
+                <h2>{{ _('About this event') }}</h2>
+                <p>{{ event.description }}</p>
+            </div>
+            {% endif %}
+
+            <div class="detail-actions">
+                <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('← Back to Events') }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

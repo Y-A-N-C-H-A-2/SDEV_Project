@@ -152,6 +152,8 @@ def register():
             city=form.city.data if form.city.data else None
         )
         user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.flush()
 
         # Handle predefined interests
         if form.interests.data:
@@ -168,9 +170,9 @@ def register():
                 if not interest:
                     interest = Interest(name=interest_name, is_predefined=False)
                     db.session.add(interest)
+                    db.session.flush()
                 user.interests.append(interest)
 
-        db.session.add(user)
         db.session.commit()
         flash('Account created successfully! Please log in.', 'success')
         return redirect(url_for('main.login'))

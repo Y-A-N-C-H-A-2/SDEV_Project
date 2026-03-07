@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}{{ community.name }} – CrossPaths{% endblock %}
+
+{% block content %}
+<div class="detail-page">
+    <div class="detail-container">
+        <div class="detail-image">
+            <div class="placeholder-img placeholder-community-large">👥</div>
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-header">
+                <h1>{{ community.name }}</h1>
+                <span class="member-count-large">👥 {{ community.members.count() }} {{ _('members') }}</span>
+            </div>
+
+            {% if community.description %}
+            <div class="detail-description">
+                <h2>{{ _('About this community') }}</h2>
+                <p>{{ community.description }}</p>
+            </div>
+            {% endif %}
+
+            <div class="detail-actions">
+                {% if current_user.is_authenticated %}
+                    {% if current_user in community.members.all() %}
+                    <form method="POST" action="{{ url_for('main.leave_community', community_id=community.id) }}" style="display:inline">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-secondary">{{ _('Leave Community') }}</button>
+                    </form>
+                    {% else %}
+                    <form method="POST" action="{{ url_for('main.join_community', community_id=community.id) }}" style="display:inline">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-primary">{{ _('Join Community') }}</button>
+                    </form>
+                    {% endif %}
+                {% else %}
+                <a href="{{ url_for('main.login') }}" class="btn btn-primary">{{ _('Login to Join') }}</a>
+                {% endif %}
+                <a href="{{ url_for('main.communities') }}" class="btn btn-secondary">{{ _('← Back to Communities') }}</a>
+            </div>
+
+            <!-- Members -->
+            {% if community.members.count() > 0 %}
+            <div class="community-members-section">
+                <h2>{{ _('Members') }}</h2>
+                <div class="members-list">
+                    {% for member in community.members.limit(20) %}
+                    <div class="member-item">
+                        <div class="member-avatar">{{ member.name[0] }}</div>
+                        <span>{{ member.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Related Events -->
+            {% if events %}
+            <div class="related-events-section">
+                <h2>{{ _('Upcoming Events') }}</h2>
+                <div class="mini-cards">
+                    {% for event in events %}
+                    <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
+                        <h4>{{ event.title }}</h4>
+                        <p>📍 {{ event.city }} · 🗓️ {{ event.date_time.strftime('%b %d, %Y') }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

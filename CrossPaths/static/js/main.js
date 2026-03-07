@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize features based on locale
     initializeLocaleFeatures(locale);
     
+    // Initialize mobile nav toggle
+    initializeMobileNav();
+
     // Add smooth scrolling for anchor links
     initializeSmoothScrolling();
     
@@ -103,6 +106,19 @@ function enableEmojiReactions() {
 function enableQuickActions() {
     // Minimize steps for common actions
     console.log('Quick actions enabled');
+}
+
+/**
+ * Initialize mobile navigation toggle
+ */
+function initializeMobileNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
 }
 
 /**

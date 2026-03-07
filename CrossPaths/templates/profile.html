@@ -6,17 +6,94 @@
 <div class="profile-page">
     <header class="page-header">
         <h1>{{ _('Your Profile') }}</h1>
-        {% include "partials/profile/header_" ~ locale ~ ".html" %}
     </header>
 
     <div class="profile-container">
-        {% include "partials/profile/details_" ~ locale ~ ".html" %}
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar-placeholder">{{ user.name[0] }}</div>
+                <div class="profile-info">
+                    <h2>{{ user.name }}</h2>
+                    <p class="profile-email">{{ user.email }}</p>
+                    {% if user.city %}
+                    <p class="profile-location">📍 {{ user.city }}, Ireland</p>
+                    {% endif %}
+                </div>
+            </div>
 
-        <!-- Events Attended Section -->
-        <section class="profile-events">
+            <div class="profile-details-grid">
+                {% if user.age %}
+                <div class="profile-detail">
+                    <span class="detail-label">{{ _('Age') }}</span>
+                    <span class="detail-value">{{ user.age }}</span>
+                </div>
+                {% endif %}
+                {% if user.gender %}
+                <div class="profile-detail">
+                    <span class="detail-label">{{ _('Gender') }}</span>
+                    <span class="detail-value">{{ user.gender }}</span>
+                </div>
+                {% endif %}
+                {% if user.nationality %}
+                <div class="profile-detail">
+                    <span class="detail-label">{{ _('Nationality') }}</span>
+                    <span class="detail-value">{{ user.nationality }}</span>
+                </div>
+                {% endif %}
+                {% if user.city %}
+                <div class="profile-detail">
+                    <span class="detail-label">{{ _('City') }}</span>
+                    <span class="detail-value">{{ user.city }}</span>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if user.interests %}
+            <div class="profile-interests">
+                <h3>{{ _('Interests') }}</h3>
+                <div class="interest-tags">
+                    {% for interest in user.interests %}
+                    <span class="interest-tag">{{ interest.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="profile-actions">
+                <a href="{{ url_for('main.edit_profile') }}" class="btn btn-primary">{{ _('Edit Profile') }}</a>
+            </div>
+        </div>
+
+        <!-- Communities Section -->
+        {% if user.communities %}
+        <section class="profile-section">
+            <h2>{{ _('Your Communities') }}</h2>
+            <div class="mini-cards">
+                {% for community in user.communities %}
+                <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="mini-card">
+                    <h4>{{ community.name }}</h4>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Events Section -->
+        <section class="profile-section">
             <h2>{{ _('Events Attended') }}</h2>
+            {% if user.attending_events | length > 0 %}
+            <div class="mini-cards">
+                {% for event in user.attending_events %}
+                <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
+                    <h4>{{ event.title }}</h4>
+                    <p>{{ event.date_time.strftime('%b %d, %Y') }}</p>
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
             <p>{{ _('No events yet. Browse upcoming events to get started!') }}</p>
             <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('Browse Events') }}</a>
+            {% endif %}
         </section>
     </div>
 </div>
