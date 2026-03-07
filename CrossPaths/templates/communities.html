@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Communities – CrossPaths') }}{% endblock %}
+
+{% block content %}
+<div class="communities-page">
+    <header class="page-header">
+        <h1>{{ _('Communities') }}</h1>
+        <p class="page-subtitle">{{ _('Browse and join interest-based communities') }}</p>
+    </header>
+
+    <div class="communities-grid">
+        {% for community in communities %}
+        <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="community-card">
+            <div class="community-card-image">
+                <div class="placeholder-img placeholder-community">👥</div>
+            </div>
+            <div class="community-card-body">
+                <h3>{{ community.name }}</h3>
+                <p>{{ community.description[:120] }}{% if community.description|length > 120 %}...{% endif %}</p>
+                <div class="community-footer">
+                    <span class="member-count">👥 {{ community.members.count() }} {{ _('members') }}</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    {% if not communities %}
+    <div class="no-events">
+        <div class="empty-state">
+            <span class="empty-icon">🏘️</span>
+            <h3>{{ _('No communities yet') }}</h3>
+            <p>{{ _('Communities are coming soon!') }}</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
