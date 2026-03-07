@@ -39,6 +39,7 @@
             <!-- Language Switcher -->
             <div class="language-switcher">
                 <form method="POST" action="{{ url_for('main.set_language') }}" class="locale-form">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <button type="submit" name="locale" value="en_IE" 
                             class="locale-btn {% if locale == 'en_IE' %}active{% endif %}"
                             title="English (Ireland)">
