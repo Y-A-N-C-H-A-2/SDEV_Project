@@ -61,9 +61,6 @@ msgstr "Як це працює"
 msgid "Review detailed event information including agenda, host credentials, and safety details."
 msgstr "Переглянути детальну інформацію про подію, включаючи порядок денний, дані організатора та деталі безпеки."
 
-msgid "Review detailed event information including agenda, host credentials, and safety details."
-msgstr "Переглянути детальну інформацію про подію, включаючи порядок денний, дані організатора та деталі безпеки."
-
 msgid "Register Securely"
 msgstr "Безпечна реєстрація"
 
