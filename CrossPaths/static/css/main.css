@@ -1659,3 +1659,32 @@ a.community-card {
         grid-template-columns: 1fr;
     }
 }
+
+/* Pagination */
+.pagination-nav {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-block;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.pagination-ellipsis {
+    padding: 0.4rem 0.6rem;
+    color: var(--text-secondary, #888);
+}

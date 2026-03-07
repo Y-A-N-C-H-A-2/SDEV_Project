@@ -9,6 +9,7 @@ from datetime import datetime
 from flask import Blueprint, render_template, session, redirect, url_for, request, flash, current_app
 from flask_babel import gettext as _
 from flask_login import login_user, logout_user, login_required, current_user
+from PIL import Image
 from werkzeug.utils import secure_filename
 
 from app import db
@@ -16,6 +17,31 @@ from app.models import User, Event, Community, Interest
 from app.forms import RegistrationForm, LoginForm, ProfileForm, EventForm, PREDEFINED_INTERESTS
 
 bp = Blueprint('main', __name__)
+
+# Maximum characters for the original filename portion of an upload
+_MAX_FILENAME_LEN = 200
+
+
+def _is_safe_redirect_url(target):
+    """Return True only when *target* is a safe, relative URL on this host."""
+    if not target:
+        return False
+    from urllib.parse import urlparse
+    parsed = urlparse(target)
+    # Accept only relative paths (no scheme, no netloc)
+    return parsed.scheme == '' and parsed.netloc == ''
+
+
+def _validate_image(stream):
+    """Verify that the uploaded file is a genuine image using Pillow."""
+    try:
+        img = Image.open(stream)
+        img.verify()
+        stream.seek(0)
+        return True
+    except Exception:
+        stream.seek(0)
+        return False
 
 
 @bp.route('/')
@@ -32,6 +58,7 @@ def events():
     """Events listing page with search and city filter"""
     city = request.args.get('city', '')
     search = request.args.get('search', '')
+    page = request.args.get('page', 1, type=int)
 
     query = Event.query.filter(Event.date_time >= datetime.utcnow())
 
@@ -46,8 +73,14 @@ def events():
             )
         )
 
-    events_list = query.order_by(Event.date_time.asc()).all()
-    return render_template('events.html', events=events_list, selected_city=city, search_query=search)
+    pagination = query.order_by(Event.date_time.asc()).paginate(page=page, per_page=12, error_out=False)
+    return render_template(
+        'events.html',
+        events=pagination.items,
+        pagination=pagination,
+        selected_city=city,
+        search_query=search,
+    )
 
 
 @bp.route('/event/<int:event_id>')
@@ -73,18 +106,26 @@ def create_event():
             organizer_id=current_user.id
         )
 
-        # Handle photo upload
+        # Handle photo upload with content validation
         if form.photo.data:
             photo = form.photo.data
-            filename = secure_filename(photo.filename)
+            if not _validate_image(photo.stream):
+                flash(_('Uploaded file is not a valid image.'), 'danger')
+                return render_template('create_event.html', form=form)
+
+            filename = secure_filename(photo.filename)[:_MAX_FILENAME_LEN]
             unique_filename = f"{uuid.uuid4().hex}_{filename}"
             photo.save(os.path.join(current_app.config['UPLOAD_FOLDER'], unique_filename))
             event.photo = unique_filename
 
-        db.session.add(event)
-        db.session.commit()
-        flash(_('Event created successfully!'), 'success')
-        return redirect(url_for('main.events'))
+        try:
+            db.session.add(event)
+            db.session.commit()
+            flash(_('Event created successfully!'), 'success')
+            return redirect(url_for('main.events'))
+        except Exception:
+            db.session.rollback()
+            flash(_('An error occurred while creating the event. Please try again.'), 'danger')
 
     return render_template('create_event.html', form=form)
 
@@ -92,8 +133,9 @@ def create_event():
 @bp.route('/communities')
 def communities():
     """Communities listing page"""
-    communities_list = Community.query.all()
-    return render_template('communities.html', communities=communities_list)
+    page = request.args.get('page', 1, type=int)
+    pagination = Community.query.paginate(page=page, per_page=12, error_out=False)
+    return render_template('communities.html', communities=pagination.items, pagination=pagination)
 
 
 @bp.route('/community/<int:community_id>')
@@ -110,9 +152,13 @@ def join_community(community_id):
     """Join a community"""
     community = Community.query.get_or_404(community_id)
     if current_user not in community.members.all():
-        community.members.append(current_user)
-        db.session.commit()
-        flash(_('You joined %(name)s!', name=community.name), 'success')
+        try:
+            community.members.append(current_user)
+            db.session.commit()
+            flash(_('You joined %(name)s!', name=community.name), 'success')
+        except Exception:
+            db.session.rollback()
+            flash(_('An error occurred. Please try again.'), 'danger')
     else:
         flash(_('You are already a member of this community.'), 'info')
     return redirect(url_for('main.community_detail', community_id=community_id))
@@ -124,9 +170,13 @@ def leave_community(community_id):
     """Leave a community"""
     community = Community.query.get_or_404(community_id)
     if current_user in community.members.all():
-        community.members.remove(current_user)
-        db.session.commit()
-        flash(_('You left %(name)s.', name=community.name), 'info')
+        try:
+            community.members.remove(current_user)
+            db.session.commit()
+            flash(_('You left %(name)s.', name=community.name), 'info')
+        except Exception:
+            db.session.rollback()
+            flash(_('An error occurred. Please try again.'), 'danger')
     return redirect(url_for('main.community_detail', community_id=community_id))
 
 
@@ -153,30 +203,37 @@ def register():
             city=form.city.data if form.city.data else None
         )
         user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.flush()
 
-        # Handle predefined interests
-        if form.interests.data:
-            for interest_name in form.interests.data:
-                interest = Interest.query.filter_by(name=interest_name).first()
-                if interest:
+        try:
+            db.session.add(user)
+            db.session.flush()
+
+            # Handle predefined interests
+            if form.interests.data:
+                for interest_name in form.interests.data:
+                    interest = Interest.query.filter_by(name=interest_name).first()
+                    if interest:
+                        user.interests.append(interest)
+
+            # Handle custom interests — normalise to title-case to avoid duplicates
+            if form.custom_interests.data:
+                custom_list = [i.strip().capitalize() for i in form.custom_interests.data.split(',') if i.strip()]
+                for interest_name in custom_list:
+                    interest = Interest.query.filter(
+                        db.func.lower(Interest.name) == interest_name.lower()
+                    ).first()
+                    if not interest:
+                        interest = Interest(name=interest_name, is_predefined=False)
+                        db.session.add(interest)
+                        db.session.flush()
                     user.interests.append(interest)
 
-        # Handle custom interests
-        if form.custom_interests.data:
-            custom_list = [i.strip() for i in form.custom_interests.data.split(',') if i.strip()]
-            for interest_name in custom_list:
-                interest = Interest.query.filter_by(name=interest_name).first()
-                if not interest:
-                    interest = Interest(name=interest_name, is_predefined=False)
-                    db.session.add(interest)
-                    db.session.flush()
-                user.interests.append(interest)
-
-        db.session.commit()
-        flash(_('Account created successfully! Please log in.'), 'success')
-        return redirect(url_for('main.login'))
+            db.session.commit()
+            flash(_('Account created successfully! Please log in.'), 'success')
+            return redirect(url_for('main.login'))
+        except Exception:
+            db.session.rollback()
+            flash(_('An error occurred during registration. Please try again.'), 'danger')
 
     return render_template('register.html', form=form)
 
@@ -194,7 +251,9 @@ def login():
             login_user(user)
             flash(_('Welcome back!'), 'success')
             next_page = request.args.get('next')
-            return redirect(next_page or url_for('main.index'))
+            if _is_safe_redirect_url(next_page):
+                return redirect(next_page)
+            return redirect(url_for('main.index'))
         else:
             flash(_('Invalid email or password.'), 'danger')
 
@@ -240,17 +299,23 @@ def edit_profile():
                     current_user.interests.append(interest)
 
         if form.custom_interests.data:
-            custom_list = [i.strip() for i in form.custom_interests.data.split(',') if i.strip()]
+            custom_list = [i.strip().capitalize() for i in form.custom_interests.data.split(',') if i.strip()]
             for interest_name in custom_list:
-                interest = Interest.query.filter_by(name=interest_name).first()
+                interest = Interest.query.filter(
+                    db.func.lower(Interest.name) == interest_name.lower()
+                ).first()
                 if not interest:
                     interest = Interest(name=interest_name, is_predefined=False)
                     db.session.add(interest)
                 current_user.interests.append(interest)
 
-        db.session.commit()
-        flash(_('Profile updated successfully!'), 'success')
-        return redirect(url_for('main.profile'))
+        try:
+            db.session.commit()
+            flash(_('Profile updated successfully!'), 'success')
+            return redirect(url_for('main.profile'))
+        except Exception:
+            db.session.rollback()
+            flash(_('An error occurred while updating your profile. Please try again.'), 'danger')
 
     elif request.method == 'GET':
         form.name.data = current_user.name
