@@ -8,10 +8,18 @@ from pathlib import Path
 
 from flask import Flask, request
 from flask_babel import Babel
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_login import LoginManager
 from babel.messages import mofile, pofile
 
-# Initialize Babel instance
+# Initialize extensions
 babel = Babel()
+db = SQLAlchemy()
+migrate = Migrate()
+login_manager = LoginManager()
+login_manager.login_view = 'main.login'
+login_manager.login_message_category = 'info'
 
 
 def _compile_translations_if_needed(translation_dir: Path) -> None:
@@ -49,10 +57,8 @@ def get_locale():
     Checks session first, then accepts language header.
     """
     from flask import session
-    # Check if user has manually selected a locale
     if 'lang' in session:
         return session['lang']
-    # Use request accept languages as fallback
     return request.accept_languages.best_match(['en_IE', 'uk_UA', 'pt_BR']) or 'en_IE'
 
 def create_app():
@@ -66,19 +72,52 @@ def create_app():
     app.config['BABEL_SUPPORTED_LOCALES'] = ['en_IE', 'uk_UA', 'pt_BR']
     app.config['BABEL_TRANSLATION_DIRECTORIES'] = str(translation_dir)
 
-    # Ensure production dynos can use translations even when .mo files are not committed.
+    # Database configuration
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+        'DATABASE_URL',
+        'postgresql://localhost/crosspaths'
+    )
+    # Fix for Heroku postgres:// vs postgresql://
+    if app.config['SQLALCHEMY_DATABASE_URI'].startswith('postgres://'):
+        app.config['SQLALCHEMY_DATABASE_URI'] = app.config['SQLALCHEMY_DATABASE_URI'].replace('postgres://', 'postgresql://', 1)
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    # Upload configuration
+    app.config['UPLOAD_FOLDER'] = os.path.join(app.static_folder, 'uploads')
+    app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
+
+    # Ensure upload directory exists
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+    # Ensure production dynos can use translations
     _compile_translations_if_needed(translation_dir)
-    
-    # Initialize Babel with app
+
+    # Initialize extensions
+    db.init_app(app)
+    migrate.init_app(app, db)
+    login_manager.init_app(app)
     babel.init_app(app, locale_selector=get_locale)
-    
+
+    # User loader for Flask-Login
+    @login_manager.user_loader
+    def load_user(user_id):
+        from app.models import User
+        return User.query.get(int(user_id))
+
     # Register routes
     from app import routes
     app.register_blueprint(routes.bp)
-    
+
     # Context processor to inject locale into all templates
     @app.context_processor
     def inject_locale():
         return dict(locale=get_locale())
-    
+
+    # Create tables and seed data
+    with app.app_context():
+        from app import models  # noqa: F401
+        db.create_all()
+        from app.seed import seed_database
+        seed_database()
+
     return app
