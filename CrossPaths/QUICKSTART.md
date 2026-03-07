@@ -69,10 +69,10 @@ Click on the flag buttons in the navigation bar to switch between:
 - Formal, structured layouts
 - Verified host badges
 - Detailed safety information
-- Muted blue/grey color scheme
+- Soft pastel periwinkle/lavender color scheme
 
 ### Brazilian Portuguese (pt_BR)
-- Warm, vibrant color palette (yellows, oranges)
+- Warm orange color palette (Bumble BFF-inspired)
 - Social proof elements
 - Expressive language with emojis
 - Community-focused messaging
@@ -80,7 +80,7 @@ Click on the flag buttons in the navigation bar to switch between:
 ### English/Irish (en_IE)
 - Clean, minimal design
 - Direct, concise copy
-- Neutral professional colors
+- Soft sage/mint pastel colors
 - Self-directed navigation
 
 ## 🔧 Development Tips
