@@ -68,19 +68,34 @@ CrossPaths/
 ├── app/
 │   ├── __init__.py          # App factory, Flask config, Babel setup
 │   ├── routes.py            # All route definitions
-│   └── utils.py             # Helper functions (locale detection, etc.)
+│   ├── models.py            # Database models (User, Event, Community, Interest)
+│   ├── forms.py             # WTForms definitions
+│   └── seed.py              # Database seeding with sample data
 ├── templates/
 │   ├── base.html            # Master template – shared layout, nav, lang switcher
 │   ├── index.html           # Home page
 │   ├── events.html          # Events listing page
+│   ├── event_detail.html    # Single event detail page
+│   ├── create_event.html    # Event creation page
+│   ├── communities.html     # Communities listing page
+│   ├── community_detail.html # Single community detail page
 │   ├── profile.html         # User profile page
-│   └── about.html           # About / community page
+│   ├── edit_profile.html    # Edit profile page
+│   ├── login.html           # Login page
+│   ├── register.html        # Registration page
+│   ├── about.html           # About / community page
+│   └── partials/            # Locale-specific partial templates
+│       ├── index/           # Home page partials per locale
+│       ├── events/          # Events page partials per locale
+│       ├── profile/         # Profile page partials per locale
+│       └── about/           # About page partials per locale
 ├── static/
 │   ├── css/
 │   │   └── main.css         # Culturally adaptive styles
 │   ├── js/
 │   │   └── main.js          # Client-side functionality
 │   └── img/
+│       ├── common/          # Shared images
 │       ├── en_IE/           # Irish/English images
 │       ├── uk_UA/           # Ukrainian images
 │       └── pt_BR/           # Brazilian images
@@ -172,8 +187,17 @@ SECRET_KEY=your-secret-key-here
 
 - **/** - Home page with culturally adaptive hero and features
 - **/events** - Events listing with locale-specific layouts
+- **/event/<id>** - Single event detail page
+- **/create-event** - Create a new event (login required)
+- **/communities** - Communities listing
+- **/community/<id>** - Single community detail page
 - **/profile** - User profile page with cultural variations
+- **/edit-profile** - Edit user profile (login required)
+- **/register** - User registration
+- **/login** - User login
+- **/logout** - User logout
 - **/about** - About page explaining the platform
+- **/set-language** - Language switching endpoint
 
 ## 🌐 Language Switching
 
@@ -183,6 +207,10 @@ Users can switch between locales using the flag buttons in the navigation bar. T
 
 - **Flask** - Web framework
 - **Flask-Babel** - Internationalization and localization
+- **Flask-SQLAlchemy** - Database ORM
+- **Flask-Login** - User session management
+- **Flask-WTF** - Form handling and CSRF protection
+- **Flask-Migrate** - Database migrations
 - **Jinja2** - Template engine
 - **Werkzeug** - WSGI utilities
 

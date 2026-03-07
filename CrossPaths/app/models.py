@@ -40,7 +40,7 @@ class User(UserMixin, db.Model):
 
     # Relationships
     interests = db.relationship('Interest', secondary=user_interests, backref=db.backref('users', lazy='dynamic'))
-    organized_events = db.relationship('Event', backref='organizer', lazy='dynamic')
+    organized_events = db.relationship('Event', backref='organizer', lazy='dynamic', cascade='all, delete-orphan')
     communities = db.relationship('Community', secondary=user_communities, backref=db.backref('members', lazy='dynamic'))
     attending_events = db.relationship('Event', secondary=event_attendees, backref=db.backref('attendees', lazy='dynamic'))
 

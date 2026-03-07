@@ -58,9 +58,6 @@ msgstr "Дізнатися більше про безпеку"
 msgid "How It Works"
 msgstr "Як це працює"
 
-msgid "Browse Verified Events"
-msgstr "Переглянути перевірені події"
-
 msgid "Review detailed event information including agenda, host credentials, and safety details."
 msgstr "Переглянути детальну інформацію про подію, включаючи порядок денний, дані організатора та деталі безпеки."
 
@@ -111,7 +108,7 @@ msgid "Date:"
 msgstr "Дата:"
 
 msgid "Time:"
-msgstr "Время:"
+msgstr "Час:"
 
 msgid "Location:"
 msgstr "Місце:"
@@ -240,3 +237,34 @@ msgstr "Електронна пошта:"
 
 msgid "Based in:"
 msgstr "Розташовані в:"
+
+# Flash Messages
+msgid "Event created successfully!"
+msgstr "Подію створено успішно!"
+
+msgid "You joined %(name)s!"
+msgstr "Ви приєдналися до %(name)s!"
+
+msgid "You are already a member of this community."
+msgstr "Ви вже є учасником цієї спільноти."
+
+msgid "You left %(name)s."
+msgstr "Ви покинули %(name)s."
+
+msgid "Email already registered. Please log in."
+msgstr "Електронну пошту вже зареєстровано. Будь ласка, увійдіть."
+
+msgid "Account created successfully! Please log in."
+msgstr "Обліковий запис створено успішно! Будь ласка, увійдіть."
+
+msgid "Welcome back!"
+msgstr "З поверненням!"
+
+msgid "Invalid email or password."
+msgstr "Невірна електронна пошта або пароль."
+
+msgid "You have been logged out."
+msgstr "Ви вийшли з облікового запису."
+
+msgid "Profile updated successfully!"
+msgstr "Профіль оновлено успішно!"

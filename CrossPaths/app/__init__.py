@@ -6,6 +6,7 @@ import logging
 import os
 from pathlib import Path
 
+import click
 from flask import Flask, request
 from flask_babel import Babel
 from flask_sqlalchemy import SQLAlchemy
@@ -68,8 +69,17 @@ def create_app():
     app = Flask(__name__, template_folder='../templates', static_folder='../static')
     translation_dir = (Path(app.root_path).parent / 'translations').resolve()
 
-    # Configuration
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key')
+    # Configuration — require SECRET_KEY in production
+    secret_key = os.environ.get('SECRET_KEY')
+    if not secret_key:
+        if os.environ.get('FLASK_ENV') == 'production':
+            raise RuntimeError(
+                "SECRET_KEY environment variable is not set. "
+                "A secret key is required in production to secure sessions and CSRF tokens."
+            )
+        secret_key = 'dev-secret-key'
+    app.config['SECRET_KEY'] = secret_key
+
     app.config['BABEL_DEFAULT_LOCALE'] = 'en_IE'
     app.config['BABEL_SUPPORTED_LOCALES'] = ['en_IE', 'uk_UA', 'pt_BR']
     app.config['BABEL_TRANSLATION_DIRECTORIES'] = str(translation_dir)
@@ -119,11 +129,19 @@ def create_app():
     def inject_locale():
         return dict(locale=get_locale())
 
-    # Create tables and seed data
-    with app.app_context():
+    # ---------- CLI commands (replaces automatic db.create_all / seed) ----------
+    @app.cli.command('init-db')
+    def init_db_command():
+        """Create all database tables."""
         from app import models  # noqa: F401
         db.create_all()
+        click.echo('Database tables created.')
+
+    @app.cli.command('seed-db')
+    def seed_db_command():
+        """Seed the database with sample data."""
         from app.seed import seed_database
         seed_database()
+        click.echo('Database seeding complete.')
 
     return app

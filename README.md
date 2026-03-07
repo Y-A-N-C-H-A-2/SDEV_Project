@@ -156,35 +156,43 @@ Group4-Phase2/
 ├── app/
 │   ├── __init__.py          # App factory, Flask config, Babel setup
 │   ├── routes.py            # All route definitions
-│   └── utils.py             # Helper functions (locale detection, etc.)
+│   ├── models.py            # Database models (User, Event, Community, Interest)
+│   ├── forms.py             # WTForms definitions
+│   └── seed.py              # Database seeding with sample data
 ├── templates/
 │   ├── base.html            # Master template – shared layout, nav, lang switcher
 │   ├── index.html           # Home page (Yana)
 │   ├── events.html          # Events listing page (Lívia)
 │   ├── profile.html         # User profile page (Kashish)
-│   └── about.html           # About / community page (Simphiwe)
+│   ├── about.html           # About / community page (Simphiwe)
+│   ├── login.html           # Login page
+│   ├── register.html        # Registration page
+│   ├── create_event.html    # Event creation page
+│   ├── event_detail.html    # Single event detail page
+│   ├── edit_profile.html    # Edit profile page
+│   ├── communities.html     # Communities listing page
+│   ├── community_detail.html # Single community detail page
+│   └── partials/            # Locale-specific partial templates
 ├── static/
 │   ├── css/
 │   │   └── main.css
 │   ├── js/
 │   │   └── main.js
 │   └── img/
+│       ├── common/          # Shared images
 │       ├── en_IE/
 │       ├── uk_UA/
 │       └── pt_BR/
 ├── translations/
 │   ├── en_IE/
 │   │   └── LC_MESSAGES/
-│   │       ├── messages.po
-│   │       └── messages.mo
+│   │       └── messages.po
 │   ├── uk_UA/
 │   │   └── LC_MESSAGES/
-│   │       ├── messages.po
-��   │       └── messages.mo
+│   │       └── messages.po
 │   └── pt_BR/
 │       └── LC_MESSAGES/
-│           ├── messages.po
-│           └── messages.mo
+│           └── messages.po
 ├── babel.cfg
 ├── messages.pot
 ├── requirements.txt
@@ -240,13 +248,18 @@ All user-facing strings in templates are wrapped with `{{ _('string') }}` and in
 
 ```python
 # app/__init__.py
-from flask_babel import Babel, gettext as _
+from flask_babel import Babel
 
-babel = Babel(app)
+babel = Babel()
 
-@babel.localeselector
 def get_locale():
-    return session.get('lang', 'en_IE')
+    from flask import session
+    if 'lang' in session:
+        return session['lang']
+    return request.accept_languages.best_match(['en_IE', 'uk_UA', 'pt_BR']) or 'en_IE'
+
+# In create_app():
+babel.init_app(app, locale_selector=get_locale)
 ```
 
 ```html
