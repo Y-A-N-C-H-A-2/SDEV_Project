@@ -1,0 +1,21 @@
+<!-- Irish/English: Clean, minimal profile layout -->
+<section class="profile-section-minimal">
+    <div class="profile-header-minimal">
+        <div class="profile-avatar-placeholder">
+            <span class="avatar-icon">👤</span>
+        </div>
+        <h2>{{ profile.name }}</h2>
+    </div>
+
+    <div class="profile-details-minimal">
+        <p><strong>{{ _('Age:') }}</strong> {{ profile.age }}</p>
+        <p><strong>{{ _('From:') }}</strong> {{ profile.country }}</p>
+        <p><strong>{{ _('Languages:') }}</strong> {{ profile.languages|join(', ') }}</p>
+        <p><strong>{{ _('Interests:') }}</strong> {{ profile.interests|join(', ') }}</p>
+        <p><strong>{{ _('About:') }}</strong> {{ profile.bio }}</p>
+    </div>
+
+    <div class="profile-actions-minimal">
+        <button class="btn btn-primary">{{ _('Edit Profile') }}</button>
+    </div>
+</section>

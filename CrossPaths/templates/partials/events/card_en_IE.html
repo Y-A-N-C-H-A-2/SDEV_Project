@@ -1,0 +1,16 @@
+<!-- Irish/English: Clean, minimal layout -->
+<div class="event-card-minimal">
+    <h2 class="event-title">{{ event.title }}</h2>
+
+    <div class="event-info-minimal">
+        <p><strong>{{ _('When:') }}</strong> {{ event.date }} at {{ event.time }}</p>
+        <p><strong>{{ _('Where:') }}</strong> {{ event.location }}</p>
+        <p><strong>{{ _('Host:') }}</strong> {{ event.host }}</p>
+        <p><strong>{{ _('Attendees:') }}</strong> {{ event.attendees }}/{{ event.max_attendees }}</p>
+    </div>
+
+    <div class="event-actions-minimal">
+        <button class="btn btn-primary">{{ _('View Details') }}</button>
+        <button class="btn btn-secondary">{{ _('RSVP') }}</button>
+    </div>
+</div>
