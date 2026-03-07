@@ -204,3 +204,34 @@ msgstr "Email:"
 
 msgid "Based in:"
 msgstr "Based in:"
+
+# Flash Messages
+msgid "Event created successfully!"
+msgstr "Event created successfully!"
+
+msgid "You joined %(name)s!"
+msgstr "You joined %(name)s!"
+
+msgid "You are already a member of this community."
+msgstr "You are already a member of this community."
+
+msgid "You left %(name)s."
+msgstr "You left %(name)s."
+
+msgid "Email already registered. Please log in."
+msgstr "Email already registered. Please log in."
+
+msgid "Account created successfully! Please log in."
+msgstr "Account created successfully! Please log in."
+
+msgid "Welcome back!"
+msgstr "Welcome back!"
+
+msgid "Invalid email or password."
+msgstr "Invalid email or password."
+
+msgid "You have been logged out."
+msgstr "You have been logged out."
+
+msgid "Profile updated successfully!"
+msgstr "Profile updated successfully!"

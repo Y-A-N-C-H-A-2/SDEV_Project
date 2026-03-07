@@ -83,7 +83,7 @@ def create_event():
 
         db.session.add(event)
         db.session.commit()
-        flash('Event created successfully!', 'success')
+        flash(_('Event created successfully!'), 'success')
         return redirect(url_for('main.events'))
 
     return render_template('create_event.html', form=form)
@@ -112,9 +112,9 @@ def join_community(community_id):
     if current_user not in community.members.all():
         community.members.append(current_user)
         db.session.commit()
-        flash(f'You joined {community.name}!', 'success')
+        flash(_('You joined %(name)s!', name=community.name), 'success')
     else:
-        flash('You are already a member of this community.', 'info')
+        flash(_('You are already a member of this community.'), 'info')
     return redirect(url_for('main.community_detail', community_id=community_id))
 
 
@@ -126,7 +126,7 @@ def leave_community(community_id):
     if current_user in community.members.all():
         community.members.remove(current_user)
         db.session.commit()
-        flash(f'You left {community.name}.', 'info')
+        flash(_('You left %(name)s.', name=community.name), 'info')
     return redirect(url_for('main.community_detail', community_id=community_id))
 
 
@@ -141,7 +141,7 @@ def register():
         # Check if email already exists
         existing_user = User.query.filter_by(email=form.email.data).first()
         if existing_user:
-            flash('Email already registered. Please log in.', 'danger')
+            flash(_('Email already registered. Please log in.'), 'danger')
             return redirect(url_for('main.login'))
 
         user = User(
@@ -175,7 +175,7 @@ def register():
                 user.interests.append(interest)
 
         db.session.commit()
-        flash('Account created successfully! Please log in.', 'success')
+        flash(_('Account created successfully! Please log in.'), 'success')
         return redirect(url_for('main.login'))
 
     return render_template('register.html', form=form)
@@ -192,11 +192,11 @@ def login():
         user = User.query.filter_by(email=form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user)
-            flash('Welcome back!', 'success')
+            flash(_('Welcome back!'), 'success')
             next_page = request.args.get('next')
             return redirect(next_page or url_for('main.index'))
         else:
-            flash('Invalid email or password.', 'danger')
+            flash(_('Invalid email or password.'), 'danger')
 
     return render_template('login.html', form=form)
 
@@ -206,7 +206,7 @@ def login():
 def logout():
     """User logout"""
     logout_user()
-    flash('You have been logged out.', 'info')
+    flash(_('You have been logged out.'), 'info')
     return redirect(url_for('main.index'))
 
 
@@ -249,7 +249,7 @@ def edit_profile():
                 current_user.interests.append(interest)
 
         db.session.commit()
-        flash('Profile updated successfully!', 'success')
+        flash(_('Profile updated successfully!'), 'success')
         return redirect(url_for('main.profile'))
 
     elif request.method == 'GET':

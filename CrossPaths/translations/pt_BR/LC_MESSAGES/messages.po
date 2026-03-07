@@ -216,3 +216,34 @@ msgstr "Email:"
 
 msgid "Based in:"
 msgstr "Baseado em:"
+
+# Flash Messages
+msgid "Event created successfully!"
+msgstr "Evento criado com sucesso!"
+
+msgid "You joined %(name)s!"
+msgstr "Você entrou em %(name)s!"
+
+msgid "You are already a member of this community."
+msgstr "Você já é membro desta comunidade."
+
+msgid "You left %(name)s."
+msgstr "Você saiu de %(name)s."
+
+msgid "Email already registered. Please log in."
+msgstr "Email já registrado. Por favor, faça login."
+
+msgid "Account created successfully! Please log in."
+msgstr "Conta criada com sucesso! Por favor, faça login."
+
+msgid "Welcome back!"
+msgstr "Bem-vindo de volta!"
+
+msgid "Invalid email or password."
+msgstr "Email ou senha inválidos."
+
+msgid "You have been logged out."
+msgstr "Você foi desconectado."
+
+msgid "Profile updated successfully!"
+msgstr "Perfil atualizado com sucesso!"
