@@ -142,5 +142,6 @@ def create_app():
         """Seed the database with sample data."""
         from app.seed import seed_database
         seed_database()
+        click.echo('Database seeding complete.')
 
     return app

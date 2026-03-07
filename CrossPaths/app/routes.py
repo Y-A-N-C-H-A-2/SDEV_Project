@@ -44,6 +44,32 @@ def _validate_image(stream):
         return False
 
 
+def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
+    """Truncate a filename while preserving its extension."""
+    name, _, ext = filename.rpartition('.')
+    if not name:
+        return filename[:max_len]
+    allowed = max_len - len(ext) - 1  # 1 for the dot
+    return f"{name[:allowed]}.{ext}" if allowed > 0 else filename[:max_len]
+
+
+def _normalize_custom_interests(raw_text):
+    """Parse, strip, and capitalise a comma-separated list of custom interests.
+
+    Returns a deduplicated list of normalised interest names.
+    """
+    if not raw_text:
+        return []
+    seen = set()
+    result = []
+    for item in raw_text.split(','):
+        name = item.strip().capitalize()
+        if name and name.lower() not in seen:
+            seen.add(name.lower())
+            result.append(name)
+    return result
+
+
 @bp.route('/')
 @bp.route('/index')
 def index():
@@ -113,7 +139,7 @@ def create_event():
                 flash(_('Uploaded file is not a valid image.'), 'danger')
                 return render_template('create_event.html', form=form)
 
-            filename = secure_filename(photo.filename)[:_MAX_FILENAME_LEN]
+            filename = _safe_truncate_filename(secure_filename(photo.filename))
             unique_filename = f"{uuid.uuid4().hex}_{filename}"
             photo.save(os.path.join(current_app.config['UPLOAD_FOLDER'], unique_filename))
             event.photo = unique_filename
@@ -216,17 +242,15 @@ def register():
                         user.interests.append(interest)
 
             # Handle custom interests — normalise to title-case to avoid duplicates
-            if form.custom_interests.data:
-                custom_list = [i.strip().capitalize() for i in form.custom_interests.data.split(',') if i.strip()]
-                for interest_name in custom_list:
-                    interest = Interest.query.filter(
-                        db.func.lower(Interest.name) == interest_name.lower()
-                    ).first()
-                    if not interest:
-                        interest = Interest(name=interest_name, is_predefined=False)
-                        db.session.add(interest)
-                        db.session.flush()
-                    user.interests.append(interest)
+            for interest_name in _normalize_custom_interests(form.custom_interests.data):
+                interest = Interest.query.filter(
+                    db.func.lower(Interest.name) == interest_name.lower()
+                ).first()
+                if not interest:
+                    interest = Interest(name=interest_name, is_predefined=False)
+                    db.session.add(interest)
+                    db.session.flush()
+                user.interests.append(interest)
 
             db.session.commit()
             flash(_('Account created successfully! Please log in.'), 'success')
@@ -298,16 +322,14 @@ def edit_profile():
                 if interest:
                     current_user.interests.append(interest)
 
-        if form.custom_interests.data:
-            custom_list = [i.strip().capitalize() for i in form.custom_interests.data.split(',') if i.strip()]
-            for interest_name in custom_list:
-                interest = Interest.query.filter(
-                    db.func.lower(Interest.name) == interest_name.lower()
-                ).first()
-                if not interest:
-                    interest = Interest(name=interest_name, is_predefined=False)
-                    db.session.add(interest)
-                current_user.interests.append(interest)
+        for interest_name in _normalize_custom_interests(form.custom_interests.data):
+            interest = Interest.query.filter(
+                db.func.lower(Interest.name) == interest_name.lower()
+            ).first()
+            if not interest:
+                interest = Interest(name=interest_name, is_predefined=False)
+                db.session.add(interest)
+            current_user.interests.append(interest)
 
         try:
             db.session.commit()
