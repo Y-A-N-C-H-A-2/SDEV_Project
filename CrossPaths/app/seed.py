@@ -3,7 +3,7 @@ CrossPaths Database Seed Data
 """
 from datetime import datetime, timedelta
 from app import db
-from app.models import Interest, Event, Community, User, community_events
+from app.models import Interest, Event, Community
 
 PREDEFINED_INTERESTS = [
     'Language exchange', 'Travel', 'Hiking', 'Photography', 'Music',
@@ -134,31 +134,29 @@ SAMPLE_COMMUNITIES = [
 
 
 def seed_database():
-    """Seed the database with initial data."""
+    """Seed the database with initial data. Only runs if the database is empty."""
+    # Skip seeding if data already exists
+    if Interest.query.first() is not None:
+        return
+
     # Add predefined interests
     for interest_name in PREDEFINED_INTERESTS:
-        existing = Interest.query.filter_by(name=interest_name).first()
-        if not existing:
-            interest = Interest(name=interest_name, is_predefined=True)
-            db.session.add(interest)
+        interest = Interest(name=interest_name, is_predefined=True)
+        db.session.add(interest)
 
     db.session.commit()
 
     # Add sample events (without organizer - they're system events)
     for event_data in SAMPLE_EVENTS:
-        existing = Event.query.filter_by(title=event_data['title']).first()
-        if not existing:
-            event = Event(**event_data)
-            db.session.add(event)
+        event = Event(**event_data)
+        db.session.add(event)
 
     db.session.commit()
 
     # Add sample communities
     for community_data in SAMPLE_COMMUNITIES:
-        existing = Community.query.filter_by(name=community_data['name']).first()
-        if not existing:
-            community = Community(**community_data)
-            db.session.add(community)
+        community = Community(**community_data)
+        db.session.add(community)
 
     db.session.commit()
     print("Database seeded successfully!")

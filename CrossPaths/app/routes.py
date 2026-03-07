@@ -38,10 +38,11 @@ def events():
     if city:
         query = query.filter(Event.city == city)
     if search:
+        search_pattern = f'%{search}%'
         query = query.filter(
             db.or_(
-                Event.title.ilike(f'%{search}%'),
-                Event.description.ilike(f'%{search}%')
+                Event.title.ilike(search_pattern),
+                Event.description.ilike(search_pattern)
             )
         )
 

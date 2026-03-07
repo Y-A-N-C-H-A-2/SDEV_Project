@@ -77,7 +77,7 @@ def create_app():
     # Database configuration
     database_url = os.environ.get('DATABASE_URL')
     if database_url:
-        # Fix for Heroku postgres:// vs postgresql://
+        # Heroku provides 'postgres://' URLs but SQLAlchemy 1.4+ requires 'postgresql://'
         if database_url.startswith('postgres://'):
             database_url = database_url.replace('postgres://', 'postgresql://', 1)
         app.config['SQLALCHEMY_DATABASE_URI'] = database_url
