@@ -1088,8 +1088,18 @@ a.community-card {
 }
 
 .community-card-image {
-    height: 150px;
+    height: 220px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+}
+
+.community-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .community-card-body {

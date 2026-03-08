@@ -45,7 +45,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'The Bernard Shaw, Dublin 8',
         'category': 'Social',
-        'photo': 'event_meetup.png',
+        'photo': 'event_galway.png',
     },
     {
         'title': 'Language Exchange Night',
@@ -54,7 +54,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Cafe en Seine, Dawson Street',
         'category': 'Language',
-        'photo': 'event_meetup.png',
+        'photo': 'event_wicklow.png',
     },
     {
         'title': 'Photography Walk',
