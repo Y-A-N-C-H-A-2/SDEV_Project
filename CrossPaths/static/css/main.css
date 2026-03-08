@@ -19,6 +19,67 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    /* Default theme (en_IE) – overridden by locale-* classes */
+    --color-primary: #7EB8A8;
+    --color-primary-hover: #6AA396;
+    --color-hero-start: #7EB8A8;
+    --color-hero-end: #A8D4C7;
+    --color-nav-hover: #7EB8A8;
+    --color-footer-bg: #2D2D2D;
+    --color-accent: #7EB8A8;
+    --color-accent-soft: #e8f5f2;
+    --color-form-focus: #7EB8A8;
+    --color-section-link: #7EB8A8;
+    --color-placeholder-start: #e8f5e9;
+    --color-placeholder-end: #c8e6c9;
+}
+
+/* Ireland (en_IE) – sage/mint, minimal */
+body.locale-en_IE {
+    --color-primary: #7EB8A8;
+    --color-primary-hover: #6AA396;
+    --color-hero-start: #7EB8A8;
+    --color-hero-end: #A8D4C7;
+    --color-nav-hover: #7EB8A8;
+    --color-footer-bg: #2D2D2D;
+    --color-accent: #7EB8A8;
+    --color-accent-soft: #e8f5f2;
+    --color-form-focus: #7EB8A8;
+    --color-section-link: #7EB8A8;
+    --color-placeholder-start: #e8f5e9;
+    --color-placeholder-end: #c8e6c9;
+}
+
+/* Ukraine (uk_UA) – periwinkle/lavender, formal */
+body.locale-uk_UA {
+    --color-primary: #8EA8C8;
+    --color-primary-hover: #7A96B8;
+    --color-hero-start: #8EA8C8;
+    --color-hero-end: #B8CCE0;
+    --color-nav-hover: #8EA8C8;
+    --color-footer-bg: #3d4f6d;
+    --color-accent: #8EA8C8;
+    --color-accent-soft: #EEF2F7;
+    --color-form-focus: #8EA8C8;
+    --color-section-link: #8EA8C8;
+    --color-placeholder-start: #e8ecf4;
+    --color-placeholder-end: #c5d4e8;
+}
+
+/* Brazil (pt_BR) – warm orange, social */
+body.locale-pt_BR {
+    --color-primary: #FF8C00;
+    --color-primary-hover: #E07B00;
+    --color-hero-start: #FF8C00;
+    --color-hero-end: #FF6B35;
+    --color-nav-hover: #FF8C00;
+    --color-footer-bg: #2D2520;
+    --color-accent: #FF8C00;
+    --color-accent-soft: #FFF3E6;
+    --color-form-focus: #FF8C00;
+    --color-section-link: #FF8C00;
+    --color-placeholder-start: #fff3e0;
+    --color-placeholder-end: #ffe0b2;
 }
 
 a {
@@ -79,7 +140,7 @@ button {
 }
 
 .nav-links a:hover {
-    color: #FF8C00;
+    color: var(--color-nav-hover);
 }
 
 /* Language Switcher */
@@ -103,13 +164,13 @@ button {
 }
 
 .locale-btn:hover {
-    border-color: #FF8C00;
+    border-color: var(--color-primary);
 }
 
 .locale-btn.active {
-    background: #FF8C00;
+    background: var(--color-primary);
     color: white;
-    border-color: #FF8C00;
+    border-color: var(--color-primary);
 }
 
 /* ==========================================
@@ -126,7 +187,7 @@ button {
    ========================================== */
 
 .footer {
-    background-color: #2D2D2D;
+    background-color: var(--color-footer-bg);
     color: white;
     padding: 2rem;
     text-align: center;
@@ -159,12 +220,12 @@ button {
 }
 
 .btn-primary {
-    background-color: #FF8C00;
+    background-color: var(--color-primary);
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #E07B00;
+    background-color: var(--color-primary-hover);
 }
 
 .btn-secondary {
@@ -213,7 +274,7 @@ button {
 .hero {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);
+    background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 100%);
     color: white;
     border-radius: 16px;
     margin-bottom: 4rem;
@@ -286,6 +347,9 @@ button {
     border-radius: 50%;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    background: var(--color-primary);
+    color: white;
+    font-weight: bold;
 }
 
 .feature-card h3 {
@@ -297,7 +361,7 @@ button {
 .cta-section {
     text-align: center;
     padding: 3rem;
-    background: #FFF3E6;
+    background: var(--color-accent-soft);
     border-radius: 16px;
 }
 
@@ -338,7 +402,7 @@ button {
 
 .verified-badge {
     display: inline-block;
-    background: #27ae60;
+    background: var(--color-accent);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -432,7 +496,7 @@ button {
 }
 
 .locale-uk_UA .feature-number {
-    background: #8EA8C8;
+    background: var(--color-primary);
     color: white;
     font-weight: bold;
 }
@@ -774,7 +838,7 @@ button {
 .hero-large {
     padding: 6rem 2rem;
     text-align: center;
-    background: linear-gradient(135deg, #2E8B57 0%, #3CB371 50%, #90EE90 100%);
+    background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 50%, var(--color-accent-soft) 100%);
     color: white;
     border-radius: 16px;
     margin-bottom: 3rem;
@@ -797,7 +861,7 @@ button {
 
 .btn-white {
     background: white;
-    color: #2E8B57;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
@@ -837,13 +901,13 @@ button {
 }
 
 .section-link {
-    color: #2E8B57;
+    color: var(--color-section-link);
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .section-link:hover {
-    color: #1a6b3a;
+    color: var(--color-primary-hover);
 }
 
 /* ==========================================
@@ -948,7 +1012,7 @@ a.event-card {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(46, 139, 87, 0.9);
+    background: var(--color-accent);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -957,8 +1021,8 @@ a.event-card {
 }
 
 .attendee-count {
-    background: #e8f5e9;
-    color: #2E8B57;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -1015,13 +1079,13 @@ a.community-card {
 }
 
 .member-count {
-    color: #2E8B57;
+    color: var(--color-primary);
     font-weight: 500;
     font-size: 0.9rem;
 }
 
 .member-count-large {
-    color: #2E8B57;
+    color: var(--color-primary);
     font-weight: 600;
     font-size: 1.1rem;
 }
@@ -1039,13 +1103,13 @@ a.community-card {
     height: 100%;
 }
 
-.placeholder-event { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); }
-.placeholder-event-large { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); height: 300px; border-radius: 16px; }
-.placeholder-community { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
-.placeholder-community-large { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); height: 250px; border-radius: 16px; }
-.placeholder-nature { background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%); height: 200px; border-radius: 16px; }
-.placeholder-city { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); height: 200px; border-radius: 16px; }
-.placeholder-social { background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); height: 200px; border-radius: 16px; }
+.placeholder-event { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); }
+.placeholder-event-large { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); height: 300px; border-radius: 16px; }
+.placeholder-community { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); }
+.placeholder-community-large { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); height: 250px; border-radius: 16px; }
+.placeholder-nature { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); height: 200px; border-radius: 16px; }
+.placeholder-city { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); height: 200px; border-radius: 16px; }
+.placeholder-social { background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%); height: 200px; border-radius: 16px; }
 
 /* ==========================================
    DISCOVER SECTION
@@ -1188,8 +1252,8 @@ a.community-card {
 .form-input:focus,
 .form-select:focus {
     outline: none;
-    border-color: #2E8B57;
-    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+    border-color: var(--color-form-focus);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
 }
 
 .form-textarea {
@@ -1261,7 +1325,7 @@ a.community-card {
 }
 
 .auth-switch a {
-    color: #2E8B57;
+    color: var(--color-section-link);
     font-weight: 600;
 }
 
@@ -1285,11 +1349,11 @@ a.community-card {
 }
 
 .checkbox-label:hover {
-    background: #e8f5e9;
+    background: var(--color-accent-soft);
 }
 
 .checkbox-label input[type="checkbox"] {
-    accent-color: #2E8B57;
+    accent-color: var(--color-primary);
 }
 
 /* ==========================================
@@ -1313,7 +1377,7 @@ a.community-card {
 .profile-avatar-placeholder {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+    background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -1336,7 +1400,7 @@ a.community-card {
 }
 
 .profile-location {
-    color: #2E8B57;
+    color: var(--color-primary);
     font-weight: 500;
     margin-top: 0.25rem;
 }
@@ -1382,8 +1446,8 @@ a.community-card {
 }
 
 .interest-tag {
-    background: #e8f5e9;
-    color: #2E8B57;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -1424,7 +1488,7 @@ a.community-card {
 }
 
 .mini-card:hover {
-    background: #e8f5e9;
+    background: var(--color-accent-soft);
 }
 
 .mini-card h4 {
@@ -1543,7 +1607,7 @@ a.community-card {
 .member-avatar {
     width: 32px;
     height: 32px;
-    background: #2E8B57;
+    background: var(--color-primary);
     color: white;
     border-radius: 50%;
     display: flex;
