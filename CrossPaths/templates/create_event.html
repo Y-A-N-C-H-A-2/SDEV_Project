@@ -44,7 +44,7 @@
             <div class="form-row">
                 <div class="form-group">
                     {{ form.date_time.label(class="form-label") }}
-                    {{ form.date_time(class="form-input") }}
+                    {{ form.date_time(class="form-input", placeholder=_('e.g. 2026-03-08T14:30')) }}
                     {% for error in form.date_time.errors %}
                     <span class="form-error">{{ error }}</span>
                     {% endfor %}
@@ -57,7 +57,11 @@
 
             <div class="form-group">
                 {{ form.photo.label(class="form-label") }}
-                {{ form.photo(class="form-file") }}
+                <div class="form-file-wrapper">
+                    {{ form.photo(class="form-file form-file-hidden") }}
+                    <label for="photo" class="btn btn-secondary btn-file-label">{{ _('Choose file') }}</label>
+                    <span class="form-file-name" data-empty="{{ _('No file chosen') }}"></span>
+                </div>
                 <p class="form-help">{{ _('Accepted formats: JPG, PNG, GIF. Max 16MB.') }}</p>
                 {% for error in form.photo.errors %}
                 <span class="form-error">{{ error }}</span>
@@ -68,4 +72,17 @@
         </form>
     </div>
 </div>
+<script>
+(function() {
+    var input = document.getElementById('photo');
+    var nameEl = input && input.closest('.form-file-wrapper').querySelector('.form-file-name');
+    if (!input || !nameEl) return;
+    var emptyText = nameEl.getAttribute('data-empty') || 'No file chosen';
+    function updateLabel() {
+        nameEl.textContent = input.files && input.files.length ? input.files[0].name : emptyText;
+    }
+    input.addEventListener('change', updateLabel);
+    updateLabel();
+})();
+</script>
 {% endblock %}

@@ -273,6 +273,46 @@ msgstr "Назва та адреса місця"
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
 msgstr "Дозволені формати: JPG, PNG, GIF. Макс 16MB."
 
+# Form labels (app/forms.py)
+msgid "Title"
+msgstr "Назва"
+
+msgid "Description"
+msgstr "Опис"
+
+msgid "Location/Venue"
+msgstr "Місце проведення"
+
+msgid "Date and Time"
+msgstr "Дата та час"
+
+msgid "Category"
+msgstr "Категорія"
+
+msgid "Event Photo"
+msgstr "Фото події"
+
+msgid "Select a city..."
+msgstr "Оберіть місто..."
+
+msgid "Select a category..."
+msgstr "Оберіть категорію..."
+
+msgid "Images only!"
+msgstr "Тільки зображення!"
+
+msgid "Choose file"
+msgstr "Обрати файл"
+
+msgid "No file chosen"
+msgstr "Файл не обрано"
+
+msgid "dd/mm/yyyy, HH:MM"
+msgstr "дд/мм/рррр, гг:хх"
+
+msgid "e.g. 2026-03-08T14:30"
+msgstr "напр. 2026-03-08T14:30"
+
 # Date/time (word between date and time)
 msgid "at"
 msgstr "о"

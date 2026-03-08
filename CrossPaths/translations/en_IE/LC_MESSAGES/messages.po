@@ -264,6 +264,46 @@ msgstr "Venue name and address"
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
 msgstr "Accepted formats: JPG, PNG, GIF. Max 16MB."
 
+# Form labels (app/forms.py)
+msgid "Title"
+msgstr "Title"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Location/Venue"
+msgstr "Location/Venue"
+
+msgid "Date and Time"
+msgstr "Date and Time"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Event Photo"
+msgstr "Event Photo"
+
+msgid "Select a city..."
+msgstr "Select a city..."
+
+msgid "Select a category..."
+msgstr "Select a category..."
+
+msgid "Images only!"
+msgstr "Images only!"
+
+msgid "Choose file"
+msgstr "Choose file"
+
+msgid "No file chosen"
+msgstr "No file chosen"
+
+msgid "dd/mm/yyyy, HH:MM"
+msgstr "dd/mm/yyyy, HH:MM"
+
+msgid "e.g. 2026-03-08T14:30"
+msgstr "e.g. 2026-03-08T14:30"
+
 # Date/time (word between date and time)
 msgid "at"
 msgstr "at"
