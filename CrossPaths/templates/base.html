@@ -13,12 +13,12 @@
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="{{ url_for('main.index') }}">
-                    <img src="{{ url_for('static', filename='img/common/logo.jpg') }}" alt="CrossPaths" class="logo">
-                    <h1>CrossPaths</h1>
+                    <img src="{{ url_for('static', filename='img/common/logo.jpg') }}" alt="{{ _('CrossPaths logo') }}" class="logo">
+                    <h1>{{ _('CrossPaths') }}</h1>
                 </a>
             </div>
 
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" aria-label="{{ _('Toggle navigation') }}">
                 <span></span><span></span><span></span>
             </button>
             
@@ -42,17 +42,17 @@
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <button type="submit" name="locale" value="en_IE" 
                             class="locale-btn {% if locale == 'en_IE' %}active{% endif %}"
-                            title="English (Ireland)">
+                            title="{{ _('English (Ireland)') }}">
                         🇮🇪 EN
                     </button>
                     <button type="submit" name="locale" value="uk_UA" 
                             class="locale-btn {% if locale == 'uk_UA' %}active{% endif %}"
-                            title="Українська">
+                            title="{{ _('Ukrainian') }}">
                         🇺🇦 UK
                     </button>
                     <button type="submit" name="locale" value="pt_BR" 
                             class="locale-btn {% if locale == 'pt_BR' %}active{% endif %}"
-                            title="Português (Brasil)">
+                            title="{{ _('Portuguese (Brazil)') }}">
                         🇧🇷 PT
                     </button>
                 </form>

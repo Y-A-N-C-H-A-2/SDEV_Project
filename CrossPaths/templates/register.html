@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 {{ form.name.label(class="form-label") }}
-                {{ form.name(class="form-input", placeholder="Your full name") }}
+                {{ form.name(class="form-input", placeholder=_('Your full name')) }}
                 {% for error in form.name.errors %}
                 <span class="form-error">{{ error }}</span>
                 {% endfor %}
@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 {{ form.email.label(class="form-label") }}
-                {{ form.email(class="form-input", placeholder="your@email.com") }}
+                {{ form.email(class="form-input", placeholder=_('your@email.com')) }}
                 {% for error in form.email.errors %}
                 <span class="form-error">{{ error }}</span>
                 {% endfor %}
@@ -30,14 +30,14 @@
             <div class="form-row">
                 <div class="form-group">
                     {{ form.password.label(class="form-label") }}
-                    {{ form.password(class="form-input", placeholder="Min 6 characters") }}
+                    {{ form.password(class="form-input", placeholder=_('Min 6 characters')) }}
                     {% for error in form.password.errors %}
                     <span class="form-error">{{ error }}</span>
                     {% endfor %}
                 </div>
                 <div class="form-group">
                     {{ form.confirm_password.label(class="form-label") }}
-                    {{ form.confirm_password(class="form-input", placeholder="Confirm password") }}
+                    {{ form.confirm_password(class="form-input", placeholder=_('Confirm password')) }}
                     {% for error in form.confirm_password.errors %}
                     <span class="form-error">{{ error }}</span>
                     {% endfor %}
@@ -47,7 +47,7 @@
             <div class="form-row">
                 <div class="form-group">
                     {{ form.age.label(class="form-label") }}
-                    {{ form.age(class="form-input", placeholder="Age") }}
+                    {{ form.age(class="form-input", placeholder=_('Age')) }}
                     {% for error in form.age.errors %}
                     <span class="form-error">{{ error }}</span>
                     {% endfor %}
@@ -64,7 +64,7 @@
             <div class="form-row">
                 <div class="form-group">
                     {{ form.nationality.label(class="form-label") }}
-                    {{ form.nationality(class="form-input", placeholder="Your nationality") }}
+                    {{ form.nationality(class="form-input", placeholder=_('Your nationality')) }}
                     {% for error in form.nationality.errors %}
                     <span class="form-error">{{ error }}</span>
                     {% endfor %}
@@ -91,7 +91,7 @@
 
             <div class="form-group">
                 {{ form.custom_interests.label(class="form-label") }}
-                {{ form.custom_interests(class="form-input", placeholder="e.g. Yoga, Cooking, Board games") }}
+                {{ form.custom_interests(class="form-input", placeholder=_('e.g. Yoga, Cooking, Board games')) }}
             </div>
 
             <button type="submit" class="btn btn-primary btn-full">{{ _('Create Account') }}</button>

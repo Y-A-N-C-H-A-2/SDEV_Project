@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ event.title }} – CrossPaths{% endblock %}
+{% block title %}{{ _('%(name)s – CrossPaths', name=event.title) }}{% endblock %}
 
 {% block content %}
 <div class="detail-page">

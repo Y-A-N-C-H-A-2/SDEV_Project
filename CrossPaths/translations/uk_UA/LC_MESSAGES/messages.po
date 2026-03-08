@@ -3,268 +3,1082 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CrossPaths 1.0\n"
-"POT-Creation-Date: 2026-03-06 12:00+0000\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-03-08 10:09+0000\n"
 "PO-Revision-Date: 2026-03-06 12:00+0000\n"
 "Last-Translator: CrossPaths Team\n"
 "Language: uk_UA\n"
+"Language-Team: uk_UA <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-# Navigation & Brand
-msgid "CrossPaths – Where cultures meet and friendships begin"
-msgstr "CrossPaths – Де культури зустрічаються і дружба починається"
-
-msgid "Home"
-msgstr "Головна"
-
-msgid "Events"
-msgstr "Події"
-
-msgid "Profile"
-msgstr "Профіль"
-
-msgid "About"
-msgstr "Про нас"
-
-msgid "Where cultures meet and friendships begin."
-msgstr "Де культури зустрічаються і дружба починається."
-
-msgid "A culturally adaptive platform for international newcomers in Dublin"
-msgstr "Культурно адаптивна платформа для міжнародних новоприбулих у Дубліні"
-
-# Home Page
-msgid "CrossPaths – Home"
-msgstr "CrossPaths – Головна"
-
-msgid "Welcome to CrossPaths"
-msgstr "Ласкаво просимо до CrossPaths"
-
-msgid "Where cultures meet and friendships begin"
-msgstr "Де культури зустрічаються і дружба починається"
-
-msgid "CrossPaths is a verified platform for meeting new friends in Dublin through structured speed-friending events."
-msgstr "CrossPaths – це перевірена платформа для знайомства з новими друзями в Дубліні через структуровані події швидких знайомств."
-
-msgid "All events are hosted by verified organizers in safe, public locations."
-msgstr "Усі події проводяться перевіреними організаторами в безпечних публічних місцях."
-
-msgid "Browse Verified Events"
-msgstr "Переглянути перевірені події ✓"
-
-msgid "Learn More About Safety"
-msgstr "Дізнатися більше про безпеку"
-
-msgid "How It Works"
-msgstr "Як це працює"
-
-msgid "Review detailed event information including agenda, host credentials, and safety details."
-msgstr "Переглянути детальну інформацію про подію, включаючи порядок денний, дані організатора та деталі безпеки."
-
-msgid "Register Securely"
-msgstr "Безпечна реєстрація"
-
-msgid "RSVP with confirmed details. Receive event reminders and location information."
-msgstr "Підтвердження реєстрації з деталями. Отримайте нагадування про подію та інформацію про місце."
-
-msgid "Follow Structured Ice-Breakers"
-msgstr "Слідуйте структурованим розминкам"
-
-msgid "Participate in timed conversation rounds with prepared topics and prompts."
-msgstr "Беріть участь у розмовах за розкладом із підготовленими темами та підказками."
-
-msgid "Build Your Network"
-msgstr "Розбудуйте свою мережу"
-
-msgid "Connect with people you met and attend future events with your new friends."
-msgstr "Зв'яжіться з людьми, яких ви зустріли, та відвідуйте майбутні події з новими друзями."
-
-msgid "Ready to Meet New Friends?"
-msgstr "Готові зустріти нових друзів?"
-
-msgid "View Upcoming Events"
-msgstr "Переглянути майбутні події"
-
-# Events Page
-msgid "Events – CrossPaths"
-msgstr "Події – CrossPaths"
-
-msgid "Upcoming Events"
-msgstr "Майбутні події"
-
-msgid "All events are verified and hosted in safe public locations"
-msgstr "Усі події перевірені та проводяться в безпечних публічних місцях"
-
-msgid "Friday Night Speed-Friending"
-msgstr "П'ятничні швидкі знайомства"
-
-msgid "Coffee Connections"
-msgstr "Кавові зустрічі"
-
-msgid "Verified Host"
-msgstr "Перевірений організатор"
-
-msgid "Date:"
-msgstr "Дата:"
-
-msgid "Time:"
-msgstr "Час:"
-
-msgid "Location:"
-msgstr "Місце:"
-
-msgid "Host:"
-msgstr "Організатор:"
-
-msgid "Capacity:"
-msgstr "Місткість:"
-
-msgid "registered"
-msgstr "зареєстровано"
-
-msgid "View Full Details & Agenda"
-msgstr "Переглянути повні деталі та порядок денний"
-
-msgid "View Safety Information"
-msgstr "Переглянути інформацію про безпеку"
-
-msgid "No upcoming events at the moment. Check back soon!"
-msgstr "Наразі немає майбутніх подій. Перевірте пізніше!"
-
-# Profile Page
-msgid "Profile – CrossPaths"
-msgstr "Профіль – CrossPaths"
-
-msgid "Your Profile"
-msgstr "Ваш профіль"
-
-msgid "Your information is private and only shared with event attendees"
-msgstr "Ваша інформація приватна та ділиться лише з учасниками подій"
-
-msgid "Member since"
-msgstr "Учасник з"
-
-msgid "March 2026"
-msgstr "березня 2026"
-
-msgid "Age:"
-msgstr "Вік:"
-
-msgid "Country of Origin:"
-msgstr "Країна походження:"
-
-msgid "Languages:"
-msgstr "Мови:"
-
-msgid "Interests:"
-msgstr "Інтереси:"
-
-msgid "About:"
-msgstr "Про себе:"
-
-msgid "Looking to meet new friends in Dublin!"
-msgstr "Шукаю нових друзів у Дубліні!"
-
-msgid "Edit Profile"
-msgstr "Редагувати профіль"
-
-msgid "Privacy Settings"
-msgstr "Налаштування приватності"
-
-msgid "Events Attended"
-msgstr "Відвідані події"
-
-msgid "No events yet. Browse upcoming events to get started!"
-msgstr "Ще немає подій. Перегляньте майбутні події, щоб почати!"
-
-# About Page
-msgid "About – CrossPaths"
-msgstr "Про нас – CrossPaths"
-
-msgid "About CrossPaths"
-msgstr "Про CrossPaths"
-
-msgid "Our Mission"
-msgstr "Наша місія"
-
-msgid "CrossPaths is a verified platform designed to support the social integration of international newcomers in Dublin through structured, safe speed-friending events."
-msgstr "CrossPaths – це перевірена платформа, призначена для підтримки соціальної інтеграції міжнародних новоприбулих у Дубліні через структуровані, безпечні події швидких знайомств."
-
-msgid "Safety & Verification"
-msgstr "Безпека та перевірка"
-
-msgid "All event hosts are verified by our team. Events take place in public venues with clear agendas and structured activities. Your safety is our priority."
-msgstr "Усі організатори подій перевірені нашою командою. Події відбуваються в публічних місцях з чітким порядком денним та структурованими активностями. Ваша безпека – наш пріоритет."
-
-msgid "Verified Hosts"
-msgstr "Перевірені організатори"
-
-msgid "All hosts undergo background verification"
-msgstr "Усі організатори проходять перевірку"
-
-msgid "Public Venues"
-msgstr "Публічні місця"
-
-msgid "Events are held in established public locations"
-msgstr "Події проводяться у встановлених публічних місцях"
-
-msgid "Clear Agendas"
-msgstr "Чіткий порядок денний"
-
-msgid "Know exactly what to expect before attending"
-msgstr "Знайте точно, чого очікувати перед відвідуванням"
-
-msgid "How We Protect Your Privacy"
-msgstr "Як ми захищаємо вашу приватність"
-
-msgid "Your personal information is never shared publicly. Profile details are only visible to confirmed event attendees. We comply with GDPR regulations."
-msgstr "Ваша особиста інформація ніколи не розголошується публічно. Деталі профілю видимі лише підтвердженим учасникам подій. Ми дотримуємося правил GDPR."
-
-msgid "Community Guidelines"
-msgstr "Правила спільноти"
-
-msgid "We maintain a respectful, inclusive community. All members must follow our code of conduct. Harassment or inappropriate behaviour results in immediate account suspension."
-msgstr "Ми підтримуємо шанобливу, інклюзивну спільноту. Усі учасники повинні дотримуватися нашого кодексу поведінки. Домагання або неналежна поведінка призводить до негайної блокування облікового запису."
-
-msgid "Get in Touch"
-msgstr "Зв'яжіться з нами"
-
-msgid "Questions or feedback? We'd love to hear from you!"
-msgstr "Питання чи відгуки? Ми раді почути від вас!"
-
-msgid "Email:"
-msgstr "Електронна пошта:"
-
-msgid "Based in:"
-msgstr "Розташовані в:"
+"Generated-By: Babel 2.14.0\n"
+
+#: app/routes.py:139
+msgid "Uploaded file is not a valid image."
+msgstr "Завантажений файл не є дійсним зображенням."
 
 # Flash Messages
+#: app/routes.py:150
 msgid "Event created successfully!"
 msgstr "Подію створено успішно!"
 
+#: app/routes.py:154
+msgid "An error occurred while creating the event. Please try again."
+msgstr "Сталася помилка під час створення події. Спробуйте ще раз."
+
+#: app/routes.py:184
+#, python-format
 msgid "You joined %(name)s!"
 msgstr "Ви приєдналися до %(name)s!"
 
+#: app/routes.py:187 app/routes.py:205
+msgid "An error occurred. Please try again."
+msgstr "Сталася помилка. Спробуйте ще раз."
+
+#: app/routes.py:189
 msgid "You are already a member of this community."
 msgstr "Ви вже є учасником цієї спільноти."
 
+#: app/routes.py:202
+#, python-format
 msgid "You left %(name)s."
 msgstr "Ви покинули %(name)s."
 
+#: app/routes.py:220
 msgid "Email already registered. Please log in."
 msgstr "Електронну пошту вже зареєстровано. Будь ласка, увійдіть."
 
+#: app/routes.py:256
 msgid "Account created successfully! Please log in."
 msgstr "Обліковий запис створено успішно! Будь ласка, увійдіть."
 
+#: app/routes.py:260
+msgid "An error occurred during registration. Please try again."
+msgstr "Сталася помилка під час реєстрації. Спробуйте ще раз."
+
+#: app/routes.py:276
 msgid "Welcome back!"
 msgstr "З поверненням!"
 
+#: app/routes.py:282
 msgid "Invalid email or password."
 msgstr "Невірна електронна пошта або пароль."
 
+#: app/routes.py:292
 msgid "You have been logged out."
 msgstr "Ви вийшли з облікового запису."
 
+#: app/routes.py:336
 msgid "Profile updated successfully!"
 msgstr "Профіль оновлено успішно!"
+
+#: app/routes.py:340
+msgid "An error occurred while updating your profile. Please try again."
+msgstr "Сталася помилка під час оновлення профілю. Спробуйте ще раз."
+
+# About Page
+#: templates/about.html:3
+msgid "About – CrossPaths"
+msgstr "Про нас – CrossPaths"
+
+#: templates/about.html:8
+msgid "About CrossPaths"
+msgstr "Про CrossPaths"
+
+#: templates/about.html:9
+msgid "Where cultures meet and friendships begin"
+msgstr "Де культури зустрічаються і дружба починається"
+
+#: templates/about.html:17
+msgid "Get in Touch"
+msgstr "Зв'яжіться з нами"
+
+#: templates/about.html:18
+msgid "Questions or feedback? We'd love to hear from you!"
+msgstr "Питання чи відгуки? Ми раді почути від вас!"
+
+#: templates/about.html:19
+msgid "Email:"
+msgstr "Електронна пошта:"
+
+#: templates/about.html:20
+msgid "Based in:"
+msgstr "Розташовані в:"
+
+# Navigation & Brand
+#: templates/base.html:6
+msgid "CrossPaths – Where cultures meet and friendships begin"
+msgstr "CrossPaths – Де культури зустрічаються і дружба починається"
+
+# Home Page
+#: templates/base.html:16
+msgid "CrossPaths logo"
+msgstr "Логотип CrossPaths"
+
+#: templates/base.html:17
+msgid "CrossPaths"
+msgstr "CrossPaths"
+
+#: templates/base.html:21
+msgid "Toggle navigation"
+msgstr "Перемкнути навігацію"
+
+#: templates/base.html:26
+msgid "Home"
+msgstr "Головна"
+
+#: templates/base.html:27 templates/partials/about/content_pt_BR.html:35
+msgid "Events"
+msgstr "Події"
+
+#: templates/base.html:28 templates/communities.html:8
+msgid "Communities"
+msgstr "Спільноти"
+
+#: templates/base.html:30 templates/create_event.html:8
+#: templates/create_event.html:67
+msgid "Create Event"
+msgstr "Створити подію"
+
+#: templates/base.html:31
+msgid "Profile"
+msgstr "Профіль"
+
+#: templates/base.html:32
+msgid "Logout"
+msgstr "Вийти"
+
+#: templates/base.html:34
+msgid "Login"
+msgstr "Увійти"
+
+#: templates/base.html:35 templates/login.html:34
+msgid "Register"
+msgstr "Реєстрація"
+
+#: templates/base.html:45
+msgid "English (Ireland)"
+msgstr "Англійська (Ірландія)"
+
+#: templates/base.html:50
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: templates/base.html:55
+msgid "Portuguese (Brazil)"
+msgstr "Португальська (Бразилія)"
+
+#: templates/base.html:88
+msgid "Where cultures meet and friendships begin."
+msgstr "Де культури зустрічаються і дружба починається."
+
+#: templates/base.html:90
+msgid "A culturally adaptive platform for international newcomers in Dublin"
+msgstr "Культурно адаптивна платформа для міжнародних новоприбулих у Дубліні"
+
+# About Page
+#: templates/communities.html:3
+msgid "Communities – CrossPaths"
+msgstr "Спільноти – CrossPaths"
+
+#: templates/communities.html:9
+msgid "Browse and join interest-based communities"
+msgstr "Переглядайте та долучайтеся до спільнот за інтересами"
+
+#: templates/communities.html:22 templates/community_detail.html:15
+#: templates/index.html:68
+msgid "members"
+msgstr "учасників"
+
+#: templates/communities.html:33
+msgid "No communities yet"
+msgstr "Спільнот поки немає"
+
+#: templates/communities.html:34
+msgid "Communities are coming soon!"
+msgstr "Спільноти з'являться незабаром!"
+
+#: templates/communities.html:44 templates/events.html:90
+msgid "Previous"
+msgstr "Попередня"
+
+#: templates/communities.html:54 templates/events.html:100
+msgid "Next"
+msgstr "Наступна"
+
+# Events Page
+#: templates/community_detail.html:3 templates/event_detail.html:3
+#, python-format
+msgid "%(name)s – CrossPaths"
+msgstr "%(name)s – CrossPaths"
+
+#: templates/community_detail.html:20
+msgid "About this community"
+msgstr "Про цю спільноту"
+
+#: templates/community_detail.html:30
+msgid "Leave Community"
+msgstr "Покинути спільноту"
+
+#: templates/community_detail.html:35
+msgid "Join Community"
+msgstr "Приєднатися до спільноти"
+
+#: templates/community_detail.html:39
+msgid "Login to Join"
+msgstr "Увійдіть, щоб приєднатися"
+
+#: templates/community_detail.html:41
+msgid "← Back to Communities"
+msgstr "← Назад до спільнот"
+
+#: templates/community_detail.html:47
+#: templates/partials/about/content_pt_BR.html:31
+msgid "Members"
+msgstr "Учасники"
+
+#: templates/community_detail.html:62 templates/events.html:8
+#: templates/index.html:25
+msgid "Upcoming Events"
+msgstr "Майбутні події"
+
+# Events Page
+#: templates/create_event.html:3
+msgid "Create Event – CrossPaths"
+msgstr "Створити подію – CrossPaths"
+
+#: templates/create_event.html:9
+msgid "Organize an event for the community"
+msgstr "Організуйте подію для спільноти"
+
+#: templates/create_event.html:16
+msgid "Event title"
+msgstr "Назва події"
+
+#: templates/create_event.html:24
+msgid "Describe your event..."
+msgstr "Опишіть вашу подію..."
+
+#: templates/create_event.html:40
+msgid "Venue name and address"
+msgstr "Назва та адреса місця"
+
+#: templates/create_event.html:61
+msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
+msgstr "Дозволені формати: JPG, PNG, GIF. Макс 16MB."
+
+# Profile Page
+#: templates/edit_profile.html:3
+msgid "Edit Profile – CrossPaths"
+msgstr "Редагувати профіль – CrossPaths"
+
+#: templates/edit_profile.html:8 templates/partials/profile/details_en_IE.html:19
+#: templates/partials/profile/details_uk_UA.html:37 templates/profile.html:63
+msgid "Edit Profile"
+msgstr "Редагувати профіль"
+
+#: templates/edit_profile.html:47 templates/profile.html:53
+#: templates/register.html:82
+msgid "Interests"
+msgstr "Інтереси"
+
+#: templates/edit_profile.html:59 templates/register.html:94
+msgid "e.g. Yoga, Cooking, Board games"
+msgstr "напр.: Йога, Кулінарія, Настільні ігри"
+
+#: templates/edit_profile.html:63
+msgid "Save Changes"
+msgstr "Зберегти зміни"
+
+#: templates/edit_profile.html:64
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: templates/event_detail.html:36 templates/events.html:61
+msgid "Organized by"
+msgstr "Організатор"
+
+#: templates/event_detail.html:41
+msgid "people attending"
+msgstr "людей відвідують"
+
+#: templates/event_detail.html:47
+msgid "About this event"
+msgstr "Про цю подію"
+
+#: templates/event_detail.html:53
+msgid "← Back to Events"
+msgstr "← Назад до подій"
+
+# Events Page
+#: templates/events.html:3
+msgid "Events – CrossPaths"
+msgstr "Події – CrossPaths"
+
+#: templates/events.html:9
+msgid "Find events happening across Ireland"
+msgstr "Знайдіть події по всій Ірландії"
+
+#: templates/events.html:17
+msgid "Search events..."
+msgstr "Пошук подій..."
+
+#: templates/events.html:22
+msgid "All Cities"
+msgstr "Усі міста"
+
+#: templates/events.html:23
+msgid "Dublin"
+msgstr "Дублін"
+
+#: templates/events.html:24
+msgid "Galway"
+msgstr "Голвей"
+
+#: templates/events.html:25
+msgid "Cork"
+msgstr "Корк"
+
+#: templates/events.html:26
+msgid "Limerick"
+msgstr "Лімерик"
+
+#: templates/events.html:27
+msgid "Waterford"
+msgstr "Вотерфорд"
+
+#: templates/events.html:30
+msgid "Search"
+msgstr "Пошук"
+
+#: templates/events.html:32
+msgid "Clear"
+msgstr "Очистити"
+
+#: templates/events.html:65
+msgid "attending"
+msgstr "відвідують"
+
+#: templates/events.html:76
+msgid "No events found"
+msgstr "Подій не знайдено"
+
+#: templates/events.html:77
+msgid "Try adjusting your search or filter, or check back soon for new events!"
+msgstr "Спробуйте змінити пошук або фільтр, або поверніться пізніше за новими подіями!"
+
+#: templates/events.html:79
+msgid "Create an Event"
+msgstr "Створити подію"
+
+# Home Page
+#: templates/index.html:3
+msgid "CrossPaths – Home"
+msgstr "CrossPaths – Головна"
+
+#: templates/index.html:10
+msgid "Meet People. Attend Events. Explore Ireland."
+msgstr "Знайомтеся. Відвідуйте події. Відкривайте Ірландію."
+
+#: templates/index.html:11
+msgid ""
+"A community platform for locals, expats, and travelers to connect through "
+"events across Ireland"
+msgstr ""
+"Платформа спільноти для місцевих, експатів та мандрівників, щоб знайомитися "
+"через події по всій Ірландії"
+
+#: templates/index.html:13 templates/partials/index/features_en_IE.html:4
+#: templates/partials/index/hero_en_IE.html:7 templates/profile.html:95
+msgid "Browse Events"
+msgstr "Переглянути події"
+
+#: templates/index.html:15
+msgid "Join Now"
+msgstr "Приєднатися"
+
+#: templates/index.html:26 templates/index.html:57
+msgid "View All →"
+msgstr "Переглянути все →"
+
+#: templates/index.html:56
+msgid "Featured Communities"
+msgstr "Рекомендовані спільноти"
+
+#: templates/index.html:78
+msgid "Discover Ireland Experiences"
+msgstr "Відкрийте враження Ірландії"
+
+#: templates/index.html:82
+msgid "Outdoor Adventures"
+msgstr "Пригоди на природі"
+
+#: templates/index.html:83
+msgid "Explore mountains, coastlines, and stunning landscapes across Ireland"
+msgstr "Досліджуйте гори, узбережжя та неймовірні краєвиди Ірландії"
+
+#: templates/index.html:87
+msgid "City Life"
+msgstr "Міське життя"
+
+#: templates/index.html:88
+msgid "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
+msgstr "Відкрийте яскраві міста від Дубліна до Голвея, від Корка до Лімерика"
+
+#: templates/index.html:92
+msgid "Culture & Social"
+msgstr "Культура і спілкування"
+
+#: templates/index.html:93
+msgid "Experience traditional music, arts, festivals and Irish hospitality"
+msgstr "Відчуйте традиційну музику, мистецтво, фестивалі та ірландську гостинність"
+
+#: templates/index.html:100
+msgid "Ready to Meet New Friends?"
+msgstr "Готові зустріти нових друзів?"
+
+#: templates/index.html:101
+msgid "Join thousands of people connecting through events across Ireland"
+msgstr "Приєднуйтесь до тисяч людей, які знайомляться через події по всій Ірландії"
+
+#: templates/index.html:103
+msgid "View Upcoming Events"
+msgstr "Переглянути майбутні події"
+
+# Profile Page
+#: templates/login.html:3
+msgid "Login – CrossPaths"
+msgstr "Вхід – CrossPaths"
+
+#: templates/login.html:8
+msgid "Welcome Back"
+msgstr "З поверненням"
+
+#: templates/login.html:9
+msgid "Log in to your CrossPaths account"
+msgstr "Увійдіть до вашого облікового запису CrossPaths"
+
+#: templates/login.html:16 templates/register.html:24
+msgid "your@email.com"
+msgstr "ваш@email.com"
+
+#: templates/login.html:24
+msgid "Your password"
+msgstr "Ваш пароль"
+
+#: templates/login.html:30
+msgid "Log In"
+msgstr "Увійти"
+
+#: templates/login.html:34
+msgid "Don't have an account?"
+msgstr "Немає облікового запису?"
+
+# Profile Page
+#: templates/profile.html:3
+msgid "Profile – CrossPaths"
+msgstr "Профіль – CrossPaths"
+
+#: templates/profile.html:8
+msgid "Your Profile"
+msgstr "Ваш профіль"
+
+#: templates/profile.html:19
+#, python-format
+msgid "%(city)s, Ireland"
+msgstr "%(city)s, Ірландія"
+
+#: templates/profile.html:27 templates/register.html:50
+msgid "Age"
+msgstr "Вік"
+
+#: templates/profile.html:33
+msgid "Gender"
+msgstr "Стать"
+
+#: templates/profile.html:39
+msgid "Nationality"
+msgstr "Національність"
+
+#: templates/profile.html:45
+msgid "City"
+msgstr "Місто"
+
+#: templates/profile.html:70
+msgid "Your Communities"
+msgstr "Ваші спільноти"
+
+#: templates/profile.html:83
+msgid "Events Attended"
+msgstr "Відвідані події"
+
+#: templates/profile.html:94
+msgid "No events yet. Browse upcoming events to get started!"
+msgstr "Ще немає подій. Перегляньте майбутні події, щоб почати!"
+
+# Profile Page
+#: templates/register.html:3
+msgid "Register – CrossPaths"
+msgstr "Реєстрація – CrossPaths"
+
+#: templates/register.html:8 templates/register.html:97
+msgid "Create Account"
+msgstr "Створити обліковий запис"
+
+#: templates/register.html:9
+msgid "Join CrossPaths and start meeting people in Ireland"
+msgstr "Приєднуйтеся до CrossPaths і почніть знайомитися з людьми в Ірландії"
+
+#: templates/register.html:16
+msgid "Your full name"
+msgstr "Ваше повне ім'я"
+
+#: templates/register.html:33
+msgid "Min 6 characters"
+msgstr "Мінімум 6 символів"
+
+#: templates/register.html:40
+msgid "Confirm password"
+msgstr "Підтвердьте пароль"
+
+#: templates/register.html:67
+msgid "Your nationality"
+msgstr "Ваша національність"
+
+#: templates/register.html:101
+msgid "Already have an account?"
+msgstr "Вже маєте обліковий запис?"
+
+#: templates/register.html:101
+msgid "Log in"
+msgstr "Увійти"
+
+# About Page
+#: templates/partials/about/content_en_IE.html:3
+msgid "What is CrossPaths?"
+msgstr "Що таке CrossPaths?"
+
+#: templates/partials/about/content_en_IE.html:4
+msgid ""
+"CrossPaths is a platform for international newcomers in Dublin to meet new "
+"people through speed-friending events."
+msgstr ""
+"CrossPaths - це платформа для міжнародних новоприбулих у Дубліні, щоб "
+"знайомитися через події speed-friending."
+
+#: templates/partials/about/content_en_IE.html:6
+msgid "How It Works"
+msgstr "Як це працює"
+
+#: templates/partials/about/content_en_IE.html:8
+msgid "Browse upcoming events"
+msgstr "Перегляньте майбутні події"
+
+#: templates/partials/about/content_en_IE.html:9
+msgid "RSVP to events that interest you"
+msgstr "Підтверджуйте участь у подіях, які вас цікавлять"
+
+#: templates/partials/about/content_en_IE.html:10
+msgid "Attend and meet new people"
+msgstr "Відвідуйте події та знайомтеся з новими людьми"
+
+#: templates/partials/about/content_en_IE.html:11
+msgid "Build your social network"
+msgstr "Розбудовуйте свою соціальну мережу"
+
+#: templates/partials/about/content_en_IE.html:14
+msgid "Who Can Join?"
+msgstr "Хто може приєднатися?"
+
+#: templates/partials/about/content_en_IE.html:15
+msgid ""
+"CrossPaths is open to anyone living in Dublin who wants to expand their "
+"social circle. Our events are particularly popular with international "
+"students, professionals, and migrants."
+msgstr ""
+"CrossPaths відкритий для всіх, хто живе в Дубліні та хоче розширити коло "
+"спілкування. Наші події особливо популярні серед міжнародних студентів, "
+"фахівців та мігрантів."
+
+#: templates/partials/about/content_en_IE.html:17
+msgid "Get Started"
+msgstr "Почніть зараз"
+
+#: templates/partials/about/content_en_IE.html:18
+msgid ""
+"Ready to meet new friends? Browse our upcoming events or create your profile "
+"to get started."
+msgstr ""
+"Готові знайти нових друзів? Перегляньте наші майбутні події або створіть "
+"профіль, щоб почати."
+
+#: templates/partials/about/content_en_IE.html:21
+msgid "View Events"
+msgstr "Переглянути події"
+
+#: templates/partials/about/content_en_IE.html:22
+msgid "Create Profile"
+msgstr "Створити профіль"
+
+#: templates/partials/about/content_pt_BR.html:3
+msgid "Welcome to Our Community!"
+msgstr "Ласкаво просимо до нашої спільноти!"
+
+#: templates/partials/about/content_pt_BR.html:4
+msgid ""
+"CrossPaths connects international newcomers in Dublin through fun, friendly "
+"speed-friending events. We're all about bringing people together and building"
+" a vibrant, diverse community!"
+msgstr ""
+"CrossPaths об'єднує міжнародних новоприбулих у Дубліні через веселi й дружні "
+"події speed-friending. Ми створюємо яскраву та різноманітну спільноту!"
+
+#: templates/partials/about/content_pt_BR.html:6
+msgid "Why CrossPaths?"
+msgstr "Чому CrossPaths?"
+
+#: templates/partials/about/content_pt_BR.html:10
+msgid "Celebrate Diversity"
+msgstr "Святкуйте різноманіття"
+
+#: templates/partials/about/content_pt_BR.html:11
+msgid "Meet people from all over the world!"
+msgstr "Знайомтеся з людьми з усього світу!"
+
+#: templates/partials/about/content_pt_BR.html:15
+msgid "Make Real Friends"
+msgstr "Заводьте справжніх друзів"
+
+#: templates/partials/about/content_pt_BR.html:16
+msgid "Not just networking — genuine connections!"
+msgstr "Не просто нетворкінг - справжні зв'язки!"
+
+#: templates/partials/about/content_pt_BR.html:20
+msgid "Have Fun!"
+msgstr "Розважайтеся!"
+
+#: templates/partials/about/content_pt_BR.html:21
+msgid "No boring meetings — just good times!"
+msgstr "Жодних нудних зустрічей - тільки гарний настрій!"
+
+#: templates/partials/about/content_pt_BR.html:25
+msgid "Join the Fun!"
+msgstr "Долучайтеся до веселощів!"
+
+#: templates/partials/about/content_pt_BR.html:26
+msgid ""
+"Whether you just arrived in Dublin or have been here for years, CrossPaths is"
+" your gateway to an amazing social circle. Come as you are, meet incredible "
+"people, and build friendships that last!"
+msgstr ""
+"Незалежно від того, чи ви щойно в Дубліні, чи вже давно тут, CrossPaths - ваш"
+" шлях до чудового кола спілкування. Будьте собою, знайомтеся з неймовірними "
+"людьми та будуйте дружбу надовго!"
+
+#: templates/partials/about/content_pt_BR.html:39
+msgid "Countries"
+msgstr "Країни"
+
+#: templates/partials/about/content_uk_UA.html:3
+msgid "Our Mission"
+msgstr "Наша місія"
+
+#: templates/partials/about/content_uk_UA.html:4
+msgid ""
+"CrossPaths is a verified platform designed to support the social integration "
+"of international newcomers in Dublin through structured, safe speed-friending"
+" events."
+msgstr ""
+"CrossPaths – це перевірена платформа, призначена для підтримки соціальної "
+"інтеграції міжнародних новоприбулих у Дубліні через структуровані, безпечні "
+"події швидких знайомств."
+
+#: templates/partials/about/content_uk_UA.html:6
+msgid "Safety & Verification"
+msgstr "Безпека та перевірка"
+
+#: templates/partials/about/content_uk_UA.html:7
+msgid ""
+"All event hosts are verified by our team. Events take place in public venues "
+"with clear agendas and structured activities. Your safety is our priority."
+msgstr ""
+"Усі організатори подій перевірені нашою командою. Події відбуваються в "
+"публічних місцях з чітким порядком денним та структурованими активностями. "
+"Ваша безпека – наш пріоритет."
+
+#: templates/partials/about/content_uk_UA.html:12
+msgid "Verified Hosts"
+msgstr "Перевірені організатори"
+
+#: templates/partials/about/content_uk_UA.html:13
+msgid "All hosts undergo background verification"
+msgstr "Усі організатори проходять перевірку"
+
+#: templates/partials/about/content_uk_UA.html:17
+msgid "Public Venues"
+msgstr "Публічні місця"
+
+#: templates/partials/about/content_uk_UA.html:18
+msgid "Events are held in established public locations"
+msgstr "Події проводяться у встановлених публічних місцях"
+
+#: templates/partials/about/content_uk_UA.html:22
+msgid "Clear Agendas"
+msgstr "Чіткий порядок денний"
+
+#: templates/partials/about/content_uk_UA.html:23
+msgid "Know exactly what to expect before attending"
+msgstr "Знайте точно, чого очікувати перед відвідуванням"
+
+#: templates/partials/about/content_uk_UA.html:27
+msgid "How We Protect Your Privacy"
+msgstr "Як ми захищаємо вашу приватність"
+
+#: templates/partials/about/content_uk_UA.html:28
+msgid ""
+"Your personal information is never shared publicly. Profile details are only "
+"visible to confirmed event attendees. We comply with GDPR regulations."
+msgstr ""
+"Ваша особиста інформація ніколи не розголошується публічно. Деталі профілю "
+"видимі лише підтвердженим учасникам подій. Ми дотримуємося правил GDPR."
+
+#: templates/partials/about/content_uk_UA.html:30
+msgid "Community Guidelines"
+msgstr "Правила спільноти"
+
+#: templates/partials/about/content_uk_UA.html:31
+msgid ""
+"We maintain a respectful, inclusive community. All members must follow our "
+"code of conduct. Harassment or inappropriate behaviour results in immediate "
+"account suspension."
+msgstr ""
+"Ми підтримуємо шанобливу, інклюзивну спільноту. Усі учасники повинні "
+"дотримуватися нашого кодексу поведінки. Домагання або неналежна поведінка "
+"призводить до негайної блокування облікового запису."
+
+#: templates/partials/events/card_en_IE.html:6
+msgid "When:"
+msgstr "Коли:"
+
+#: templates/partials/events/card_en_IE.html:7
+msgid "Where:"
+msgstr "Де:"
+
+#: templates/partials/events/card_en_IE.html:8
+#: templates/partials/events/card_uk_UA.html:24
+msgid "Host:"
+msgstr "Організатор:"
+
+#: templates/partials/events/card_en_IE.html:9
+msgid "Attendees:"
+msgstr "Учасники:"
+
+#: templates/partials/events/card_en_IE.html:13
+msgid "View Details"
+msgstr "Переглянути деталі"
+
+#: templates/partials/events/card_en_IE.html:14
+#: templates/partials/index/features_en_IE.html:8
+msgid "RSVP"
+msgstr "Підтвердити участь"
+
+#: templates/partials/events/card_pt_BR.html:6
+msgid "people going"
+msgstr "осіб йдуть"
+
+#: templates/partials/events/card_pt_BR.html:13
+msgid "Hosted by"
+msgstr "Організатор"
+
+#: templates/partials/events/card_pt_BR.html:17
+msgid "Join us for a fun evening! Chat, laugh, and make new friends!"
+msgstr ""
+"Приєднуйтеся до веселого вечора! Спілкуйтеся, смійтеся та знаходьте нових "
+"друзів!"
+
+#: templates/partials/events/card_pt_BR.html:21
+msgid "I'm Going!"
+msgstr "Я йду!"
+
+#: templates/partials/events/card_pt_BR.html:22
+msgid "See Who's Attending"
+msgstr "Переглянути, хто йде"
+
+#: templates/partials/events/card_uk_UA.html:6
+msgid "Verified Host"
+msgstr "Перевірений організатор"
+
+#: templates/partials/events/card_uk_UA.html:12
+msgid "Date:"
+msgstr "Дата:"
+
+#: templates/partials/events/card_uk_UA.html:16
+msgid "Time:"
+msgstr "Час:"
+
+#: templates/partials/events/card_uk_UA.html:20
+msgid "Location:"
+msgstr "Місце:"
+
+#: templates/partials/events/card_uk_UA.html:28
+msgid "Capacity:"
+msgstr "Місткість:"
+
+#: templates/partials/events/card_uk_UA.html:29
+msgid "registered"
+msgstr "зареєстровано"
+
+#: templates/partials/events/card_uk_UA.html:34
+msgid "View Full Details & Agenda"
+msgstr "Переглянути повні деталі та порядок денний"
+
+#: templates/partials/events/card_uk_UA.html:35
+msgid "View Safety Information"
+msgstr "Переглянути інформацію про безпеку"
+
+#: templates/partials/events/header_en_IE.html:1
+msgid "Speed-friending events in Dublin"
+msgstr "Події speed-friending у Дубліні"
+
+#: templates/partials/events/header_pt_BR.html:1
+msgid "Find your next adventure and see who's going!"
+msgstr "Знайдіть свою наступну пригоду та подивіться, хто йде!"
+
+#: templates/partials/events/header_uk_UA.html:1
+msgid "All events are verified and hosted in safe public locations"
+msgstr "Усі події перевірені та проводяться в безпечних публічних місцях"
+
+#: templates/partials/index/features_en_IE.html:5
+msgid "Find speed-friending events near you."
+msgstr "Знайдіть події speed-friending поруч із вами."
+
+#: templates/partials/index/features_en_IE.html:9
+msgid "Register for events that interest you."
+msgstr "Реєструйтеся на події, які вас цікавлять."
+
+#: templates/partials/index/features_en_IE.html:12
+msgid "Attend"
+msgstr "Відвідати"
+
+#: templates/partials/index/features_en_IE.html:13
+msgid "Meet new people in structured settings."
+msgstr "Знайомтеся з новими людьми у структурованому форматі."
+
+#: templates/partials/index/features_en_IE.html:16
+msgid "Connect"
+msgstr "Спілкуватися"
+
+#: templates/partials/index/features_en_IE.html:17
+msgid "Build your social network in Dublin."
+msgstr "Розбудовуйте свою соціальну мережу в Дубліні."
+
+#: templates/partials/index/features_pt_BR.html:5
+msgid "Discover Fun Events"
+msgstr "Відкривайте цікаві події"
+
+#: templates/partials/index/features_pt_BR.html:6
+msgid "Browse exciting meetups and see who else is going!"
+msgstr "Переглядайте захопливі зустрічі та дивіться, хто ще йде!"
+
+#: templates/partials/index/features_pt_BR.html:10
+msgid "Chat Before You Meet"
+msgstr "Спілкуйтеся до зустрічі"
+
+#: templates/partials/index/features_pt_BR.html:11
+msgid "Join event group chats and break the ice online first."
+msgstr "Приєднуйтесь до групових чатів події та розтопіть лід онлайн."
+
+#: templates/partials/index/features_pt_BR.html:15
+msgid "Make Real Connections"
+msgstr "Будуйте справжні зв'язки"
+
+#: templates/partials/index/features_pt_BR.html:16
+msgid "Meet face-to-face in fun, relaxed settings around Dublin."
+msgstr "Зустрічайтеся наживо в веселій та невимушеній атмосфері по всьому Дубліну."
+
+#: templates/partials/index/features_pt_BR.html:20
+msgid "Find Your Tribe"
+msgstr "Знайдіть свою спільноту"
+
+#: templates/partials/index/features_pt_BR.html:21
+msgid "Build your social circle and never feel alone in a new city!"
+msgstr "Розширюйте своє коло спілкування й не почувайтеся самотньо в новому місті!"
+
+#: templates/partials/index/features_uk_UA.html:5
+#: templates/partials/index/hero_uk_UA.html:8
+msgid "Browse Verified Events"
+msgstr "Переглянути перевірені події ✓"
+
+#: templates/partials/index/features_uk_UA.html:6
+msgid ""
+"Review detailed event information including agenda, host credentials, and "
+"safety details."
+msgstr ""
+"Переглянути детальну інформацію про подію, включаючи порядок денний, дані "
+"організатора та деталі безпеки."
+
+#: templates/partials/index/features_uk_UA.html:10
+msgid "Register Securely"
+msgstr "Безпечна реєстрація"
+
+#: templates/partials/index/features_uk_UA.html:11
+msgid "RSVP with confirmed details. Receive event reminders and location information."
+msgstr ""
+"Підтвердження реєстрації з деталями. Отримайте нагадування про подію та "
+"інформацію про місце."
+
+#: templates/partials/index/features_uk_UA.html:15
+msgid "Follow Structured Ice-Breakers"
+msgstr "Слідуйте структурованим розминкам"
+
+#: templates/partials/index/features_uk_UA.html:16
+msgid "Participate in timed conversation rounds with prepared topics and prompts."
+msgstr "Беріть участь у розмовах за розкладом із підготовленими темами та підказками."
+
+#: templates/partials/index/features_uk_UA.html:20
+msgid "Build Your Network"
+msgstr "Розбудуйте свою мережу"
+
+#: templates/partials/index/features_uk_UA.html:21
+msgid "Connect with people you met and attend future events with your new friends."
+msgstr ""
+"Зв'яжіться з людьми, яких ви зустріли, та відвідуйте майбутні події з новими "
+"друзями."
+
+#: templates/partials/index/hero_en_IE.html:3
+msgid "Connect with international newcomers in Dublin through speed-friending events."
+msgstr "Знайомтеся з міжнародними новоприбулими в Дубліні через події speed-friending."
+
+#: templates/partials/index/hero_en_IE.html:10
+msgid "Learn More"
+msgstr "Дізнатися більше"
+
+#: templates/partials/index/hero_pt_BR.html:3
+msgid ""
+"Make new friends in Dublin! Join fun speed-friending events and meet amazing "
+"people from around the world."
+msgstr ""
+"Заводьте нових друзів у Дубліні! Долучайтеся до веселих подій speed-friending"
+" і знайомтеся з людьми з усього світу."
+
+#: templates/partials/index/hero_pt_BR.html:4
+msgid "See who's going, chat before you meet, and find your tribe! 🎉"
+msgstr "Дивіться, хто йде, спілкуйтеся до зустрічі та знайдіть свою спільноту! 🎉"
+
+#: templates/partials/index/hero_pt_BR.html:8
+msgid "See Events & People"
+msgstr "Переглянути події та людей"
+
+#: templates/partials/index/hero_pt_BR.html:11
+msgid "Create Your Profile"
+msgstr "Створіть свій профіль"
+
+#: templates/partials/index/hero_uk_UA.html:3
+msgid ""
+"CrossPaths is a verified platform for meeting new friends in Dublin through "
+"structured speed-friending events."
+msgstr ""
+"CrossPaths – це перевірена платформа для знайомства з новими друзями в "
+"Дубліні через структуровані події швидких знайомств."
+
+#: templates/partials/index/hero_uk_UA.html:4
+msgid "All events are hosted by verified organizers in safe, public locations."
+msgstr ""
+"Усі події проводяться перевіреними організаторами в безпечних публічних "
+"місцях."
+
+#: templates/partials/index/hero_uk_UA.html:11
+msgid "Learn More About Safety"
+msgstr "Дізнатися більше про безпеку"
+
+#: templates/partials/profile/details_en_IE.html:11
+#: templates/partials/profile/details_uk_UA.html:15
+msgid "Age:"
+msgstr "Вік:"
+
+#: templates/partials/profile/details_en_IE.html:12
+msgid "From:"
+msgstr "Звідки:"
+
+#: templates/partials/profile/details_en_IE.html:13
+#: templates/partials/profile/details_uk_UA.html:23
+msgid "Languages:"
+msgstr "Мови:"
+
+#: templates/partials/profile/details_en_IE.html:14
+#: templates/partials/profile/details_uk_UA.html:27
+msgid "Interests:"
+msgstr "Інтереси:"
+
+#: templates/partials/profile/details_en_IE.html:15
+#: templates/partials/profile/details_uk_UA.html:31
+msgid "About:"
+msgstr "Про себе:"
+
+#: templates/partials/profile/details_pt_BR.html:8
+msgid "Hey, I'm"
+msgstr "Привіт, я"
+
+#: templates/partials/profile/details_pt_BR.html:15
+msgid "years old"
+msgstr "років"
+
+#: templates/partials/profile/details_pt_BR.html:20
+msgid "My Interests"
+msgstr "Мої інтереси"
+
+#: templates/partials/profile/details_pt_BR.html:29
+msgid "I speak"
+msgstr "Я розмовляю"
+
+#: templates/partials/profile/details_pt_BR.html:39
+msgid "Edit My Profile"
+msgstr "Редагувати мій профіль"
+
+#: templates/partials/profile/details_pt_BR.html:40
+msgid "Share Profile"
+msgstr "Поділитися профілем"
+
+#: templates/partials/profile/details_uk_UA.html:9
+msgid "Member since"
+msgstr "Учасник з"
+
+#: templates/partials/profile/details_uk_UA.html:9
+msgid "March 2026"
+msgstr "березня 2026"
+
+#: templates/partials/profile/details_uk_UA.html:19
+msgid "Country of Origin:"
+msgstr "Країна походження:"
+
+#: templates/partials/profile/details_uk_UA.html:38
+msgid "Privacy Settings"
+msgstr "Налаштування приватності"
+
+#: templates/partials/profile/header_en_IE.html:1
+msgid "Manage your profile information"
+msgstr "Керуйте інформацією вашого профілю"
+
+#: templates/partials/profile/header_pt_BR.html:1
+msgid "Show your personality and let people know the real you!"
+msgstr "Покажіть свою індивідуальність і дайте людям побачити справжнього вас!"
+
+#: templates/partials/profile/header_uk_UA.html:1
+msgid "Your information is private and only shared with event attendees"
+msgstr "Ваша інформація приватна та ділиться лише з учасниками подій"
+
+#~ msgid "About"
+#~ msgstr "Про нас"
+
+#~ msgid "Friday Night Speed-Friending"
+#~ msgstr "П'ятничні швидкі знайомства"
+
+#~ msgid "No upcoming events at the moment. Check back soon!"
+#~ msgstr "Наразі немає майбутніх подій. Перевірте пізніше!"
+
+#~ msgid "Looking to meet new friends in Dublin!"
+#~ msgstr "Шукаю нових друзів у Дубліні!"
+

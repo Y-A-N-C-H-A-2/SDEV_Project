@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 {{ form.title.label(class="form-label") }}
-                {{ form.title(class="form-input", placeholder="Event title") }}
+                {{ form.title(class="form-input", placeholder=_('Event title')) }}
                 {% for error in form.title.errors %}
                 <span class="form-error">{{ error }}</span>
                 {% endfor %}
@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 {{ form.description.label(class="form-label") }}
-                {{ form.description(class="form-input form-textarea", rows=4, placeholder="Describe your event...") }}
+                {{ form.description(class="form-input form-textarea", rows=4, placeholder=_('Describe your event...')) }}
                 {% for error in form.description.errors %}
                 <span class="form-error">{{ error }}</span>
                 {% endfor %}
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     {{ form.venue.label(class="form-label") }}
-                    {{ form.venue(class="form-input", placeholder="Venue name and address") }}
+                    {{ form.venue(class="form-input", placeholder=_('Venue name and address')) }}
                 </div>
             </div>
 

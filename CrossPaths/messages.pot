@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-07 20:28+0000\n"
+"POT-Creation-Date: 2026-03-08 10:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: app/routes.py:86
+#: app/routes.py:139
+msgid "Uploaded file is not a valid image."
+msgstr ""
+
+#: app/routes.py:150
 msgid "Event created successfully!"
 msgstr ""
 
-#: app/routes.py:115
+#: app/routes.py:154
+msgid "An error occurred while creating the event. Please try again."
+msgstr ""
+
+#: app/routes.py:184
 #, python-format
 msgid "You joined %(name)s!"
 msgstr ""
 
-#: app/routes.py:117
+#: app/routes.py:187 app/routes.py:205
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: app/routes.py:189
 msgid "You are already a member of this community."
 msgstr ""
 
-#: app/routes.py:129
+#: app/routes.py:202
 #, python-format
 msgid "You left %(name)s."
 msgstr ""
 
-#: app/routes.py:144
+#: app/routes.py:220
 msgid "Email already registered. Please log in."
 msgstr ""
 
-#: app/routes.py:178
+#: app/routes.py:256
 msgid "Account created successfully! Please log in."
 msgstr ""
 
-#: app/routes.py:195
+#: app/routes.py:260
+msgid "An error occurred during registration. Please try again."
+msgstr ""
+
+#: app/routes.py:276
 msgid "Welcome back!"
 msgstr ""
 
-#: app/routes.py:199
+#: app/routes.py:282
 msgid "Invalid email or password."
 msgstr ""
 
-#: app/routes.py:209
+#: app/routes.py:292
 msgid "You have been logged out."
 msgstr ""
 
-#: app/routes.py:252
+#: app/routes.py:336
 msgid "Profile updated successfully!"
+msgstr ""
+
+#: app/routes.py:340
+msgid "An error occurred while updating your profile. Please try again."
 msgstr ""
 
 #: templates/about.html:3
@@ -89,6 +109,18 @@ msgstr ""
 
 #: templates/base.html:6
 msgid "CrossPaths – Where cultures meet and friendships begin"
+msgstr ""
+
+#: templates/base.html:16
+msgid "CrossPaths logo"
+msgstr ""
+
+#: templates/base.html:17
+msgid "CrossPaths"
+msgstr ""
+
+#: templates/base.html:21
+msgid "Toggle navigation"
 msgstr ""
 
 #: templates/base.html:26
@@ -124,11 +156,23 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: templates/base.html:87
+#: templates/base.html:45
+msgid "English (Ireland)"
+msgstr ""
+
+#: templates/base.html:50
+msgid "Ukrainian"
+msgstr ""
+
+#: templates/base.html:55
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: templates/base.html:88
 msgid "Where cultures meet and friendships begin."
 msgstr ""
 
-#: templates/base.html:89
+#: templates/base.html:90
 msgid "A culturally adaptive platform for international newcomers in Dublin"
 msgstr ""
 
@@ -151,6 +195,19 @@ msgstr ""
 
 #: templates/communities.html:34
 msgid "Communities are coming soon!"
+msgstr ""
+
+#: templates/communities.html:44 templates/events.html:90
+msgid "Previous"
+msgstr ""
+
+#: templates/communities.html:54 templates/events.html:100
+msgid "Next"
+msgstr ""
+
+#: templates/community_detail.html:3 templates/event_detail.html:3
+#, python-format
+msgid "%(name)s – CrossPaths"
 msgstr ""
 
 #: templates/community_detail.html:20
@@ -191,6 +248,18 @@ msgstr ""
 msgid "Organize an event for the community"
 msgstr ""
 
+#: templates/create_event.html:16
+msgid "Event title"
+msgstr ""
+
+#: templates/create_event.html:24
+msgid "Describe your event..."
+msgstr ""
+
+#: templates/create_event.html:40
+msgid "Venue name and address"
+msgstr ""
+
 #: templates/create_event.html:61
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
 msgstr ""
@@ -208,6 +277,10 @@ msgstr ""
 #: templates/edit_profile.html:47 templates/profile.html:53
 #: templates/register.html:82
 msgid "Interests"
+msgstr ""
+
+#: templates/edit_profile.html:59 templates/register.html:94
+msgid "e.g. Yoga, Cooking, Board games"
 msgstr ""
 
 #: templates/edit_profile.html:63
@@ -248,6 +321,26 @@ msgstr ""
 
 #: templates/events.html:22
 msgid "All Cities"
+msgstr ""
+
+#: templates/events.html:23
+msgid "Dublin"
+msgstr ""
+
+#: templates/events.html:24
+msgid "Galway"
+msgstr ""
+
+#: templates/events.html:25
+msgid "Cork"
+msgstr ""
+
+#: templates/events.html:26
+msgid "Limerick"
+msgstr ""
+
+#: templates/events.html:27
+msgid "Waterford"
 msgstr ""
 
 #: templates/events.html:30
@@ -357,6 +450,14 @@ msgstr ""
 msgid "Log in to your CrossPaths account"
 msgstr ""
 
+#: templates/login.html:16 templates/register.html:24
+msgid "your@email.com"
+msgstr ""
+
+#: templates/login.html:24
+msgid "Your password"
+msgstr ""
+
 #: templates/login.html:30
 msgid "Log In"
 msgstr ""
@@ -373,7 +474,12 @@ msgstr ""
 msgid "Your Profile"
 msgstr ""
 
-#: templates/profile.html:27
+#: templates/profile.html:19
+#, python-format
+msgid "%(city)s, Ireland"
+msgstr ""
+
+#: templates/profile.html:27 templates/register.html:50
 msgid "Age"
 msgstr ""
 
@@ -411,6 +517,22 @@ msgstr ""
 
 #: templates/register.html:9
 msgid "Join CrossPaths and start meeting people in Ireland"
+msgstr ""
+
+#: templates/register.html:16
+msgid "Your full name"
+msgstr ""
+
+#: templates/register.html:33
+msgid "Min 6 characters"
+msgstr ""
+
+#: templates/register.html:40
+msgid "Confirm password"
+msgstr ""
+
+#: templates/register.html:67
+msgid "Your nationality"
 msgstr ""
 
 #: templates/register.html:101

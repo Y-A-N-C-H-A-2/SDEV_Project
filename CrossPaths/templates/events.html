@@ -20,11 +20,11 @@
                 <div class="city-filter">
                     <select name="city" class="form-select">
                         <option value="">{{ _('All Cities') }}</option>
-                        <option value="Dublin" {% if selected_city == 'Dublin' %}selected{% endif %}>Dublin</option>
-                        <option value="Galway" {% if selected_city == 'Galway' %}selected{% endif %}>Galway</option>
-                        <option value="Cork" {% if selected_city == 'Cork' %}selected{% endif %}>Cork</option>
-                        <option value="Limerick" {% if selected_city == 'Limerick' %}selected{% endif %}>Limerick</option>
-                        <option value="Waterford" {% if selected_city == 'Waterford' %}selected{% endif %}>Waterford</option>
+                        <option value="Dublin" {% if selected_city == 'Dublin' %}selected{% endif %}>{{ _('Dublin') }}</option>
+                        <option value="Galway" {% if selected_city == 'Galway' %}selected{% endif %}>{{ _('Galway') }}</option>
+                        <option value="Cork" {% if selected_city == 'Cork' %}selected{% endif %}>{{ _('Cork') }}</option>
+                        <option value="Limerick" {% if selected_city == 'Limerick' %}selected{% endif %}>{{ _('Limerick') }}</option>
+                        <option value="Waterford" {% if selected_city == 'Waterford' %}selected{% endif %}>{{ _('Waterford') }}</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">{{ _('Search') }}</button>

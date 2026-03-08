@@ -10,11 +10,11 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length, Optional, N
 
 CITY_CHOICES = [
     ('', _l('Select a city...')),
-    ('Dublin', 'Dublin'),
-    ('Galway', 'Galway'),
-    ('Cork', 'Cork'),
-    ('Limerick', 'Limerick'),
-    ('Waterford', 'Waterford'),
+    ('Dublin', _l('Dublin')),
+    ('Galway', _l('Galway')),
+    ('Cork', _l('Cork')),
+    ('Limerick', _l('Limerick')),
+    ('Waterford', _l('Waterford')),
 ]
 
 GENDER_CHOICES = [
@@ -46,6 +46,20 @@ PREDEFINED_INTERESTS = [
     'Art', 'Tech', 'Sports', 'Food and coffee', 'Nightlife', 'Cultural events'
 ]
 
+PREDEFINED_INTEREST_CHOICES = [
+    ('Language exchange', _l('Language exchange')),
+    ('Travel', _l('Travel')),
+    ('Hiking', _l('Hiking')),
+    ('Photography', _l('Photography')),
+    ('Music', _l('Music')),
+    ('Art', _l('Art')),
+    ('Tech', _l('Tech')),
+    ('Sports', _l('Sports')),
+    ('Food and coffee', _l('Food and coffee')),
+    ('Nightlife', _l('Nightlife')),
+    ('Cultural events', _l('Cultural events')),
+]
+
 
 class MultiCheckboxField(SelectMultipleField):
     widget = widgets.ListWidget(prefix_label=False)
@@ -61,7 +75,7 @@ class RegistrationForm(FlaskForm):
     gender = SelectField(_l('Gender'), choices=GENDER_CHOICES, validators=[Optional()])
     nationality = StringField(_l('Nationality'), validators=[Optional(), Length(max=60)])
     city = SelectField(_l('City in Ireland'), choices=CITY_CHOICES, validators=[Optional()])
-    interests = MultiCheckboxField(_l('Interests'), choices=[(i, i) for i in PREDEFINED_INTERESTS])
+    interests = MultiCheckboxField(_l('Interests'), choices=PREDEFINED_INTEREST_CHOICES)
     custom_interests = StringField(_l('Custom Interests (comma-separated)'), validators=[Optional()])
 
 
@@ -76,7 +90,7 @@ class ProfileForm(FlaskForm):
     gender = SelectField(_l('Gender'), choices=GENDER_CHOICES, validators=[Optional()])
     nationality = StringField(_l('Nationality'), validators=[Optional(), Length(max=60)])
     city = SelectField(_l('City in Ireland'), choices=CITY_CHOICES, validators=[Optional()])
-    interests = MultiCheckboxField(_l('Interests'), choices=[(i, i) for i in PREDEFINED_INTERESTS])
+    interests = MultiCheckboxField(_l('Interests'), choices=PREDEFINED_INTEREST_CHOICES)
     custom_interests = StringField(_l('Custom Interests (comma-separated)'), validators=[Optional()])
 
 
