@@ -36,7 +36,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Killruddery House, Bray, Co. Wicklow',
         'category': 'Cultural',
-        'photo': 'placeholder_wednesday.jpg',
+        'photo': 'event_wicklow.png',
     },
     {
         'title': 'International Meetup in Dublin',
@@ -54,7 +54,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Cafe en Seine, Dawson Street',
         'category': 'Language',
-        'photo': 'placeholder_language.jpg',
+        'photo': 'event_meetup.png',
     },
     {
         'title': 'Photography Walk',
@@ -72,7 +72,7 @@ SAMPLE_EVENTS = [
         'city': 'Cork',
         'venue': "Filter Coffee, George's Quay, Cork",
         'category': 'Food & Drink',
-        'photo': 'placeholder_coffee.jpg',
+        'photo': 'event_meetup.png',
     },
     {
         'title': 'Pub Social Night',
@@ -98,7 +98,7 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Language Exchange Community',
         'description': 'Connect with language learners and native speakers. Practice your target language in a friendly, supportive environment through regular meetups and events.',
-        'image': 'placeholder_community_language.jpg',
+        'image': 'event_meetup.png',
     },
     {
         'name': 'Hiking Ireland',
@@ -118,7 +118,7 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Tech and Startups Ireland',
         'description': 'Connect with tech professionals, startup founders, and anyone interested in the Irish tech scene. Networking events, talks, and hackathons.',
-        'image': 'placeholder_community_tech.jpg',
+        'image': 'event_photography.png',
     },
     {
         'name': 'Art and Creativity',
