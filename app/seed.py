@@ -113,7 +113,7 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Photography Club',
         'description': "For photographers of all levels! Share your work, learn new techniques, and join photo walks around Ireland's most beautiful locations.",
-        'image': 'event_photography.png',
+        'image': 'event_photography_club.png',
     },
     {
         'name': 'Tech and Startups Ireland',
