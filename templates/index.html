@@ -4,15 +4,15 @@
 
 {% block content %}
 <div class="home-page">
-    <!-- Hero Section: locale-specific imagery (purpose-aligned) -->
+    <!-- Hero Section: one image per locale, never repeated elsewhere on this page -->
     {% if locale == 'pt_BR' %}
-        {% set hero_bg = 'img/pt_BR/language-exchange.png' %}
+        {% set hero_bg = 'img/common/discover-social-pub.png' %}
     {% elif locale == 'uk_UA' %}
-        {% set hero_bg = 'img/uk_UA/planning-trust.png' %}
+        {% set hero_bg = 'img/common/hero-ireland-landscape.png' %}
     {% elif locale == 'en_IE' %}
-        {% set hero_bg = 'img/common/hikers-explore.png' %}
+        {% set hero_bg = 'img/common/hero-community-circle.png' %}
     {% else %}
-        {% set hero_bg = 'img/common/flags-canopy.png' %}
+        {% set hero_bg = 'img/common/hero-community-circle.png' %}
     {% endif %}
     <section class="hero hero-large hero-with-img">
         <div class="hero-bg-img" style="background-image: url('{{ url_for('static', filename=hero_bg) }}');" aria-hidden="true"></div>
@@ -88,28 +88,32 @@
     </section>
     {% endif %}
 
-    <!-- Discover Ireland Section: purpose-aligned imagery by locale -->
+    <!-- Discover Ireland Section: 3 unique images, never same as hero for this locale -->
     <section class="home-section discover-section">
         <h2>{{ _('Discover Ireland Experiences') }}</h2>
         <div class="discover-grid">
             <div class="discover-card">
-                <img src="{{ url_for('static', filename='img/common/hikers-explore.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
+                {% if locale == 'en_IE' %}
+                <img src="{{ url_for('static', filename='img/common/hero-ireland-landscape.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
+                {% elif locale == 'uk_UA' %}
+                <img src="{{ url_for('static', filename='img/common/hero-community-circle.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
+                {% else %}
+                <img src="{{ url_for('static', filename='img/common/hero-ireland-landscape.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
+                {% endif %}
                 <h3>{{ _('Outdoor Adventures') }}</h3>
                 <p>{{ _('Explore mountains, coastlines, and stunning landscapes across Ireland') }}</p>
             </div>
             <div class="discover-card">
-                <img src="{{ url_for('static', filename='img/common/flags-canopy.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
+                {% if locale == 'pt_BR' %}
+                <img src="{{ url_for('static', filename='img/common/hero-ireland-landscape.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
+                {% else %}
+                <img src="{{ url_for('static', filename='img/common/discover-social-pub.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
+                {% endif %}
                 <h3>{{ _('City Life') }}</h3>
                 <p>{{ _('Discover vibrant cities from Dublin to Galway, Cork to Limerick') }}</p>
             </div>
             <div class="discover-card">
-                {% if locale == 'pt_BR' %}
-                <img src="{{ url_for('static', filename='img/pt_BR/language-exchange.png') }}" alt="{{ _('Language exchange and social events') }}" class="discover-img">
-                {% elif locale == 'en_IE' %}
-                <img src="{{ url_for('static', filename='img/pt_BR/coffee-social.png') }}" alt="{{ _('Culture and social connections') }}" class="discover-img">
-                {% else %}
-                <img src="{{ url_for('static', filename='img/common/flags-canopy.png') }}" alt="{{ _('Culture and community') }}" class="discover-img">
-                {% endif %}
+                <img src="{{ url_for('static', filename='img/common/discover-culture-irish.png') }}" alt="{{ _('Culture and community') }}" class="discover-img">
                 <h3>{{ _('Culture & Social') }}</h3>
                 <p>{{ _('Experience traditional music, arts, festivals and Irish hospitality') }}</p>
             </div>

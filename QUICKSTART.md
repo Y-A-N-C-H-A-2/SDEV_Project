@@ -46,9 +46,17 @@ export FLASK_ENV=development
 python run.py
 ```
 
+**Port 5000 already in use?** (e.g. AirPlay Receiver on macOS) Use a different port:
+
+```bash
+FLASK_PORT=5001 python run.py
+```
+
+Then open http://127.0.0.1:5001
+
 ### 5. Open in Browser
 
-Navigate to: http://127.0.0.1:5000
+Navigate to: http://127.0.0.1:5000 (or http://127.0.0.1:5001 if you set `FLASK_PORT=5001`)
 
 ### 6. Test Locale Switching
 
