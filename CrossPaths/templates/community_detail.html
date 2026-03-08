@@ -6,7 +6,11 @@
 <div class="detail-page">
     <div class="detail-container">
         <div class="detail-image">
+            {% if community.image and not community.image.startswith('placeholder') %}
+            <img src="{{ url_for('static', filename=('img/seed/' if community.image.startswith('event_') else 'uploads/') + community.image) }}" alt="{{ _(community.name) }}">
+            {% else %}
             <div class="placeholder-img placeholder-community-large">👥</div>
+            {% endif %}
         </div>
 
         <div class="detail-content">

@@ -29,8 +29,8 @@
             {% for event in events %}
             <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="event-card">
                 <div class="event-card-image">
-                    {% if event.photo %}
-                    <div class="placeholder-img placeholder-event">📅</div>
+                    {% if event.photo and not event.photo.startswith('placeholder') %}
+                    <img src="{{ url_for('static', filename=('img/seed/' if event.photo.startswith('event_') else 'uploads/') + event.photo) }}" alt="{{ _(event.title) }}">
                     {% else %}
                     <div class="placeholder-img placeholder-event">📅</div>
                     {% endif %}
@@ -60,7 +60,11 @@
             {% for community in communities %}
             <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="community-card">
                 <div class="community-card-image">
+                    {% if community.image and not community.image.startswith('placeholder') %}
+                    <img src="{{ url_for('static', filename=('img/seed/' if community.image.startswith('event_') else 'uploads/') + community.image) }}" alt="{{ _(community.name) }}">
+                    {% else %}
                     <div class="placeholder-img placeholder-community">👥</div>
+                    {% endif %}
                 </div>
                 <div class="community-card-body">
                     <h3>{{ _(community.name) }}</h3>

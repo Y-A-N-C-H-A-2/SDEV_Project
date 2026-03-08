@@ -7,7 +7,7 @@
     <div class="detail-container">
         <div class="detail-image">
             {% if event.photo and not event.photo.startswith('placeholder') %}
-            <img src="{{ url_for('static', filename='uploads/' + event.photo) }}" alt="{{ _(event.title) }}">
+            <img src="{{ url_for('static', filename=('img/seed/' if event.photo.startswith('event_') else 'uploads/') + event.photo) }}" alt="{{ _(event.title) }}">
             {% else %}
             <div class="placeholder-img placeholder-event-large">📅</div>
             {% endif %}

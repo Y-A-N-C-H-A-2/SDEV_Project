@@ -18,7 +18,7 @@ SAMPLE_EVENTS = [
         'city': 'Galway',
         'venue': 'Dunguaire Castle, Kinvara',
         'category': 'Travel',
-        'photo': 'placeholder_galway.jpg',
+        'photo': 'event_galway.png',
     },
     {
         'title': 'Wicklow Mountains Hiking Trip',
@@ -27,7 +27,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Glendalough, Co. Wicklow',
         'category': 'Outdoor',
-        'photo': 'placeholder_wicklow.jpg',
+        'photo': 'event_wicklow.png',
     },
     {
         'title': 'Wednesday Filming Locations Tour in Wicklow',
@@ -45,7 +45,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'The Bernard Shaw, Dublin 8',
         'category': 'Social',
-        'photo': 'placeholder_meetup.jpg',
+        'photo': 'event_meetup.png',
     },
     {
         'title': 'Language Exchange Night',
@@ -63,7 +63,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': "Meeting at Ha'penny Bridge, Dublin",
         'category': 'Photography',
-        'photo': 'placeholder_photo.jpg',
+        'photo': 'event_photography.png',
     },
     {
         'title': 'Coffee Meetup for Newcomers in Ireland',
@@ -81,7 +81,7 @@ SAMPLE_EVENTS = [
         'city': 'Limerick',
         'venue': "Dolan's Pub, Limerick",
         'category': 'Nightlife',
-        'photo': 'placeholder_pub.jpg',
+        'photo': 'event_pub.png',
     },
     {
         'title': 'Art and Creativity Workshop',
@@ -90,7 +90,7 @@ SAMPLE_EVENTS = [
         'city': 'Waterford',
         'venue': 'Garter Lane Arts Centre, Waterford',
         'category': 'Art & Creative',
-        'photo': 'placeholder_art.jpg',
+        'photo': 'event_art.png',
     },
 ]
 
@@ -103,17 +103,17 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Hiking Ireland',
         'description': "Explore Ireland's stunning trails and mountains together. From gentle coastal walks to challenging mountain hikes, there's something for everyone.",
-        'image': 'placeholder_community_hiking.jpg',
+        'image': 'event_wicklow.png',
     },
     {
         'name': 'International Friends in Dublin',
         'description': 'A welcoming community for internationals living in Dublin. Meet people from around the world, share experiences, and build lasting friendships.',
-        'image': 'placeholder_community_international.jpg',
+        'image': 'event_pub.png',
     },
     {
         'name': 'Photography Club',
         'description': "For photographers of all levels! Share your work, learn new techniques, and join photo walks around Ireland's most beautiful locations.",
-        'image': 'placeholder_community_photography.jpg',
+        'image': 'event_photography.png',
     },
     {
         'name': 'Tech and Startups Ireland',
@@ -123,12 +123,12 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Art and Creativity',
         'description': 'A space for artists, creatives, and art enthusiasts. From painting workshops to gallery visits, let creativity bring us together.',
-        'image': 'placeholder_community_art.jpg',
+        'image': 'event_art.png',
     },
     {
         'name': 'Travel Buddies',
         'description': 'Find travel companions for adventures around Ireland and beyond. Share travel tips, plan group trips, and explore new destinations together.',
-        'image': 'placeholder_community_travel.jpg',
+        'image': 'event_galway.png',
     },
 ]
 
