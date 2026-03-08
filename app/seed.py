@@ -27,7 +27,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Glendalough, Co. Wicklow',
         'category': 'Outdoor',
-        'photo': 'event_wicklow.png',
+        'photo': 'event_wicklow_hike.png',
     },
     {
         'title': 'Wednesday Filming Locations Tour in Wicklow',
