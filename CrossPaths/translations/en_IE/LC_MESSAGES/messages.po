@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: CrossPaths 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-03-08 10:09+0000\n"
-"PO-Revision-Date: 2026-03-06 12:00+0000\n"
+"PO-Revision-Date: 2026-03-08 12:00+0000\n"
 "Last-Translator: CrossPaths Team\n"
 "Language: en_IE\n"
 "Language-Team: en_IE <LL@li.org>\n"
@@ -17,16 +17,15 @@ msgstr ""
 
 #: app/routes.py:139
 msgid "Uploaded file is not a valid image."
-msgstr ""
+msgstr "Uploaded file is not a valid image."
 
-# Flash Messages
 #: app/routes.py:150
 msgid "Event created successfully!"
 msgstr "Event created successfully!"
 
 #: app/routes.py:154
 msgid "An error occurred while creating the event. Please try again."
-msgstr ""
+msgstr "An error occurred while creating the event. Please try again."
 
 #: app/routes.py:184
 #, python-format
@@ -35,7 +34,7 @@ msgstr "You joined %(name)s!"
 
 #: app/routes.py:187 app/routes.py:205
 msgid "An error occurred. Please try again."
-msgstr ""
+msgstr "An error occurred. Please try again."
 
 #: app/routes.py:189
 msgid "You are already a member of this community."
@@ -56,7 +55,7 @@ msgstr "Account created successfully! Please log in."
 
 #: app/routes.py:260
 msgid "An error occurred during registration. Please try again."
-msgstr ""
+msgstr "An error occurred during registration. Please try again."
 
 #: app/routes.py:276
 msgid "Welcome back!"
@@ -76,9 +75,8 @@ msgstr "Profile updated successfully!"
 
 #: app/routes.py:340
 msgid "An error occurred while updating your profile. Please try again."
-msgstr ""
+msgstr "An error occurred while updating your profile. Please try again."
 
-# About Page
 #: templates/about.html:3
 msgid "About – CrossPaths"
 msgstr "About – CrossPaths"
@@ -107,25 +105,21 @@ msgstr "Email:"
 msgid "Based in:"
 msgstr "Based in:"
 
-# Navigation & Brand
 #: templates/base.html:6
 msgid "CrossPaths – Where cultures meet and friendships begin"
 msgstr "CrossPaths – Where cultures meet and friendships begin"
 
-# Home Page
 #: templates/base.html:16
-#, fuzzy
 msgid "CrossPaths logo"
-msgstr "CrossPaths – Home"
+msgstr "CrossPaths logo"
 
 #: templates/base.html:17
-#, fuzzy
 msgid "CrossPaths"
-msgstr "About CrossPaths"
+msgstr "CrossPaths"
 
 #: templates/base.html:21
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Toggle navigation"
 
 #: templates/base.html:26
 msgid "Home"
@@ -137,13 +131,12 @@ msgstr "Events"
 
 #: templates/base.html:28 templates/communities.html:8
 msgid "Communities"
-msgstr ""
+msgstr "Communities"
 
 #: templates/base.html:30 templates/create_event.html:8
 #: templates/create_event.html:67
-#, fuzzy
 msgid "Create Event"
-msgstr "Browse Events"
+msgstr "Create Event"
 
 #: templates/base.html:31
 msgid "Profile"
@@ -151,27 +144,27 @@ msgstr "Profile"
 
 #: templates/base.html:32
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
 #: templates/base.html:34
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: templates/base.html:35 templates/login.html:34
 msgid "Register"
-msgstr ""
+msgstr "Register"
 
 #: templates/base.html:45
 msgid "English (Ireland)"
-msgstr ""
+msgstr "English (Ireland)"
 
 #: templates/base.html:50
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrainian"
 
 #: templates/base.html:55
 msgid "Portuguese (Brazil)"
-msgstr ""
+msgstr "Portuguese (Brazil)"
 
 #: templates/base.html:88
 msgid "Where cultures meet and friendships begin."
@@ -181,105 +174,97 @@ msgstr "Where cultures meet and friendships begin."
 msgid "A culturally adaptive platform for international newcomers in Dublin"
 msgstr "A culturally adaptive platform for international newcomers in Dublin"
 
-# About Page
 #: templates/communities.html:3
-#, fuzzy
 msgid "Communities – CrossPaths"
-msgstr "About – CrossPaths"
+msgstr "Communities – CrossPaths"
 
 #: templates/communities.html:9
 msgid "Browse and join interest-based communities"
-msgstr ""
+msgstr "Browse and join interest-based communities"
 
 #: templates/communities.html:22 templates/community_detail.html:15
 #: templates/index.html:68
 msgid "members"
-msgstr ""
+msgstr "members"
 
 #: templates/communities.html:33
 msgid "No communities yet"
-msgstr ""
+msgstr "No communities yet"
 
 #: templates/communities.html:34
 msgid "Communities are coming soon!"
-msgstr ""
+msgstr "Communities are coming soon!"
 
 #: templates/communities.html:44 templates/events.html:90
 msgid "Previous"
-msgstr ""
+msgstr "Previous"
 
 #: templates/communities.html:54 templates/events.html:100
 msgid "Next"
-msgstr ""
+msgstr "Next"
 
-# Events Page
 #: templates/community_detail.html:3 templates/event_detail.html:3
-#, fuzzy, python-format
+#, python-format
 msgid "%(name)s – CrossPaths"
-msgstr "Events – CrossPaths"
+msgstr "%(name)s – CrossPaths"
 
 #: templates/community_detail.html:20
 msgid "About this community"
-msgstr ""
+msgstr "About this community"
 
 #: templates/community_detail.html:30
 msgid "Leave Community"
-msgstr ""
+msgstr "Leave Community"
 
 #: templates/community_detail.html:35
 msgid "Join Community"
-msgstr ""
+msgstr "Join Community"
 
 #: templates/community_detail.html:39
 msgid "Login to Join"
-msgstr ""
+msgstr "Login to Join"
 
 #: templates/community_detail.html:41
 msgid "← Back to Communities"
-msgstr ""
+msgstr "← Back to Communities"
 
 #: templates/community_detail.html:47
 #: templates/partials/about/content_pt_BR.html:31
 msgid "Members"
-msgstr ""
+msgstr "Members"
 
 #: templates/community_detail.html:62 templates/events.html:8
 #: templates/index.html:25
 msgid "Upcoming Events"
 msgstr "Upcoming Events"
 
-# Events Page
 #: templates/create_event.html:3
-#, fuzzy
 msgid "Create Event – CrossPaths"
-msgstr "Events – CrossPaths"
+msgstr "Create Event – CrossPaths"
 
 #: templates/create_event.html:9
 msgid "Organize an event for the community"
-msgstr ""
+msgstr "Organize an event for the community"
 
 #: templates/create_event.html:16
-#, fuzzy
 msgid "Event title"
-msgstr "Events Attended"
+msgstr "Event title"
 
 #: templates/create_event.html:24
 msgid "Describe your event..."
-msgstr ""
+msgstr "Describe your event..."
 
 #: templates/create_event.html:40
 msgid "Venue name and address"
-msgstr ""
+msgstr "Venue name and address"
 
 #: templates/create_event.html:61
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
-msgstr ""
+msgstr "Accepted formats: JPG, PNG, GIF. Max 16MB."
 
-# Profile Page
 #: templates/edit_profile.html:3
-#, fuzzy
 msgid "Edit Profile – CrossPaths"
-msgstr "Profile – CrossPaths"
+msgstr "Edit Profile – CrossPaths"
 
 #: templates/edit_profile.html:8
 #: templates/partials/profile/details_en_IE.html:19
@@ -289,118 +274,112 @@ msgstr "Edit Profile"
 
 #: templates/edit_profile.html:47 templates/profile.html:53
 #: templates/register.html:82
-#, fuzzy
 msgid "Interests"
-msgstr "Interests:"
+msgstr "Interests"
 
 #: templates/edit_profile.html:59 templates/register.html:94
 msgid "e.g. Yoga, Cooking, Board games"
-msgstr ""
+msgstr "e.g. Yoga, Cooking, Board games"
 
 #: templates/edit_profile.html:63
 msgid "Save Changes"
-msgstr ""
+msgstr "Save Changes"
 
 #: templates/edit_profile.html:64
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: templates/event_detail.html:36 templates/events.html:61
 msgid "Organized by"
-msgstr ""
+msgstr "Organized by"
 
 #: templates/event_detail.html:41
 msgid "people attending"
-msgstr ""
+msgstr "people attending"
 
 #: templates/event_detail.html:47
-#, fuzzy
 msgid "About this event"
-msgstr "Browse Events"
+msgstr "About this event"
 
 #: templates/event_detail.html:53
-#, fuzzy
 msgid "← Back to Events"
-msgstr "Browse Events"
+msgstr "← Back to Events"
 
-# Events Page
 #: templates/events.html:3
 msgid "Events – CrossPaths"
 msgstr "Events – CrossPaths"
 
 #: templates/events.html:9
 msgid "Find events happening across Ireland"
-msgstr ""
+msgstr "Find events happening across Ireland"
 
 #: templates/events.html:17
-#, fuzzy
 msgid "Search events..."
-msgstr "Browse Events"
+msgstr "Search events..."
 
 #: templates/events.html:22
 msgid "All Cities"
-msgstr ""
+msgstr "All Cities"
 
 #: templates/events.html:23
 msgid "Dublin"
-msgstr ""
+msgstr "Dublin"
 
 #: templates/events.html:24
 msgid "Galway"
-msgstr ""
+msgstr "Galway"
 
 #: templates/events.html:25
 msgid "Cork"
-msgstr ""
+msgstr "Cork"
 
 #: templates/events.html:26
 msgid "Limerick"
-msgstr ""
+msgstr "Limerick"
 
 #: templates/events.html:27
 msgid "Waterford"
-msgstr ""
+msgstr "Waterford"
 
 #: templates/events.html:30
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: templates/events.html:32
 msgid "Clear"
-msgstr ""
+msgstr "Clear"
 
 #: templates/events.html:65
-#, fuzzy
 msgid "attending"
-msgstr "Attend"
+msgstr "attending"
 
 #: templates/events.html:76
-#, fuzzy
 msgid "No events found"
-msgstr "Events Attended"
+msgstr "No events found"
 
 #: templates/events.html:77
 msgid "Try adjusting your search or filter, or check back soon for new events!"
-msgstr ""
+msgstr "Try adjusting your search or filter, or check back soon for new events!"
 
 #: templates/events.html:79
 msgid "Create an Event"
-msgstr ""
+msgstr "Create an Event"
 
-# Home Page
 #: templates/index.html:3
 msgid "CrossPaths – Home"
 msgstr "CrossPaths – Home"
 
 #: templates/index.html:10
 msgid "Meet People. Attend Events. Explore Ireland."
-msgstr ""
+msgstr "Meet People. Attend Events. Explore Ireland."
 
 #: templates/index.html:11
 msgid ""
 "A community platform for locals, expats, and travelers to connect through"
 " events across Ireland"
 msgstr ""
+"A community platform for locals, expats, and travelers to connect through"
+" events across Ireland"
 
 #: templates/index.html:13 templates/partials/index/features_en_IE.html:4
 #: templates/partials/index/hero_en_IE.html:7 templates/profile.html:95
@@ -409,44 +388,43 @@ msgstr "Browse Events"
 
 #: templates/index.html:15
 msgid "Join Now"
-msgstr ""
+msgstr "Join Now"
 
 #: templates/index.html:26 templates/index.html:57
-#, fuzzy
 msgid "View All →"
-msgstr "View Details"
+msgstr "View All →"
 
 #: templates/index.html:56
 msgid "Featured Communities"
-msgstr ""
+msgstr "Featured Communities"
 
 #: templates/index.html:78
 msgid "Discover Ireland Experiences"
-msgstr ""
+msgstr "Discover Ireland Experiences"
 
 #: templates/index.html:82
 msgid "Outdoor Adventures"
-msgstr ""
+msgstr "Outdoor Adventures"
 
 #: templates/index.html:83
 msgid "Explore mountains, coastlines, and stunning landscapes across Ireland"
-msgstr ""
+msgstr "Explore mountains, coastlines, and stunning landscapes across Ireland"
 
 #: templates/index.html:87
 msgid "City Life"
-msgstr ""
+msgstr "City Life"
 
 #: templates/index.html:88
 msgid "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
-msgstr ""
+msgstr "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
 
 #: templates/index.html:92
 msgid "Culture & Social"
-msgstr ""
+msgstr "Culture & Social"
 
 #: templates/index.html:93
 msgid "Experience traditional music, arts, festivals and Irish hospitality"
-msgstr ""
+msgstr "Experience traditional music, arts, festivals and Irish hospitality"
 
 #: templates/index.html:100
 msgid "Ready to Meet New Friends?"
@@ -454,44 +432,40 @@ msgstr "Ready to Meet New Friends?"
 
 #: templates/index.html:101
 msgid "Join thousands of people connecting through events across Ireland"
-msgstr ""
+msgstr "Join thousands of people connecting through events across Ireland"
 
 #: templates/index.html:103
 msgid "View Upcoming Events"
 msgstr "View Upcoming Events"
 
-# Profile Page
 #: templates/login.html:3
-#, fuzzy
 msgid "Login – CrossPaths"
-msgstr "Profile – CrossPaths"
+msgstr "Login – CrossPaths"
 
 #: templates/login.html:8
-#, fuzzy
 msgid "Welcome Back"
-msgstr "Welcome back!"
+msgstr "Welcome Back"
 
 #: templates/login.html:9
 msgid "Log in to your CrossPaths account"
-msgstr ""
+msgstr "Log in to your CrossPaths account"
 
 #: templates/login.html:16 templates/register.html:24
 msgid "your@email.com"
-msgstr ""
+msgstr "your@email.com"
 
 #: templates/login.html:24
 msgid "Your password"
-msgstr ""
+msgstr "Your password"
 
 #: templates/login.html:30
 msgid "Log In"
-msgstr ""
+msgstr "Log In"
 
 #: templates/login.html:34
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Don't have an account?"
 
-# Profile Page
 #: templates/profile.html:3
 msgid "Profile – CrossPaths"
 msgstr "Profile – CrossPaths"
@@ -503,28 +477,27 @@ msgstr "Your Profile"
 #: templates/profile.html:19
 #, python-format
 msgid "%(city)s, Ireland"
-msgstr ""
+msgstr "%(city)s, Ireland"
 
 #: templates/profile.html:27 templates/register.html:50
-#, fuzzy
 msgid "Age"
-msgstr "Age:"
+msgstr "Age"
 
 #: templates/profile.html:33
 msgid "Gender"
-msgstr ""
+msgstr "Gender"
 
 #: templates/profile.html:39
 msgid "Nationality"
-msgstr ""
+msgstr "Nationality"
 
 #: templates/profile.html:45
 msgid "City"
-msgstr ""
+msgstr "City"
 
 #: templates/profile.html:70
 msgid "Your Communities"
-msgstr ""
+msgstr "Your Communities"
 
 #: templates/profile.html:83
 msgid "Events Attended"
@@ -534,44 +507,41 @@ msgstr "Events Attended"
 msgid "No events yet. Browse upcoming events to get started!"
 msgstr "No events yet. Browse upcoming events to get started!"
 
-# Profile Page
 #: templates/register.html:3
-#, fuzzy
 msgid "Register – CrossPaths"
-msgstr "Profile – CrossPaths"
+msgstr "Register – CrossPaths"
 
 #: templates/register.html:8 templates/register.html:97
 msgid "Create Account"
-msgstr ""
+msgstr "Create Account"
 
 #: templates/register.html:9
 msgid "Join CrossPaths and start meeting people in Ireland"
-msgstr ""
+msgstr "Join CrossPaths and start meeting people in Ireland"
 
 #: templates/register.html:16
-#, fuzzy, python-format
 msgid "Your full name"
-msgstr "You left %(name)s."
+msgstr "Your full name"
 
 #: templates/register.html:33
 msgid "Min 6 characters"
-msgstr ""
+msgstr "Min 6 characters"
 
 #: templates/register.html:40
 msgid "Confirm password"
-msgstr ""
+msgstr "Confirm password"
 
 #: templates/register.html:67
 msgid "Your nationality"
-msgstr ""
+msgstr "Your nationality"
 
 #: templates/register.html:101
 msgid "Already have an account?"
-msgstr ""
+msgstr "Already have an account?"
 
 #: templates/register.html:101
 msgid "Log in"
-msgstr ""
+msgstr "Log in"
 
 #: templates/partials/about/content_en_IE.html:3
 msgid "What is CrossPaths?"
@@ -590,23 +560,20 @@ msgid "How It Works"
 msgstr "How It Works"
 
 #: templates/partials/about/content_en_IE.html:8
-#, fuzzy
 msgid "Browse upcoming events"
-msgstr "Upcoming Events"
+msgstr "Browse upcoming events"
 
 #: templates/partials/about/content_en_IE.html:9
-#, fuzzy
 msgid "RSVP to events that interest you"
-msgstr "Register for events that interest you."
+msgstr "RSVP to events that interest you"
 
 #: templates/partials/about/content_en_IE.html:10
 msgid "Attend and meet new people"
-msgstr ""
+msgstr "Attend and meet new people"
 
 #: templates/partials/about/content_en_IE.html:11
-#, fuzzy
 msgid "Build your social network"
-msgstr "Build your social network in Dublin."
+msgstr "Build your social network"
 
 #: templates/partials/about/content_en_IE.html:14
 msgid "Who Can Join?"
@@ -643,9 +610,8 @@ msgid "Create Profile"
 msgstr "Create Profile"
 
 #: templates/partials/about/content_pt_BR.html:3
-#, fuzzy
 msgid "Welcome to Our Community!"
-msgstr "Welcome to CrossPaths"
+msgstr "Welcome to Our Community!"
 
 #: templates/partials/about/content_pt_BR.html:4
 msgid ""
@@ -653,39 +619,41 @@ msgid ""
 "friendly speed-friending events. We're all about bringing people together"
 " and building a vibrant, diverse community!"
 msgstr ""
+"CrossPaths connects international newcomers in Dublin through fun, "
+"friendly speed-friending events. We're all about bringing people together"
+" and building a vibrant, diverse community!"
 
 #: templates/partials/about/content_pt_BR.html:6
-#, fuzzy
 msgid "Why CrossPaths?"
-msgstr "What is CrossPaths?"
+msgstr "Why CrossPaths?"
 
 #: templates/partials/about/content_pt_BR.html:10
 msgid "Celebrate Diversity"
-msgstr ""
+msgstr "Celebrate Diversity"
 
 #: templates/partials/about/content_pt_BR.html:11
 msgid "Meet people from all over the world!"
-msgstr ""
+msgstr "Meet people from all over the world!"
 
 #: templates/partials/about/content_pt_BR.html:15
 msgid "Make Real Friends"
-msgstr ""
+msgstr "Make Real Friends"
 
 #: templates/partials/about/content_pt_BR.html:16
 msgid "Not just networking — genuine connections!"
-msgstr ""
+msgstr "Not just networking — genuine connections!"
 
 #: templates/partials/about/content_pt_BR.html:20
 msgid "Have Fun!"
-msgstr ""
+msgstr "Have Fun!"
 
 #: templates/partials/about/content_pt_BR.html:21
 msgid "No boring meetings — just good times!"
-msgstr ""
+msgstr "No boring meetings — just good times!"
 
 #: templates/partials/about/content_pt_BR.html:25
 msgid "Join the Fun!"
-msgstr ""
+msgstr "Join the Fun!"
 
 #: templates/partials/about/content_pt_BR.html:26
 msgid ""
@@ -693,28 +661,31 @@ msgid ""
 "CrossPaths is your gateway to an amazing social circle. Come as you are, "
 "meet incredible people, and build friendships that last!"
 msgstr ""
+"Whether you just arrived in Dublin or have been here for years, "
+"CrossPaths is your gateway to an amazing social circle. Come as you are, "
+"meet incredible people, and build friendships that last!"
 
 #: templates/partials/about/content_pt_BR.html:39
 msgid "Countries"
-msgstr ""
+msgstr "Countries"
 
 #: templates/partials/about/content_uk_UA.html:3
 msgid "Our Mission"
-msgstr ""
+msgstr "Our Mission"
 
 #: templates/partials/about/content_uk_UA.html:4
-#, fuzzy
 msgid ""
 "CrossPaths is a verified platform designed to support the social "
 "integration of international newcomers in Dublin through structured, safe"
 " speed-friending events."
 msgstr ""
-"CrossPaths is a platform for international newcomers in Dublin to meet "
-"new people through speed-friending events."
+"CrossPaths is a verified platform designed to support the social "
+"integration of international newcomers in Dublin through structured, safe"
+" speed-friending events."
 
 #: templates/partials/about/content_uk_UA.html:6
 msgid "Safety & Verification"
-msgstr ""
+msgstr "Safety & Verification"
 
 #: templates/partials/about/content_uk_UA.html:7
 msgid ""
@@ -722,34 +693,37 @@ msgid ""
 "venues with clear agendas and structured activities. Your safety is our "
 "priority."
 msgstr ""
+"All event hosts are verified by our team. Events take place in public "
+"venues with clear agendas and structured activities. Your safety is our "
+"priority."
 
 #: templates/partials/about/content_uk_UA.html:12
 msgid "Verified Hosts"
-msgstr ""
+msgstr "Verified Hosts"
 
 #: templates/partials/about/content_uk_UA.html:13
 msgid "All hosts undergo background verification"
-msgstr ""
+msgstr "All hosts undergo background verification"
 
 #: templates/partials/about/content_uk_UA.html:17
 msgid "Public Venues"
-msgstr ""
+msgstr "Public Venues"
 
 #: templates/partials/about/content_uk_UA.html:18
 msgid "Events are held in established public locations"
-msgstr ""
+msgstr "Events are held in established public locations"
 
 #: templates/partials/about/content_uk_UA.html:22
 msgid "Clear Agendas"
-msgstr ""
+msgstr "Clear Agendas"
 
 #: templates/partials/about/content_uk_UA.html:23
 msgid "Know exactly what to expect before attending"
-msgstr ""
+msgstr "Know exactly what to expect before attending"
 
 #: templates/partials/about/content_uk_UA.html:27
 msgid "How We Protect Your Privacy"
-msgstr ""
+msgstr "How We Protect Your Privacy"
 
 #: templates/partials/about/content_uk_UA.html:28
 msgid ""
@@ -757,10 +731,13 @@ msgid ""
 "only visible to confirmed event attendees. We comply with GDPR "
 "regulations."
 msgstr ""
+"Your personal information is never shared publicly. Profile details are "
+"only visible to confirmed event attendees. We comply with GDPR "
+"regulations."
 
 #: templates/partials/about/content_uk_UA.html:30
 msgid "Community Guidelines"
-msgstr ""
+msgstr "Community Guidelines"
 
 #: templates/partials/about/content_uk_UA.html:31
 msgid ""
@@ -768,6 +745,9 @@ msgid ""
 "our code of conduct. Harassment or inappropriate behaviour results in "
 "immediate account suspension."
 msgstr ""
+"We maintain a respectful, inclusive community. All members must follow "
+"our code of conduct. Harassment or inappropriate behaviour results in "
+"immediate account suspension."
 
 #: templates/partials/events/card_en_IE.html:6
 msgid "When:"
@@ -797,27 +777,27 @@ msgstr "RSVP"
 
 #: templates/partials/events/card_pt_BR.html:6
 msgid "people going"
-msgstr ""
+msgstr "people going"
 
 #: templates/partials/events/card_pt_BR.html:13
 msgid "Hosted by"
-msgstr ""
+msgstr "Hosted by"
 
 #: templates/partials/events/card_pt_BR.html:17
 msgid "Join us for a fun evening! Chat, laugh, and make new friends!"
-msgstr ""
+msgstr "Join us for a fun evening! Chat, laugh, and make new friends!"
 
 #: templates/partials/events/card_pt_BR.html:21
 msgid "I'm Going!"
-msgstr ""
+msgstr "I'm Going!"
 
 #: templates/partials/events/card_pt_BR.html:22
 msgid "See Who's Attending"
-msgstr ""
+msgstr "See Who's Attending"
 
 #: templates/partials/events/card_uk_UA.html:6
 msgid "Verified Host"
-msgstr ""
+msgstr "Verified Host"
 
 #: templates/partials/events/card_uk_UA.html:12
 msgid "Date:"
@@ -833,20 +813,19 @@ msgstr "Location:"
 
 #: templates/partials/events/card_uk_UA.html:28
 msgid "Capacity:"
-msgstr ""
+msgstr "Capacity:"
 
 #: templates/partials/events/card_uk_UA.html:29
 msgid "registered"
-msgstr ""
+msgstr "registered"
 
 #: templates/partials/events/card_uk_UA.html:34
-#, fuzzy
 msgid "View Full Details & Agenda"
-msgstr "View Details"
+msgstr "View Full Details & Agenda"
 
 #: templates/partials/events/card_uk_UA.html:35
 msgid "View Safety Information"
-msgstr ""
+msgstr "View Safety Information"
 
 #: templates/partials/events/header_en_IE.html:1
 msgid "Speed-friending events in Dublin"
@@ -854,11 +833,11 @@ msgstr "Speed-friending events in Dublin"
 
 #: templates/partials/events/header_pt_BR.html:1
 msgid "Find your next adventure and see who's going!"
-msgstr ""
+msgstr "Find your next adventure and see who's going!"
 
 #: templates/partials/events/header_uk_UA.html:1
 msgid "All events are verified and hosted in safe public locations"
-msgstr ""
+msgstr "All events are verified and hosted in safe public locations"
 
 #: templates/partials/index/features_en_IE.html:5
 msgid "Find speed-friending events near you."
@@ -885,79 +864,81 @@ msgid "Build your social network in Dublin."
 msgstr "Build your social network in Dublin."
 
 #: templates/partials/index/features_pt_BR.html:5
-#, fuzzy
 msgid "Discover Fun Events"
-msgstr "View Events"
+msgstr "Discover Fun Events"
 
 #: templates/partials/index/features_pt_BR.html:6
 msgid "Browse exciting meetups and see who else is going!"
-msgstr ""
+msgstr "Browse exciting meetups and see who else is going!"
 
 #: templates/partials/index/features_pt_BR.html:10
 msgid "Chat Before You Meet"
-msgstr ""
+msgstr "Chat Before You Meet"
 
 #: templates/partials/index/features_pt_BR.html:11
 msgid "Join event group chats and break the ice online first."
-msgstr ""
+msgstr "Join event group chats and break the ice online first."
 
 #: templates/partials/index/features_pt_BR.html:15
-#, fuzzy
 msgid "Make Real Connections"
-msgstr "Coffee Connections"
+msgstr "Make Real Connections"
 
 #: templates/partials/index/features_pt_BR.html:16
 msgid "Meet face-to-face in fun, relaxed settings around Dublin."
-msgstr ""
+msgstr "Meet face-to-face in fun, relaxed settings around Dublin."
 
 #: templates/partials/index/features_pt_BR.html:20
 msgid "Find Your Tribe"
-msgstr ""
+msgstr "Find Your Tribe"
 
 #: templates/partials/index/features_pt_BR.html:21
 msgid "Build your social circle and never feel alone in a new city!"
-msgstr ""
+msgstr "Build your social circle and never feel alone in a new city!"
 
 #: templates/partials/index/features_uk_UA.html:5
 #: templates/partials/index/hero_uk_UA.html:8
-#, fuzzy
 msgid "Browse Verified Events"
-msgstr "Browse Events"
+msgstr "Browse Verified Events"
 
 #: templates/partials/index/features_uk_UA.html:6
 msgid ""
 "Review detailed event information including agenda, host credentials, and"
 " safety details."
 msgstr ""
+"Review detailed event information including agenda, host credentials, and"
+" safety details."
 
 #: templates/partials/index/features_uk_UA.html:10
 msgid "Register Securely"
-msgstr ""
+msgstr "Register Securely"
 
 #: templates/partials/index/features_uk_UA.html:11
 msgid ""
 "RSVP with confirmed details. Receive event reminders and location "
 "information."
 msgstr ""
+"RSVP with confirmed details. Receive event reminders and location "
+"information."
 
 #: templates/partials/index/features_uk_UA.html:15
 msgid "Follow Structured Ice-Breakers"
-msgstr ""
+msgstr "Follow Structured Ice-Breakers"
 
 #: templates/partials/index/features_uk_UA.html:16
 msgid "Participate in timed conversation rounds with prepared topics and prompts."
-msgstr ""
+msgstr "Participate in timed conversation rounds with prepared topics and prompts."
 
 #: templates/partials/index/features_uk_UA.html:20
-#, fuzzy
 msgid "Build Your Network"
-msgstr "Build your social network in Dublin."
+msgstr "Build Your Network"
 
 #: templates/partials/index/features_uk_UA.html:21
 msgid ""
 "Connect with people you met and attend future events with your new "
 "friends."
 msgstr ""
+"Connect with people you met and attend future events with your new "
+"friends."
 
 #: templates/partials/index/hero_en_IE.html:3
 msgid ""
@@ -976,37 +957,36 @@ msgid ""
 "Make new friends in Dublin! Join fun speed-friending events and meet "
 "amazing people from around the world."
 msgstr ""
+"Make new friends in Dublin! Join fun speed-friending events and meet "
+"amazing people from around the world."
 
 #: templates/partials/index/hero_pt_BR.html:4
 msgid "See who's going, chat before you meet, and find your tribe! 🎉"
-msgstr ""
+msgstr "See who's going, chat before you meet, and find your tribe! 🎉"
 
 #: templates/partials/index/hero_pt_BR.html:8
 msgid "See Events & People"
-msgstr ""
+msgstr "See Events & People"
 
 #: templates/partials/index/hero_pt_BR.html:11
-#, fuzzy
 msgid "Create Your Profile"
-msgstr "Create Profile"
+msgstr "Create Your Profile"
 
 #: templates/partials/index/hero_uk_UA.html:3
-#, fuzzy
 msgid ""
 "CrossPaths is a verified platform for meeting new friends in Dublin "
 "through structured speed-friending events."
 msgstr ""
-"CrossPaths is a platform for international newcomers in Dublin to meet "
-"new people through speed-friending events."
+"CrossPaths is a verified platform for meeting new friends in Dublin "
+"through structured speed-friending events."
 
 #: templates/partials/index/hero_uk_UA.html:4
 msgid "All events are hosted by verified organizers in safe, public locations."
-msgstr ""
+msgstr "All events are hosted by verified organizers in safe, public locations."
 
 #: templates/partials/index/hero_uk_UA.html:11
-#, fuzzy
 msgid "Learn More About Safety"
-msgstr "Learn More"
+msgstr "Learn More About Safety"
 
 #: templates/partials/profile/details_en_IE.html:11
 #: templates/partials/profile/details_uk_UA.html:15
@@ -1034,46 +1014,43 @@ msgstr "About:"
 
 #: templates/partials/profile/details_pt_BR.html:8
 msgid "Hey, I'm"
-msgstr ""
+msgstr "Hey, I'm"
 
 #: templates/partials/profile/details_pt_BR.html:15
 msgid "years old"
-msgstr ""
+msgstr "years old"
 
 #: templates/partials/profile/details_pt_BR.html:20
-#, fuzzy
 msgid "My Interests"
-msgstr "Interests:"
+msgstr "My Interests"
 
 #: templates/partials/profile/details_pt_BR.html:29
 msgid "I speak"
-msgstr ""
+msgstr "I speak"
 
 #: templates/partials/profile/details_pt_BR.html:39
-#, fuzzy
 msgid "Edit My Profile"
-msgstr "Edit Profile"
+msgstr "Edit My Profile"
 
 #: templates/partials/profile/details_pt_BR.html:40
-#, fuzzy
 msgid "Share Profile"
-msgstr "Create Profile"
+msgstr "Share Profile"
 
 #: templates/partials/profile/details_uk_UA.html:9
 msgid "Member since"
-msgstr ""
+msgstr "Member since"
 
 #: templates/partials/profile/details_uk_UA.html:9
 msgid "March 2026"
-msgstr ""
+msgstr "March 2026"
 
 #: templates/partials/profile/details_uk_UA.html:19
 msgid "Country of Origin:"
-msgstr ""
+msgstr "Country of Origin:"
 
 #: templates/partials/profile/details_uk_UA.html:38
 msgid "Privacy Settings"
-msgstr ""
+msgstr "Privacy Settings"
 
 #: templates/partials/profile/header_en_IE.html:1
 msgid "Manage your profile information"
@@ -1081,21 +1058,8 @@ msgstr "Manage your profile information"
 
 #: templates/partials/profile/header_pt_BR.html:1
 msgid "Show your personality and let people know the real you!"
-msgstr ""
+msgstr "Show your personality and let people know the real you!"
 
 #: templates/partials/profile/header_uk_UA.html:1
 msgid "Your information is private and only shared with event attendees"
-msgstr ""
-
-#~ msgid "About"
-#~ msgstr "About"
-
-#~ msgid "Friday Night Speed-Friending"
-#~ msgstr "Friday Night Speed-Friending"
-
-#~ msgid "No upcoming events at the moment. Check back soon!"
-#~ msgstr "No upcoming events at the moment. Check back soon!"
-
-#~ msgid "Looking to meet new friends in Dublin!"
-#~ msgstr "Looking to meet new friends in Dublin!"
-
+msgstr "Your information is private and only shared with event attendees"
