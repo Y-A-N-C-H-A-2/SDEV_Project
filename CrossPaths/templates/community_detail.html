@@ -12,7 +12,7 @@
         <div class="detail-content">
             <div class="detail-header">
                 <h1>{{ community.name }}</h1>
-                <span class="member-count-large">👥 {{ community.members.count() }} {{ _('members') }}</span>
+                <span class="member-count-large">👥 {{ community.members.count() }} {{ ngettext('member', 'members', community.members.count()) }}</span>
             </div>
 
             {% if community.description %}
@@ -64,7 +64,7 @@
                     {% for event in events %}
                     <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
                         <h4>{{ event.title }}</h4>
-                        <p>📍 {{ event.city }} · 🗓️ {{ event.date_time.strftime('%b %d, %Y') }}</p>
+                        <p>📍 {{ event.city }} · 🗓️ {{ event.date_time|datetimeformat('d MMM yyyy') }}</p>
                     </a>
                     {% endfor %}
                 </div>

@@ -16,7 +16,7 @@
         <div class="detail-content">
             <div class="detail-header">
                 {% if event.category %}
-                <span class="event-category-badge">{{ event.category }}</span>
+                <span class="event-category-badge">{{ _(event.category) }}</span>
                 {% endif %}
                 <h1>{{ event.title }}</h1>
             </div>
@@ -24,7 +24,7 @@
             <div class="detail-meta">
                 <div class="meta-item">
                     <span class="meta-icon">🗓️</span>
-                    <span>{{ event.date_time.strftime('%A, %B %d, %Y at %H:%M') }}</span>
+                    <span>{{ event.date_time|datetimeformat('EEEE, d MMMM yyyy') }} {{ _('at') }} {{ event.date_time|datetimeformat('HH:mm') }}</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-icon">📍</span>

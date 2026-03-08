@@ -19,7 +19,7 @@
                 <h3>{{ community.name }}</h3>
                 <p>{{ community.description[:120] }}{% if community.description|length > 120 %}...{% endif %}</p>
                 <div class="community-footer">
-                    <span class="member-count">👥 {{ community.members.count() }} {{ _('members') }}</span>
+                    <span class="member-count">👥 {{ community.members.count() }} {{ ngettext('member', 'members', community.members.count()) }}</span>
                 </div>
             </div>
         </a>

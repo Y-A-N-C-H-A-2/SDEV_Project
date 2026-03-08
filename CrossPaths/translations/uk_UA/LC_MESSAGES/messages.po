@@ -190,8 +190,11 @@ msgstr "Переглядайте та долучайтеся до спільно
 
 #: templates/communities.html:22 templates/community_detail.html:15
 #: templates/index.html:68
-msgid "members"
-msgstr "учасників"
+msgid "member"
+msgid_plural "members"
+msgstr[0] "учасник"
+msgstr[1] "учасники"
+msgstr[2] "учасників"
 
 #: templates/communities.html:33
 msgid "No communities yet"
@@ -269,6 +272,36 @@ msgstr "Назва та адреса місця"
 #: templates/create_event.html:61
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
 msgstr "Дозволені формати: JPG, PNG, GIF. Макс 16MB."
+
+# Date/time (word between date and time)
+msgid "at"
+msgstr "о"
+
+# Event categories (for badges in templates)
+msgid "Social"
+msgstr "Спілкування"
+msgid "Cultural"
+msgstr "Культура"
+msgid "Outdoor"
+msgstr "На свіжому повітрі"
+msgid "Language"
+msgstr "Мови"
+msgid "Food & Drink"
+msgstr "Їжа та напої"
+msgid "Art & Creative"
+msgstr "Мистецтво та творчість"
+msgid "Tech"
+msgstr "Технології"
+msgid "Sports"
+msgstr "Спорт"
+msgid "Music"
+msgstr "Музика"
+msgid "Travel"
+msgstr "Подорожі"
+msgid "Nightlife"
+msgstr "Нічне життя"
+msgid "Photography"
+msgstr "Фотографія"
 
 # Profile Page
 #: templates/edit_profile.html:3

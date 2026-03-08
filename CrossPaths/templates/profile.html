@@ -86,7 +86,7 @@
                 {% for event in user.attending_events %}
                 <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
                     <h4>{{ event.title }}</h4>
-                    <p>{{ event.date_time.strftime('%b %d, %Y') }}</p>
+                    <p>{{ event.date_time|datetimeformat('d MMM yyyy') }}</p>
                 </a>
                 {% endfor %}
             </div>

@@ -184,8 +184,10 @@ msgstr "Browse and join interest-based communities"
 
 #: templates/communities.html:22 templates/community_detail.html:15
 #: templates/index.html:68
-msgid "members"
-msgstr "members"
+msgid "member"
+msgid_plural "members"
+msgstr[0] "member"
+msgstr[1] "members"
 
 #: templates/communities.html:33
 msgid "No communities yet"
@@ -261,6 +263,36 @@ msgstr "Venue name and address"
 #: templates/create_event.html:61
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
 msgstr "Accepted formats: JPG, PNG, GIF. Max 16MB."
+
+# Date/time (word between date and time)
+msgid "at"
+msgstr "at"
+
+# Event categories (for badges in templates)
+msgid "Social"
+msgstr "Social"
+msgid "Cultural"
+msgstr "Cultural"
+msgid "Outdoor"
+msgstr "Outdoor"
+msgid "Language"
+msgstr "Language"
+msgid "Food & Drink"
+msgstr "Food & Drink"
+msgid "Art & Creative"
+msgstr "Art & Creative"
+msgid "Tech"
+msgstr "Tech"
+msgid "Sports"
+msgstr "Sports"
+msgid "Music"
+msgstr "Music"
+msgid "Travel"
+msgstr "Travel"
+msgid "Nightlife"
+msgstr "Nightlife"
+msgid "Photography"
+msgstr "Photography"
 
 #: templates/edit_profile.html:3
 msgid "Edit Profile – CrossPaths"
