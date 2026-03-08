@@ -1,7 +1,7 @@
 <!-- Ukrainian: Formal layout with verification badges and detailed info -->
 <div class="event-card-formal">
     <div class="event-header">
-        <h2 class="event-title">{{ event.title }}</h2>
+        <h2 class="event-title">{{ _(event.title) }}</h2>
         {% if event.verified %}
         <span class="verified-badge">✓ {{ _('Verified Host') }}</span>
         {% endif %}

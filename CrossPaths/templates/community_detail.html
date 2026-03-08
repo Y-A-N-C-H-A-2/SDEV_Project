@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _('%(name)s – CrossPaths', name=community.name) }}{% endblock %}
+{% block title %}{{ _('%(name)s – CrossPaths', name=_(community.name)) }}{% endblock %}
 
 {% block content %}
 <div class="detail-page">
@@ -11,14 +11,14 @@
 
         <div class="detail-content">
             <div class="detail-header">
-                <h1>{{ community.name }}</h1>
+                <h1>{{ _(community.name) }}</h1>
                 <span class="member-count-large">👥 {{ community.members.count() }} {{ ngettext('member', 'members', community.members.count()) }}</span>
             </div>
 
             {% if community.description %}
             <div class="detail-description">
                 <h2>{{ _('About this community') }}</h2>
-                <p>{{ community.description }}</p>
+                <p>{{ _(community.description) }}</p>
             </div>
             {% endif %}
 
@@ -63,7 +63,7 @@
                 <div class="mini-cards">
                     {% for event in events %}
                     <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
-                        <h4>{{ event.title }}</h4>
+                        <h4>{{ _(event.title) }}</h4>
                         <p>📍 {{ event.city }} · 🗓️ {{ event.date_time|datetimeformat('d MMM yyyy') }}</p>
                     </a>
                     {% endfor %}

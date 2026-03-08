@@ -71,7 +71,7 @@
             <div class="mini-cards">
                 {% for community in user.communities %}
                 <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="mini-card">
-                    <h4>{{ community.name }}</h4>
+                    <h4>{{ _(community.name) }}</h4>
                 </a>
                 {% endfor %}
             </div>
@@ -85,7 +85,7 @@
             <div class="mini-cards">
                 {% for event in user.attending_events %}
                 <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
-                    <h4>{{ event.title }}</h4>
+                    <h4>{{ _(event.title) }}</h4>
                     <p>{{ event.date_time|datetimeformat('d MMM yyyy') }}</p>
                 </a>
                 {% endfor %}

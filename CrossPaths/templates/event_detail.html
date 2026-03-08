@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _('%(name)s – CrossPaths', name=event.title) }}{% endblock %}
+{% block title %}{{ _('%(name)s – CrossPaths', name=_(event.title)) }}{% endblock %}
 
 {% block content %}
 <div class="detail-page">
     <div class="detail-container">
         <div class="detail-image">
             {% if event.photo and not event.photo.startswith('placeholder') %}
-            <img src="{{ url_for('static', filename='uploads/' + event.photo) }}" alt="{{ event.title }}">
+            <img src="{{ url_for('static', filename='uploads/' + event.photo) }}" alt="{{ _(event.title) }}">
             {% else %}
             <div class="placeholder-img placeholder-event-large">📅</div>
             {% endif %}
@@ -18,7 +18,7 @@
                 {% if event.category %}
                 <span class="event-category-badge">{{ _(event.category) }}</span>
                 {% endif %}
-                <h1>{{ event.title }}</h1>
+                <h1>{{ _(event.title) }}</h1>
             </div>
 
             <div class="detail-meta">
@@ -45,7 +45,7 @@
             {% if event.description %}
             <div class="detail-description">
                 <h2>{{ _('About this event') }}</h2>
-                <p>{{ event.description }}</p>
+                <p>{{ _(event.description) }}</p>
             </div>
             {% endif %}
 

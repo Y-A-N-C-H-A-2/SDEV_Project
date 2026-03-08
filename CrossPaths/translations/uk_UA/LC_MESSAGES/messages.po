@@ -1103,6 +1103,103 @@ msgstr "Покажіть свою індивідуальність і дайте
 msgid "Your information is private and only shared with event attendees"
 msgstr "Ваша інформація приватна та ділиться лише з учасниками подій"
 
+# Event and community seed content (displayed from DB)
+msgid "Trip to Galway with a Castle Visit"
+msgstr "Поїздка в Голвей з відвідуванням замку"
+
+msgid "Join us for an amazing day trip to Galway! We will visit the historic Dunguaire Castle, explore the colorful streets of Galway city, and enjoy traditional Irish music in a local pub."
+msgstr "Приєднуйтесь до чудової одноденної поїздки в Голвей! Відвідаємо історичний замок Дангуейр, прогуляємося кольоровими вулицями міста та послухаємо традиційну ірландську музику в місцевому пабі."
+
+msgid "Wicklow Mountains Hiking Trip"
+msgstr "Похід горами Уіклоу"
+
+msgid "Experience the breathtaking beauty of the Wicklow Mountains. This moderate-level hike takes us through Glendalough valley with stunning views of the upper and lower lakes."
+msgstr "Насолоджуйтесь захоплюючою красою гір Уіклоу. Похід середньої складності долиною Глендалох з чудовими видами на верхнє та нижнє озера."
+
+msgid "Wednesday Filming Locations Tour in Wicklow"
+msgstr "Тур локаціями зйомок серіалу «Венсдей» в Уіклоу"
+
+msgid "Explore the magical filming locations of the Wednesday series in County Wicklow. Visit the stunning landscapes that served as the backdrop for Nevermore Academy."
+msgstr "Дослідіть чарівні місця зйомок серіалу «Венсдей» в графстві Уіклоу. Відвідайте вражаючі пейзажі, що стали фоном для Академії Невермор."
+
+msgid "International Meetup in Dublin"
+msgstr "Міжнародна зустріч у Дубліні"
+
+msgid "Meet people from all over the world living in Dublin! This casual meetup is perfect for newcomers and anyone looking to expand their social circle in the city."
+msgstr "Знайомтесь із людьми з усього світу, які живуть у Дубліні! Ця невимушена зустріч ідеально підходить для новоприбулих та тих, хто хоче розширити коло спілкування."
+
+msgid "Language Exchange Night"
+msgstr "Ніч обміну мовами"
+
+msgid "Practice languages while making new friends! Bring your enthusiasm for learning and share your native language. All levels welcome."
+msgstr "Практикуйте мови та заводите нових друзів! Діліться ентузіазмом до навчання та рідною мовою. Ласкаво просимо всіх рівнів."
+
+msgid "Photography Walk"
+msgstr "Фото-прогулянка"
+
+msgid "Join fellow photography enthusiasts for a guided walk through Dublin's most photogenic spots. Bring any camera — phone cameras are welcome too!"
+msgstr "Приєднуйтесь до любителів фотографії на екскурсію наймальовничішими місцями Дубліна. Будь-яка камера — у тому числі смартфон — ласкаво просимо!"
+
+msgid "Coffee Meetup for Newcomers in Ireland"
+msgstr "Кавова зустріч для новоприбулих в Ірландії"
+
+msgid "New to Ireland? Come for a relaxed coffee meetup and meet other newcomers. Share tips, stories, and make lasting connections over great coffee."
+msgstr "Ви недавно в Ірландії? Приходьте на невимушену кавову зустріч та познайомтесь з іншими новоприбулими. Діліться порадами, історіями та заводите друзів за чашкою кави."
+
+msgid "Pub Social Night"
+msgstr "Вечірка в пабі"
+
+msgid "Experience the famous Irish pub culture! Join us for a fun night of live music, great craic, and the best Guinness in town."
+msgstr "Відчуйте знамениту ірландську культуру пабів! Приєднуйтесь до веселої вечірки з живою музикою та найкращим Guinness у місті."
+
+msgid "Art and Creativity Workshop"
+msgstr "Майстер-клас з мистецтва та творчості"
+
+msgid "Unleash your creative side in this hands-on art workshop. No experience needed — just bring your curiosity and willingness to try something new!"
+msgstr "Розкрийте свій творчий потенціал на практичному мистецькому майстер-класі. Досвід не потрібен — лише цікавість та готовність спробувати щось нове!"
+
+msgid "Language Exchange Community"
+msgstr "Спільнота обміну мовами"
+
+msgid "Connect with language learners and native speakers. Practice your target language in a friendly, supportive environment through regular meetups and events."
+msgstr "Спілкуйтесь з тими, хто вивчає мови, та носіями. Практикуйте мову в дружній підтримуючій атмосфері на зустрічах та подіях."
+
+msgid "Hiking Ireland"
+msgstr "Походи Ірландією"
+
+msgid "Explore Ireland's stunning trails and mountains together. From gentle coastal walks to challenging mountain hikes, there's something for everyone."
+msgstr "Досліджуйте разом мальовничі стежки та гори Ірландії. Від легких прибережних прогулянок до складних гірських походів — знайдеться щось для кожного."
+
+msgid "International Friends in Dublin"
+msgstr "Міжнародні друзі в Дубліні"
+
+msgid "A welcoming community for internationals living in Dublin. Meet people from around the world, share experiences, and build lasting friendships."
+msgstr "Гостинна спільнота для іноземців у Дубліні. Знайомтесь з людьми з усього світу, діліться досвідом та заводите міцну дружбу."
+
+msgid "Photography Club"
+msgstr "Фотоклуб"
+
+msgid "For photographers of all levels! Share your work, learn new techniques, and join photo walks around Ireland's most beautiful locations."
+msgstr "Для фотографів усіх рівнів! Діліться роботами, вчіть нові прийоми та долучайтесь до фото-прогулянок найкрасивішими місцями Ірландії."
+
+msgid "Tech and Startups Ireland"
+msgstr "Тех та стартапи Ірландії"
+
+msgid "Connect with tech professionals, startup founders, and anyone interested in the Irish tech scene. Networking events, talks, and hackathons."
+msgstr "Спілкуйтесь з IT-фахівцями, засновниками стартапів та всіма, хто цікавиться tech-середовищем Ірландії. Нетворкінг, доповіді та хакатони."
+
+msgid "Art and Creativity"
+msgstr "Мистецтво та творчість"
+
+msgid "A space for artists, creatives, and art enthusiasts. From painting workshops to gallery visits, let creativity bring us together."
+msgstr "Простір для митців, креативників та любителів мистецтва. Від майстер-класів з живопису до відвідування галерей — творчість об’єднує."
+
+msgid "Travel Buddies"
+msgstr "Подорожні друзі"
+
+msgid "Find travel companions for adventures around Ireland and beyond. Share travel tips, plan group trips, and explore new destinations together."
+msgstr "Знаходьте попутників для пригод в Ірландії та за її межами. Діліться порадами, плануйте групові поїздки та досліджуйте нові місця разом."
+
 #~ msgid "About"
 #~ msgstr "Про нас"
 

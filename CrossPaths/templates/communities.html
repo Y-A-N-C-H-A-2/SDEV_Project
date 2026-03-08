@@ -16,8 +16,9 @@
                 <div class="placeholder-img placeholder-community">👥</div>
             </div>
             <div class="community-card-body">
-                <h3>{{ community.name }}</h3>
-                <p>{{ community.description[:120] }}{% if community.description|length > 120 %}...{% endif %}</p>
+                <h3>{{ _(community.name) }}</h3>
+                {% set desc_tr = _(community.description) %}
+                <p>{{ desc_tr[:120] }}{% if desc_tr|length > 120 %}...{% endif %}</p>
                 <div class="community-footer">
                     <span class="member-count">👥 {{ community.members.count() }} {{ ngettext('member', 'members', community.members.count()) }}</span>
                 </div>

@@ -1113,3 +1113,100 @@ msgstr ""
 "Suas informações são privadas e compartilhadas apenas com participantes "
 "do evento"
 
+# Event and community seed content (displayed from DB)
+msgid "Trip to Galway with a Castle Visit"
+msgstr "Passeio a Galway com visita ao castelo"
+
+msgid "Join us for an amazing day trip to Galway! We will visit the historic Dunguaire Castle, explore the colorful streets of Galway city, and enjoy traditional Irish music in a local pub."
+msgstr "Junte-se a nós num passeio incrível a Galway! Visitaremos o histórico Castelo Dunguaire, exploraremos as ruas coloridas da cidade e curtiremos música irlandesa tradicional num pub local."
+
+msgid "Wicklow Mountains Hiking Trip"
+msgstr "Trilha nas Montanhas de Wicklow"
+
+msgid "Experience the breathtaking beauty of the Wicklow Mountains. This moderate-level hike takes us through Glendalough valley with stunning views of the upper and lower lakes."
+msgstr "Vivencie a beleza das Montanhas de Wicklow. Esta trilha de nível moderado passa pelo vale de Glendalough com vistas deslumbrantes dos lagos superior e inferior."
+
+msgid "Wednesday Filming Locations Tour in Wicklow"
+msgstr "Tour das locações de Wednesday em Wicklow"
+
+msgid "Explore the magical filming locations of the Wednesday series in County Wicklow. Visit the stunning landscapes that served as the backdrop for Nevermore Academy."
+msgstr "Explore as locações mágicas da série Wednesday no condado de Wicklow. Visite as paisagens que serviram de cenário para a Academia Nevermore."
+
+msgid "International Meetup in Dublin"
+msgstr "Encontro internacional em Dublin"
+
+msgid "Meet people from all over the world living in Dublin! This casual meetup is perfect for newcomers and anyone looking to expand their social circle in the city."
+msgstr "Conheça pessoas do mundo todo que vivem em Dublin! Este encontro descontraído é ideal para recém-chegados e quem quer ampliar o círculo social na cidade."
+
+msgid "Language Exchange Night"
+msgstr "Noite de intercâmbio de idiomas"
+
+msgid "Practice languages while making new friends! Bring your enthusiasm for learning and share your native language. All levels welcome."
+msgstr "Pratique idiomas e faça novos amigos! Traga seu entusiasmo por aprender e compartilhe sua língua nativa. Todos os níveis são bem-vindos."
+
+msgid "Photography Walk"
+msgstr "Passeio fotográfico"
+
+msgid "Join fellow photography enthusiasts for a guided walk through Dublin's most photogenic spots. Bring any camera — phone cameras are welcome too!"
+msgstr "Junte-se a entusiastas de fotografia num passeio guiado pelos pontos mais fotogênicos de Dublin. Qualquer câmera — inclusive do celular — é bem-vinda!"
+
+msgid "Coffee Meetup for Newcomers in Ireland"
+msgstr "Encontro de café para recém-chegados na Irlanda"
+
+msgid "New to Ireland? Come for a relaxed coffee meetup and meet other newcomers. Share tips, stories, and make lasting connections over great coffee."
+msgstr "Recém-chegando na Irlanda? Venha a um encontro de café descontraído e conheça outros recém-chegados. Troque dicas, histórias e faça amizades tomando um ótimo café."
+
+msgid "Pub Social Night"
+msgstr "Noite social no pub"
+
+msgid "Experience the famous Irish pub culture! Join us for a fun night of live music, great craic, and the best Guinness in town."
+msgstr "Vivencie a famosa cultura dos pubs irlandeses! Junte-se a nós numa noite de música ao vivo, boa prosa e o melhor Guinness da cidade."
+
+msgid "Art and Creativity Workshop"
+msgstr "Oficina de arte e criatividade"
+
+msgid "Unleash your creative side in this hands-on art workshop. No experience needed — just bring your curiosity and willingness to try something new!"
+msgstr "Solte seu lado criativo nesta oficina prática de arte. Não é preciso experiência — só curiosidade e vontade de experimentar algo novo!"
+
+msgid "Language Exchange Community"
+msgstr "Comunidade de intercâmbio de idiomas"
+
+msgid "Connect with language learners and native speakers. Practice your target language in a friendly, supportive environment through regular meetups and events."
+msgstr "Conecte-se com quem aprende idiomas e falantes nativos. Pratique o idioma que estuda num ambiente acolhedor em encontros e eventos regulares."
+
+msgid "Hiking Ireland"
+msgstr "Trilhas na Irlanda"
+
+msgid "Explore Ireland's stunning trails and mountains together. From gentle coastal walks to challenging mountain hikes, there's something for everyone."
+msgstr "Explore juntos as trilhas e montanhas da Irlanda. De caminhadas costeiras leves a trilhas de montanha desafiadoras — há opção para todos."
+
+msgid "International Friends in Dublin"
+msgstr "Amigos internacionais em Dublin"
+
+msgid "A welcoming community for internationals living in Dublin. Meet people from around the world, share experiences, and build lasting friendships."
+msgstr "Uma comunidade acolhedora para estrangeiros em Dublin. Conheça pessoas do mundo todo, compartilhe experiências e construa amizades duradouras."
+
+msgid "Photography Club"
+msgstr "Clube de fotografia"
+
+msgid "For photographers of all levels! Share your work, learn new techniques, and join photo walks around Ireland's most beautiful locations."
+msgstr "Para fotógrafos de todos os níveis! Compartilhe seu trabalho, aprenda novas técnicas e participe de passeios fotográficos pelos lugares mais bonitos da Irlanda."
+
+msgid "Tech and Startups Ireland"
+msgstr "Tech e startups Irlanda"
+
+msgid "Connect with tech professionals, startup founders, and anyone interested in the Irish tech scene. Networking events, talks, and hackathons."
+msgstr "Conecte-se com profissionais de tech, fundadores de startups e quem se interessa pelo cenário tech irlandês. Eventos de networking, palestras e hackathons."
+
+msgid "Art and Creativity"
+msgstr "Arte e criatividade"
+
+msgid "A space for artists, creatives, and art enthusiasts. From painting workshops to gallery visits, let creativity bring us together."
+msgstr "Um espaço para artistas, criativos e entusiastas de arte. De oficinas de pintura a visitas a galerias — a criatividade nos une."
+
+msgid "Travel Buddies"
+msgstr "Amigos de viagem"
+
+msgid "Find travel companions for adventures around Ireland and beyond. Share travel tips, plan group trips, and explore new destinations together."
+msgstr "Encontre companheiros de viagem para aventuras na Irlanda e além. Troque dicas, planeje viagens em grupo e explore novos destinos juntos."
+
