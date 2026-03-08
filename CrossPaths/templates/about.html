@@ -9,6 +9,17 @@
         <p class="page-subtitle">{{ _('Where cultures meet and friendships begin') }}</p>
     </header>
 
+    <!-- Purpose-aligned imagery: diversity (common) or locale-specific trust/social -->
+    <div class="about-banner">
+        {% if locale == 'uk_UA' %}
+        <img src="{{ url_for('static', filename='img/uk_UA/planning-trust.png') }}" alt="{{ _('Structured, verified events') }}" class="about-banner-img">
+        {% elif locale == 'pt_BR' %}
+        <img src="{{ url_for('static', filename='img/pt_BR/coffee-social.png') }}" alt="{{ _('Community and connection') }}" class="about-banner-img">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/common/flags-canopy.png') }}" alt="{{ _('Where cultures meet') }}" class="about-banner-img">
+        {% endif %}
+    </div>
+
     <div class="about-container">
         {% include "partials/about/content_" ~ locale ~ ".html" %}
 
