@@ -2,10 +2,18 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
 
 # Virtual environment
 venv/
+env/
+ENV/
+
+# Environment variables
 .env
+.env.local
+.flaskenv
 
 # Database
 *.db
@@ -13,9 +21,45 @@ venv/
 # Compiled translation files (generated from .po files)
 *.mo
 
+# Flask
+instance/
+.webassets-cache
+
+# Build / dist
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Uploads (keep folder, ignore contents)
+static/uploads/*
+!static/uploads/.gitkeep
 
 # OS
 .DS_Store

@@ -1,12 +1,7 @@
 """
-WSGI entry point for Heroku deployment
+WSGI entry point for Heroku deployment.
+App lives at repo root; no path hacks needed.
 """
-import sys
-import os
-
-# Add CrossPaths to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'CrossPaths'))
-
 from app import create_app, db
 
 app = create_app()

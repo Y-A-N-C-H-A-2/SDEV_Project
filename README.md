@@ -151,8 +151,10 @@ Irish/English-speaking users in Dublin need concise, direct content and efficien
 
 ## 4. Architecture and Structure
 
+The app lives at **repository root** (no nested app folder). Single `requirements.txt` for local and Heroku.
+
 ```
-Group4-Phase2/
+<repo root>/
 ├── app/
 │   ├── __init__.py          # App factory, Flask config, Babel setup
 │   ├── routes.py            # All route definitions
@@ -161,10 +163,10 @@ Group4-Phase2/
 │   └── seed.py              # Database seeding with sample data
 ├── templates/
 │   ├── base.html            # Master template – shared layout, nav, lang switcher
-│   ├── index.html           # Home page (Yana)
-│   ├── events.html          # Events listing page (Lívia)
-│   ├── profile.html         # User profile page (Kashish)
-│   ├── about.html           # About / community page (Simphiwe)
+│   ├── index.html           # Home page
+│   ├── events.html          # Events listing page
+│   ├── profile.html         # User profile page
+│   ├── about.html           # About / community page
 │   ├── login.html           # Login page
 │   ├── register.html        # Registration page
 │   ├── create_event.html    # Event creation page
@@ -193,9 +195,14 @@ Group4-Phase2/
 │   └── pt_BR/
 │       └── LC_MESSAGES/
 │           └── messages.po
+├── scripts/                 # Translation/seed helpers
 ├── babel.cfg
 ├── messages.pot
-├── requirements.txt
+├── requirements.txt         # Single source for deps (local + Heroku)
+├── run.py                   # Local dev entry point
+├── wsgi.py                  # Heroku/gunicorn entry point
+├── Procfile                 # Heroku: web process
+├── QUICKSTART.md            # Run instructions
 └── README.md
 ```
 

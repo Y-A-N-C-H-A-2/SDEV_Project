@@ -9,7 +9,7 @@ All files and folders have been created according to the architecture specificat
 ### 1. Set up Python Virtual Environment
 
 ```bash
-cd /Users/yanachulovska/SDEV_Project/CrossPaths
+cd /Users/yanachulovska/SDEV_Project
 
 # Create virtual environment
 python3 -m venv venv
@@ -20,16 +20,16 @@ source venv/bin/activate  # On macOS/Linux
 
 ### 2. Install Dependencies
 
-**Stay in the CrossPaths directory** (requirements.txt is here). The app uses SQLite by default, so you don’t need PostgreSQL for local dev.
+**From the project root** (where `requirements.txt` lives). The app uses SQLite by default; no PostgreSQL needed for local dev.
 
 ```bash
-# From CrossPaths directory, with venv activated:
+# With venv activated:
 pip install -r requirements.txt
 ```
 
 ### 3. Compile Translations
 
-**Run this from the CrossPaths directory** (the `translations` folder is here).
+**Run from the project root** (where the `translations` folder lives).
 
 ```bash
 # This compiles the .po files into .mo files that Flask-Babel needs
@@ -124,27 +124,27 @@ pybabel compile -d translations
 ## 🐛 Troubleshooting
 
 **Issue: "No module named 'flask_babel'" or "No module named 'flask'"**
-- Activate the venv: `source venv/bin/activate` (from CrossPaths).
-- Install deps from CrossPaths: `cd CrossPaths` then `pip install -r requirements.txt`.
+- Activate the venv: `source venv/bin/activate` (from project root).
+- Install deps: from project root, `pip install -r requirements.txt`.
 
 **Issue: "Could not open requirements file"**
-- Run `pip install -r requirements.txt` from inside the **CrossPaths** directory (this folder has its own requirements.txt).
+- Run `pip install -r requirements.txt` from the **project root**.
 
 **Issue: "Failed to build psycopg2-binary" / "pg_config executable not found"**
-- Use the **CrossPaths** requirements.txt (it omits psycopg2). The app uses SQLite when `DATABASE_URL` is not set.
+- Root `requirements.txt` includes psycopg2-binary for Heroku; the app uses SQLite when `DATABASE_URL` is not set.
 - For PostgreSQL later: install client libs (e.g. `brew install postgresql` on macOS) then `pip install psycopg2-binary==2.9.9`.
 
 **Issue: "No such file or directory: 'translations'"**
-- Run `pybabel compile -d translations` from the **CrossPaths** directory (where the `translations` folder lives).
+- Run `pybabel compile -d translations` from the **project root** (where the `translations` folder lives).
 
 **Issue: "Translations not working"**
-- From CrossPaths, compile translations: `pybabel compile -d translations`.
+- From project root, compile translations: `pybabel compile -d translations`.
 
 **Issue: "Template not found"**
-- Check that templates/ folder is at the root level of CrossPaths, not inside app/
+- Check that `templates/` is at project root, not inside `app/`
 
 **Issue: "Static files not loading"**
-- Check that static/ folder is at the root level of CrossPaths, not inside app/
+- Check that `static/` is at project root, not inside `app/`
 
 ## 📧 Support
 
