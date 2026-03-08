@@ -20,11 +20,16 @@ source venv/bin/activate  # On macOS/Linux
 
 ### 2. Install Dependencies
 
+**Stay in the CrossPaths directory** (requirements.txt is here). The app uses SQLite by default, so you don’t need PostgreSQL for local dev.
+
 ```bash
+# From CrossPaths directory, with venv activated:
 pip install -r requirements.txt
 ```
 
 ### 3. Compile Translations
+
+**Run this from the CrossPaths directory** (the `translations` folder is here).
 
 ```bash
 # This compiles the .po files into .mo files that Flask-Babel needs
@@ -118,17 +123,28 @@ pybabel compile -d translations
 
 ## 🐛 Troubleshooting
 
-**Issue: "No module named 'flask'"**
-- Solution: Make sure virtual environment is activated and dependencies are installed
+**Issue: "No module named 'flask_babel'" or "No module named 'flask'"**
+- Activate the venv: `source venv/bin/activate` (from CrossPaths).
+- Install deps from CrossPaths: `cd CrossPaths` then `pip install -r requirements.txt`.
+
+**Issue: "Could not open requirements file"**
+- Run `pip install -r requirements.txt` from inside the **CrossPaths** directory (this folder has its own requirements.txt).
+
+**Issue: "Failed to build psycopg2-binary" / "pg_config executable not found"**
+- Use the **CrossPaths** requirements.txt (it omits psycopg2). The app uses SQLite when `DATABASE_URL` is not set.
+- For PostgreSQL later: install client libs (e.g. `brew install postgresql` on macOS) then `pip install psycopg2-binary==2.9.9`.
+
+**Issue: "No such file or directory: 'translations'"**
+- Run `pybabel compile -d translations` from the **CrossPaths** directory (where the `translations` folder lives).
 
 **Issue: "Translations not working"**
-- Solution: Compile translations with `pybabel compile -d translations`
+- From CrossPaths, compile translations: `pybabel compile -d translations`.
 
 **Issue: "Template not found"**
-- Solution: Check that templates/ folder is at the root level, not inside app/
+- Check that templates/ folder is at the root level of CrossPaths, not inside app/
 
 **Issue: "Static files not loading"**
-- Solution: Check that static/ folder is at the root level, not inside app/
+- Check that static/ folder is at the root level of CrossPaths, not inside app/
 
 ## 📧 Support
 
