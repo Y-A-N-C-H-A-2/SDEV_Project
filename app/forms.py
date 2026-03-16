@@ -1,11 +1,19 @@
 """
 CrossPaths Forms
 """
+from datetime import datetime
+
 from flask_babel import lazy_gettext as _l
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, IntegerField, SelectField, TextAreaField, DateTimeLocalField, SelectMultipleField, widgets
 from wtforms.validators import DataRequired, Email, EqualTo, Length, Optional, NumberRange, ValidationError
+
+
+def validate_future_date(_form, field):
+    """Ensure date_time is in the future."""
+    if field.data and field.data <= datetime.utcnow():
+        raise ValidationError(_l('Event date and time must be in the future.'))
 
 
 CITY_CHOICES = [
@@ -99,6 +107,6 @@ class EventForm(FlaskForm):
     description = TextAreaField(_l('Description'), validators=[Optional()])
     city = SelectField(_l('City'), choices=CITY_CHOICES, validators=[DataRequired()])
     venue = StringField(_l('Location/Venue'), validators=[Optional(), Length(max=200)])
-    date_time = DateTimeLocalField(_l('Date and Time'), format=['%Y-%m-%dT%H:%M', '%Y-%m-%dT%H:%M:%S'], validators=[DataRequired()])
+    date_time = DateTimeLocalField(_l('Date and Time'), format=['%Y-%m-%dT%H:%M', '%Y-%m-%dT%H:%M:%S'], validators=[DataRequired(), validate_future_date])
     category = SelectField(_l('Category'), choices=CATEGORY_CHOICES, validators=[Optional()])
     photo = FileField(_l('Event Photo'), validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif'], _l('Images only!'))])

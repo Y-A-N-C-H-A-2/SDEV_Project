@@ -10,11 +10,13 @@ from flask import Blueprint, render_template, session, redirect, url_for, reques
 from flask_babel import gettext as _
 from flask_login import login_user, logout_user, login_required, current_user
 from PIL import Image
+from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.utils import secure_filename
 
 from app import db
-from app.models import User, Event, Community, Interest
-from app.forms import RegistrationForm, LoginForm, ProfileForm, EventForm, PREDEFINED_INTERESTS
+from app.models import User, Event, Community, Interest, community_events
+from app.forms import RegistrationForm, LoginForm, ProfileForm, EventForm
+from app.utils import sync_user_interests, is_same_origin_referrer
 
 bp = Blueprint('main', __name__)
 
@@ -51,23 +53,6 @@ def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
         return filename[:max_len]
     allowed = max_len - len(ext) - 1  # 1 for the dot
     return f"{name[:allowed]}.{ext}" if allowed > 0 else filename[:max_len]
-
-
-def _normalize_custom_interests(raw_text):
-    """Parse, strip, and capitalise a comma-separated list of custom interests.
-
-    Returns a deduplicated list of normalised interest names.
-    """
-    if not raw_text:
-        return []
-    seen = set()
-    result = []
-    for item in raw_text.split(','):
-        name = item.strip().capitalize()
-        if name and name.lower() not in seen:
-            seen.add(name.lower())
-            result.append(name)
-    return result
 
 
 @bp.route('/')
@@ -149,8 +134,9 @@ def create_event():
             db.session.commit()
             flash(_('Event created successfully!'), 'success')
             return redirect(url_for('main.events'))
-        except Exception:
+        except SQLAlchemyError:
             db.session.rollback()
+            current_app.logger.exception("Create event failed")
             flash(_('An error occurred while creating the event. Please try again.'), 'danger')
 
     return render_template('create_event.html', form=form)
@@ -168,7 +154,16 @@ def communities():
 def community_detail(community_id):
     """Single community detail page"""
     community = Community.query.get_or_404(community_id)
-    upcoming_events = Event.query.filter(Event.date_time >= datetime.utcnow()).order_by(Event.date_time.asc()).limit(5).all()
+    upcoming_events = (
+        Event.query.join(community_events, Event.id == community_events.c.event_id)
+        .filter(
+            community_events.c.community_id == community_id,
+            Event.date_time >= datetime.utcnow(),
+        )
+        .order_by(Event.date_time.asc())
+        .limit(5)
+        .all()
+    )
     return render_template('community_detail.html', community=community, events=upcoming_events)
 
 
@@ -182,8 +177,9 @@ def join_community(community_id):
             community.members.append(current_user)
             db.session.commit()
             flash(_('You joined %(name)s!', name=community.name), 'success')
-        except Exception:
+        except SQLAlchemyError:
             db.session.rollback()
+            current_app.logger.exception("Join community failed")
             flash(_('An error occurred. Please try again.'), 'danger')
     else:
         flash(_('You are already a member of this community.'), 'info')
@@ -200,8 +196,9 @@ def leave_community(community_id):
             community.members.remove(current_user)
             db.session.commit()
             flash(_('You left %(name)s.', name=community.name), 'info')
-        except Exception:
+        except SQLAlchemyError:
             db.session.rollback()
+            current_app.logger.exception("Leave community failed")
             flash(_('An error occurred. Please try again.'), 'danger')
     return redirect(url_for('main.community_detail', community_id=community_id))
 
@@ -233,30 +230,13 @@ def register():
         try:
             db.session.add(user)
             db.session.flush()
-
-            # Handle predefined interests
-            if form.interests.data:
-                for interest_name in form.interests.data:
-                    interest = Interest.query.filter_by(name=interest_name).first()
-                    if interest:
-                        user.interests.append(interest)
-
-            # Handle custom interests — normalise to title-case to avoid duplicates
-            for interest_name in _normalize_custom_interests(form.custom_interests.data):
-                interest = Interest.query.filter(
-                    db.func.lower(Interest.name) == interest_name.lower()
-                ).first()
-                if not interest:
-                    interest = Interest(name=interest_name, is_predefined=False)
-                    db.session.add(interest)
-                    db.session.flush()
-                user.interests.append(interest)
-
+            sync_user_interests(user, form.interests.data, form.custom_interests.data)
             db.session.commit()
             flash(_('Account created successfully! Please log in.'), 'success')
             return redirect(url_for('main.login'))
-        except Exception:
+        except SQLAlchemyError:
             db.session.rollback()
+            current_app.logger.exception("Registration failed")
             flash(_('An error occurred during registration. Please try again.'), 'danger')
 
     return render_template('register.html', form=form)
@@ -313,30 +293,16 @@ def edit_profile():
         current_user.nationality = form.nationality.data
         current_user.city = form.city.data if form.city.data else None
 
-        # Update interests
-        current_user.interests.clear()
-
-        if form.interests.data:
-            for interest_name in form.interests.data:
-                interest = Interest.query.filter_by(name=interest_name).first()
-                if interest:
-                    current_user.interests.append(interest)
-
-        for interest_name in _normalize_custom_interests(form.custom_interests.data):
-            interest = Interest.query.filter(
-                db.func.lower(Interest.name) == interest_name.lower()
-            ).first()
-            if not interest:
-                interest = Interest(name=interest_name, is_predefined=False)
-                db.session.add(interest)
-            current_user.interests.append(interest)
-
         try:
+            sync_user_interests(
+                current_user, form.interests.data, form.custom_interests.data
+            )
             db.session.commit()
             flash(_('Profile updated successfully!'), 'success')
             return redirect(url_for('main.profile'))
-        except Exception:
+        except SQLAlchemyError:
             db.session.rollback()
+            current_app.logger.exception("Edit profile failed")
             flash(_('An error occurred while updating your profile. Please try again.'), 'danger')
 
     elif request.method == 'GET':
@@ -361,10 +327,12 @@ def about():
 
 @bp.route('/set-language', methods=['POST'])
 def set_language():
-    """Handle language switching"""
+    """Handle language switching. Redirect only to same-origin URLs to avoid open redirect."""
     locale = request.form.get('locale', 'en_IE')
 
     if locale in ['en_IE', 'uk_UA', 'pt_BR']:
         session['lang'] = locale
 
-    return redirect(request.referrer or url_for('main.index'))
+    if is_same_origin_referrer(request, request.referrer):
+        return redirect(request.referrer)
+    return redirect(url_for('main.index'))
