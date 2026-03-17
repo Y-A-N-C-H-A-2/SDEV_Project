@@ -134,11 +134,19 @@ def create_app():
     csrf.init_app(app)
     babel.init_app(app, locale_selector=get_locale)
 
-    # User loader for Flask-Login
+    # User loader for Flask-Login (harden against invalid/tampered user_id in session)
     @login_manager.user_loader
     def load_user(user_id):
+        if user_id is None:
+            return None
+        try:
+            uid = int(user_id)
+            if uid <= 0:
+                return None
+        except (ValueError, TypeError):
+            return None
         from app.models import User
-        return db.session.get(User, int(user_id))
+        return db.session.get(User, uid)
 
     # Register routes
     from app import routes

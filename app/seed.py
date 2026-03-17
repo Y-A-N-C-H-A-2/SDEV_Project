@@ -4,6 +4,7 @@ CrossPaths Database Seed Data
 from datetime import datetime, timedelta
 
 from sqlalchemy import select
+from sqlalchemy.exc import ProgrammingError
 
 from app import db
 from app.models import Interest, Event, Community
@@ -138,9 +139,17 @@ SAMPLE_COMMUNITIES = [
 
 def seed_database():
     """Seed the database with initial data. Only runs if the database is empty."""
-    # Skip seeding if data already exists
-    if db.session.scalars(select(Interest).limit(1)).first() is not None:
-        return
+    # Ensure tables exist (e.g. init-db may have run against SQLite when Postgres wasn't ready yet)
+    try:
+        if db.session.scalars(select(Interest).limit(1)).first() is not None:
+            return
+    except ProgrammingError as e:
+        msg = str(e).lower()
+        if "does not exist" in msg or "undefinedtable" in msg:
+            from app import models  # noqa: F401 - ensure all models registered
+            db.create_all()
+        else:
+            raise
 
     # Add predefined interests
     for interest_name in PREDEFINED_INTERESTS:

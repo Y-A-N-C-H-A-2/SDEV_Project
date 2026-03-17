@@ -13,6 +13,7 @@ from PIL import Image
 from sqlalchemy import select, or_
 from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.utils import secure_filename
+from werkzeug.wrappers import Response
 
 from app import db
 from app.models import User, Event, Community, Interest, community_events
@@ -20,6 +21,18 @@ from app.forms import RegistrationForm, LoginForm, ProfileForm, EventForm
 from app.utils import sync_user_interests, is_same_origin_referrer
 
 bp = Blueprint('main', __name__)
+
+
+@bp.route('/health')
+def health():
+    """Health check: DB connectivity and tables. Returns 200 if OK, 503 with error body if not."""
+    try:
+        db.session.scalars(select(Event).limit(1)).first()
+        return Response('ok', status=200, mimetype='text/plain')
+    except SQLAlchemyError as e:
+        current_app.logger.exception("Health check failed: %s", e)
+        return Response(f"database error: {e!s}", status=503, mimetype='text/plain')
+
 
 # Maximum characters for the original filename portion of an upload
 _MAX_FILENAME_LEN = 200
@@ -60,12 +73,20 @@ def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
 @bp.route('/index')
 def index():
     """Home page"""
-    now = datetime.utcnow()
-    events = db.session.scalars(
-        select(Event).where(Event.date_time >= now).order_by(Event.date_time.asc()).limit(4)
-    ).all()
-    communities = db.session.scalars(select(Community).limit(4)).all()
-    return render_template('index.html', events=events, communities=communities)
+    try:
+        now = datetime.utcnow()
+        events = db.session.scalars(
+            select(Event).where(Event.date_time >= now).order_by(Event.date_time.asc()).limit(4)
+        ).all()
+        communities = db.session.scalars(select(Community).limit(4)).all()
+        return render_template('index.html', events=events, communities=communities)
+    except SQLAlchemyError as e:
+        current_app.logger.exception("Index failed (database): %s", e)
+        return Response(
+            f"Database unavailable. Run: flask init-db && flask seed-db. Error: {e!s}",
+            status=503,
+            mimetype='text/plain',
+        )
 
 
 @bp.route('/events')
