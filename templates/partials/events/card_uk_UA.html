@@ -1,37 +1,35 @@
-<!-- Ukrainian: Formal layout with verification badges and detailed info -->
+<!-- Ukrainian: Formal layout with detailed info -->
 <div class="event-card-formal">
     <div class="event-header">
         <h2 class="event-title">{{ _(event.title) }}</h2>
-        {% if event.verified %}
-        <span class="verified-badge">✓ {{ _('Verified Host') }}</span>
-        {% endif %}
     </div>
 
     <div class="event-details">
         <div class="event-detail-row">
             <span class="detail-label">{{ _('Date:') }}</span>
-            <span class="detail-value">{{ event.date }}</span>
+            <span class="detail-value">{{ event.date_time|datetimeformat('d MMM yyyy') }}</span>
         </div>
         <div class="event-detail-row">
             <span class="detail-label">{{ _('Time:') }}</span>
-            <span class="detail-value">{{ event.time }}</span>
+            <span class="detail-value">{{ event.date_time|datetimeformat('HH:mm') }}</span>
         </div>
         <div class="event-detail-row">
             <span class="detail-label">{{ _('Location:') }}</span>
-            <span class="detail-value">{{ event.location }}</span>
+            <span class="detail-value">{{ event.city }}{% if event.venue %} · {{ event.venue }}{% endif %}</span>
         </div>
+        {% if event.organizer %}
         <div class="event-detail-row">
             <span class="detail-label">{{ _('Host:') }}</span>
-            <span class="detail-value">{{ event.host }}</span>
+            <span class="detail-value">{{ event.organizer.name }}</span>
         </div>
+        {% endif %}
         <div class="event-detail-row">
-            <span class="detail-label">{{ _('Capacity:') }}</span>
-            <span class="detail-value">{{ event.attendees }}/{{ event.max_attendees }} {{ _('registered') }}</span>
+            <span class="detail-label">{{ _('Registered:') }}</span>
+            <span class="detail-value">{{ event.attendees.count() }} {{ _('people attending') }}</span>
         </div>
     </div>
 
     <div class="event-actions">
-        <button class="btn btn-primary">{{ _('View Full Details & Agenda') }}</button>
-        <button class="btn btn-secondary">{{ _('View Safety Information') }}</button>
+        <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="btn btn-primary">{{ _('View Full Details & Agenda') }}</a>
     </div>
 </div>

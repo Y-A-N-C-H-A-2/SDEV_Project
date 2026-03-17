@@ -3,14 +3,16 @@
     <div class="event-header-warm">
         <h2 class="event-title">{{ _(event.title) }} 🎊</h2>
         <div class="event-social">
-            <span class="attendee-count">{{ event.attendees }} {{ _('people going') }}</span>
+            <span class="attendee-count">{{ event.attendees.count() }} {{ _('people going') }}</span>
         </div>
     </div>
 
     <div class="event-info-warm">
-        <p class="event-datetime">📅 {{ event.date }} · ⏰ {{ event.time }}</p>
-        <p class="event-location">📍 {{ event.location }}</p>
-        <p class="event-host">{{ _('Hosted by') }} {{ event.host }}</p>
+        <p class="event-datetime">📅 {{ event.date_time|datetimeformat('d MMM yyyy') }} · ⏰ {{ event.date_time|datetimeformat('HH:mm') }}</p>
+        <p class="event-location">📍 {{ event.city }}{% if event.venue %} · {{ event.venue }}{% endif %}</p>
+        {% if event.organizer %}
+        <p class="event-host">{{ _('Hosted by') }} {{ event.organizer.name }}</p>
+        {% endif %}
     </div>
 
     <div class="event-vibe">
@@ -18,7 +20,6 @@
     </div>
 
     <div class="event-actions-warm">
-        <button class="btn btn-primary warm">{{ _('I\'m Going!') }} ❤️</button>
-        <button class="btn btn-secondary warm">{{ _('See Who\'s Attending') }}</button>
+        <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="btn btn-primary warm">{{ _('View Details') }}</a>
     </div>
 </div>
