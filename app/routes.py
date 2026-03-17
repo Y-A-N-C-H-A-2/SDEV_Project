@@ -59,46 +59,23 @@ def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
 @bp.route('/index')
 def index():
     """Home page"""
-    events = Event.query.filter(Event.date_time >= datetime.utcnow()).order_by(Event.date_time.asc()).limit(4).all()
-    communities = Community.query.limit(4).all()
-    return render_template('index.html', events=events, communities=communities)
+    from app import get_locale
+    return redirect(url_for('crosspaths.home', locale=get_locale()))
 
 
 @bp.route('/events')
 def events():
     """Events listing page with search and city filter"""
-    city = request.args.get('city', '')
-    search = request.args.get('search', '')
-    page = request.args.get('page', 1, type=int)
-
-    query = Event.query.filter(Event.date_time >= datetime.utcnow())
-
-    if city:
-        query = query.filter(Event.city == city)
-    if search:
-        search_pattern = f'%{search}%'
-        query = query.filter(
-            db.or_(
-                Event.title.ilike(search_pattern),
-                Event.description.ilike(search_pattern)
-            )
-        )
-
-    pagination = query.order_by(Event.date_time.asc()).paginate(page=page, per_page=12, error_out=False)
-    return render_template(
-        'events.html',
-        events=pagination.items,
-        pagination=pagination,
-        selected_city=city,
-        search_query=search,
-    )
+    from app import get_locale
+    return redirect(url_for('crosspaths.events', locale=get_locale()))
 
 
 @bp.route('/event/<int:event_id>')
 def event_detail(event_id):
     """Single event detail page"""
-    event = Event.query.get_or_404(event_id)
-    return render_template('event_detail.html', event=event)
+    # Legacy route: redirect to MVP detail (IDs differ across data sources).
+    from app import get_locale
+    return redirect(url_for('crosspaths.events', locale=get_locale()))
 
 
 @bp.route('/create-event', methods=['GET', 'POST'])
@@ -322,7 +299,8 @@ def edit_profile():
 @bp.route('/about')
 def about():
     """About / community page"""
-    return render_template('about.html')
+    from app import get_locale
+    return redirect(url_for('crosspaths.about', locale=get_locale()))
 
 
 @bp.route('/set-language', methods=['POST'])

@@ -1,56 +1,83 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _('%(name)s – CrossPaths', name=_(event.title)) }}{% endblock %}
+{% block title %}{{ _('%(name)s – CrossPaths', name=_(event.title[locale])) }}{% endblock %}
 
 {% block content %}
 <div class="detail-page">
     <div class="detail-container">
         <div class="detail-image">
-            {% if event.photo and not event.photo.startswith('placeholder') %}
-            <img src="{{ url_for('static', filename=('img/seed/' if event.photo.startswith('event_') else 'uploads/') + event.photo) }}" alt="{{ _(event.title) }}">
-            {% else %}
-            <div class="placeholder-img placeholder-event-large">📅</div>
-            {% endif %}
+            <img src="{{ event.image_url }}" alt="{{ _(event.title[locale]) }}">
         </div>
 
         <div class="detail-content">
             <div class="detail-header">
-                {% if event.category %}
-                <span class="event-category-badge">{{ _(event.category) }}</span>
-                {% endif %}
-                <h1>{{ _(event.title) }}</h1>
+                <h1>{{ _(event.title[locale]) }}</h1>
             </div>
 
             <div class="detail-meta">
                 <div class="meta-item">
                     <span class="meta-icon">🗓️</span>
-                    <span>{{ event.date_time|datetimeformat('EEEE, d MMMM yyyy') }} {{ _('at') }} {{ event.date_time|datetimeformat('HH:mm') }}</span>
+                    <span>{{ format_date(event.day, format='full') }} {{ _('at') }} {{ event.start_time.strftime('%H:%M') }}</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-icon">📍</span>
-                    <span>{{ event.city }}{% if event.venue %} · {{ event.venue }}{% endif %}</span>
+                    <span>{{ _(event.location) }}</span>
                 </div>
-                {% if event.organizer %}
                 <div class="meta-item">
                     <span class="meta-icon">👤</span>
-                    <span>{{ _('Organized by') }} {{ event.organizer.name }}</span>
+                    <span>{{ _('Host') }}: {{ event.host_name }}
+                      {% if locale == 'uk_UA' and event.host_verified %}
+                        <span class="badge-verified-text">✓ {{ _('Verified') }}</span>
+                      {% endif %}
+                    </span>
                 </div>
-                {% endif %}
                 <div class="meta-item">
                     <span class="meta-icon">👥</span>
-                    <span>{{ event.attendees.count() }} {{ _('people attending') }}</span>
+                    <span>{{ event.attendee_count }} {{ _('people attending') }}</span>
                 </div>
             </div>
 
-            {% if event.description %}
             <div class="detail-description">
-                <h2>{{ _('About this event') }}</h2>
-                <p>{{ _(event.description) }}</p>
+                {% if locale == 'uk_UA' %}
+                  <h2>{{ _('Event details') }}</h2>
+                  <p>{{ _(event.description[locale]) }}</p>
+
+                  <div class="cp-uk-safety-box">
+                    <p class="cp-safety-note"><span class="icon-lock" aria-hidden="true">🔒</span> {{ _('All events are hosted by verified organizers in safe, public locations') }}</p>
+                    <p><strong>{{ _('This event is free and safe to attend') }}</strong></p>
+                  </div>
+
+                  <h2>{{ _('Full agenda') }}</h2>
+                  <ol class="cp-agenda">
+                    {% for item in event.agenda %}
+                      <li>{{ _(item) }}</li>
+                    {% endfor %}
+                  </ol>
+                {% elif locale == 'pt_BR' %}
+                  <h2>{{ _('What to expect ❤️') }}</h2>
+                  <p>{{ _(event.description[locale]) }}</p>
+
+                  <h2>{{ _("Who's coming?") }}</h2>
+                  <div class="cp-attendee-list">
+                    {% for name in event.pt_attendees_first_names %}
+                      <span class="cp-attendee-pill">{{ name }}</span>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <h2>{{ _('About this event') }}</h2>
+                  <p>{{ _(event.description[locale]) }}</p>
+                {% endif %}
             </div>
-            {% endif %}
 
             <div class="detail-actions">
-                <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('← Back to Events') }}</a>
+                <a href="{{ url_for('crosspaths.events', locale=locale) }}" class="btn btn-secondary">{{ _('← Back to Events') }}</a>
+                {% if locale == 'pt_BR' %}
+                  <a href="{{ url_for('crosspaths.events', locale=locale) }}" class="btn btn-primary warm">{{ _('Join the Group 🎉') }}</a>
+                {% elif locale == 'uk_UA' %}
+                  <a href="{{ url_for('crosspaths.events', locale=locale) }}" class="btn btn-primary">{{ _('View Full Details & Agenda') }}</a>
+                {% else %}
+                  <a href="{{ url_for('crosspaths.events', locale=locale) }}" class="btn btn-primary">{{ _('Join Event') }}</a>
+                {% endif %}
             </div>
         </div>
     </div>

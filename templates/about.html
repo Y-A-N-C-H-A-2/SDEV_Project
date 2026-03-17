@@ -4,26 +4,35 @@
 
 {% block content %}
 <div class="about-page">
-    <header class="page-header">
-        <h1>{{ _('About CrossPaths') }}</h1>
-        <p class="page-subtitle">{{ _('Where cultures meet and friendships begin') }}</p>
-    </header>
+  <header class="page-header">
+    <h1>{{ _('About CrossPaths') }}</h1>
+    {% if locale == 'uk_UA' %}
+      <p class="page-subtitle">{{ _('Structured, verified events for newcomers in Dublin') }}</p>
+    {% elif locale == 'pt_BR' %}
+      <p class="page-subtitle">{{ _('Warm group connections for newcomers in Dublin 🎉') }}</p>
+    {% else %}
+      <p class="page-subtitle">{{ _('A simple way to meet people through events') }}</p>
+    {% endif %}
+  </header>
 
-    <!-- Single unique image per page (not used in hero or discover on index) -->
-    <div class="about-banner">
-        <img src="{{ url_for('static', filename='img/common/discover-venue-templebar.png') }}" alt="{{ _('Where cultures meet') }}" class="about-banner-img">
-    </div>
+  <div class="about-container">
+    {% if locale == 'uk_UA' %}
+      <p>{{ _('CrossPaths is a culturally adaptive platform for international newcomers in Dublin, Ireland.') }}</p>
+      <p>{{ _('We provide structured, verified event information so you can plan confidently and attend safely.') }}</p>
 
-    <div class="about-container">
-        {% include "partials/about/content_" ~ locale ~ ".html" %}
+      <h2>{{ _('Trust & safety') }}</h2>
+      <p><span class="icon-lock" aria-hidden="true">🔒</span> {{ _('All events are hosted by verified organizers in safe, public locations') }}</p>
+      <p>{{ _('Host verification (✓), attendee counts, and full agendas are always shown for clarity.') }}</p>
+    {% elif locale == 'pt_BR' %}
+      <p>{{ _('CrossPaths helps newcomers find their people in Dublin — with warm group events and real-life connections. 🎉') }}</p>
+      <p>{{ _('No swiping — just pick a vibe, show up, and make friends. ❤️') }}</p>
 
-        <!-- Contact Section (shared across all locales) -->
-        <section class="contact-section">
-            <h2>{{ _('Get in Touch') }}</h2>
-            <p>{{ _('Questions or feedback? We\'d love to hear from you!') }}</p>
-            <p><strong>{{ _('Email:') }}</strong> hello@crosspaths.ie</p>
-            <p><strong>{{ _('Based in:') }}</strong> Dublin, Ireland</p>
-        </section>
-    </div>
+      <h2>{{ _('Our vibe') }}</h2>
+      <p>{{ _('Friendly hosts, group energy, and plenty of moments to talk naturally.') }}</p>
+    {% else %}
+      <p>{{ _('CrossPaths helps international newcomers in Dublin find events and meet people — simply.') }}</p>
+      <p>{{ _('No swiping. Just event-based connection.') }}</p>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

@@ -16,6 +16,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
+# --- CrossPaths MVP (locale-prefixed) ---
+msgid "Meet new people in Dublin"
+msgstr "Познайомтеся з новими людьми в Дубліні"
+
+msgid "Simple, friendly events to help you settle in."
+msgstr "Прості та дружні події, які допоможуть вам адаптуватися."
+
+msgid "Browse Events"
+msgstr "Переглянути події"
+
+msgid "Safe, structured social events in Dublin"
+msgstr "Безпечні та структуровані соціальні події в Дубліні"
+
+msgid "Browse verified events with clear agendas and trusted hosts."
+msgstr "Переглядайте перевірені події з чітким порядком денним та надійними організаторами."
+
+msgid "View Full Details & Agenda"
+msgstr "Переглянути повні деталі та програму"
+
+msgid "How it works"
+msgstr "Як це працює"
+
+msgid "Browse Verified Events 📋"
+msgstr "1. Перегляньте перевірені події 📋"
+
+msgid "Check Host Credentials ✓"
+msgstr "2. Перевірте організатора ✓"
+
+msgid "Attend Safely 🔒"
+msgstr "3. Відвідайте безпечно 🔒"
+
+msgid "Each event includes a clear agenda and attendee count for certainty and planning."
+msgstr "Кожна подія містить чітку програму та кількість учасників для впевненого планування."
+
+msgid "Verified organizers are clearly marked so you can choose with confidence."
+msgstr "Перевірені організатори позначені, щоб ви могли обирати впевнено."
+
+msgid "All events are hosted by verified organizers in safe, public locations"
+msgstr "Усі події проводяться перевіреними організаторами у безпечних громадських місцях"
+
+msgid "Verified speed-friending events in Dublin"
+msgstr "Перевірені події швидких знайомств у Дубліні"
+
+msgid "Structured agendas, verified hosts, and clear safety information."
+msgstr "Структуровані програми, перевірені організатори та зрозуміла інформація про безпеку."
+
+msgid "Agenda included"
+msgstr "Програма включена"
+
+msgid "Attendees"
+msgstr "Учасники"
+
+msgid "Host"
+msgstr "Організатор"
+
+msgid "Verified"
+msgstr "Перевірено"
+
+msgid "Verified host"
+msgstr "Перевірений організатор"
+
+msgid "Event details"
+msgstr "Деталі події"
+
+msgid "This event is free and safe to attend"
+msgstr "Цю подію можна відвідати безкоштовно та безпечно"
+
+msgid "Full agenda"
+msgstr "Повна програма"
+
+msgid "About this event"
+msgstr "Про подію"
+
+msgid "Events in Dublin"
+msgstr "Події в Дубліні"
+
+msgid "Pick one, show up, meet someone new."
+msgstr "Оберіть подію, приходьте та знайомтеся."
+
+msgid "Join Event"
+msgstr "Приєднатися до події"
+
+msgid "← Back to Events"
+msgstr "← Назад до подій"
+
+msgid "About – CrossPaths"
+msgstr "Про CrossPaths"
+
+msgid "Structured, verified events for newcomers in Dublin"
+msgstr "Структуровані та перевірені події для новоприбулих у Дубліні"
+
+msgid "CrossPaths is a culturally adaptive platform for international newcomers in Dublin, Ireland."
+msgstr "CrossPaths — культурно адаптивна платформа для міжнародних новоприбулих у Дубліні, Ірландія."
+
+msgid "We provide structured, verified event information so you can plan confidently and attend safely."
+msgstr "Ми надаємо структуровану та перевірену інформацію про події, щоб ви могли впевнено планувати та безпечно відвідувати."
+
+msgid "Trust & safety"
+msgstr "Довіра та безпека"
+
+msgid "Host verification (✓), attendee counts, and full agendas are always shown for clarity."
+msgstr "Для ясності завжди показуються перевірка організатора (✓), кількість учасників та повна програма."
+
 #: app/routes.py:139
 msgid "Uploaded file is not a valid image."
 msgstr "Завантажений файл не є дійсним зображенням."

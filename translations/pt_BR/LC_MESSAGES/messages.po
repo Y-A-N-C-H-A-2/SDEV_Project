@@ -18,6 +18,103 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
+# --- CrossPaths MVP (locale-prefixed) ---
+msgid "Meet new people in Dublin"
+msgstr "Conheça gente nova em Dublin"
+
+msgid "Simple, friendly events to help you settle in."
+msgstr "Eventos simples e acolhedores pra te ajudar a se sentir em casa."
+
+msgid "Browse Events"
+msgstr "Ver eventos"
+
+msgid "Find your people in Dublin 🎉"
+msgstr "Encontre a sua galera em Dublin 🎉"
+
+msgid "Warm group events for newcomers — come as you are, leave with friends ❤️"
+msgstr "Eventos em grupo bem acolhedores pra newcomers — chega como você é, sai com amigos ❤️"
+
+msgid "Join the Group 🎉"
+msgstr "Entrar no grupo 🎉"
+
+msgid "Good vibes, real connections"
+msgstr "Boas energias, conexões de verdade"
+
+msgid "Meet New People ❤️"
+msgstr "Conheça gente nova ❤️"
+
+msgid "Enjoy Together 🙌"
+msgstr "Curta junto 🙌"
+
+msgid "Pick a fun event and jump into a welcoming group."
+msgstr "Escolhe um evento legal e entra num grupo acolhedor."
+
+msgid "Short rounds + easy prompts make it natural to connect."
+msgstr "Rodadas rápidas + perguntas simples deixam tudo mais natural."
+
+msgid "Shared experiences turn into friendships — quickly."
+msgstr "Experiências em grupo viram amizade — rapidinho."
+
+msgid "Group events in Dublin (good vibes only) 🎉"
+msgstr "Eventos em grupo em Dublin (só good vibes) 🎉"
+
+msgid "Pick a date, bring your energy, and meet your new crew ❤️"
+msgstr "Escolhe a data, traz a energia e conhece sua nova galera ❤️"
+
+msgid "Group energy"
+msgstr "Energia de grupo"
+
+msgid "going"
+msgstr "confirmadas"
+
+msgid "Attendees preview"
+msgstr "Prévia de participantes"
+
+msgid "What to expect ❤️"
+msgstr "O que esperar ❤️"
+
+msgid "Who's coming?"
+msgstr "Quem vai?"
+
+msgid "About this event"
+msgstr "Sobre o evento"
+
+msgid "Events in Dublin"
+msgstr "Eventos em Dublin"
+
+msgid "Pick one, show up, meet someone new."
+msgstr "Escolhe um, aparece e conhece alguém novo."
+
+msgid "Join Event"
+msgstr "Entrar no evento"
+
+msgid "← Back to Events"
+msgstr "← Voltar para eventos"
+
+msgid "About – CrossPaths"
+msgstr "Sobre – CrossPaths"
+
+msgid "Warm group connections for newcomers in Dublin 🎉"
+msgstr "Conexões em grupo (bem quentinhas) pra newcomers em Dublin 🎉"
+
+msgid "A simple way to meet people through events"
+msgstr "Um jeito simples de conhecer pessoas por eventos"
+
+msgid "CrossPaths helps newcomers find their people in Dublin — with warm group events and real-life connections. 🎉"
+msgstr "O CrossPaths ajuda newcomers a encontrarem sua galera em Dublin — com eventos em grupo e conexões na vida real. 🎉"
+
+msgid "No swiping — just pick a vibe, show up, and make friends. ❤️"
+msgstr "Sem swipe — escolhe a vibe, aparece e faz amizade. ❤️"
+
+msgid "Our vibe"
+msgstr "Nossa vibe"
+
+msgid "Friendly hosts, group energy, and plenty of moments to talk naturally."
+msgstr "Hosts gente boa, energia de grupo e muitos momentos pra conversar naturalmente."
+
+msgid "No swiping. Just event-based connection."
+msgstr "Sem swipe. Só conexão por eventos."
+
 #: app/routes.py:139
 msgid "Uploaded file is not a valid image."
 msgstr "O arquivo enviado não é uma imagem válida."

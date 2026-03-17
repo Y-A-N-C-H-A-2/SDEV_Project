@@ -4,104 +4,78 @@
 
 {% block content %}
 <div class="events-page">
-    <header class="page-header">
-        <h1>{{ _('Upcoming Events') }}</h1>
-        <p class="page-subtitle">{{ _('Find events happening across Ireland') }}</p>
-    </header>
+  <header class="page-header">
+    {% if locale == 'uk_UA' %}
+      <h1>{{ _('Verified speed-friending events in Dublin') }}</h1>
+      <p class="page-subtitle">{{ _('Structured agendas, verified hosts, and clear safety information.') }}</p>
+    {% elif locale == 'pt_BR' %}
+      <h1>{{ _('Group events in Dublin (good vibes only) 🎉') }}</h1>
+      <p class="page-subtitle">{{ _('Pick a date, bring your energy, and meet your new crew ❤️') }}</p>
+    {% else %}
+      <h1>{{ _('Events in Dublin') }}</h1>
+      <p class="page-subtitle">{{ _('Pick one, show up, meet someone new.') }}</p>
+    {% endif %}
+  </header>
 
-    <!-- Search and Filter -->
-    <div class="events-filters">
-        <form method="GET" action="{{ url_for('main.events') }}" class="filter-form">
-            <div class="filter-row">
-                <div class="search-box">
-                    <input type="text" name="search" placeholder="{{ _('Search events...') }}" 
-                           value="{{ search_query }}" class="form-input">
-                </div>
-                <div class="city-filter">
-                    <select name="city" class="form-select">
-                        <option value="">{{ _('All Cities') }}</option>
-                        <option value="Dublin" {% if selected_city == 'Dublin' %}selected{% endif %}>{{ _('Dublin') }}</option>
-                        <option value="Galway" {% if selected_city == 'Galway' %}selected{% endif %}>{{ _('Galway') }}</option>
-                        <option value="Cork" {% if selected_city == 'Cork' %}selected{% endif %}>{{ _('Cork') }}</option>
-                        <option value="Limerick" {% if selected_city == 'Limerick' %}selected{% endif %}>{{ _('Limerick') }}</option>
-                        <option value="Waterford" {% if selected_city == 'Waterford' %}selected{% endif %}>{{ _('Waterford') }}</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">{{ _('Search') }}</button>
-                {% if search_query or selected_city %}
-                <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('Clear') }}</a>
-                {% endif %}
-            </div>
-        </form>
-    </div>
-
-    <!-- Events List -->
-    <div class="events-container">
-        {% for event in events %}
-        <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="event-card">
-            <div class="event-card-image">
-                {% if event.photo and not event.photo.startswith('placeholder') %}
-                <img src="{{ url_for('static', filename=('img/seed/' if event.photo.startswith('event_') else 'uploads/') + event.photo) }}" alt="{{ _(event.title) }}">
-                {% else %}
-                <div class="placeholder-img placeholder-event">📅</div>
-                {% endif %}
-                {% if event.category %}
-                <span class="event-category-badge">{{ _(event.category) }}</span>
-                {% endif %}
-            </div>
-            <div class="event-card-body">
-                <h3 class="event-title">{{ _(event.title) }}</h3>
-                {% if event.description %}
-                {% set desc_tr = _(event.description) %}
-                <p class="event-description">{{ desc_tr[:150] }}{% if desc_tr|length > 150 %}...{% endif %}</p>
-                {% endif %}
-                <div class="event-details">
-                    <p class="event-meta">🗓️ {{ event.date_time|datetimeformat('d MMMM yyyy') }} {{ _('at') }} {{ event.date_time|datetimeformat('HH:mm') }}</p>
-                    <p class="event-meta">📍 {{ event.city }}{% if event.venue %} · {{ event.venue }}{% endif %}</p>
-                    {% if event.organizer %}
-                    <p class="event-meta">👤 {{ _('Organized by') }} {{ event.organizer.name }}</p>
-                    {% endif %}
-                </div>
-                <div class="event-footer">
-                    <span class="attendee-count">{{ event.attendees.count() }} {{ _('attending') }}</span>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
-
-    {% if not events %}
-    <div class="no-events">
-        <div class="empty-state">
-            <span class="empty-icon">🔍</span>
-            <h3>{{ _('No events found') }}</h3>
-            <p>{{ _('Try adjusting your search or filter, or check back soon for new events!') }}</p>
-            {% if current_user.is_authenticated %}
-            <a href="{{ url_for('main.create_event') }}" class="btn btn-primary">{{ _('Create an Event') }}</a>
-            {% endif %}
+  <div class="events-container">
+    {% for event in events %}
+      <div class="event-card {% if locale == 'uk_UA' %}event-card-formal{% elif locale == 'pt_BR' %}event-card-warm{% else %}event-card-minimal{% endif %}">
+        <div class="event-card-image">
+          <img src="{{ event.image_url }}" alt="{{ _(event.title[locale]) }}">
+          {% if locale == 'pt_BR' %}
+            <div class="cp-photo-overlay">{{ _('Group energy') }}</div>
+          {% endif %}
         </div>
-    </div>
-    {% endif %}
+        <div class="event-card-body">
+          <div class="cp-event-title-row">
+            <h3 class="event-title">{{ _(event.title[locale]) }}</h3>
+            {% if locale == 'uk_UA' and event.host_verified %}
+              <span class="badge-verified" title="{{ _('Verified host') }}">✓</span>
+            {% endif %}
+          </div>
 
-    <!-- Pagination -->
-    {% if pagination and pagination.pages > 1 %}
-    <nav class="pagination-nav" aria-label="Page navigation">
-        <ul class="pagination">
-            {% if pagination.has_prev %}
-            <li><a href="{{ url_for('main.events', page=pagination.prev_num, city=selected_city, search=search_query) }}" class="btn btn-secondary">&laquo; {{ _('Previous') }}</a></li>
-            {% endif %}
-            {% for p in pagination.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-                {% if p %}
-                <li><a href="{{ url_for('main.events', page=p, city=selected_city, search=search_query) }}" class="btn {% if p == pagination.page %}btn-primary{% else %}btn-secondary{% endif %}">{{ p }}</a></li>
-                {% else %}
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                {% endif %}
-            {% endfor %}
-            {% if pagination.has_next %}
-            <li><a href="{{ url_for('main.events', page=pagination.next_num, city=selected_city, search=search_query) }}" class="btn btn-secondary">{{ _('Next') }} &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+          <p class="event-meta">🗓️ {{ format_date(event.day, format='long') }} {{ _('at') }} {{ event.start_time.strftime('%H:%M') }}</p>
+          <p class="event-meta">📍 {{ _(event.location) }}</p>
+
+          {% if locale == 'uk_UA' %}
+            <div class="cp-trust-row">
+              <span class="icon-agenda" aria-hidden="true">📋</span>
+              <span>{{ _('Agenda included') }}</span>
+              <span class="cp-dot">·</span>
+              <span>{{ _('Attendees') }}: <strong>{{ event.attendee_count }}</strong></span>
+            </div>
+            <div class="cp-host-row">
+              <span>{{ _('Host') }}: <strong>{{ event.host_name }}</strong></span>
+              {% if event.host_verified %}
+                <span class="badge-verified-text">✓ {{ _('Verified') }}</span>
+              {% endif %}
+            </div>
+            <p class="cp-safety-note"><span class="icon-lock" aria-hidden="true">🔒</span> {{ _('All events are hosted by verified organizers in safe, public locations') }}</p>
+            <div class="event-actions">
+              <a class="btn btn-primary" href="{{ url_for('crosspaths.event_detail', locale=locale, event_id=event.id) }}">{{ _('View Full Details & Agenda') }}</a>
+            </div>
+          {% elif locale == 'pt_BR' %}
+            <p class="event-description">{{ _(event.description[locale]) }}</p>
+            <div class="cp-social-cues">
+              <span class="attendee-count">{{ event.attendee_count }} {{ _('going') }}</span>
+              <div class="cp-faces" aria-label="{{ _('Attendees preview') }}">
+                {% for name in event.pt_attendees_first_names[:5] %}
+                  <span class="cp-face">{{ name[:1] }}</span>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="event-actions">
+              <a class="btn btn-primary warm" href="{{ url_for('crosspaths.event_detail', locale=locale, event_id=event.id) }}">{{ _('Join the Group 🎉') }}</a>
+            </div>
+          {% else %}
+            <p class="event-description">{{ _(event.description[locale]) }}</p>
+            <div class="event-actions">
+              <a class="btn btn-primary" href="{{ url_for('crosspaths.event_detail', locale=locale, event_id=event.id) }}">{{ _('Join Event') }}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

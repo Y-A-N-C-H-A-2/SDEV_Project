@@ -36,8 +36,8 @@ body {
 
 /* Ireland (en_IE) – sage/mint, minimal */
 body.locale-en_IE {
-    --color-primary: #7EB8A8;
-    --color-primary-hover: #6AA396;
+    --color-primary: #6B8F71;
+    --color-primary-hover: #5f7f64;
     --color-hero-start: #7EB8A8;
     --color-hero-end: #A8D4C7;
     --color-nav-hover: #7EB8A8;
@@ -52,8 +52,8 @@ body.locale-en_IE {
 
 /* Ukraine (uk_UA) – periwinkle/lavender, formal */
 body.locale-uk_UA {
-    --color-primary: #8EA8C8;
-    --color-primary-hover: #7A96B8;
+    --color-primary: #7B7FC4;
+    --color-primary-hover: #6a6fb2;
     --color-hero-start: #8EA8C8;
     --color-hero-end: #B8CCE0;
     --color-nav-hover: #8EA8C8;
@@ -68,8 +68,8 @@ body.locale-uk_UA {
 
 /* Brazil (pt_BR) – warm orange, social */
 body.locale-pt_BR {
-    --color-primary: #FF8C00;
-    --color-primary-hover: #E07B00;
+    --color-primary: #E8733A;
+    --color-primary-hover: #cf6734;
     --color-hero-start: #FF8C00;
     --color-hero-end: #FF6B35;
     --color-nav-hover: #FF8C00;
@@ -171,6 +171,129 @@ button {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
+}
+
+/* ==========================================
+   CrossPaths MVP helpers
+   ========================================== */
+
+.cp-event-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.badge-verified,
+.badge-verified-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.badge-verified {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 800;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.badge-verified-text {
+    background: var(--color-accent-soft);
+    color: var(--color-primary);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cp-trust-row,
+.cp-host-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+    color: #2c3e50;
+}
+
+.cp-dot {
+    opacity: 0.7;
+}
+
+.cp-safety-note {
+    margin-top: 0.75rem;
+    background: var(--color-accent-soft);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: #2c3e50;
+}
+
+.cp-uk-safety-box {
+    margin: 1rem 0;
+}
+
+.cp-agenda {
+    margin: 0.5rem 0 0 1.25rem;
+}
+
+.cp-photo-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.cp-social-cues {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.cp-faces {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.cp-face {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.cp-attendee-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.cp-attendee-pill {
+    background: var(--color-accent-soft);
+    color: var(--color-primary);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 /* ==========================================
