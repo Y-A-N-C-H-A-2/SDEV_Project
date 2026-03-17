@@ -1,4 +1,4 @@
-# Group 4 – CrossPaths
+# Group 8 – CrossPaths
 
 > *Where cultures meet and friendships begin.*
 
