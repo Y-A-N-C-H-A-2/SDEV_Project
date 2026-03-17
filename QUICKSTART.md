@@ -129,6 +129,59 @@ pybabel compile -d translations
 - **translations/*/LC_MESSAGES/messages.po** - Translation strings
 - **run.py** - Application entry point
 
+## ☁️ Deploy to Heroku (why it works locally but not on Heroku)
+
+Locally the app uses **SQLite** (no `DATABASE_URL`). On Heroku you **must** use **PostgreSQL** and run DB setup there.
+
+### 1. Add Heroku Postgres (required)
+
+If you haven’t already, attach Postgres so `DATABASE_URL` is set:
+
+```bash
+heroku addons:create heroku-postgresql:essential-0 --app YOUR_APP_NAME
+```
+
+Replace `YOUR_APP_NAME` with your app (e.g. `cross-paths-c113cfc29b42`). Check: **Heroku Dashboard → your app → Resources** – you should see “Heroku Postgres”.
+
+### 2. Set config vars
+
+In **Dashboard → your app → Settings → Config Vars**, add:
+
+| Key         | Value        |
+|------------|--------------|
+| `SECRET_KEY` | a long random string (e.g. from `python3 -c "import secrets; print(secrets.token_hex(32))"`) |
+
+Do **not** set `FLASK_ENV=production` unless you have set `SECRET_KEY` (otherwise the app will refuse to start).
+
+### 3. Create tables and seed data on Heroku
+
+After each deploy, Heroku runs the **release** phase (`flask init-db && flask seed-db`). If the release failed or you’re not sure, run it manually:
+
+```bash
+heroku run "FLASK_APP=wsgi:app flask init-db" --app YOUR_APP_NAME
+heroku run "FLASK_APP=wsgi:app flask seed-db" --app YOUR_APP_NAME
+```
+
+### 4. See the real error
+
+- **Health check:** open `https://YOUR_APP.herokuapp.com/health`  
+  - If you get **503** and a message like `no such table: events`, run the commands in step 3.
+- **Logs:** run `heroku logs --tail --app YOUR_APP_NAME`, then load the app and watch the traceback.
+
+### 5. Push and deploy
+
+```bash
+git push heroku main
+```
+
+If you don’t have a `heroku` remote yet:
+
+```bash
+heroku git:remote -a YOUR_APP_NAME
+```
+
+---
+
 ## 🐛 Troubleshooting
 
 **Issue: "No module named 'flask_babel'" or "No module named 'flask'"**
@@ -153,6 +206,12 @@ pybabel compile -d translations
 
 **Issue: "Static files not loading"**
 - Check that `static/` is at project root, not inside `app/`
+
+**Issue: "Works locally but 500 / Application Error on Heroku"**
+- Ensure **Heroku Postgres** is attached (see “Deploy to Heroku” above). Without it, the app has no persistent DB.
+- Set **SECRET_KEY** in Heroku Config Vars.
+- Run `flask init-db` and `flask seed-db` on Heroku (see step 3 under “Deploy to Heroku”).
+- Open `/health` on the live app; if it returns 503, the message is the DB error. Check **Activity → Release** in the dashboard to see if the release phase failed.
 
 ## 📧 Support
 

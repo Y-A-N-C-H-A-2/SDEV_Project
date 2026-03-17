@@ -97,8 +97,8 @@ def create_app():
     app.config['BABEL_SUPPORTED_LOCALES'] = ['en_IE', 'uk_UA', 'pt_BR']
     app.config['BABEL_TRANSLATION_DIRECTORIES'] = str(translation_dir)
 
-    # Database configuration
-    database_url = os.environ.get('DATABASE_URL')
+    # Database configuration (Heroku sets DATABASE_URL when Postgres add-on is attached)
+    database_url = (os.environ.get('DATABASE_URL') or '').strip()
     if database_url:
         # Heroku provides 'postgres://' URLs but SQLAlchemy 1.4+ requires 'postgresql://'
         if database_url.startswith('postgres://'):

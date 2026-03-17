@@ -25,13 +25,13 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/health')
 def health():
-    """Health check: DB connectivity and tables. Returns 200 if OK, 503 with error body if not."""
+    """Health check: DB connectivity and tables. Returns 200 if OK, 503 if not."""
     try:
         db.session.scalars(select(Event).limit(1)).first()
         return Response('ok', status=200, mimetype='text/plain')
     except SQLAlchemyError as e:
         current_app.logger.exception("Health check failed: %s", e)
-        return Response(f"database error: {e!s}", status=503, mimetype='text/plain')
+        return Response('Service temporarily unavailable', status=503, mimetype='text/plain')
 
 
 # Maximum characters for the original filename portion of an upload
@@ -82,11 +82,7 @@ def index():
         return render_template('index.html', events=events, communities=communities)
     except SQLAlchemyError as e:
         current_app.logger.exception("Index failed (database): %s", e)
-        return Response(
-            f"Database unavailable. Run: flask init-db && flask seed-db. Error: {e!s}",
-            status=503,
-            mimetype='text/plain',
-        )
+        return Response('Service temporarily unavailable', status=503, mimetype='text/plain')
 
 
 @bp.route('/events')

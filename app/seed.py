@@ -146,6 +146,7 @@ def seed_database():
     except ProgrammingError as e:
         msg = str(e).lower()
         if "does not exist" in msg or "undefinedtable" in msg:
+            db.session.rollback()
             from app import models  # noqa: F401 - ensure all models registered
             db.create_all()
         else:
