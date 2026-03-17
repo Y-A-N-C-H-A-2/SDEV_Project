@@ -103,6 +103,10 @@ def create_app():
         # Heroku provides 'postgres://' URLs but SQLAlchemy 1.4+ requires 'postgresql://'
         if database_url.startswith('postgres://'):
             database_url = database_url.replace('postgres://', 'postgresql://', 1)
+        # Heroku Postgres requires SSL; add sslmode=require if not already present
+        if 'postgresql://' in database_url and 'sslmode=' not in database_url:
+            separator = '&' if '?' in database_url else '?'
+            database_url = f'{database_url}{separator}sslmode=require'
         app.config['SQLALCHEMY_DATABASE_URI'] = database_url
     else:
         # Default to SQLite for local development; use PostgreSQL in production
