@@ -18,9 +18,6 @@ ENV/
 # Database
 *.db
 
-# Compiled translation files (generated from .po files)
-*.mo
-
 # Flask
 instance/
 .webassets-cache

@@ -4,6 +4,7 @@ Culturally adaptive speed-friending platform
 """
 import logging
 import os
+import sys
 from pathlib import Path
 
 import click
@@ -51,8 +52,14 @@ def _compile_translations_if_needed(translation_dir: Path) -> None:
             with mo_path.open('wb') as mo_file:
                 mofile.write_mo(mo_file, catalog)
             logging.info("Compiled translation catalog: %s", mo_path)
-        except Exception:
+        except Exception as e:
             logging.exception("Failed to compile translation catalog for locale '%s'", locale_dir.name)
+            # Ensure failure is visible in Heroku logs (e.g. read-only filesystem)
+            print(
+                f"[CrossPaths] Translation compile failed for {locale_dir.name}: {e}. "
+                "Ensure .mo files are committed or filesystem is writable.",
+                file=sys.stderr,
+            )
 
 def get_locale():
     """
