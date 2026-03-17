@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 
 import click
-from flask import Flask, g, request
+from flask import Flask, request
 from flask_babel import Babel
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -57,19 +57,9 @@ def _compile_translations_if_needed(translation_dir: Path) -> None:
 def get_locale():
     """
     Determine the best locale to use for the request.
-    Checks URL prefix (view args) first, then session, then accepts-language.
+    Checks session first, then accepts language header.
     """
     from flask import session
-    # URL prefix locale (/<locale>/...) wins for culturally adaptive pages.
-    url_locale = None
-    if request and request.view_args:
-        url_locale = request.view_args.get('locale')
-    if not url_locale and hasattr(g, 'url_locale'):
-        url_locale = getattr(g, 'url_locale')
-    if url_locale in ['en_IE', 'uk_UA', 'pt_BR']:
-        session['lang'] = url_locale
-        return url_locale
-
     if 'lang' in session:
         return session['lang']
     return request.accept_languages.best_match(['en_IE', 'uk_UA', 'pt_BR']) or 'en_IE'
@@ -134,22 +124,10 @@ def create_app():
     from app import routes
     app.register_blueprint(routes.bp)
 
-    # Locale-prefixed MVP routes (/<locale>/...)
-    from app.crosspaths_mvp import bp as crosspaths_bp
-    app.register_blueprint(crosspaths_bp)
-
     # Context processor to inject locale into all templates
     @app.context_processor
     def inject_locale():
-        from flask_babel import format_date
-        return dict(locale=get_locale(), format_date=format_date)
-
-    @app.before_request
-    def _capture_url_locale():
-        if request and request.view_args:
-            loc = request.view_args.get('locale')
-            if loc in app.config['BABEL_SUPPORTED_LOCALES']:
-                g.url_locale = loc
+        return dict(locale=get_locale())
 
     # ---------- CLI commands (replaces automatic db.create_all / seed) ----------
     @app.cli.command('init-db')

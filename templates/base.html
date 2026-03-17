@@ -12,11 +12,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                {% if request.endpoint and request.endpoint.startswith('crosspaths.') %}
-                <a href="{{ url_for('crosspaths.home', locale=locale) }}">
-                {% else %}
                 <a href="{{ url_for('main.index') }}">
-                {% endif %}
                     <img src="{{ url_for('static', filename='img/common/logo.jpg') }}" alt="{{ _('CrossPaths logo') }}" class="logo">
                     <h1>{{ _('CrossPaths') }}</h1>
                 </a>
@@ -27,11 +23,6 @@
             </button>
             
             <ul class="nav-links">
-                {% if request.endpoint and request.endpoint.startswith('crosspaths.') %}
-                <li><a href="{{ url_for('crosspaths.home', locale=locale) }}">{{ _('Home') }}</a></li>
-                <li><a href="{{ url_for('crosspaths.events', locale=locale) }}">{{ _('Events') }}</a></li>
-                <li><a href="{{ url_for('crosspaths.about', locale=locale) }}">{{ _('About') }}</a></li>
-                {% else %}
                 <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
                 <li><a href="{{ url_for('main.events') }}">{{ _('Events') }}</a></li>
                 <li><a href="{{ url_for('main.communities') }}">{{ _('Communities') }}</a></li>
@@ -43,24 +34,10 @@
                 <li><a href="{{ url_for('main.login') }}">{{ _('Login') }}</a></li>
                 <li><a href="{{ url_for('main.register') }}" class="btn btn-primary btn-nav">{{ _('Register') }}</a></li>
                 {% endif %}
-                {% endif %}
             </ul>
             
             <!-- Language Switcher -->
             <div class="language-switcher">
-                {% if request.endpoint and request.endpoint.startswith('crosspaths.') %}
-                <div class="locale-form">
-                    <a href="{{ switch_locale_url('en_IE') }}"
-                       class="locale-btn {% if locale == 'en_IE' %}active{% endif %}"
-                       title="{{ _('English (Ireland)') }}">🇮🇪 EN</a>
-                    <a href="{{ switch_locale_url('uk_UA') }}"
-                       class="locale-btn {% if locale == 'uk_UA' %}active{% endif %}"
-                       title="{{ _('Ukrainian') }}">🇺🇦 UK</a>
-                    <a href="{{ switch_locale_url('pt_BR') }}"
-                       class="locale-btn {% if locale == 'pt_BR' %}active{% endif %}"
-                       title="{{ _('Portuguese (Brazil)') }}">🇧🇷 PT</a>
-                </div>
-                {% else %}
                 <form method="POST" action="{{ url_for('main.set_language') }}" class="locale-form">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <button type="submit" name="locale" value="en_IE" 
@@ -79,7 +56,6 @@
                         🇧🇷 PT
                     </button>
                 </form>
-                {% endif %}
             </div>
         </div>
     </nav>
