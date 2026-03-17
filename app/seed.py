@@ -2,6 +2,9 @@
 CrossPaths Database Seed Data
 """
 from datetime import datetime, timedelta
+
+from sqlalchemy import select
+
 from app import db
 from app.models import Interest, Event, Community
 
@@ -136,7 +139,7 @@ SAMPLE_COMMUNITIES = [
 def seed_database():
     """Seed the database with initial data. Only runs if the database is empty."""
     # Skip seeding if data already exists
-    if Interest.query.first() is not None:
+    if db.session.scalars(select(Interest).limit(1)).first() is not None:
         return
 
     # Add predefined interests

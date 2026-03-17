@@ -10,6 +10,7 @@ from flask import Blueprint, render_template, session, redirect, url_for, reques
 from flask_babel import gettext as _
 from flask_login import login_user, logout_user, login_required, current_user
 from PIL import Image
+from sqlalchemy import select, or_
 from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.utils import secure_filename
 
@@ -59,8 +60,11 @@ def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
 @bp.route('/index')
 def index():
     """Home page"""
-    events = Event.query.filter(Event.date_time >= datetime.utcnow()).order_by(Event.date_time.asc()).limit(4).all()
-    communities = Community.query.limit(4).all()
+    now = datetime.utcnow()
+    events = db.session.scalars(
+        select(Event).where(Event.date_time >= now).order_by(Event.date_time.asc()).limit(4)
+    ).all()
+    communities = db.session.scalars(select(Community).limit(4)).all()
     return render_template('index.html', events=events, communities=communities)
 
 
@@ -71,20 +75,20 @@ def events():
     search = request.args.get('search', '')
     page = request.args.get('page', 1, type=int)
 
-    query = Event.query.filter(Event.date_time >= datetime.utcnow())
-
+    stmt = select(Event).where(Event.date_time >= datetime.utcnow())
     if city:
-        query = query.filter(Event.city == city)
+        stmt = stmt.where(Event.city == city)
     if search:
         search_pattern = f'%{search}%'
-        query = query.filter(
-            db.or_(
+        stmt = stmt.where(
+            or_(
                 Event.title.ilike(search_pattern),
                 Event.description.ilike(search_pattern)
             )
         )
+    stmt = stmt.order_by(Event.date_time.asc())
 
-    pagination = query.order_by(Event.date_time.asc()).paginate(page=page, per_page=12, error_out=False)
+    pagination = db.paginate(stmt, page=page, per_page=12, error_out=False)
     return render_template(
         'events.html',
         events=pagination.items,
@@ -97,7 +101,7 @@ def events():
 @bp.route('/event/<int:event_id>')
 def event_detail(event_id):
     """Single event detail page"""
-    event = Event.query.get_or_404(event_id)
+    event = db.get_or_404(Event, event_id)
     return render_template('event_detail.html', event=event)
 
 
@@ -146,24 +150,25 @@ def create_event():
 def communities():
     """Communities listing page"""
     page = request.args.get('page', 1, type=int)
-    pagination = Community.query.paginate(page=page, per_page=12, error_out=False)
+    pagination = db.paginate(select(Community), page=page, per_page=12, error_out=False)
     return render_template('communities.html', communities=pagination.items, pagination=pagination)
 
 
 @bp.route('/community/<int:community_id>')
 def community_detail(community_id):
     """Single community detail page"""
-    community = Community.query.get_or_404(community_id)
-    upcoming_events = (
-        Event.query.join(community_events, Event.id == community_events.c.event_id)
-        .filter(
+    community = db.get_or_404(Community, community_id)
+    now = datetime.utcnow()
+    upcoming_events = db.session.scalars(
+        select(Event)
+        .join(community_events, Event.id == community_events.c.event_id)
+        .where(
             community_events.c.community_id == community_id,
-            Event.date_time >= datetime.utcnow(),
+            Event.date_time >= now,
         )
         .order_by(Event.date_time.asc())
         .limit(5)
-        .all()
-    )
+    ).all()
     return render_template('community_detail.html', community=community, events=upcoming_events)
 
 
@@ -171,7 +176,7 @@ def community_detail(community_id):
 @login_required
 def join_community(community_id):
     """Join a community"""
-    community = Community.query.get_or_404(community_id)
+    community = db.get_or_404(Community, community_id)
     if current_user not in community.members.all():
         try:
             community.members.append(current_user)
@@ -190,7 +195,7 @@ def join_community(community_id):
 @login_required
 def leave_community(community_id):
     """Leave a community"""
-    community = Community.query.get_or_404(community_id)
+    community = db.get_or_404(Community, community_id)
     if current_user in community.members.all():
         try:
             community.members.remove(current_user)
@@ -212,7 +217,7 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         # Check if email already exists
-        existing_user = User.query.filter_by(email=form.email.data).first()
+        existing_user = db.session.scalars(select(User).where(User.email == form.email.data)).first()
         if existing_user:
             flash(_('Email already registered. Please log in.'), 'danger')
             return redirect(url_for('main.login'))
@@ -250,7 +255,7 @@ def login():
 
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
+        user = db.session.scalars(select(User).where(User.email == form.email.data)).first()
         if user and user.check_password(form.password.data):
             login_user(user)
             flash(_('Welcome back!'), 'success')

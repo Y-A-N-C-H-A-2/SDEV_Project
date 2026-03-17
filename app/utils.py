@@ -3,6 +3,8 @@ CrossPaths shared utilities
 """
 from urllib.parse import urlparse
 
+from sqlalchemy import select, func
+
 from app import db
 from app.models import Interest
 
@@ -34,13 +36,13 @@ def sync_user_interests(user, predefined_names, custom_text):
 
     if predefined_names:
         for interest_name in predefined_names:
-            interest = Interest.query.filter_by(name=interest_name).first()
+            interest = db.session.scalars(select(Interest).where(Interest.name == interest_name)).first()
             if interest:
                 user.interests.append(interest)
 
     for interest_name in normalize_custom_interests(custom_text or ''):
-        interest = Interest.query.filter(
-            db.func.lower(Interest.name) == interest_name.lower()
+        interest = db.session.scalars(
+            select(Interest).where(func.lower(Interest.name) == interest_name.lower())
         ).first()
         if not interest:
             interest = Interest(name=interest_name, is_predefined=False)
