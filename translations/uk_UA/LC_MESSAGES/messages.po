@@ -18,52 +18,52 @@ msgstr ""
 
 # --- CrossPaths MVP (locale-prefixed) ---
 msgid "Meet new people in Dublin"
-msgstr "Познайомтеся з новими людьми в Дубліні"
+msgstr "Познайомтеся з новими людьми в Дубліні у структурованому та безпечному форматі"
 
 msgid "Simple, friendly events to help you settle in."
-msgstr "Прості та дружні події, які допоможуть вам адаптуватися."
+msgstr "Прості, чітко організовані заходи з перевіреними організаторами, які допоможуть вам безпечно адаптуватися."
 
 msgid "Browse Events"
-msgstr "Переглянути події"
+msgstr "Переглянути деталі безпечних заходів"
 
 msgid "Safe, structured social events in Dublin"
-msgstr "Безпечні та структуровані соціальні події в Дубліні"
+msgstr "Безпечні, структуровані соціальні заходи в Дубліні з перевіреними організаторами"
 
 msgid "Browse verified events with clear agendas and trusted hosts."
-msgstr "Переглядайте перевірені події з чітким порядком денним та надійними організаторами."
+msgstr "Переглядайте верифіковані заходи з чітким порядком денним, описом формату участі та надійними організаторами."
 
 msgid "View Full Details & Agenda"
-msgstr "Переглянути повні деталі та програму"
+msgstr "Переглянути деталі та програму заходу"
 
 msgid "How it works"
 msgstr "Як це працює"
 
 msgid "Browse Verified Events 📋"
-msgstr "1. Перегляньте перевірені події 📋"
+msgstr "1. Ознайомтеся з верифікованими заходами 📋"
 
 msgid "Check Host Credentials ✓"
-msgstr "2. Перевірте організатора ✓"
+msgstr "2. Перевірте інформацію про організатора заходу ✓"
 
 msgid "Attend Safely 🔒"
-msgstr "3. Відвідайте безпечно 🔒"
+msgstr "3. Прийміть зважене рішення та відвідайте захід безпечно 🔒"
 
 msgid "Each event includes a clear agenda and attendee count for certainty and planning."
-msgstr "Кожна подія містить чітку програму та кількість учасників для впевненого планування."
+msgstr "Кожен захід містить чітку програму, очікувану кількість учасників та опис формату, щоб ви могли планувати участь з максимальною визначеністю."
 
 msgid "Verified organizers are clearly marked so you can choose with confidence."
-msgstr "Перевірені організатори позначені, щоб ви могли обирати впевнено."
+msgstr "Верифіковані організатори чітко позначені, щоб ви могли обирати захід усвідомлено та впевнено."
 
 msgid "All events are hosted by verified organizers in safe, public locations"
-msgstr "Усі події проводяться перевіреними організаторами у безпечних громадських місцях"
+msgstr "Усі заходи проводяться верифікованими організаторами у безпечних, публічних місцях"
 
 msgid "Verified speed-friending events in Dublin"
-msgstr "Перевірені події швидких знайомств у Дубліні"
+msgstr "Верифіковані заходи швидких знайомств у Дубліні з акцентом на безпеку"
 
 msgid "Structured agendas, verified hosts, and clear safety information."
-msgstr "Структуровані програми, перевірені організатори та зрозуміла інформація про безпеку."
+msgstr "Структуровані програми, верифіковані організатори та прозора, детальна інформація про безпеку участі."
 
 msgid "Agenda included"
-msgstr "Програма включена"
+msgstr "Програма заходу доступна заздалегідь"
 
 msgid "Attendees"
 msgstr "Учасники"
@@ -75,28 +75,28 @@ msgid "Verified"
 msgstr "Перевірено"
 
 msgid "Verified host"
-msgstr "Перевірений організатор"
+msgstr "Верифікований організатор заходу"
 
 msgid "Event details"
-msgstr "Деталі події"
+msgstr "Деталі заходу"
 
 msgid "This event is free and safe to attend"
-msgstr "Цю подію можна відвідати безкоштовно та безпечно"
+msgstr "Цей захід є безкоштовним для участі та проводиться у безпечному, публічному місці з верифікованим організатором"
 
 msgid "Full agenda"
-msgstr "Повна програма"
+msgstr "Повна програма заходу"
 
 msgid "About this event"
-msgstr "Про подію"
+msgstr "Про цей захід"
 
 msgid "Events in Dublin"
-msgstr "Події в Дубліні"
+msgstr "Заходи в Дубліні"
 
 msgid "Pick one, show up, meet someone new."
-msgstr "Оберіть подію, приходьте та знайомтеся."
+msgstr "Оберіть захід, заздалегідь ознайомтеся з програмою та місцем проведення і познайомтеся з новими людьми у безпечному середовищі."
 
 msgid "Join Event"
-msgstr "Приєднатися до події"
+msgstr "Переглянути деталі та програму заходу"
 
 msgid "← Back to Events"
 msgstr "← Назад до подій"
@@ -105,19 +105,19 @@ msgid "About – CrossPaths"
 msgstr "Про CrossPaths"
 
 msgid "Structured, verified events for newcomers in Dublin"
-msgstr "Структуровані та перевірені події для новоприбулих у Дубліні"
+msgstr "Структуровані, верифіковані заходи для новоприбулих у Дубліні з чіткими правилами та гарантіями безпеки"
 
 msgid "CrossPaths is a culturally adaptive platform for international newcomers in Dublin, Ireland."
-msgstr "CrossPaths — культурно адаптивна платформа для міжнародних новоприбулих у Дубліні, Ірландія."
+msgstr "CrossPaths — культурно адаптивна, верифікована платформа для міжнародних новоприбулих у Дубліні, Ірландія, яка пропонує лише безпечні, структуровані заходи."
 
 msgid "We provide structured, verified event information so you can plan confidently and attend safely."
-msgstr "Ми надаємо структуровану та перевірену інформацію про події, щоб ви могли впевнено планувати та безпечно відвідувати."
+msgstr "Ми надаємо структуровану, верифіковану інформацію про кожен захід (формат, місце, кількість учасників та правила), щоб ви могли планувати участь упевнено та відвідувати заходи безпечно."
 
 msgid "Trust & safety"
 msgstr "Довіра та безпека"
 
 msgid "Host verification (✓), attendee counts, and full agendas are always shown for clarity."
-msgstr "Для ясності завжди показуються перевірка організатора (✓), кількість учасників та повна програма."
+msgstr "Для прозорості завжди відображаються статус верифікації організатора (✓), очікувана кількість учасників та повна програма заходу."
 
 #: app/routes.py:139
 msgid "Uploaded file is not a valid image."
@@ -581,15 +581,15 @@ msgstr ""
 #: templates/index.html:13 templates/partials/index/features_en_IE.html:4
 #: templates/partials/index/hero_en_IE.html:7 templates/profile.html:95
 msgid "Browse Events"
-msgstr "Переглянути події"
+msgstr "Переглянути деталі безпечних заходів"
 
 #: templates/index.html:15
 msgid "Join Now"
-msgstr "Приєднатися"
+msgstr "Створити обліковий запис та ознайомитися із заходами"
 
 #: templates/index.html:26 templates/index.html:57
 msgid "View All →"
-msgstr "Переглянути все →"
+msgstr "Переглянути всі доступні заходи →"
 
 #: templates/index.html:56
 msgid "Featured Communities"
@@ -625,15 +625,15 @@ msgstr "Відчуйте традиційну музику, мистецтво, 
 
 #: templates/index.html:100
 msgid "Ready to Meet New Friends?"
-msgstr "Готові зустріти нових друзів?"
+msgstr "Готові познайомитися з новими людьми у безпечному форматі?"
 
 #: templates/index.html:101
 msgid "Join thousands of people connecting through events across Ireland"
-msgstr "Приєднуйтесь до тисяч людей, які знайомляться через події по всій Ірландії"
+msgstr "Приєднуйтеся до тисяч людей, які знайомляться через структуровані, безпечні заходи по всій Ірландії"
 
 #: templates/index.html:103
 msgid "View Upcoming Events"
-msgstr "Переглянути майбутні події"
+msgstr "Переглянути майбутні заходи та їх програму"
 
 # Profile Page
 #: templates/login.html:3
@@ -804,7 +804,7 @@ msgstr ""
 
 #: templates/partials/about/content_en_IE.html:21
 msgid "View Events"
-msgstr "Переглянути події"
+msgstr "Переглянути перелік заходів"
 
 #: templates/partials/about/content_en_IE.html:22
 msgid "Create Profile"
@@ -1097,43 +1097,43 @@ msgstr "Розширюйте своє коло спілкування й не п
 #: templates/partials/index/features_uk_UA.html:5
 #: templates/partials/index/hero_uk_UA.html:8
 msgid "Browse Verified Events"
-msgstr "Переглянути перевірені події ✓"
+msgstr "Переглянути перелік верифікованих заходів ✓"
 
 #: templates/partials/index/features_uk_UA.html:6
 msgid ""
 "Review detailed event information including agenda, host credentials, and "
 "safety details."
 msgstr ""
-"Переглянути детальну інформацію про подію, включаючи порядок денний, дані "
-"організатора та деталі безпеки."
+"Перегляньте детальну інформацію про кожен захід: порядок денний, дані "
+"верифікованого організатора, обмеження за кількістю учасників та деталі безпеки."
 
 #: templates/partials/index/features_uk_UA.html:10
 msgid "Register Securely"
-msgstr "Безпечна реєстрація"
+msgstr "Безпечна та контрольована реєстрація"
 
 #: templates/partials/index/features_uk_UA.html:11
 msgid "RSVP with confirmed details. Receive event reminders and location information."
 msgstr ""
-"Підтвердження реєстрації з деталями. Отримайте нагадування про подію та "
-"інформацію про місце."
+"Підтвердіть участь лише після ознайомлення з усіма деталями. Отримайте "
+"нагадування про захід, точну адресу, час початку та контактні дані організатора."
 
 #: templates/partials/index/features_uk_UA.html:15
 msgid "Follow Structured Ice-Breakers"
-msgstr "Слідуйте структурованим розминкам"
+msgstr "Дотримуйтеся чітко структурованих знайомств"
 
 #: templates/partials/index/features_uk_UA.html:16
 msgid "Participate in timed conversation rounds with prepared topics and prompts."
-msgstr "Беріть участь у розмовах за розкладом із підготовленими темами та підказками."
+msgstr "Беріть участь у розмовах за заздалегідь підготовленим сценарієм із визначеним часом, темами та запитаннями."
 
 #: templates/partials/index/features_uk_UA.html:20
 msgid "Build Your Network"
-msgstr "Розбудуйте свою мережу"
+msgstr "Розбудуйте свою мережу контактів"
 
 #: templates/partials/index/features_uk_UA.html:21
 msgid "Connect with people you met and attend future events with your new friends."
 msgstr ""
-"Зв'яжіться з людьми, яких ви зустріли, та відвідуйте майбутні події з новими "
-"друзями."
+"Підтримуйте зв'язок із людьми, з якими ви познайомилися, та відвідуйте майбутні "
+"заходи разом у передбачуваному та безпечному форматі."
 
 #: templates/partials/index/hero_en_IE.html:3
 msgid "Connect with international newcomers in Dublin through speed-friending events."
@@ -1168,14 +1168,14 @@ msgid ""
 "CrossPaths is a verified platform for meeting new friends in Dublin through "
 "structured speed-friending events."
 msgstr ""
-"CrossPaths – це перевірена платформа для знайомства з новими друзями в "
-"Дубліні через структуровані події швидких знайомств."
+"CrossPaths – це верифікована платформа для знайомства з новими людьми в "
+"Дубліні через структуровані заходи швидких знайомств."
 
 #: templates/partials/index/hero_uk_UA.html:4
 msgid "All events are hosted by verified organizers in safe, public locations."
 msgstr ""
-"Усі події проводяться перевіреними організаторами в безпечних публічних "
-"місцях."
+"Усі заходи проводяться верифікованими організаторами у безпечних, публічних "
+"місцях із чітко визначеними правилами участі."
 
 #: templates/partials/index/hero_uk_UA.html:11
 msgid "Learn More About Safety"
@@ -1438,3 +1438,30 @@ msgstr ""
 #~ msgid "Looking to meet new friends in Dublin!"
 #~ msgstr "Шукаю нових друзів у Дубліні!"
 
+#: templates/index.html:XX
+msgid "How it works for Ukrainian newcomers"
+msgstr "Як це працює для новоприбулих з України"
+
+#: templates/index.html:YY
+msgid "Step 1 – Review the verified event 📋"
+msgstr "Крок 1 – Ознайомтеся з деталями верифікованого заходу 📋"
+
+#: templates/index.html:ZZ
+msgid "Check the event agenda, location, time, and attendee limits in detail before you decide to join."
+msgstr "Ознайомтеся з програмою заходу, місцем проведення, часом початку та обмеженнями за кількістю учасників, перш ніж приймати рішення про участь."
+
+#: templates/index.html:AA
+msgid "Step 2 – Confirm a verified host ✓"
+msgstr "Крок 2 – Перевірте верифікованого організатора ✓"
+
+#: templates/index.html:BB
+msgid "Look for the verification badge next to the host name and review their credentials before registering."
+msgstr "Зверніть увагу на позначку верифікації поруч з іменем організатора та перегляньте інформацію про нього перед реєстрацією."
+
+#: templates/index.html:CC
+msgid "Step 3 – Attend in a safe public place 🔒"
+msgstr "Крок 3 – Відвідуйте захід у безпечному публічному місці 🔒"
+
+#: templates/index.html:DD
+msgid "Only attend events held in safe, public venues with clear rules, so you can meet new people confidently and securely."
+msgstr "Відвідуйте лише ті заходи, що проходять у безпечних, публічних місцях із чіткими правилами, щоб знайомитися з новими людьми впевнено та безпечно."

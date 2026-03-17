@@ -27,7 +27,31 @@
             </div>
         </div>
     </section>
-
+    {% if locale == 'uk_UA' %}
+    <section class="home-section how-it-works-uk">
+        <h2 class="section-title">{{ _('How it works for Ukrainian newcomers') }}</h2>
+        <ol class="how-it-works-steps">
+            <li class="how-it-works-step">
+                <span class="step-label">{{ _('Step 1 – Review the verified event 📋') }}</span>
+                <p class="step-text">
+                    {{ _('Check the event agenda, location, time, and attendee limits in detail before you decide to join.') }}
+                </p>
+            </li>
+            <li class="how-it-works-step">
+                <span class="step-label">{{ _('Step 2 – Confirm a verified host ✓') }}</span>
+                <p class="step-text">
+                    {{ _('Look for the verification badge next to the host name and review their credentials before registering.') }}
+                </p>
+            </li>
+            <li class="how-it-works-step">
+                <span class="step-label">{{ _('Step 3 – Attend in a safe public place 🔒') }}</span>
+                <p class="step-text">
+                    {{ _('Only attend events held in safe, public venues with clear rules, so you can meet new people confidently and securely.') }}
+                </p>
+            </li>
+        </ol>
+    </section>
+    {% endif %}
     <!-- Upcoming Events Section -->
     {% if events %}
     <section class="home-section">

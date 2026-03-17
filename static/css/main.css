@@ -32,6 +32,11 @@ body {
     --color-section-link: #7EB8A8;
     --color-placeholder-start: #e8f5e9;
     --color-placeholder-end: #c8e6c9;
+    /* Locale-agnostic semantic tokens */
+    --accent-color: #7EB8A8;
+    --btn-primary: #7EB8A8;
+    --btn-primary-hover: #6AA396;
+    --hero-bg: linear-gradient(135deg, #7EB8A8 0%, #A8D4C7 100%);
 }
 
 /* Ireland (en_IE) – sage/mint, minimal */
@@ -48,6 +53,10 @@ body.locale-en_IE {
     --color-section-link: #7EB8A8;
     --color-placeholder-start: #e8f5e9;
     --color-placeholder-end: #c8e6c9;
+    --accent-color: #7DB87D;
+    --btn-primary: #7DB87D;
+    --btn-primary-hover: #6AA36C;
+    --hero-bg: linear-gradient(135deg, #7DB87D 0%, #A8D4C7 100%);
 }
 
 /* Ukraine (uk_UA) – periwinkle/lavender, formal */
@@ -64,6 +73,10 @@ body.locale-uk_UA {
     --color-section-link: #8EA8C8;
     --color-placeholder-start: #e8ecf4;
     --color-placeholder-end: #c5d4e8;
+    --accent-color: #9B9BD4;
+    --btn-primary: #7B7FC4;
+    --btn-primary-hover: #6A6FB2;
+    --hero-bg: linear-gradient(135deg, #8EA8C8 0%, #B8CCE0 100%);
 }
 
 /* Brazil (pt_BR) – warm orange, social */
@@ -80,6 +93,10 @@ body.locale-pt_BR {
     --color-section-link: #FF8C00;
     --color-placeholder-start: #fff3e0;
     --color-placeholder-end: #ffe0b2;
+    --accent-color: #FF8C00;
+    --btn-primary: #FF6B35;
+    --btn-primary-hover: #E05A2B;
+    --hero-bg: linear-gradient(135deg, #FF8C00 0%, #FF6B35 100%);
 }
 
 a {
@@ -343,12 +360,12 @@ button {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--btn-primary, var(--color-primary));
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-hover);
+    background-color: var(--btn-primary-hover, var(--color-primary-hover));
 }
 
 .btn-secondary {
@@ -397,7 +414,7 @@ button {
 .hero {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 100%);
+    background: var(--hero-bg, linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 100%));
     color: white;
     border-radius: 16px;
     margin-bottom: 4rem;
@@ -629,9 +646,7 @@ button {
    Soft pastel periwinkle/lavender colour scheme
    ========================================== */
 
-.locale-uk_UA .hero {
-    background: linear-gradient(135deg, #8EA8C8 0%, #B8CCE0 100%);
-}
+/* hero background now controlled by --hero-bg per locale */
 
 .locale-uk_UA .feature-number {
     background: var(--color-primary);
@@ -639,13 +654,7 @@ button {
     font-weight: bold;
 }
 
-.locale-uk_UA .btn-primary {
-    background-color: #8EA8C8;
-}
-
-.locale-uk_UA .btn-primary:hover {
-    background-color: #7A96B8;
-}
+/* primary button colors now controlled by --btn-primary per locale */
 
 .locale-uk_UA .event-card-formal .event-details {
     border-left: 4px solid #8EA8C8;
@@ -711,21 +720,13 @@ button {
    Warm orange palette inspired by Bumble BFF
    ========================================== */
 
-.locale-pt_BR .hero {
-    background: linear-gradient(135deg, #FF8C00 0%, #FF6B35 100%);
-}
+/* hero background now controlled by --hero-bg per locale */
 
 .locale-pt_BR .feature-icon {
     font-size: 2.5rem;
 }
 
-.locale-pt_BR .btn-primary.warm {
-    background: linear-gradient(135deg, #FF8C00 0%, #FF6B35 100%);
-}
-
-.locale-pt_BR .btn-primary.warm:hover {
-    background: linear-gradient(135deg, #E07B00 0%, #E05A2B 100%);
-}
+/* warm PT-BR button variant now uses base --btn-primary colors */
 
 .locale-pt_BR .event-card-warm {
     border-left: 5px solid #FF8C00;
@@ -859,21 +860,13 @@ button {
    Soft sage/mint pastel colour palette
    ========================================== */
 
-.locale-en_IE .hero {
-    background: linear-gradient(135deg, #7EB8A8 0%, #A8D4C7 100%);
-}
+/* hero background now controlled by --hero-bg per locale */
 
 .locale-en_IE .feature-card {
     border-top: 3px solid #7EB8A8;
 }
 
-.locale-en_IE .btn-primary {
-    background-color: #7EB8A8;
-}
-
-.locale-en_IE .btn-primary:hover {
-    background-color: #6AA396;
-}
+/* primary button colors now controlled by --btn-primary per locale */
 
 .locale-en_IE .event-card-minimal {
     border-left: 3px solid #7EB8A8;
@@ -976,7 +969,7 @@ button {
 .hero-large {
     padding: 6rem 2rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 50%, var(--color-accent-soft) 100%);
+    background: var(--hero-bg, linear-gradient(135deg, var(--color-hero-start) 0%, var(--color-hero-end) 50%, var(--color-accent-soft) 100%));
     color: white;
     border-radius: 16px;
     margin-bottom: 3rem;

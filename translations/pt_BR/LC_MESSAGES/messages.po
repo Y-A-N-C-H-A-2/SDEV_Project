@@ -562,65 +562,65 @@ msgid ""
 "A community platform for locals, expats, and travelers to connect through "
 "events across Ireland"
 msgstr ""
-"Uma plataforma comunitaria para locais, expatriados e viajantes se conectarem"
-" por eventos em toda a Irlanda"
+"Uma comunidade para você se conectar com gente do mundo todo, através de eventos"
+" e encontros em toda a Irlanda. 🤝"
 
 #: templates/index.html:13 templates/partials/index/features_en_IE.html:4
 #: templates/partials/index/hero_en_IE.html:7 templates/profile.html:95
 msgid "Browse Events"
-msgstr "Ver Eventos"
+msgstr "Ver eventos e conhecer gente ✨"
 
 #: templates/index.html:15
 msgid "Join Now"
-msgstr "Participe agora"
+msgstr "Entre na comunidade agora 👋"
 
 #: templates/index.html:26 templates/index.html:57
 msgid "View All →"
-msgstr "Ver tudo →"
+msgstr "Ver todos os eventos →"
 
 #: templates/index.html:56
 msgid "Featured Communities"
-msgstr "Comunidades em destaque"
+msgstr "Comunidades em destaque para você 🤝"
 
 #: templates/index.html:78
 msgid "Discover Ireland Experiences"
-msgstr "Descubra experiencias na Irlanda"
+msgstr "Descubra experiências incríveis pela Irlanda 🇮🇪"
 
 #: templates/index.html:82
 msgid "Outdoor Adventures"
-msgstr "Aventuras ao ar livre"
+msgstr "Aventuras ao ar livre com a galera 🌲"
 
 #: templates/index.html:83
 msgid "Explore mountains, coastlines, and stunning landscapes across Ireland"
-msgstr "Explore montanhas, costas e paisagens incriveis por toda a Irlanda"
+msgstr "Explore montanhas, costas e paisagens incríveis pela Irlanda com novos amigos."
 
 #: templates/index.html:87
 msgid "City Life"
-msgstr "Vida na cidade"
+msgstr "Vida na cidade com novas conexões 🏙️"
 
 #: templates/index.html:88
 msgid "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
-msgstr "Descubra cidades vibrantes de Dublin a Galway, de Cork a Limerick"
+msgstr "Descubra cidades vibrantes, de Dublin a Galway, de Cork a Limerick, sempre em boa companhia. 🎉"
 
 #: templates/index.html:92
 msgid "Culture & Social"
-msgstr "Cultura e social"
+msgstr "Cultura & encontros sociais 🎭"
 
 #: templates/index.html:93
 msgid "Experience traditional music, arts, festivals and Irish hospitality"
-msgstr "Experimente musica tradicional, artes, festivais e a hospitalidade irlandesa"
+msgstr "Viva música, arte, festivais e a famosa hospitalidade irlandesa com um grupo acolhedor."
 
 #: templates/index.html:100
 msgid "Ready to Meet New Friends?"
-msgstr "Pronto para Conhecer Novos Amigos?"
+msgstr "Pronto para conhecer novos amigos em grupo? 🤗"
 
 #: templates/index.html:101
 msgid "Join thousands of people connecting through events across Ireland"
-msgstr "Junte-se a milhares de pessoas se conectando por eventos em toda a Irlanda"
+msgstr "Junte-se a milhares de pessoas fazendo novas amizades em eventos por toda a Irlanda. 🎉"
 
 #: templates/index.html:103
 msgid "View Upcoming Events"
-msgstr "Ver Próximos Eventos"
+msgstr "Ver próximos eventos e encontrar sua galera! 🎉"
 
 #: templates/login.html:3
 msgid "Login – CrossPaths"
@@ -1047,35 +1047,43 @@ msgstr "Construa sua rede social em Dublin."
 
 #: templates/partials/index/features_pt_BR.html:5
 msgid "Discover Fun Events"
-msgstr "Descubra Eventos Divertidos"
+msgstr "Descubra eventos divertidos com a sua galera 🎉"
 
 #: templates/partials/index/features_pt_BR.html:6
 msgid "Browse exciting meetups and see who else is going!"
-msgstr "Explore encontros empolgantes e veja quem mais vai!"
+msgstr "Explore encontros empolgantes, veja quem vai estar lá e escolha os grupos que combinam com você."
+
+#: templates/partials/index/features_pt_BR.html:9
+msgid "Group Events & Community"
+msgstr "Eventos em grupo e comunidade 👥"
+
+#: templates/partials/index/features_pt_BR.html:10
+msgid "See who else is joining, connect with the whole group, and feel part of a shared community."
+msgstr "Veja quem mais vai participar, conecte-se com toda a galera e sinta-se parte de uma comunidade acolhedora."
 
 #: templates/partials/index/features_pt_BR.html:10
 msgid "Chat Before You Meet"
-msgstr "Converse Antes de Conhecer"
+msgstr "Bata papo antes de se encontrar 💬"
 
 #: templates/partials/index/features_pt_BR.html:11
 msgid "Join event group chats and break the ice online first."
-msgstr "Participe de chats em grupo do evento e quebre o gelo online primeiro."
+msgstr "Entre nos grupos do evento, puxe assunto e quebre o gelo online antes de chegar."
 
 #: templates/partials/index/features_pt_BR.html:15
 msgid "Make Real Connections"
-msgstr "Faça Conexões Reais"
+msgstr "Crie conexões de verdade 🤝"
 
 #: templates/partials/index/features_pt_BR.html:16
 msgid "Meet face-to-face in fun, relaxed settings around Dublin."
-msgstr "Encontre-se pessoalmente em ambientes divertidos e descontraídos em Dublin."
+msgstr "Encontre o pessoal cara a cara em lugares legais e descontraídos por toda Dublin."
 
 #: templates/partials/index/features_pt_BR.html:20
 msgid "Find Your Tribe"
-msgstr "Encontre Sua Turma"
+msgstr "Encontre sua turma em Dublin 🎉"
 
 #: templates/partials/index/features_pt_BR.html:21
 msgid "Build your social circle and never feel alone in a new city!"
-msgstr "Construa seu círculo social e nunca se sinta sozinho em uma cidade nova!"
+msgstr "Construa seu círculo social, faça amigos e nunca se sinta sozinho em uma cidade nova!"
 
 #: templates/partials/index/features_uk_UA.html:5
 #: templates/partials/index/hero_uk_UA.html:8
