@@ -38,7 +38,7 @@
                 {% endif %}
                 <div class="meta-item">
                     <span class="meta-icon">👥</span>
-                    <span>{{ event.attendees.count() }} {{ _('people attending') }}</span>
+                    <span>{{ attendee_count }} {{ _('people attending') }}</span>
                 </div>
             </div>
 
@@ -48,6 +48,27 @@
             </div>
 
             <div class="detail-actions">
+                {% if current_user.is_authenticated %}
+                    {% if not is_past_event %}
+                        {% if is_organizer %}
+                        <button type="button" class="btn btn-secondary" disabled>{{ _('You are organizing this event') }}</button>
+                        {% elif is_attending %}
+                        <form method="POST" action="{{ url_for('main.leave_event', event_id=event.id) }}" style="display:inline">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-secondary">{{ _('Cancel Signup') }}</button>
+                        </form>
+                        {% else %}
+                        <form method="POST" action="{{ url_for('main.signup_event', event_id=event.id) }}" style="display:inline">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-primary">{{ _('Sign Up for Event') }}</button>
+                        </form>
+                        {% endif %}
+                    {% else %}
+                    <button type="button" class="btn btn-secondary" disabled>{{ _('Event Ended') }}</button>
+                    {% endif %}
+                {% else %}
+                <a href="{{ url_for('main.login', next=url_for('main.event_detail', event_id=event.id)) }}" class="btn btn-primary">{{ _('Login to Sign Up') }}</a>
+                {% endif %}
                 <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('← Back to Events') }}</a>
             </div>
         </div>

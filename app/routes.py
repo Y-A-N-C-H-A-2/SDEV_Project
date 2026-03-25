@@ -38,6 +38,23 @@ def health():
 _MAX_FILENAME_LEN = 200
 
 
+def _is_user_attending_event(user, event):
+    """Return True when user is attending or organizing an event."""
+    if not user or not getattr(user, 'is_authenticated', False):
+        return False
+    if event.organizer_id == user.id:
+        return True
+    return event.attendees.filter(User.id == user.id).count() > 0
+
+
+def _event_attendee_count(event):
+    """Count attendees, ensuring organizer is counted once."""
+    count = event.attendees.count()
+    if event.organizer_id and event.attendees.filter(User.id == event.organizer_id).count() == 0:
+        count += 1
+    return count
+
+
 def _is_safe_redirect_url(target):
     """Return True only when *target* is a safe, relative URL on this host."""
     if not target:
@@ -106,12 +123,20 @@ def events():
     stmt = stmt.order_by(Event.date_time.asc())
 
     pagination = db.paginate(stmt, page=page, per_page=12, error_out=False)
+    attendee_counts = {event.id: _event_attendee_count(event) for event in pagination.items}
+    attending_event_ids = set()
+    if current_user.is_authenticated:
+        attending_event_ids = {
+            event.id for event in pagination.items if _is_user_attending_event(current_user, event)
+        }
     return render_template(
         'events.html',
         events=pagination.items,
         pagination=pagination,
         selected_city=city,
         search_query=search,
+        attendee_counts=attendee_counts,
+        attending_event_ids=attending_event_ids,
     )
 
 
@@ -119,7 +144,73 @@ def events():
 def event_detail(event_id):
     """Single event detail page"""
     event = db.get_or_404(Event, event_id)
-    return render_template('event_detail.html', event=event)
+    is_past_event = event.date_time < datetime.utcnow()
+    is_attending = _is_user_attending_event(current_user, event)
+    is_organizer = current_user.is_authenticated and event.organizer_id == current_user.id
+    return render_template(
+        'event_detail.html',
+        event=event,
+        is_past_event=is_past_event,
+        is_attending=is_attending,
+        is_organizer=is_organizer,
+        attendee_count=_event_attendee_count(event),
+    )
+
+
+@bp.route('/event/<int:event_id>/signup', methods=['POST'])
+@login_required
+def signup_event(event_id):
+    """Sign up current user for an event."""
+    event = db.get_or_404(Event, event_id)
+
+    if event.date_time < datetime.utcnow():
+        flash(_('This event has already happened.'), 'warning')
+        return redirect(url_for('main.event_detail', event_id=event_id))
+
+    if _is_user_attending_event(current_user, event):
+        flash(_('You are already signed up for this event.'), 'info')
+        return redirect(url_for('main.event_detail', event_id=event_id))
+
+    try:
+        event.attendees.append(current_user)
+        db.session.commit()
+        flash(_('You are signed up for %(name)s!', name=event.title), 'success')
+    except SQLAlchemyError:
+        db.session.rollback()
+        current_app.logger.exception("Event signup failed")
+        flash(_('An error occurred. Please try again.'), 'danger')
+
+    return redirect(url_for('main.event_detail', event_id=event_id))
+
+
+@bp.route('/event/<int:event_id>/leave', methods=['POST'])
+@login_required
+def leave_event(event_id):
+    """Cancel current user's event signup."""
+    event = db.get_or_404(Event, event_id)
+
+    if event.date_time < datetime.utcnow():
+        flash(_('You can only cancel signup before the event starts.'), 'warning')
+        return redirect(url_for('main.event_detail', event_id=event_id))
+
+    if event.organizer_id == current_user.id:
+        flash(_('As the organizer, you are automatically attending this event.'), 'info')
+        return redirect(url_for('main.event_detail', event_id=event_id))
+
+    if not _is_user_attending_event(current_user, event):
+        flash(_('You are not signed up for this event.'), 'info')
+        return redirect(url_for('main.event_detail', event_id=event_id))
+
+    try:
+        event.attendees.remove(current_user)
+        db.session.commit()
+        flash(_('You are no longer signed up for %(name)s.', name=event.title), 'info')
+    except SQLAlchemyError:
+        db.session.rollback()
+        current_app.logger.exception("Leave event failed")
+        flash(_('An error occurred. Please try again.'), 'danger')
+
+    return redirect(url_for('main.event_detail', event_id=event_id))
 
 
 @bp.route('/create-event', methods=['GET', 'POST'])
@@ -137,6 +228,8 @@ def create_event():
             category=form.category.data,
             organizer_id=current_user.id
         )
+        # Organizers are always counted as attendees.
+        event.attendees.append(current_user)
 
         # Handle photo upload with content validation
         if form.photo.data:

@@ -38,8 +38,9 @@
     <!-- Events List -->
     <div class="events-container">
         {% for event in events %}
-        <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="event-card">
+        <div class="event-card">
             <div class="event-card-image">
+                <a href="{{ url_for('main.event_detail', event_id=event.id) }}">
                 {% if event.photo and not event.photo.startswith('placeholder') %}
                 <img src="{{ url_for('static', filename=('img/seed/' if event.photo.startswith('event_') else 'uploads/') + event.photo) }}" alt="{{ _(event.title) }}">
                 {% else %}
@@ -48,6 +49,7 @@
                 {% if event.category %}
                 <span class="event-category-badge">{{ _(event.category) }}</span>
                 {% endif %}
+                </a>
             </div>
             <div class="event-card-body">
                 <h3 class="event-title">{{ _(event.title) }}</h3>
@@ -63,10 +65,28 @@
                     {% endif %}
                 </div>
                 <div class="event-footer">
-                    <span class="attendee-count">{{ event.attendees.count() }} {{ _('attending') }}</span>
+                    <span class="attendee-count">{{ attendee_counts[event.id] }} {{ _('attending') }}</span>
+                    <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="btn btn-secondary">{{ _('View Details') }}</a>
+                    {% if current_user.is_authenticated %}
+                        {% if event.organizer_id == current_user.id %}
+                        <button type="button" class="btn btn-secondary" disabled>{{ _('You are organizing this event') }}</button>
+                        {% elif event.id in attending_event_ids %}
+                        <form method="POST" action="{{ url_for('main.leave_event', event_id=event.id) }}" style="display:inline">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-secondary">{{ _('Cancel Signup') }}</button>
+                        </form>
+                        {% else %}
+                        <form method="POST" action="{{ url_for('main.signup_event', event_id=event.id) }}" style="display:inline">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-primary">{{ _('Sign Up') }}</button>
+                        </form>
+                        {% endif %}
+                    {% else %}
+                    <a href="{{ url_for('main.login', next=url_for('main.event_detail', event_id=event.id)) }}" class="btn btn-primary">{{ _('Login to Sign Up') }}</a>
+                    {% endif %}
                 </div>
             </div>
-        </a>
+        </div>
         {% endfor %}
     </div>
 
