@@ -47,7 +47,7 @@ msgid "Enjoy Together 🙌"
 msgstr "Curta junto 🙌"
 
 msgid "Pick a fun event and jump into a welcoming group."
-msgstr "Escolhe um evento legal e entra num grupo acolhedor."
+msgstr "Escolha um evento legal e entre em um grupo acolhedor."
 
 msgid "Short rounds + easy prompts make it natural to connect."
 msgstr "Rodadas rápidas + perguntas simples deixam tudo mais natural."
@@ -59,13 +59,13 @@ msgid "Group events in Dublin (good vibes only) 🎉"
 msgstr "Eventos em grupo em Dublin (só good vibes) 🎉"
 
 msgid "Pick a date, bring your energy, and meet your new crew ❤️"
-msgstr "Escolhe a data, traz a energia e conhece sua nova galera ❤️"
+msgstr "Escolha a data, traga a energia e conheça sua nova galera ❤️"
 
 msgid "Group energy"
 msgstr "Energia de grupo"
 
 msgid "going"
-msgstr "confirmadas"
+msgstr "Confirmados"
 
 msgid "Attendees preview"
 msgstr "Prévia de participantes"
@@ -83,7 +83,7 @@ msgid "Events in Dublin"
 msgstr "Eventos em Dublin"
 
 msgid "Pick one, show up, meet someone new."
-msgstr "Escolhe um, aparece e conhece alguém novo."
+msgstr "Escolha um, apareça e conheça alguém novo."
 
 msgid "Join Event"
 msgstr "Entrar no evento"
@@ -104,7 +104,7 @@ msgid "CrossPaths helps newcomers find their people in Dublin — with warm grou
 msgstr "O CrossPaths ajuda newcomers a encontrarem sua galera em Dublin — com eventos em grupo e conexões na vida real. 🎉"
 
 msgid "No swiping — just pick a vibe, show up, and make friends. ❤️"
-msgstr "Sem swipe — escolhe a vibe, aparece e faz amizade. ❤️"
+msgstr "Sem swiping — escolha a vibe, apareça, e faça amizade. ❤️"
 
 msgid "Our vibe"
 msgstr "Nossa vibe"
@@ -113,7 +113,7 @@ msgid "Friendly hosts, group energy, and plenty of moments to talk naturally."
 msgstr "Hosts gente boa, energia de grupo e muitos momentos pra conversar naturalmente."
 
 msgid "No swiping. Just event-based connection."
-msgstr "Sem swipe. Só conexão por eventos."
+msgstr "Sem swiping. Só conexão por eventos."
 
 #: app/routes.py:139
 msgid "Uploaded file is not a valid image."
