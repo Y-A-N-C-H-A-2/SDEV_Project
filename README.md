@@ -177,14 +177,13 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 │   └── partials/            # Locale-specific partial templates
 ├── static/
 │   ├── css/
-│   │   └── main.css
+│   │   ├── main.css         # Shared styles
+│   │   └── locale-*.css     # Per-locale theme (en_IE, uk_UA, pt_BR)
 │   ├── js/
 │   │   └── main.js
 │   └── img/
-│       ├── common/          # Shared images
-│       ├── en_IE/
-│       ├── uk_UA/
-│       └── pt_BR/
+│       ├── common/          # Shared images (logo, hero, discover)
+│       └── seed/            # Sample event/community images
 ├── translations/
 │   ├── en_IE/
 │   │   └── LC_MESSAGES/
@@ -197,13 +196,11 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 │           └── messages.po
 ├── scripts/                 # Translation/seed helpers
 ├── babel.cfg
-├── messages.pot
 ├── requirements.txt         # Single source for deps (local + Heroku)
 ├── run.py                   # Local dev entry point
 ├── wsgi.py                  # Heroku/gunicorn entry point
 ├── Procfile                 # Heroku: web process
-├── QUICKSTART.md            # Run instructions
-└── README.md
+└── README.md                # This file (design + run/deploy reference)
 ```
 
 ### Template Inheritance Strategy
@@ -217,7 +214,7 @@ All pages extend `base.html` using Jinja's `{% extends %}` directive. `base.html
 
 ### Static File Management
 
-Static files are organised with locale-specific images stored in subfolders under `static/img/` (e.g., `static/img/uk_UA/hero.jpg`). Shared CSS lives in `static/css/main.css` with locale-specific overrides triggered by body class (e.g., `.locale-pt_BR .hero { ... }`). JavaScript is shared across all locales in `static/js/main.js`.
+Static files: shared images under `static/img/common/` and seed images under `static/img/seed/`. Shared CSS is `static/css/main.css`; each locale loads an additional file (`static/css/locale-en_IE.css`, `locale-uk_UA.css`, or `locale-pt_BR.css`) from `base.html`. JavaScript is shared in `static/js/main.js`.
 
 ### Dynamic Behaviour
 
@@ -293,7 +290,86 @@ export SECRET_KEY=dev-secret-key
 
 ---
 
-## 9. Design Thinking Deliverables (Week 5 Lab – Part B)
+## 5. Development, deployment, and technical reference
+
+### 5.1 Run locally
+
+From the repository root (where `requirements.txt` lives):
+
+```bash
+python3 -m venv venv
+source venv/bin/activate   # macOS/Linux
+
+pip install -r requirements.txt
+pybabel compile -d translations
+
+export FLASK_ENV=development
+python run.py
+```
+
+Open http://127.0.0.1:5000 . If port 5000 is busy (e.g. AirPlay on macOS): `FLASK_PORT=5001 python run.py` .
+
+The app uses **SQLite** (`crosspaths.db`) when `DATABASE_URL` is not set. No PostgreSQL is required for local development.
+
+### 5.2 Translations
+
+After changing translatable strings in templates or Python:
+
+```bash
+pybabel extract -F babel.cfg -o messages.pot .
+pybabel update -i messages.pot -d translations
+# Edit translations/*/LC_MESSAGES/messages.po, then:
+pybabel compile -d translations
+```
+
+The `messages.pot` file is **generated** by `extract` and is listed in `.gitignore`. The app also compiles outdated `.mo` files on startup when possible.
+
+### 5.3 Deploy to Heroku (summary)
+
+- Attach **Heroku Postgres** so `DATABASE_URL` is set; the app maps `postgres://` to `postgresql://` and adds SSL as needed.
+- Set **`SECRET_KEY`** in Config Vars (required when `FLASK_ENV=production`).
+- Release phase (see `Procfile`) runs `flask init-db` and `flask seed-db`. If tables are missing, run those commands manually:  
+  `heroku run "FLASK_APP=wsgi:app flask init-db"` and `flask seed-db` on the app.
+- Use `/health` on the deployed URL to surface configuration/DB issues.
+
+### 5.4 Core features and routes
+
+**Public:** Home (upcoming events + featured communities), paginated events list (city filter + search), event detail, communities list and detail (community-specific upcoming events), About (locale partials), locale switch via POST `/set-language` (same-origin redirect only).
+
+**Auth:** Register, login (safe relative `next` redirect), logout.
+
+**Signed-in:** Profile, edit profile (interests in one transaction), create event (optional image validated with Pillow, stored under `static/uploads`), join/leave community.
+
+| Route | Methods | Auth | Purpose |
+|-------|---------|------|--------|
+| `/`, `/index` | GET | No | Home |
+| `/events` | GET | No | Events list + filters |
+| `/event/<id>` | GET | No | Event detail |
+| `/create-event` | GET, POST | Yes | Create event |
+| `/communities` | GET | No | Communities list |
+| `/community/<id>` | GET | No | Community detail |
+| `/community/<id>/join` `leave` | POST | Yes | Membership |
+| `/register` `/login` `/logout` | — | — | Auth |
+| `/profile` `/edit-profile` | GET, POST | Yes | Profile |
+| `/about` | GET | No | About |
+| `/set-language` | POST | No | Session locale |
+
+**Data model (summary):** `User`, `Interest`, `Event`, `Community` with many-to-many links (interests, event attendance, community membership, events linked to communities). Indexes on `Event.date_time` and `Event.city` support listing and filters.
+
+**Stack (high level):** Flask (app factory, blueprint), Flask-SQLAlchemy + Alembic/Flask-Migrate, Flask-Login, Flask-WTF/CSRF, Flask-Babel, Werkzeug (passwords, `secure_filename`), Pillow (upload validation), gunicorn (Heroku `web`). Entry points: `run.py` (local, may create/seed DB in app context), `wsgi.py` (production).
+
+### 5.5 Troubleshooting
+
+| Issue | What to try |
+|-------|-------------|
+| Missing Flask / Babel modules | Activate `venv`, then `pip install -r requirements.txt` from project root |
+| Translations not updating | Run `pybabel compile -d translations` from project root |
+| Heroku 500 / no tables | Ensure Postgres addon + `SECRET_KEY`; run `init-db` and `seed-db` on Heroku |
+| `psycopg2` build errors locally | Local dev uses SQLite; full Postgres support may need system libs + `psycopg2-binary` |
+
+---
+
+## 6. Design Thinking Deliverables (Week 5 Lab – Part B)
 
 ### Emerging Design Tensions
 
@@ -315,7 +391,7 @@ export SECRET_KEY=dev-secret-key
 
 ---
 
-## 10. Limitations
+## 7. Limitations
 
 - Translations are not exhaustive — some dynamic content (e.g., error messages) may remain in English
 - Cultural adaptations are applied at the locale level; sub-regional differences within Ukraine or Brazil are not addressed

@@ -1,0 +1,87 @@
+/*
+ * Ukraine (uk_UA) – periwinkle/lavender, formal
+ * Loaded only when locale is uk_UA (with main.css)
+ */
+
+body {
+    --color-primary: #7B7FC4;
+    --color-primary-hover: #6a6fb2;
+    --color-hero-start: #8EA8C8;
+    --color-hero-end: #B8CCE0;
+    --color-nav-hover: #8EA8C8;
+    --color-footer-bg: #3d4f6d;
+    --color-accent: #8EA8C8;
+    --color-accent-soft: #EEF2F7;
+    --color-form-focus: #8EA8C8;
+    --color-section-link: #8EA8C8;
+    --color-placeholder-start: #e8ecf4;
+    --color-placeholder-end: #c5d4e8;
+    --accent-color: #9B9BD4;
+    --btn-primary: #7B7FC4;
+    --btn-primary-hover: #6A6FB2;
+    --hero-bg: linear-gradient(135deg, #8EA8C8 0%, #B8CCE0 100%);
+}
+
+.feature-number {
+    background: var(--color-primary);
+    color: white;
+    font-weight: bold;
+}
+
+.event-card-formal .event-details {
+    border-left: 4px solid #8EA8C8;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+
+.event-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.safety-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.safety-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #EEF2F7;
+    border-radius: 8px;
+}
+
+.safety-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.profile-section-formal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-field {
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+    display: flex;
+    gap: 1rem;
+}
+
+.profile-field label {
+    font-weight: 600;
+    min-width: 150px;
+    color: #2c3e50;
+}

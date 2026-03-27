@@ -22,7 +22,7 @@ if __name__ == '__main__':
         seed_database()
 
     print("=" * 60)
-    print("CrossPaths - Culturally Adaptive Speed-Friending Platform")
+    print("CrossPaths — culturally adaptive community events platform")
     print("=" * 60)
     print(f"Running on: http://{host}:{port}")
     print(f"Environment: {'Development' if debug else 'Production'}")

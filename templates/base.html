@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ _('CrossPaths – Where cultures meet and friendships begin') }}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% set _loc = locale if locale in ['en_IE', 'uk_UA', 'pt_BR'] else 'en_IE' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/locale-' + _loc + '.css') }}">
 </head>
 <body class="locale-{{ locale }}">
     <!-- Navigation -->
@@ -14,7 +16,7 @@
             <div class="nav-brand">
                 <a href="{{ url_for('main.index') }}">
                     <img src="{{ url_for('static', filename='img/common/logo.jpg') }}" alt="{{ _('CrossPaths logo') }}" class="logo">
-                    <h1>{{ _('CrossPaths') }}</h1>
+                    <h1>{% if locale == 'pt_BR' %}<span class="nav-brand-emoji" aria-hidden="true">😊</span> {% endif %}{{ _('CrossPaths') }}</h1>
                 </a>
             </div>
 

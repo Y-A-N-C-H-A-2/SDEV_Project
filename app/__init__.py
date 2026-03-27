@@ -1,6 +1,6 @@
 """
 CrossPaths Flask Application Factory
-Culturally adaptive speed-friending platform
+Culturally adaptive community events platform
 """
 import logging
 import os

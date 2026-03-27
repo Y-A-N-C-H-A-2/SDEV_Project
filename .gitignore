@@ -22,6 +22,9 @@ ENV/
 instance/
 .webassets-cache
 
+# Babel (generated; recreate with: pybabel extract -F babel.cfg -o messages.pot .)
+messages.pot
+
 # Build / dist
 build/
 develop-eggs/

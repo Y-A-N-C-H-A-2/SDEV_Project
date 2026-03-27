@@ -51,6 +51,30 @@
             </li>
         </ol>
     </section>
+    {% elif locale == 'pt_BR' %}
+    <section class="home-section how-it-works-br" aria-labelledby="how-br-title">
+        <h2 id="how-br-title" class="section-title">{{ _('How it works — fun & easy') }}</h2>
+        <ol class="how-it-works-steps">
+            <li class="how-it-works-step">
+                <span class="step-label">{{ _('Step 1 – Pick an event you love ✨') }}</span>
+                <p class="step-text">
+                    {{ _('Browse meetups, pub nights, hikes, and language exchanges — pick something that feels like you!') }}
+                </p>
+            </li>
+            <li class="how-it-works-step">
+                <span class="step-label">{{ _('Step 2 – Say hi and sign up 👋') }}</span>
+                <p class="step-text">
+                    {{ _('Join with one click, check the vibe, and see who is going — no stress, just good energy.') }}
+                </p>
+            </li>
+            <li class="how-it-works-step">
+                <span class="step-label">{{ _('Step 3 – Show up and make friends 🤗') }}</span>
+                <p class="step-text">
+                    {{ _('Meet in welcoming public places, swap stories, and grow your circle in Dublin!') }}
+                </p>
+            </li>
+        </ol>
+    </section>
     {% endif %}
     <!-- Upcoming Events Section -->
     {% if events %}

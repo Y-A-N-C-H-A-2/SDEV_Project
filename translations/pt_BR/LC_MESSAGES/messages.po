@@ -207,13 +207,13 @@ msgstr "Português (Brasil)"
 
 #: templates/base.html:88
 msgid "Where cultures meet and friendships begin."
-msgstr "Onde culturas se encontram e amizades começam."
+msgstr "💚 Onde culturas se encontram e amizades começam."
 
 #: templates/base.html:90
 msgid "A culturally adaptive platform for international newcomers in Dublin"
 msgstr ""
-"Uma plataforma culturalmente adaptável para recém-chegados internacionais"
-" em Dublin"
+"Uma plataforma acolhedora para quem chegou em Dublin de outro canto do "
+"mundo 😊"
 
 #: templates/communities.html:3
 msgid "Communities – CrossPaths"
@@ -279,7 +279,7 @@ msgstr "Membros"
 #: templates/community_detail.html:66 templates/events.html:8
 #: templates/index.html:59
 msgid "Upcoming Events"
-msgstr "Próximos Eventos"
+msgstr "📅 Próximos eventos"
 
 #: templates/create_event.html:3
 msgid "Create Event – CrossPaths"
@@ -461,7 +461,7 @@ msgstr "CrossPaths – Início"
 
 #: templates/index.html:20
 msgid "Meet People. Attend Events. Explore Ireland."
-msgstr "Conheça Pessoas. Participe de Eventos. Explore a Irlanda."
+msgstr "Conheça gente nova, participe de eventos e explore a Irlanda! ✨"
 
 #: templates/index.html:21
 msgid ""
@@ -469,15 +469,15 @@ msgid ""
 " events across Ireland"
 msgstr ""
 "Uma plataforma comunitária para habitantes locais, expatriados e "
-"viajantes se conectarem através de eventos pela Irlanda"
+"viajantes se conectarem através de eventos pela Irlanda 😊"
 
 #: templates/index.html:23 templates/profile.html:95
 msgid "Browse Events"
-msgstr "Explorar Eventos"
+msgstr "Ver eventos ✨"
 
 #: templates/index.html:25
 msgid "Join Now"
-msgstr "Participe Agora"
+msgstr "Quero participar! 🙌"
 
 #: templates/index.html:32
 msgid "How it works for Ukrainian newcomers"
@@ -514,17 +514,57 @@ msgid ""
 "can meet new people confidently and securely."
 msgstr ""
 
+#: templates/index.html
+msgid "How it works — fun & easy"
+msgstr "Como funciona — fácil e divertido 😊"
+
+#: templates/index.html
+msgid "Step 1 – Pick an event you love ✨"
+msgstr "Passo 1 — Escolha um evento que você vai amar ✨"
+
+#: templates/index.html
+msgid ""
+"Browse meetups, pub nights, hikes, and language exchanges — pick "
+"something that feels like you!"
+msgstr ""
+"Veja encontros, noites no pub, trilhas e trocas de idiomas — escolha o "
+"que combina com você! 😄"
+
+#: templates/index.html
+msgid "Step 2 – Say hi and sign up 👋"
+msgstr "Passo 2 — Diga oi e inscreva-se 👋"
+
+#: templates/index.html
+msgid ""
+"Join with one click, check the vibe, and see who is going — no stress, "
+"just good energy."
+msgstr ""
+"Inscreva-se com um clique, sinta o clima e veja quem vai — sem estresse, "
+"só energia boa! ✌️"
+
+#: templates/index.html
+msgid "Step 3 – Show up and make friends 🤗"
+msgstr "Passo 3 — Apareça e faça amigos 🤗"
+
+#: templates/index.html
+msgid ""
+"Meet in welcoming public places, swap stories, and grow your circle in "
+"Dublin!"
+msgstr ""
+"Encontre-se em lugares públicos acolhedores, troque histórias e amplie sua "
+"roda em Dublin! 💛"
+
 #: templates/index.html:60 templates/index.html:91
 msgid "View All →"
 msgstr "Ver Todos →"
 
 #: templates/index.html:90
 msgid "Featured Communities"
-msgstr "Comunidades em Destaque"
+msgstr "💬 Comunidades em destaque"
 
 #: templates/index.html:117
 msgid "Discover Ireland Experiences"
-msgstr "Descubra Experiências na Irlanda"
+msgstr "Descubra experiências na Irlanda 🍀"
 
 #: templates/index.html:121 templates/index.html:123 templates/index.html:125
 #, fuzzy
@@ -562,17 +602,16 @@ msgstr "Viva a música tradicional, artes, festivais e hospitalidade irlandesa"
 
 #: templates/index.html:149
 msgid "Ready to Meet New Friends?"
-msgstr "Pronto para Conhecer Novos Amigos?"
+msgstr "Pronto para fazer novos amigos? 😊"
 
 #: templates/index.html:150
 msgid "Join thousands of people connecting through events across Ireland"
 msgstr ""
-"Junte-se a milhares de pessoas se conectando através de eventos pela "
-"Irlanda"
+"Junte-se a um monte de gente se conectando em eventos pela Irlanda 💫"
 
 #: templates/index.html:152
 msgid "View Upcoming Events"
-msgstr "Ver Próximos Eventos"
+msgstr "Ver próximos eventos ✨"
 
 #: templates/login.html:3
 msgid "Login – CrossPaths"

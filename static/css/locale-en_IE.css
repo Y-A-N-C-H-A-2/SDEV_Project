@@ -1,0 +1,59 @@
+/*
+ * Ireland (en_IE) – sage/mint, minimal
+ * Loaded only when locale is en_IE (with main.css)
+ */
+
+body {
+    --color-primary: #6B8F71;
+    --color-primary-hover: #5f7f64;
+    --color-hero-start: #7EB8A8;
+    --color-hero-end: #A8D4C7;
+    --color-nav-hover: #7EB8A8;
+    --color-footer-bg: #2D2D2D;
+    --color-accent: #7EB8A8;
+    --color-accent-soft: #e8f5f2;
+    --color-form-focus: #7EB8A8;
+    --color-section-link: #7EB8A8;
+    --color-placeholder-start: #e8f5e9;
+    --color-placeholder-end: #c8e6c9;
+    --accent-color: #7DB87D;
+    --btn-primary: #7DB87D;
+    --btn-primary-hover: #6AA36C;
+    --hero-bg: linear-gradient(135deg, #7DB87D 0%, #A8D4C7 100%);
+}
+
+.feature-card {
+    border-top: 3px solid #7EB8A8;
+}
+
+.event-card-minimal {
+    border-left: 3px solid #7EB8A8;
+}
+
+.event-info-minimal {
+    margin: 1rem 0;
+}
+
+.event-info-minimal p {
+    margin: 0.5rem 0;
+}
+
+.profile-section-minimal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-header-minimal {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-details-minimal p {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
