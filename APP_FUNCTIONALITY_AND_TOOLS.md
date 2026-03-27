@@ -27,7 +27,7 @@ This document describes what the CrossPaths application does and how every techn
 
 | Feature | Description |
 |--------|-------------|
-| **Home** | Lists up to 4 upcoming events and 4 communities; hero and features vary by locale via partials. |
+| **Home** | Lists up to 4 upcoming events and 4 communities; hero copy and layout vary by locale in `index.html`. |
 | **Events list** | Paginated list of upcoming events; filter by city and free-text search (title/description). |
 | **Event detail** | Single event page with title, description, date/time, city, venue, category, photo, organizer. |
 | **Communities list** | Paginated list of communities. |
@@ -165,7 +165,7 @@ Event photos: optional upload in EventForm; validated with Pillow; filename trun
 | **Jinja2** | 3.1.6 | Server-side templates: inheritance, blocks, loops, conditionals, `url_for`, `_()`. |
 | **MarkupSafe** | 3.0.3 | Safe string escaping for Jinja2. |
 
-Layout: `templates/base.html`; pages extend it and fill `content` and `title`. Locale is injected as `locale` (e.g. `en_IE`) and used for body class and partials (`partials/` per locale). No front-end build; plain CSS and JS.
+Layout: `templates/base.html`; pages extend it and fill `content` and `title`. Locale is injected as `locale` (e.g. `en_IE`) and used for body class and conditional blocks (e.g. home, about). No front-end build; plain CSS and JS.
 
 ### 4.9 Configuration and environment
 
@@ -197,7 +197,7 @@ Release phase runs once per deploy to create tables and seed; web workers only s
 | **app/forms.py** | WTForms forms, choices, and `validate_future_date`. |
 | **app/seed.py** | Idempotent seed: predefined interests, sample events, sample communities (skips if data exists). |
 | **app/utils.py** | `normalize_custom_interests`, `sync_user_interests`, `is_same_origin_referrer`. |
-| **templates/** | Jinja2 HTML; `base.html`; locale partials under `partials/`. |
+| **templates/** | Jinja2 HTML; `base.html`; locale-specific about content under `partials/about/`. |
 | **static/css/main.css** | Global and locale-specific (body class) styles. |
 | **static/js/main.js** | Locale-based behaviour (e.g. uk_UA confirmations/safety, pt_BR animations/emoji, en_IE quick actions), mobile nav, smooth scroll, form validation; `CrossPaths` namespace for utilities. |
 | **translations/** | Per-locale `LC_MESSAGES/messages.po` and compiled `messages.mo`. |

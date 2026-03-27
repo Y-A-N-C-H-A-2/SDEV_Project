@@ -1,7 +1,6 @@
 """
 CrossPaths Database Models
 """
-from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import db
@@ -15,13 +14,11 @@ user_interests = db.Table('user_interests',
 user_communities = db.Table('user_communities',
     db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True),
     db.Column('community_id', db.Integer, db.ForeignKey('communities.id'), primary_key=True),
-    db.Column('joined_at', db.DateTime, default=datetime.utcnow)
 )
 
 event_attendees = db.Table('event_attendees',
     db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True),
     db.Column('event_id', db.Integer, db.ForeignKey('events.id'), primary_key=True),
-    db.Column('rsvp_at', db.DateTime, default=datetime.utcnow)
 )
 
 
@@ -36,11 +33,9 @@ class User(UserMixin, db.Model):
     gender = db.Column(db.String(20))
     nationality = db.Column(db.String(60))
     city = db.Column(db.String(50))
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Relationships
     interests = db.relationship('Interest', secondary=user_interests, backref=db.backref('users', lazy='dynamic'))
-    organized_events = db.relationship('Event', backref='organizer', lazy='dynamic', cascade='all, delete-orphan')
     communities = db.relationship('Community', secondary=user_communities, backref=db.backref('members', lazy='dynamic'))
     attending_events = db.relationship('Event', secondary=event_attendees, backref=db.backref('attendees', lazy='dynamic'))
 
@@ -77,7 +72,11 @@ class Event(db.Model):
     category = db.Column(db.String(60))
     photo = db.Column(db.String(300))
     organizer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    organizer = db.relationship(
+        'User',
+        foreign_keys=[organizer_id],
+        backref=db.backref('organized_events', lazy='dynamic', cascade='all, delete-orphan'),
+    )
 
     def __repr__(self):
         return f'<Event {self.title}>'
@@ -90,7 +89,6 @@ class Community(db.Model):
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
     image = db.Column(db.String(300))
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Relationships
     events = db.relationship('Event', secondary='community_events', backref=db.backref('communities', lazy='dynamic'))

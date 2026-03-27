@@ -49,11 +49,6 @@ CATEGORY_CHOICES = [
     ('Photography', _l('Photography')),
 ]
 
-PREDEFINED_INTERESTS = [
-    'Language exchange', 'Travel', 'Hiking', 'Photography', 'Music',
-    'Art', 'Tech', 'Sports', 'Food and coffee', 'Nightlife', 'Cultural events'
-]
-
 PREDEFINED_INTEREST_CHOICES = [
     ('Language exchange', _l('Language exchange')),
     ('Travel', _l('Travel')),
