@@ -102,7 +102,7 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Language Exchange Community',
         'description': 'Connect with language learners and native speakers. Practice your target language in a friendly, supportive environment through regular meetups and events.',
-        'image': 'event_meetup.png',
+        'image': 'event_language_exchange.png',
     },
     {
         'name': 'Hiking Ireland',
