@@ -40,7 +40,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Killruddery House, Bray, Co. Wicklow',
         'category': 'Cultural',
-        'photo': 'event_wicklow.png',
+        'photo': 'event_wednesday_wicklow.png',
     },
     {
         'title': 'International Meetup in Dublin',
@@ -122,7 +122,7 @@ SAMPLE_COMMUNITIES = [
     {
         'name': 'Tech and Startups Ireland',
         'description': 'Connect with tech professionals, startup founders, and anyone interested in the Irish tech scene. Networking events, talks, and hackathons.',
-        'image': 'event_photography.png',
+        'image': 'event_tech_startups.png',
     },
     {
         'name': 'Art and Creativity',
