@@ -7,6 +7,7 @@ __pycache__/
 
 # Virtual environment
 venv/
+.venv/
 env/
 ENV/
 
@@ -23,7 +24,7 @@ ENV/
 instance/
 .webassets-cache
 
-# Babel (generated; recreate with: pybabel extract -F babel.cfg -o messages.pot .)
+# Babel (generated; recreate with README pybabel extract command incl. -k _l)
 messages.pot
 
 # Build / dist

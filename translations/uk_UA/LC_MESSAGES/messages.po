@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CrossPaths 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-27 22:09+0000\n"
+"POT-Creation-Date: 2026-03-28 20:42+0000\n"
 "PO-Revision-Date: 2026-03-06 12:00+0000\n"
 "Last-Translator: CrossPaths Team\n"
 "Language: uk_UA\n"
@@ -15,6 +15,209 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
+
+#: app/babel_strings.py:8
+msgid "Ukrainian"
+msgstr "українська"
+
+#: app/forms.py:16
+msgid "Event date and time must be in the future."
+msgstr "Дата та час події мають бути в майбутньому."
+
+#: app/forms.py:20
+msgid "Select a city..."
+msgstr "Оберіть місто..."
+
+#: app/forms.py:21 templates/events.html:23
+msgid "Dublin"
+msgstr "Дублін"
+
+#: app/forms.py:22 templates/events.html:24
+msgid "Galway"
+msgstr "Голвей"
+
+#: app/forms.py:23 templates/events.html:25
+msgid "Cork"
+msgstr "Корк"
+
+#: app/forms.py:24 templates/events.html:26
+msgid "Limerick"
+msgstr "Лімерик"
+
+#: app/forms.py:25 templates/events.html:27
+msgid "Waterford"
+msgstr "Вотерфорд"
+
+#: app/forms.py:29
+msgid "Select..."
+msgstr "Оберіть..."
+
+#: app/forms.py:30
+msgid "Male"
+msgstr "Чоловік"
+
+#: app/forms.py:31
+msgid "Female"
+msgstr "Жінка"
+
+#: app/forms.py:32
+msgid "Non-binary"
+msgstr "Небінарний(-а)"
+
+#: app/forms.py:33
+msgid "Prefer not to say"
+msgstr "Бажаю не вказувати"
+
+#: app/forms.py:37
+msgid "Select a category..."
+msgstr "Оберіть категорію..."
+
+#: app/forms.py:38
+msgid "Social"
+msgstr "Спілкування"
+
+#: app/forms.py:39
+msgid "Cultural"
+msgstr "Культура"
+
+#: app/forms.py:40
+msgid "Outdoor"
+msgstr "На природі"
+
+#: app/forms.py:41
+msgid "Language"
+msgstr "Мови"
+
+#: app/forms.py:42
+msgid "Food & Drink"
+msgstr "Їжа та напої"
+
+#: app/forms.py:43
+msgid "Art & Creative"
+msgstr "Мистецтво та творчість"
+
+#: app/forms.py:44 app/forms.py:59
+msgid "Tech"
+msgstr "Технології"
+
+#: app/forms.py:45 app/forms.py:60
+msgid "Sports"
+msgstr "Спорт"
+
+#: app/forms.py:46 app/forms.py:57
+msgid "Music"
+msgstr "Музика"
+
+#: app/forms.py:47 app/forms.py:54
+msgid "Travel"
+msgstr "Подорожі"
+
+#: app/forms.py:48 app/forms.py:62
+msgid "Nightlife"
+msgstr "Нічне життя"
+
+#: app/forms.py:49 app/forms.py:56
+msgid "Photography"
+msgstr "Фотографія"
+
+#: app/forms.py:53
+msgid "Language exchange"
+msgstr "Мовний обмін"
+
+#: app/forms.py:55
+msgid "Hiking"
+msgstr "Походи"
+
+# Date/time (word between date and time)
+#: app/forms.py:58
+msgid "Art"
+msgstr "Мистецтво"
+
+#: app/forms.py:61
+msgid "Food and coffee"
+msgstr "Їжа та кава"
+
+#: app/forms.py:63
+msgid "Cultural events"
+msgstr "Культурні події"
+
+#: app/forms.py:73 app/forms.py:91
+msgid "Name"
+msgstr "Ім'я"
+
+#: app/forms.py:74 app/forms.py:86
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: app/forms.py:75 app/forms.py:87
+msgid "Password"
+msgstr "Пароль"
+
+#: app/forms.py:76
+msgid "Confirm Password"
+msgstr "Підтвердіть пароль"
+
+#: app/forms.py:76
+msgid "Passwords must match"
+msgstr "Паролі мають збігатися"
+
+#: app/forms.py:77 app/forms.py:92 templates/profile.html:27
+#: templates/register.html:50
+msgid "Age"
+msgstr "Вік"
+
+#: app/forms.py:78 app/forms.py:93 templates/profile.html:33
+msgid "Gender"
+msgstr "Стать"
+
+#: app/forms.py:79 app/forms.py:94 templates/profile.html:39
+msgid "Nationality"
+msgstr "Національність"
+
+#: app/forms.py:80 app/forms.py:95
+msgid "City in Ireland"
+msgstr "Місто в Ірландії"
+
+#: app/forms.py:81 app/forms.py:96 templates/edit_profile.html:47
+#: templates/profile.html:53 templates/register.html:82
+msgid "Interests"
+msgstr "Інтереси"
+
+#: app/forms.py:82 app/forms.py:97
+msgid "Custom Interests (comma-separated)"
+msgstr "Власні інтереси (через кому)"
+
+#: app/forms.py:101
+msgid "Title"
+msgstr "Назва"
+
+#: app/forms.py:102
+msgid "Description"
+msgstr "Опис"
+
+#: app/forms.py:103 templates/profile.html:45
+msgid "City"
+msgstr "Місто"
+
+#: app/forms.py:104
+msgid "Location/Venue"
+msgstr "Місце проведення"
+
+#: app/forms.py:105
+msgid "Date and Time"
+msgstr "Дата та час"
+
+#: app/forms.py:106
+msgid "Category"
+msgstr "Категорія"
+
+#: app/forms.py:107
+msgid "Event Photo"
+msgstr "Фото події"
+
+#: app/forms.py:107
+msgid "Images only!"
+msgstr "Лише зображення!"
 
 #: app/routes.py:167
 msgid "This event has already happened."
@@ -123,7 +326,7 @@ msgstr "Про CrossPaths"
 msgid "Where cultures meet and friendships begin"
 msgstr "Де культури зустрічаються і дружба починається"
 
-#: templates/about.html:14 templates/index.html:132 templates/index.html:134
+#: templates/about.html:14 templates/index.html:156 templates/index.html:158
 #, fuzzy
 msgid "Where cultures meet"
 msgstr "Де культури зустрічаються і дружба починається"
@@ -150,68 +353,68 @@ msgid "CrossPaths – Where cultures meet and friendships begin"
 msgstr "CrossPaths – Де культури зустрічаються і дружба починається"
 
 # Home Page
-#: templates/base.html:16
+#: templates/base.html:18
 msgid "CrossPaths logo"
 msgstr "Логотип CrossPaths"
 
-#: templates/base.html:17
+#: templates/base.html:19
 msgid "CrossPaths"
 msgstr "CrossPaths"
 
-#: templates/base.html:21
+#: templates/base.html:23
 msgid "Toggle navigation"
 msgstr "Перемкнути навігацію"
 
-#: templates/base.html:26
+#: templates/base.html:28
 msgid "Home"
 msgstr "Головна"
 
-#: templates/base.html:27 templates/partials/about/content_pt_BR.html:35
+#: templates/base.html:29 templates/partials/about/content_pt_BR.html:35
 msgid "Events"
 msgstr "Події"
 
-#: templates/base.html:28 templates/communities.html:8
+#: templates/base.html:30 templates/communities.html:8
 msgid "Communities"
 msgstr "Спільноти"
 
-#: templates/base.html:30 templates/create_event.html:8
+#: templates/base.html:32 templates/create_event.html:8
 #: templates/create_event.html:71
 msgid "Create Event"
 msgstr "Створити подію"
 
-#: templates/base.html:31
+#: templates/base.html:33
 msgid "Profile"
 msgstr "Профіль"
 
-#: templates/base.html:32
+#: templates/base.html:34
 msgid "Logout"
 msgstr "Вийти"
 
-#: templates/base.html:34
+#: templates/base.html:36
 msgid "Login"
 msgstr "Увійти"
 
-#: templates/base.html:35 templates/login.html:34
+#: templates/base.html:37 templates/login.html:34
 msgid "Register"
 msgstr "Реєстрація"
 
-#: templates/base.html:45
+#: templates/base.html:47
 msgid "English (Ireland)"
 msgstr "Англійська (Ірландія)"
 
-#: templates/base.html:50
-msgid "Ukrainian"
+#: templates/base.html:52
+msgid "Ukrainian (interface language)"
 msgstr "Українська"
 
-#: templates/base.html:55
+#: templates/base.html:57
 msgid "Portuguese (Brazil)"
 msgstr "Португальська (Бразилія)"
 
-#: templates/base.html:88
+#: templates/base.html:90
 msgid "Where cultures meet and friendships begin."
 msgstr "Де культури зустрічаються і дружба починається."
 
-#: templates/base.html:90
+#: templates/base.html:92
 msgid "A culturally adaptive platform for international newcomers in Dublin"
 msgstr "Культурно адаптивна платформа для міжнародних новоприбулих у Дубліні"
 
@@ -225,7 +428,7 @@ msgid "Browse and join interest-based communities"
 msgstr "Переглядайте та долучайтеся до спільнот за інтересами"
 
 #: templates/communities.html:27 templates/community_detail.html:19
-#: templates/index.html:107
+#: templates/index.html:131
 msgid "member"
 msgid_plural "members"
 msgstr[0] "учасник"
@@ -280,7 +483,7 @@ msgid "Members"
 msgstr "Учасники"
 
 #: templates/community_detail.html:66 templates/events.html:8
-#: templates/index.html:59
+#: templates/index.html:83
 msgid "Upcoming Events"
 msgstr "Майбутні події"
 
@@ -330,11 +533,6 @@ msgstr "Редагувати профіль – CrossPaths"
 msgid "Edit Profile"
 msgstr "Редагувати профіль"
 
-#: templates/edit_profile.html:47 templates/profile.html:53
-#: templates/register.html:82
-msgid "Interests"
-msgstr "Інтереси"
-
 #: templates/edit_profile.html:59 templates/register.html:94
 msgid "e.g. Yoga, Cooking, Board games"
 msgstr "напр.: Йога, Кулінарія, Настільні ігри"
@@ -349,7 +547,7 @@ msgstr "Скасувати"
 
 # Date/time (word between date and time)
 #: templates/event_detail.html:27 templates/events.html:61
-#: templates/index.html:78
+#: templates/index.html:102
 msgid "at"
 msgstr "о"
 
@@ -408,26 +606,6 @@ msgstr "Пошук подій..."
 #: templates/events.html:22
 msgid "All Cities"
 msgstr "Усі міста"
-
-#: templates/events.html:23
-msgid "Dublin"
-msgstr "Дублін"
-
-#: templates/events.html:24
-msgid "Galway"
-msgstr "Голвей"
-
-#: templates/events.html:25
-msgid "Cork"
-msgstr "Корк"
-
-#: templates/events.html:26
-msgid "Limerick"
-msgstr "Лімерик"
-
-#: templates/events.html:27
-msgid "Waterford"
-msgstr "Вотерфорд"
 
 #: templates/events.html:30
 msgid "Search"
@@ -528,63 +706,98 @@ msgstr ""
 "Відвідуйте лише ті заходи, що проходять у безпечних, публічних місцях із "
 "чіткими правилами, щоб знайомитися з новими людьми впевнено та безпечно."
 
-#: templates/index.html:60 templates/index.html:91
+#: templates/index.html:56
+#, fuzzy
+msgid "How it works — fun & easy"
+msgstr "Як це працює"
+
+#: templates/index.html:59
+msgid "Step 1 – Pick an event you love ✨"
+msgstr ""
+
+#: templates/index.html:61
+msgid ""
+"Browse meetups, pub nights, hikes, and language exchanges — pick "
+"something that feels like you!"
+msgstr ""
+
+#: templates/index.html:65
+msgid "Step 2 – Say hi and sign up 👋"
+msgstr ""
+
+#: templates/index.html:67
+msgid ""
+"Join with one click, check the vibe, and see who is going — no stress, "
+"just good energy."
+msgstr ""
+
+#: templates/index.html:71
+msgid "Step 3 – Show up and make friends 🤗"
+msgstr ""
+
+#: templates/index.html:73
+msgid ""
+"Meet in welcoming public places, swap stories, and grow your circle in "
+"Dublin!"
+msgstr ""
+
+#: templates/index.html:84 templates/index.html:115
 msgid "View All →"
 msgstr "Переглянути всі доступні заходи →"
 
-#: templates/index.html:90
+#: templates/index.html:114
 msgid "Featured Communities"
 msgstr "Рекомендовані спільноти"
 
-#: templates/index.html:117
+#: templates/index.html:141
 msgid "Discover Ireland Experiences"
 msgstr "Відкрийте враження Ірландії"
 
-#: templates/index.html:121 templates/index.html:123 templates/index.html:125
+#: templates/index.html:145 templates/index.html:147 templates/index.html:149
 #, fuzzy
 msgid "Outdoor adventures with fellow newcomers"
 msgstr "Пригоди на природі"
 
-#: templates/index.html:127
+#: templates/index.html:151
 msgid "Outdoor Adventures"
 msgstr "Пригоди на природі"
 
-#: templates/index.html:128
+#: templates/index.html:152
 msgid "Explore mountains, coastlines, and stunning landscapes across Ireland"
 msgstr "Досліджуйте гори, узбережжя та неймовірні краєвиди Ірландії"
 
-#: templates/index.html:136
+#: templates/index.html:160
 msgid "City Life"
 msgstr "Міське життя"
 
-#: templates/index.html:137
+#: templates/index.html:161
 msgid "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
 msgstr "Відкрийте яскраві міста від Дубліна до Голвея, від Корка до Лімерика"
 
-#: templates/index.html:140
+#: templates/index.html:164
 #, fuzzy
 msgid "Culture and community"
 msgstr "Покинути спільноту"
 
-#: templates/index.html:141
+#: templates/index.html:165
 msgid "Culture & Social"
 msgstr "Культура і спілкування"
 
-#: templates/index.html:142
+#: templates/index.html:166
 msgid "Experience traditional music, arts, festivals and Irish hospitality"
 msgstr "Відчуйте традиційну музику, мистецтво, фестивалі та ірландську гостинність"
 
-#: templates/index.html:149
+#: templates/index.html:173
 msgid "Ready to Meet New Friends?"
 msgstr "Готові познайомитися з новими людьми у безпечному форматі?"
 
-#: templates/index.html:150
+#: templates/index.html:174
 msgid "Join thousands of people connecting through events across Ireland"
 msgstr ""
 "Приєднуйтеся до тисяч людей, які знайомляться через структуровані, "
 "безпечні заходи по всій Ірландії"
 
-#: templates/index.html:152
+#: templates/index.html:176
 msgid "View Upcoming Events"
 msgstr "Переглянути майбутні заходи та їх програму"
 
@@ -630,22 +843,6 @@ msgstr "Ваш профіль"
 #, python-format
 msgid "%(city)s, Ireland"
 msgstr "%(city)s, Ірландія"
-
-#: templates/profile.html:27 templates/register.html:50
-msgid "Age"
-msgstr "Вік"
-
-#: templates/profile.html:33
-msgid "Gender"
-msgstr "Стать"
-
-#: templates/profile.html:39
-msgid "Nationality"
-msgstr "Національність"
-
-#: templates/profile.html:45
-msgid "City"
-msgstr "Місто"
 
 #: templates/profile.html:70
 msgid "Your Communities"
@@ -1627,4 +1824,7 @@ msgstr ""
 #~ "Ірландії та за її межами. Діліться "
 #~ "порадами, плануйте групові поїздки та "
 #~ "досліджуйте нові місця разом."
+
+#~ msgid "Ukrainian"
+#~ msgstr "Українська"
 

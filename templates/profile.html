@@ -16,7 +16,7 @@
                     <h2>{{ user.name }}</h2>
                     <p class="profile-email">{{ user.email }}</p>
                     {% if user.city %}
-                    <p class="profile-location">📍 {{ _('%(city)s, Ireland', city=user.city) }}</p>
+                    <p class="profile-location">📍 {{ _('%(city)s, Ireland', city=_(user.city)) }}</p>
                     {% endif %}
                 </div>
             </div>
@@ -31,19 +31,19 @@
                 {% if user.gender %}
                 <div class="profile-detail">
                     <span class="detail-label">{{ _('Gender') }}</span>
-                    <span class="detail-value">{{ user.gender }}</span>
+                    <span class="detail-value">{{ _(user.gender) }}</span>
                 </div>
                 {% endif %}
                 {% if user.nationality %}
                 <div class="profile-detail">
                     <span class="detail-label">{{ _('Nationality') }}</span>
-                    <span class="detail-value">{{ user.nationality }}</span>
+                    <span class="detail-value">{{ _(user.nationality) }}</span>
                 </div>
                 {% endif %}
                 {% if user.city %}
                 <div class="profile-detail">
                     <span class="detail-label">{{ _('City') }}</span>
-                    <span class="detail-value">{{ user.city }}</span>
+                    <span class="detail-value">{{ _(user.city) }}</span>
                 </div>
                 {% endif %}
             </div>
@@ -53,7 +53,7 @@
                 <h3>{{ _('Interests') }}</h3>
                 <div class="interest-tags">
                     {% for interest in user.interests %}
-                    <span class="interest-tag">{{ interest.name }}</span>
+                    <span class="interest-tag">{{ _(interest.name) }}</span>
                     {% endfor %}
                 </div>
             </div>

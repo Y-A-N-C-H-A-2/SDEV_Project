@@ -319,7 +319,7 @@ The app uses **SQLite** (`crosspaths.db`) when `DATABASE_URL` is not set. No Pos
 After changing translatable strings in templates or Python:
 
 ```bash
-pybabel extract -F babel.cfg -o messages.pot .
+pybabel extract -F babel.cfg -o messages.pot -k _l -k lazy_gettext .
 pybabel update -i messages.pot -d translations
 # Edit translations/*/LC_MESSAGES/messages.po, then:
 pybabel compile -d translations
