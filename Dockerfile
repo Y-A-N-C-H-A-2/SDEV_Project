@@ -13,7 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN pybabel compile -d translations
+RUN pybabel compile -d translations \
+    && chmod +x docker-entrypoint.sh
 
 RUN useradd --create-home appuser \
     && chown -R appuser:appuser /app
@@ -21,4 +22,4 @@ USER appuser
 
 EXPOSE 10000
 
-CMD ["sh", "-c", "exec gunicorn --bind 0.0.0.0:${PORT:-10000} --workers ${WEB_CONCURRENCY:-2} --timeout 120 wsgi:app"]
+ENTRYPOINT ["/app/docker-entrypoint.sh"]

@@ -1,6 +1,10 @@
 # Render Blueprint: https://render.com/docs/blueprint-spec
 # New → Blueprint → connect repo → apply this file.
 # Web service builds from ./Dockerfile (gunicorn uses $PORT from Render).
+#
+# SECRET_KEY + generateValue: Render only auto-generates if the variable is absent.
+# If deploy logs show "SECRET_KEY ... not set", add SECRET_KEY in the Dashboard
+# (openssl rand -base64 32) or delete an empty SECRET_KEY and redeploy.
 
 databases:
   - name: crosspaths-db
@@ -26,3 +30,6 @@ services:
         fromDatabase:
           name: crosspaths-db
           property: connectionString
+      # Free tier has no Shell; run init-db + seed-db once at container start (idempotent).
+      - key: AUTO_DB_SETUP
+        value: "1"

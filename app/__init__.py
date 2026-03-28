@@ -86,10 +86,18 @@ def create_app():
     secret_key = os.environ.get('SECRET_KEY')
     if not secret_key:
         if os.environ.get('FLASK_ENV') == 'production':
-            raise RuntimeError(
+            msg = (
                 "SECRET_KEY environment variable is not set. "
                 "A secret key is required in production to secure sessions and CSRF tokens."
             )
+            if os.environ.get('RENDER'):
+                msg += (
+                    " On Render: Web Service → Environment → add SECRET_KEY "
+                    "(e.g. run locally: openssl rand -base64 32). "
+                    "If you use a Blueprint, generateValue only applies when SECRET_KEY does not "
+                    "already exist; remove an empty SECRET_KEY, save, and redeploy."
+                )
+            raise RuntimeError(msg)
         secret_key = 'dev-secret-key'
     app.config['SECRET_KEY'] = secret_key
 

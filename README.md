@@ -331,16 +331,15 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 
 1. Push this repository to GitHub (or another Git host Render supports).
 2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and apply **`render.yaml`**. That creates a **Docker** web service (image built from **`Dockerfile`**) and **PostgreSQL**; **`render.yaml`** sets:
-   - **Build:** Docker build from **`./Dockerfile`** (includes `pip install`, `pybabel compile`, and **`CMD`** gunicorn on `$PORT`)
+   - **Build:** Docker build from **`./Dockerfile`** (includes `pip install`, `pybabel compile`, **`docker-entrypoint.sh`** → gunicorn on `$PORT`)
    - **Env:** `FLASK_APP=wsgi:app`, `FLASK_ENV=production`, generated **`SECRET_KEY`**, **`DATABASE_URL`** from the database  
-   Confirm database pricing in the UI if prompted.
-3. After the first successful deploy, open **Shell** on the web service and run:
-   ```bash
-   flask init-db && flask seed-db
-   ```
-4. Optional: set **`WEB_CONCURRENCY`** in **Environment** for gunicorn workers. **`/health`** is the health-check path.
+   Confirm database pricing in the UI if prompted. In **Environment**, confirm **`SECRET_KEY`** has a non-empty value; if it is missing, add one (`openssl rand -base64 32` locally) — Render’s `generateValue` only runs when that variable does not already exist (e.g. empty placeholder from an earlier setup).
+3. **Database tables and seed data:** On **paid** plans you can use **Shell** and run `flask init-db && flask seed-db`. On the **free** tier (no Shell), **`render.yaml`** sets **`AUTO_DB_SETUP=1`**, so the Docker **entrypoint** runs those commands once before gunicorn on each deploy; they are safe to repeat (`create_all` / seed only if empty). After the first good deploy you may set **`AUTO_DB_SETUP`** to **`0`** in **Environment** if you prefer not to run them on every restart.
+4. **Without `AUTO_DB_SETUP`:** From your laptop, copy the Postgres **External Database URL** from the Render dashboard, then from the project root with `venv` active:  
+   `export DATABASE_URL='…' SECRET_KEY='…' FLASK_APP=wsgi:app FLASK_ENV=production` → `flask init-db && flask seed-db`.
+5. Optional: set **`WEB_CONCURRENCY`** in **Environment** for gunicorn workers. **`/health`** is the health-check path.
 
-**Already created the service manually?** Choose **Environment → Docker**, set **Dockerfile path** to `./Dockerfile`, and add **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, and **`DATABASE_URL`**. Render sets **`PORT`**; the image’s **`CMD`** runs gunicorn on that port. For a **native Python** service instead of Docker, use build `pip install -r requirements.txt && pybabel compile -d translations`, start `gunicorn --bind 0.0.0.0:$PORT --timeout 120 wsgi:app`, and the same env vars.
+**Already created the service manually?** Choose **Environment → Docker**, set **Dockerfile path** to `./Dockerfile`, and add **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, **`DATABASE_URL`**, and (free tier) **`AUTO_DB_SETUP=1`** if you cannot use Shell. Render sets **`PORT`**; the image **entrypoint** starts gunicorn. For a **native Python** service instead of Docker, use build `pip install -r requirements.txt && pybabel compile -d translations`, start `gunicorn --bind 0.0.0.0:$PORT --timeout 120 wsgi:app`, and the same env vars.
 
 **Ephemeral disk:** Each deploy gets a fresh disk unless you add a **persistent disk** or external object storage; uploads under `static/uploads` are not kept across redeploys unless you add storage.
 
@@ -386,6 +385,7 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 | Missing Flask / Babel modules | Activate `venv`, then `pip install -r requirements.txt` from project root |
 | Translations not updating | Run `pybabel compile -d translations` from project root |
 | Production 500 / no tables | Ensure PostgreSQL + `DATABASE_URL` + `SECRET_KEY`; run `init-db` and `seed-db` |
+| Render: worker exits, `SECRET_KEY ... not set` | Dashboard → web service → **Environment** → add **`SECRET_KEY`** (random string). Remove any empty **`SECRET_KEY`** row, save, **Manual Deploy** |
 | `psycopg2` build errors locally | Local dev uses SQLite; full Postgres support may need system libs + `psycopg2-binary` |
 
 ---
