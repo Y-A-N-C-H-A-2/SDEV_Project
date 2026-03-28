@@ -151,7 +151,7 @@ Irish/English-speaking users in Dublin need concise, direct content and efficien
 
 ## 4. Architecture and Structure
 
-The app lives at **repository root** (no nested app folder). Single `requirements.txt` for local and Heroku.
+The app lives at **repository root** (no nested app folder). Single `requirements.txt` for local and production dependencies.
 
 ```
 <repo root>/
@@ -196,10 +196,12 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 │           └── messages.po
 ├── scripts/                 # Translation/seed helpers
 ├── babel.cfg
-├── requirements.txt         # Single source for deps (local + Heroku)
+├── requirements.txt         # Dependencies (local + production)
+├── Dockerfile               # Container image (gunicorn + CrossPaths)
+├── .dockerignore            # Excludes venv, .git, local DB from image
+├── render.yaml              # Render Blueprint (web + PostgreSQL)
 ├── run.py                   # Local dev entry point
-├── wsgi.py                  # Heroku/gunicorn entry point
-├── Procfile                 # Heroku: web process
+├── wsgi.py                  # Production WSGI entry (e.g. gunicorn)
 └── README.md                # This file (design + run/deploy reference)
 ```
 
@@ -324,15 +326,37 @@ pybabel compile -d translations
 
 The `messages.pot` file is **generated** by `extract` and is listed in `.gitignore`. The app also compiles outdated `.mo` files on startup when possible.
 
-### 5.3 Deploy to Heroku (summary)
+### 5.3 Production on Render (Docker)
 
-- Attach **Heroku Postgres** so `DATABASE_URL` is set; the app maps `postgres://` to `postgresql://` and adds SSL as needed.
-- Set **`SECRET_KEY`** in Config Vars (required when `FLASK_ENV=production`).
-- Release phase (see `Procfile`) runs `flask init-db` and `flask seed-db`. If tables are missing, run those commands manually:  
-  `heroku run "FLASK_APP=wsgi:app flask init-db"` and `flask seed-db` on the app.
+1. Push this repository to GitHub (or GitLab/Bitbucket supported by Render).
+2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and select **`render.yaml`**. That provisions a **Web Service** (Docker) and a **PostgreSQL** database; `DATABASE_URL` and a generated **`SECRET_KEY`** are wired automatically. (Confirm database pricing/plan in Render’s UI if prompted.)
+3. After the first successful deploy, open **Shell** on the web service and run:
+   ```bash
+   flask init-db && flask seed-db
+   ```
+   (`FLASK_APP=wsgi:app` is set in the Docker image.)
+4. Optional tuning: set **`WEB_CONCURRENCY`** (gunicorn workers) in the service **Environment** tab.
+5. **`/health`** is configured as the Render health check path.
+
+**Ephemeral disk:** The container filesystem is reset on redeploy. User-uploaded images under `static/uploads` are not persisted unless you add object storage (e.g. S3) or a Render **persistent disk** and point uploads there—fine for demos if you rely on seed data only.
+
+**Run the container locally** (smoke test; uses SQLite inside the image if `DATABASE_URL` is unset):
+
+```bash
+docker build -t crosspaths .
+docker run --rm -p 8080:10000 -e PORT=10000 -e SECRET_KEY=local-dev-secret crosspaths
+```
+
+Then open http://127.0.0.1:8080 (run `docker exec … flask init-db` / `seed-db` once if the DB is empty).
+
+### 5.4 Production deployment (any host)
+
+- Point **`DATABASE_URL`** at PostgreSQL when not using local SQLite; the app maps `postgres://` to `postgresql://` and adds `sslmode=require` when needed.
+- Set **`SECRET_KEY`** in the environment (required when `FLASK_ENV=production`).
+- After deploy, create and seed tables if needed: `FLASK_APP=wsgi:app flask init-db` and `FLASK_APP=wsgi:app flask seed-db`.
 - Use `/health` on the deployed URL to surface configuration/DB issues.
 
-### 5.4 Core features and routes
+### 5.5 Core features and routes
 
 **Public:** Home (upcoming events + featured communities), paginated events list (city filter + search), event detail, communities list and detail (community-specific upcoming events), About (locale partials), locale switch via POST `/set-language` (same-origin redirect only).
 
@@ -356,15 +380,15 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 
 **Data model (summary):** `User`, `Interest`, `Event`, `Community` with many-to-many links (interests, event attendance, community membership, events linked to communities). Indexes on `Event.date_time` and `Event.city` support listing and filters.
 
-**Stack (high level):** Flask (app factory, blueprint), Flask-SQLAlchemy + Alembic/Flask-Migrate, Flask-Login, Flask-WTF/CSRF, Flask-Babel, Werkzeug (passwords, `secure_filename`), Pillow (upload validation), gunicorn (Heroku `web`). Entry points: `run.py` (local, may create/seed DB in app context), `wsgi.py` (production).
+**Stack (high level):** Flask (app factory, blueprint), Flask-SQLAlchemy + Alembic/Flask-Migrate, Flask-Login, Flask-WTF/CSRF, Flask-Babel, Werkzeug (passwords, `secure_filename`), Pillow (upload validation), gunicorn (production WSGI server). Entry points: `run.py` (local, may create/seed DB in app context), `wsgi.py` (production).
 
-### 5.5 Troubleshooting
+### 5.6 Troubleshooting
 
 | Issue | What to try |
 |-------|-------------|
 | Missing Flask / Babel modules | Activate `venv`, then `pip install -r requirements.txt` from project root |
 | Translations not updating | Run `pybabel compile -d translations` from project root |
-| Heroku 500 / no tables | Ensure Postgres addon + `SECRET_KEY`; run `init-db` and `seed-db` on Heroku |
+| Production 500 / no tables | Ensure PostgreSQL + `DATABASE_URL` + `SECRET_KEY`; run `init-db` and `seed-db` |
 | `psycopg2` build errors locally | Local dev uses SQLite; full Postgres support may need system libs + `psycopg2-binary` |
 
 ---

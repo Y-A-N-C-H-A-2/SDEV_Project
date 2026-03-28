@@ -1,0 +1,25 @@
+.git
+.gitignore
+venv
+env
+ENV
+__pycache__
+*.py[cod]
+*.db
+.env
+.env.*
+.flaskenv
+.pytest_cache
+.coverage
+htmlcov
+*.log
+.vscode
+.idea
+*.swp
+.DS_Store
+messages.pot
+.cursor
+
+# User uploads — recreated at runtime; do not bake local files into the image
+static/uploads/*
+!static/uploads/.gitkeep

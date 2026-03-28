@@ -54,7 +54,7 @@ def _compile_translations_if_needed(translation_dir: Path) -> None:
             logging.info("Compiled translation catalog: %s", mo_path)
         except Exception as e:
             logging.exception("Failed to compile translation catalog for locale '%s'", locale_dir.name)
-            # Ensure failure is visible in Heroku logs (e.g. read-only filesystem)
+            # Ensure failure is visible in server logs (e.g. read-only filesystem)
             print(
                 f"[CrossPaths] Translation compile failed for {locale_dir.name}: {e}. "
                 "Ensure .mo files are committed or filesystem is writable.",
@@ -73,7 +73,7 @@ def get_locale():
 
 def create_app():
     """Create and configure the Flask application"""
-    # Use absolute paths so templates/static/translations resolve correctly on Heroku (any CWD)
+    # Use absolute paths so templates/static/translations resolve regardless of CWD
     _project_root = Path(__file__).resolve().parent.parent
     app = Flask(
         __name__,
@@ -97,13 +97,13 @@ def create_app():
     app.config['BABEL_SUPPORTED_LOCALES'] = ['en_IE', 'uk_UA', 'pt_BR']
     app.config['BABEL_TRANSLATION_DIRECTORIES'] = str(translation_dir)
 
-    # Database configuration (Heroku sets DATABASE_URL when Postgres add-on is attached)
+    # Database configuration (optional DATABASE_URL for PostgreSQL in production)
     database_url = (os.environ.get('DATABASE_URL') or '').strip()
     if database_url:
-        # Heroku provides 'postgres://' URLs but SQLAlchemy 1.4+ requires 'postgresql://'
+        # Some hosts use postgres://; SQLAlchemy 1.4+ expects postgresql://
         if database_url.startswith('postgres://'):
             database_url = database_url.replace('postgres://', 'postgresql://', 1)
-        # Heroku Postgres requires SSL; add sslmode=require if not already present
+        # Managed Postgres often requires SSL; add sslmode=require if not already present
         if 'postgresql://' in database_url and 'sslmode=' not in database_url:
             separator = '&' if '?' in database_url else '?'
             database_url = f'{database_url}{separator}sslmode=require'
@@ -118,13 +118,13 @@ def create_app():
     app.config['UPLOAD_FOLDER'] = str(_project_root / 'static' / 'uploads')
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 
-    # Ensure upload directory exists (skip on read-only filesystem, e.g. Heroku)
+    # Ensure upload directory exists (skip on read-only filesystem)
     try:
         os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     except OSError as e:
         logging.warning("Could not create upload folder %s: %s", app.config['UPLOAD_FOLDER'], e)
 
-    # Ensure production dynos can use translations
+    # Ensure production can use translations
     _compile_translations_if_needed(translation_dir)
 
     # Initialize extensions
