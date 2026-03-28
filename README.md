@@ -201,7 +201,8 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 ├── .dockerignore            # Used only when building the Docker image
 ├── render.yaml              # Render Blueprint (Python web + PostgreSQL)
 ├── run.py                   # Local dev entry point
-├── wsgi.py                  # Production WSGI entry (e.g. gunicorn)
+├── gunicorn.conf.py         # Binds 0.0.0.0:$PORT when start cmd is plain `gunicorn app:app`
+├── wsgi.py                  # Production WSGI entry (e.g. gunicorn wsgi:app)
 └── README.md                # This file (design + run/deploy reference)
 ```
 
@@ -340,7 +341,7 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
    ```
 4. Optional: set **`WEB_CONCURRENCY`** in **Environment** for gunicorn workers. **`/health`** is the health-check path.
 
-**Already created the service manually?** In **Settings → Build & Deploy**, set the same **Build** / **Start** commands as above, and in **Environment** add **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, and **`DATABASE_URL`** (from your Postgres instance). Do **not** use `gunicorn app:app` — this project uses **`wsgi:app`**.
+**Already created the service manually?** Prefer **Build** `pip install -r requirements.txt && pybabel compile -d translations` and **Start** `gunicorn --bind 0.0.0.0:$PORT wsgi:app`, with **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, and **`DATABASE_URL`**. If Render keeps the default **`gunicorn app:app`**, the repo defines **`app`** on the `app` package and **`gunicorn.conf.py`** so that command still binds to **`$PORT`** and starts correctly.
 
 **Ephemeral disk:** Each deploy gets a fresh disk unless you add a **persistent disk** or external object storage; uploads under `static/uploads` are not kept across redeploys unless you add storage.
 

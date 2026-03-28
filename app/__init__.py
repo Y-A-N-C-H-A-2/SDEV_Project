@@ -173,3 +173,7 @@ def create_app():
         click.echo('Database seeding complete.')
 
     return app
+
+
+# Single WSGI instance: supports `gunicorn app:app` (Render’s Python default) and `wsgi:app`.
+app = create_app()

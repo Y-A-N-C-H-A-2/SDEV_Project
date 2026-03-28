@@ -2,11 +2,8 @@
 CrossPaths Application Entry Point
 Run this file to start the Flask development server
 """
-from app import create_app, db
+from app import app, db
 import os
-
-# Create the Flask application
-app = create_app()
 
 if __name__ == '__main__':
     # Get configuration from environment or use defaults
