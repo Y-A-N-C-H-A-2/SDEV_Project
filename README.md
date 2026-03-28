@@ -199,7 +199,7 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 ├── requirements.txt         # Dependencies (local + production)
 ├── Dockerfile               # Optional: local / other hosts that run containers
 ├── .dockerignore            # Used only when building the Docker image
-├── render.yaml              # Render Blueprint (Python web + PostgreSQL)
+├── render.yaml              # Render Blueprint (Docker web + PostgreSQL)
 ├── run.py                   # Local dev entry point
 ├── gunicorn.conf.py         # Bind + 120s timeout when start cmd is plain `gunicorn app:app`
 ├── wsgi.py                  # Production WSGI entry (e.g. gunicorn wsgi:app)
@@ -327,25 +327,24 @@ pybabel compile -d translations
 
 The `messages.pot` file is **generated** by `extract` and is listed in `.gitignore`. The app also compiles outdated `.mo` files on startup when possible.
 
-### 5.3 Production on Render (Python)
+### 5.3 Production on Render (Docker)
 
 1. Push this repository to GitHub (or another Git host Render supports).
-2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and apply **`render.yaml`**. That creates a **Python** web service and **PostgreSQL**; **`render.yaml`** sets:
-   - **Build:** `pip install -r requirements.txt && pybabel compile -d translations`
-   - **Start:** `gunicorn --bind 0.0.0.0:$PORT --timeout 120 wsgi:app`
+2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and apply **`render.yaml`**. That creates a **Docker** web service (image built from **`Dockerfile`**) and **PostgreSQL**; **`render.yaml`** sets:
+   - **Build:** Docker build from **`./Dockerfile`** (includes `pip install`, `pybabel compile`, and **`CMD`** gunicorn on `$PORT`)
    - **Env:** `FLASK_APP=wsgi:app`, `FLASK_ENV=production`, generated **`SECRET_KEY`**, **`DATABASE_URL`** from the database  
-   Python version follows **`.python-version`** (e.g. 3.12) on Render. Confirm database pricing in the UI if prompted.
+   Confirm database pricing in the UI if prompted.
 3. After the first successful deploy, open **Shell** on the web service and run:
    ```bash
    flask init-db && flask seed-db
    ```
 4. Optional: set **`WEB_CONCURRENCY`** in **Environment** for gunicorn workers. **`/health`** is the health-check path.
 
-**Already created the service manually?** Prefer **Build** `pip install -r requirements.txt && pybabel compile -d translations` and **Start** `gunicorn --bind 0.0.0.0:$PORT --timeout 120 wsgi:app`, with **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, and **`DATABASE_URL`**. If Render keeps the default **`gunicorn app:app`**, the repo defines **`app`** on the `app` package and **`gunicorn.conf.py`** (bind, **120s worker timeout**) so that default still matches the Docker image behaviour.
+**Already created the service manually?** Choose **Environment → Docker**, set **Dockerfile path** to `./Dockerfile`, and add **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, and **`DATABASE_URL`**. Render sets **`PORT`**; the image’s **`CMD`** runs gunicorn on that port. For a **native Python** service instead of Docker, use build `pip install -r requirements.txt && pybabel compile -d translations`, start `gunicorn --bind 0.0.0.0:$PORT --timeout 120 wsgi:app`, and the same env vars.
 
 **Ephemeral disk:** Each deploy gets a fresh disk unless you add a **persistent disk** or external object storage; uploads under `static/uploads` are not kept across redeploys unless you add storage.
 
-**Optional — Docker locally:** `docker build` / `docker run` using the repo **`Dockerfile`** still works for local smoke tests; Render is configured via **`render.yaml`** for Python, not Docker.
+**Local Docker:** `docker build` / `docker run` using **`Dockerfile`** matches what Render builds from **`render.yaml`**.
 
 ### 5.4 Production deployment (any host)
 
