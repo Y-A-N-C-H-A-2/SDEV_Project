@@ -1,6 +1,6 @@
 # Render Blueprint: https://render.com/docs/blueprint-spec
-# Create via Dashboard → New → Blueprint → connect this repo.
-# Adjust `region` / `plan` in the dashboard if your account requires it.
+# New → Blueprint → connect repo → apply this file.
+# Python native runtime (not Docker). Uses .python-version for the Python series.
 
 databases:
   - name: crosspaths-db
@@ -10,13 +10,15 @@ databases:
 services:
   - type: web
     name: crosspaths-web
-    runtime: docker
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
+    runtime: python
+    buildCommand: pip install -r requirements.txt && pybabel compile -d translations
+    startCommand: gunicorn --bind 0.0.0.0:$PORT wsgi:app
     healthCheckPath: /health
     envVars:
       - key: FLASK_ENV
         value: production
+      - key: FLASK_APP
+        value: wsgi:app
       - key: PYTHONUNBUFFERED
         value: "1"
       - key: SECRET_KEY

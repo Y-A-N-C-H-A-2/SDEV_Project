@@ -197,9 +197,9 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 ├── scripts/                 # Translation/seed helpers
 ├── babel.cfg
 ├── requirements.txt         # Dependencies (local + production)
-├── Dockerfile               # Container image (gunicorn + CrossPaths)
-├── .dockerignore            # Excludes venv, .git, local DB from image
-├── render.yaml              # Render Blueprint (web + PostgreSQL)
+├── Dockerfile               # Optional: local / other hosts that run containers
+├── .dockerignore            # Used only when building the Docker image
+├── render.yaml              # Render Blueprint (Python web + PostgreSQL)
 ├── run.py                   # Local dev entry point
 ├── wsgi.py                  # Production WSGI entry (e.g. gunicorn)
 └── README.md                # This file (design + run/deploy reference)
@@ -326,28 +326,25 @@ pybabel compile -d translations
 
 The `messages.pot` file is **generated** by `extract` and is listed in `.gitignore`. The app also compiles outdated `.mo` files on startup when possible.
 
-### 5.3 Production on Render (Docker)
+### 5.3 Production on Render (Python)
 
-1. Push this repository to GitHub (or GitLab/Bitbucket supported by Render).
-2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and select **`render.yaml`**. That provisions a **Web Service** (Docker) and a **PostgreSQL** database; `DATABASE_URL` and a generated **`SECRET_KEY`** are wired automatically. (Confirm database pricing/plan in Render’s UI if prompted.)
+1. Push this repository to GitHub (or another Git host Render supports).
+2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and apply **`render.yaml`**. That creates a **Python** web service and **PostgreSQL**; **`render.yaml`** sets:
+   - **Build:** `pip install -r requirements.txt && pybabel compile -d translations`
+   - **Start:** `gunicorn --bind 0.0.0.0:$PORT wsgi:app`
+   - **Env:** `FLASK_APP=wsgi:app`, `FLASK_ENV=production`, generated **`SECRET_KEY`**, **`DATABASE_URL`** from the database  
+   Python version follows **`.python-version`** (e.g. 3.12) on Render. Confirm database pricing in the UI if prompted.
 3. After the first successful deploy, open **Shell** on the web service and run:
    ```bash
    flask init-db && flask seed-db
    ```
-   (`FLASK_APP=wsgi:app` is set in the Docker image.)
-4. Optional tuning: set **`WEB_CONCURRENCY`** (gunicorn workers) in the service **Environment** tab.
-5. **`/health`** is configured as the Render health check path.
+4. Optional: set **`WEB_CONCURRENCY`** in **Environment** for gunicorn workers. **`/health`** is the health-check path.
 
-**Ephemeral disk:** The container filesystem is reset on redeploy. User-uploaded images under `static/uploads` are not persisted unless you add object storage (e.g. S3) or a Render **persistent disk** and point uploads there—fine for demos if you rely on seed data only.
+**Already created the service manually?** In **Settings → Build & Deploy**, set the same **Build** / **Start** commands as above, and in **Environment** add **`FLASK_APP=wsgi:app`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, and **`DATABASE_URL`** (from your Postgres instance). Do **not** use `gunicorn app:app` — this project uses **`wsgi:app`**.
 
-**Run the container locally** (smoke test; uses SQLite inside the image if `DATABASE_URL` is unset):
+**Ephemeral disk:** Each deploy gets a fresh disk unless you add a **persistent disk** or external object storage; uploads under `static/uploads` are not kept across redeploys unless you add storage.
 
-```bash
-docker build -t crosspaths .
-docker run --rm -p 8080:10000 -e PORT=10000 -e SECRET_KEY=local-dev-secret crosspaths
-```
-
-Then open http://127.0.0.1:8080 (run `docker exec … flask init-db` / `seed-db` once if the DB is empty).
+**Optional — Docker locally:** `docker build` / `docker run` using the repo **`Dockerfile`** still works for local smoke tests; Render is configured via **`render.yaml`** for Python, not Docker.
 
 ### 5.4 Production deployment (any host)
 
