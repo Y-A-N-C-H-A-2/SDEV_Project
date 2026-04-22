@@ -4,7 +4,6 @@ All application routes and view functions
 """
 import os
 import uuid
-from datetime import datetime
 
 from flask import Blueprint, render_template, session, redirect, url_for, request, flash, current_app
 from flask_babel import gettext as _
@@ -15,10 +14,10 @@ from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.utils import secure_filename
 from werkzeug.wrappers import Response
 
-from app import db
+from app import db, SUPPORTED_LOCALES
 from app.models import User, Event, Community, Interest, community_events
 from app.forms import RegistrationForm, LoginForm, ProfileForm, EventForm
-from app.utils import sync_user_interests, is_same_origin_referrer
+from app.utils import sync_user_interests, is_same_origin_referrer, utcnow
 
 bp = Blueprint('main', __name__)
 
@@ -79,11 +78,11 @@ def _validate_image(stream):
 
 def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
     """Truncate a filename while preserving its extension."""
-    name, _, ext = filename.rpartition('.')
+    name, dot, ext = filename.rpartition('.')
     if not name:
         return filename[:max_len]
-    allowed = max_len - len(ext) - 1  # 1 for the dot
-    return f"{name[:allowed]}.{ext}" if allowed > 0 else filename[:max_len]
+    allowed = max_len - len(ext) - len(dot)
+    return f"{name[:allowed]}{dot}{ext}" if allowed > 0 else filename[:max_len]
 
 
 @bp.route('/')
@@ -91,7 +90,7 @@ def _safe_truncate_filename(filename, max_len=_MAX_FILENAME_LEN):
 def index():
     """Home page"""
     try:
-        now = datetime.utcnow()
+        now = utcnow()
         events = db.session.scalars(
             select(Event).where(Event.date_time >= now).order_by(Event.date_time.asc()).limit(4)
         ).all()
@@ -109,7 +108,7 @@ def events():
     search = request.args.get('search', '')
     page = request.args.get('page', 1, type=int)
 
-    stmt = select(Event).where(Event.date_time >= datetime.utcnow())
+    stmt = select(Event).where(Event.date_time >= utcnow())
     if city:
         stmt = stmt.where(Event.city == city)
     if search:
@@ -144,7 +143,7 @@ def events():
 def event_detail(event_id):
     """Single event detail page"""
     event = db.get_or_404(Event, event_id)
-    is_past_event = event.date_time < datetime.utcnow()
+    is_past_event = event.date_time < utcnow()
     is_attending = _is_user_attending_event(current_user, event)
     is_organizer = current_user.is_authenticated and event.organizer_id == current_user.id
     return render_template(
@@ -163,7 +162,7 @@ def signup_event(event_id):
     """Sign up current user for an event."""
     event = db.get_or_404(Event, event_id)
 
-    if event.date_time < datetime.utcnow():
+    if event.date_time < utcnow():
         flash(_('This event has already happened.'), 'warning')
         return redirect(url_for('main.event_detail', event_id=event_id))
 
@@ -189,7 +188,7 @@ def leave_event(event_id):
     """Cancel current user's event signup."""
     event = db.get_or_404(Event, event_id)
 
-    if event.date_time < datetime.utcnow():
+    if event.date_time < utcnow():
         flash(_('You can only cancel signup before the event starts.'), 'warning')
         return redirect(url_for('main.event_detail', event_id=event_id))
 
@@ -268,7 +267,7 @@ def communities():
 def community_detail(community_id):
     """Single community detail page"""
     community = db.get_or_404(Community, community_id)
-    now = datetime.utcnow()
+    now = utcnow()
     upcoming_events = db.session.scalars(
         select(Event)
         .join(community_events, Event.id == community_events.c.event_id)
@@ -336,9 +335,9 @@ def register():
             name=form.name.data,
             email=form.email.data,
             age=form.age.data,
-            gender=form.gender.data if form.gender.data else None,
-            nationality=form.nationality.data,
-            city=form.city.data if form.city.data else None
+            gender=form.gender.data or None,
+            nationality=(form.nationality.data or '').strip() or None,
+            city=form.city.data or None,
         )
         user.set_password(form.password.data)
 
@@ -404,9 +403,9 @@ def edit_profile():
     if form.validate_on_submit():
         current_user.name = form.name.data
         current_user.age = form.age.data
-        current_user.gender = form.gender.data if form.gender.data else None
-        current_user.nationality = form.nationality.data
-        current_user.city = form.city.data if form.city.data else None
+        current_user.gender = form.gender.data or None
+        current_user.nationality = (form.nationality.data or '').strip() or None
+        current_user.city = form.city.data or None
 
         try:
             sync_user_interests(
@@ -445,7 +444,7 @@ def set_language():
     """Handle language switching. Redirect only to same-origin URLs to avoid open redirect."""
     locale = request.form.get('locale', 'en_IE')
 
-    if locale in ['en_IE', 'uk_UA', 'pt_BR']:
+    if locale in SUPPORTED_LOCALES:
         session['lang'] = locale
 
     if is_same_origin_referrer(request, request.referrer):

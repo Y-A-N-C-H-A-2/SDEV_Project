@@ -52,7 +52,7 @@
                 <div class="members-list">
                     {% for member in community.members.limit(20) %}
                     <div class="member-item">
-                        <div class="member-avatar">{{ member.name[0] }}</div>
+                        <div class="member-avatar">{{ (member.name or '?')[:1]|upper }}</div>
                         <span>{{ member.name }}</span>
                     </div>
                     {% endfor %}

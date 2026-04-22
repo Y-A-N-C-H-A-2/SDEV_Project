@@ -1,12 +1,21 @@
 """
 CrossPaths shared utilities
 """
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 from sqlalchemy import select, func
 
 from app import db
 from app.models import Interest
+
+
+def utcnow():
+    """Return a naive UTC datetime, matching the (timezone-naive) DB columns.
+
+    Replacement for the deprecated ``datetime.utcnow()`` (Python 3.12+).
+    """
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
 def normalize_custom_interests(raw_text):

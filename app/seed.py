@@ -1,13 +1,14 @@
 """
 CrossPaths Database Seed Data
 """
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from sqlalchemy import select
 from sqlalchemy.exc import ProgrammingError
 
 from app import db
 from app.models import Interest, Event, Community
+from app.utils import utcnow
 
 PREDEFINED_INTERESTS = [
     'Language exchange', 'Travel', 'Hiking', 'Photography', 'Music',
@@ -18,7 +19,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Trip to Galway with a Castle Visit',
         'description': 'Join us for an amazing day trip to Galway! We will visit the historic Dunguaire Castle, explore the colorful streets of Galway city, and enjoy traditional Irish music in a local pub.',
-        'date_time': datetime.utcnow() + timedelta(days=14),
+        'days_from_now': 14,
         'city': 'Galway',
         'venue': 'Dunguaire Castle, Kinvara',
         'category': 'Travel',
@@ -27,7 +28,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Wicklow Mountains Hiking Trip',
         'description': 'Experience the breathtaking beauty of the Wicklow Mountains. This moderate-level hike takes us through Glendalough valley with stunning views of the upper and lower lakes.',
-        'date_time': datetime.utcnow() + timedelta(days=7),
+        'days_from_now': 7,
         'city': 'Dublin',
         'venue': 'Glendalough, Co. Wicklow',
         'category': 'Outdoor',
@@ -36,7 +37,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Wednesday Filming Locations Tour in Wicklow',
         'description': 'Explore the magical filming locations of the Wednesday series in County Wicklow. Visit the stunning landscapes that served as the backdrop for Nevermore Academy.',
-        'date_time': datetime.utcnow() + timedelta(days=21),
+        'days_from_now': 21,
         'city': 'Dublin',
         'venue': 'Killruddery House, Bray, Co. Wicklow',
         'category': 'Cultural',
@@ -45,7 +46,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'International Meetup in Dublin',
         'description': 'Meet people from all over the world living in Dublin! This casual meetup is perfect for newcomers and anyone looking to expand their social circle in the city.',
-        'date_time': datetime.utcnow() + timedelta(days=3),
+        'days_from_now': 3,
         'city': 'Dublin',
         'venue': 'The Bernard Shaw, Dublin 8',
         'category': 'Social',
@@ -54,7 +55,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Language Exchange Night',
         'description': 'Practice languages while making new friends! Bring your enthusiasm for learning and share your native language. All levels welcome.',
-        'date_time': datetime.utcnow() + timedelta(days=5),
+        'days_from_now': 5,
         'city': 'Dublin',
         'venue': 'Cafe en Seine, Dawson Street',
         'category': 'Language',
@@ -63,7 +64,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Photography Walk',
         'description': "Join fellow photography enthusiasts for a guided walk through Dublin's most photogenic spots. Bring any camera — phone cameras are welcome too!",
-        'date_time': datetime.utcnow() + timedelta(days=10),
+        'days_from_now': 10,
         'city': 'Dublin',
         'venue': "Meeting at Ha'penny Bridge, Dublin",
         'category': 'Photography',
@@ -72,7 +73,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Coffee Meetup for Newcomers in Ireland',
         'description': 'New to Ireland? Come for a relaxed coffee meetup and meet other newcomers. Share tips, stories, and make lasting connections over great coffee.',
-        'date_time': datetime.utcnow() + timedelta(days=2),
+        'days_from_now': 2,
         'city': 'Cork',
         'venue': "Filter Coffee, George's Quay, Cork",
         'category': 'Food & Drink',
@@ -81,7 +82,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Pub Social Night',
         'description': 'Experience the famous Irish pub culture! Join us for a fun night of live music, great craic, and the best Guinness in town.',
-        'date_time': datetime.utcnow() + timedelta(days=4),
+        'days_from_now': 4,
         'city': 'Limerick',
         'venue': "Dolan's Pub, Limerick",
         'category': 'Nightlife',
@@ -90,7 +91,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Art and Creativity Workshop',
         'description': 'Unleash your creative side in this hands-on art workshop. No experience needed — just bring your curiosity and willingness to try something new!',
-        'date_time': datetime.utcnow() + timedelta(days=12),
+        'days_from_now': 12,
         'city': 'Waterford',
         'venue': 'Garter Lane Arts Centre, Waterford',
         'category': 'Art & Creative',
@@ -103,36 +104,43 @@ SAMPLE_COMMUNITIES = [
         'name': 'Language Exchange Community',
         'description': 'Connect with language learners and native speakers. Practice your target language in a friendly, supportive environment through regular meetups and events.',
         'image': 'event_language_exchange.png',
+        'event_categories': ['Language'],
     },
     {
         'name': 'Hiking Ireland',
         'description': "Explore Ireland's stunning trails and mountains together. From gentle coastal walks to challenging mountain hikes, there's something for everyone.",
         'image': 'event_wicklow.png',
+        'event_categories': ['Outdoor'],
     },
     {
         'name': 'International Friends in Dublin',
         'description': 'A welcoming community for internationals living in Dublin. Meet people from around the world, share experiences, and build lasting friendships.',
         'image': 'event_pub.png',
+        'event_categories': ['Social', 'Nightlife', 'Food & Drink'],
     },
     {
         'name': 'Photography Club',
         'description': "For photographers of all levels! Share your work, learn new techniques, and join photo walks around Ireland's most beautiful locations.",
         'image': 'event_photography_club.png',
+        'event_categories': ['Photography'],
     },
     {
         'name': 'Tech and Startups Ireland',
         'description': 'Connect with tech professionals, startup founders, and anyone interested in the Irish tech scene. Networking events, talks, and hackathons.',
         'image': 'event_tech_startups.png',
+        'event_categories': ['Tech'],
     },
     {
         'name': 'Art and Creativity',
         'description': 'A space for artists, creatives, and art enthusiasts. From painting workshops to gallery visits, let creativity bring us together.',
         'image': 'event_art.png',
+        'event_categories': ['Art & Creative', 'Cultural'],
     },
     {
         'name': 'Travel Buddies',
         'description': 'Find travel companions for adventures around Ireland and beyond. Share travel tips, plan group trips, and explore new destinations together.',
         'image': 'event_galway.png',
+        'event_categories': ['Travel'],
     },
 ]
 
@@ -159,16 +167,28 @@ def seed_database():
 
     db.session.commit()
 
-    # Add sample events (without organizer - they're system events)
+    # Add sample events (without organizer - they're system events).
+    # Compute dates at call time so re-seeding produces fresh, future events.
+    now = utcnow()
     for event_data in SAMPLE_EVENTS:
-        event = Event(**event_data)
-        db.session.add(event)
+        data = dict(event_data)
+        days = data.pop('days_from_now')
+        data['date_time'] = now + timedelta(days=days)
+        db.session.add(Event(**data))
 
     db.session.commit()
 
-    # Add sample communities
+    # Add sample communities and link them to events sharing their categories
+    events_by_category = {}
+    for event in db.session.scalars(select(Event)).all():
+        events_by_category.setdefault(event.category, []).append(event)
+
     for community_data in SAMPLE_COMMUNITIES:
-        community = Community(**community_data)
+        data = dict(community_data)
+        categories = data.pop('event_categories', [])
+        community = Community(**data)
+        for category in categories:
+            community.events.extend(events_by_category.get(category, []))
         db.session.add(community)
 
     db.session.commit()

@@ -1,18 +1,18 @@
 """
 CrossPaths Forms
 """
-from datetime import datetime
-
 from flask_babel import lazy_gettext as _l
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, IntegerField, SelectField, TextAreaField, DateTimeLocalField, SelectMultipleField, widgets
 from wtforms.validators import DataRequired, Email, EqualTo, Length, Optional, NumberRange, ValidationError
 
+from app.utils import utcnow
+
 
 def validate_future_date(_form, field):
     """Ensure date_time is in the future."""
-    if field.data and field.data <= datetime.utcnow():
+    if field.data and field.data <= utcnow():
         raise ValidationError(_l('Event date and time must be in the future.'))
 
 

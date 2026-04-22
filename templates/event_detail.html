@@ -42,10 +42,12 @@
                 </div>
             </div>
 
+            {% if event.description %}
             <div class="detail-description">
                 <h2>{{ _('About this event') }}</h2>
                 <p>{{ _(event.description) }}</p>
             </div>
+            {% endif %}
 
             <div class="detail-actions">
                 {% if current_user.is_authenticated %}

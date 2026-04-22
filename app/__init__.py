@@ -61,15 +61,20 @@ def _compile_translations_if_needed(translation_dir: Path) -> None:
                 file=sys.stderr,
             )
 
+SUPPORTED_LOCALES = ['en_IE', 'uk_UA', 'pt_BR']
+
+
 def get_locale():
     """
     Determine the best locale to use for the request.
-    Checks session first, then accepts language header.
+    Checks session first, then accepts language header. Always returns a value
+    from SUPPORTED_LOCALES so callers can safely use it in template paths etc.
     """
     from flask import session
-    if 'lang' in session:
-        return session['lang']
-    return request.accept_languages.best_match(['en_IE', 'uk_UA', 'pt_BR']) or 'en_IE'
+    session_lang = session.get('lang')
+    if session_lang in SUPPORTED_LOCALES:
+        return session_lang
+    return request.accept_languages.best_match(SUPPORTED_LOCALES) or 'en_IE'
 
 def create_app():
     """Create and configure the Flask application"""
@@ -102,7 +107,7 @@ def create_app():
     app.config['SECRET_KEY'] = secret_key
 
     app.config['BABEL_DEFAULT_LOCALE'] = 'en_IE'
-    app.config['BABEL_SUPPORTED_LOCALES'] = ['en_IE', 'uk_UA', 'pt_BR']
+    app.config['BABEL_SUPPORTED_LOCALES'] = SUPPORTED_LOCALES
     app.config['BABEL_TRANSLATION_DIRECTORIES'] = str(translation_dir)
 
     # Database configuration (optional DATABASE_URL for PostgreSQL in production)
