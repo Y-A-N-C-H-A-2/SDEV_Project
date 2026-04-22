@@ -23,7 +23,7 @@ if __name__ == '__main__':
     print("=" * 60)
     print(f"Running on: http://{host}:{port}")
     print(f"Environment: {'Development' if debug else 'Production'}")
-    print(f"Supported locales: en_IE, uk_UA, pt_BR")
+    print("Supported locales: en_IE, uk_UA, pt_BR")
     print("=" * 60)
     print("\nPress Ctrl+C to stop the server\n")
     

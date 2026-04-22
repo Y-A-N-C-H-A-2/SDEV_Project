@@ -15,7 +15,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.wrappers import Response
 
 from app import db, SUPPORTED_LOCALES
-from app.models import User, Event, Community, Interest, community_events
+from app.models import User, Event, Community, community_events
 from app.forms import RegistrationForm, LoginForm, ProfileForm, EventForm
 from app.utils import sync_user_interests, is_same_origin_referrer, utcnow
 
