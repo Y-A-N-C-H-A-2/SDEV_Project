@@ -21,6 +21,11 @@ event_attendees = db.Table('event_attendees',
     db.Column('event_id', db.Integer, db.ForeignKey('events.id'), primary_key=True),
 )
 
+community_events = db.Table('community_events',
+    db.Column('community_id', db.Integer, db.ForeignKey('communities.id'), primary_key=True),
+    db.Column('event_id', db.Integer, db.ForeignKey('events.id'), primary_key=True),
+)
+
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -75,7 +80,7 @@ class Event(db.Model):
     organizer = db.relationship(
         'User',
         foreign_keys=[organizer_id],
-        backref=db.backref('organized_events', lazy='dynamic', cascade='all, delete-orphan'),
+        backref=db.backref('organized_events', lazy='dynamic'),
     )
 
     def __repr__(self):
@@ -91,11 +96,4 @@ class Community(db.Model):
     image = db.Column(db.String(300))
 
     # Relationships
-    events = db.relationship('Event', secondary='community_events', backref=db.backref('communities', lazy='dynamic'))
-
-
-# Association table for community events
-community_events = db.Table('community_events',
-    db.Column('community_id', db.Integer, db.ForeignKey('communities.id'), primary_key=True),
-    db.Column('event_id', db.Integer, db.ForeignKey('events.id'), primary_key=True)
-)
+    events = db.relationship('Event', secondary=community_events, backref=db.backref('communities', lazy='dynamic'))

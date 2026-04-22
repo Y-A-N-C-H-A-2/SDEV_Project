@@ -11,7 +11,7 @@
     <div class="profile-container">
         <div class="profile-card">
             <div class="profile-header">
-                <div class="profile-avatar-placeholder">{{ user.name[0] }}</div>
+                <div class="profile-avatar-placeholder">{{ (user.name or '?')[:1]|upper }}</div>
                 <div class="profile-info">
                     <h2>{{ user.name }}</h2>
                     <p class="profile-email">{{ user.email }}</p>

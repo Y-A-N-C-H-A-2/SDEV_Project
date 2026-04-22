@@ -26,9 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeLocaleFeatures(locale) {
     switch(locale) {
         case 'uk_UA':
-            // Ukrainian: Add extra confirmation for actions
-            addConfirmationDialogs();
-            // Show safety information prominently
+            // Ukrainian: highlight safety information prominently
             highlightSafetyFeatures();
             break;
 
@@ -41,20 +39,6 @@ function initializeLocaleFeatures(locale) {
         default:
             break;
     }
-}
-
-/**
- * Add confirmation dialogs for important actions (Ukrainian locale)
- */
-function addConfirmationDialogs() {
-    const actionButtons = document.querySelectorAll('.btn-primary');
-    actionButtons.forEach(button => {
-        if (button.textContent.includes('RSVP') || button.textContent.includes('Register')) {
-            button.addEventListener('click', function() {
-                // In production, this would show a proper modal
-            });
-        }
-    });
 }
 
 /**
