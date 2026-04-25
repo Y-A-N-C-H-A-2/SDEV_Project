@@ -14,7 +14,7 @@
         <form method="GET" action="{{ url_for('main.events') }}" class="filter-form">
             <div class="filter-row">
                 <div class="search-box">
-                    <input type="text" name="search" placeholder="{{ _('Search events...') }}" 
+                    <input type="text" name="search" placeholder="{{ _('Search events...') }}"
                            value="{{ search_query }}" class="form-input">
                 </div>
                 <div class="city-filter">
@@ -27,12 +27,28 @@
                         <option value="Waterford" {% if selected_city == 'Waterford' %}selected{% endif %}>{{ _('Waterford') }}</option>
                     </select>
                 </div>
+                <input type="hidden" name="when" value="{{ selected_when }}">
                 <button type="submit" class="btn btn-primary">{{ _('Search') }}</button>
-                {% if search_query or selected_city %}
+                {% if search_query or selected_city or selected_when %}
                 <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('Clear') }}</a>
                 {% endif %}
             </div>
         </form>
+
+        <div class="time-filters" role="tablist" aria-label="{{ _('Time filter') }}">
+            <a class="time-chip {% if not selected_when %}is-active{% endif %}"
+               href="{{ url_for('main.events', city=selected_city, search=search_query) }}">
+                {{ _('All upcoming') }}
+            </a>
+            <a class="time-chip {% if selected_when == 'tonight' %}is-active{% endif %}"
+               href="{{ url_for('main.events', city=selected_city, search=search_query, when='tonight') }}">
+                {{ _('Tonight') }}
+            </a>
+            <a class="time-chip {% if selected_when == 'weekend' %}is-active{% endif %}"
+               href="{{ url_for('main.events', city=selected_city, search=search_query, when='weekend') }}">
+                {{ _('This weekend') }}
+            </a>
+        </div>
     </div>
 
     <!-- Events List -->
@@ -64,8 +80,18 @@
                     <p class="event-meta">👤 {{ _('Organized by') }} {{ event.organizer.name }}</p>
                     {% endif %}
                 </div>
+                {% if attendee_avatars[event.id] %}
+                <ul class="attendee-avatars attendee-avatars-card" aria-label="{{ _('Who is going') }}">
+                    {% for u in attendee_avatars[event.id] %}
+                    <li class="attendee-avatar" title="{{ u.name }}">{{ (u.name or '?')[:1]|upper }}</li>
+                    {% endfor %}
+                    {% if attendee_counts[event.id] > attendee_avatars[event.id]|length %}
+                    <li class="attendee-avatar attendee-avatar-more">+{{ attendee_counts[event.id] - attendee_avatars[event.id]|length }}</li>
+                    {% endif %}
+                </ul>
+                {% endif %}
                 <div class="event-footer">
-                    <span class="attendee-count">{{ attendee_counts[event.id] }} {{ _('attending') }}</span>
+                    <span class="attendee-count">{{ attendee_counts[event.id] }}{% if event.attendee_cap %}/{{ event.attendee_cap }}{% endif %} {{ _('attending') }}</span>
                     <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="btn btn-secondary">{{ _('View Details') }}</a>
                     {% if current_user.is_authenticated %}
                         {% if event.organizer_id == current_user.id %}
@@ -75,6 +101,10 @@
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-secondary">{{ _('Cancel Signup') }}</button>
                         </form>
+                        {% elif event.attendee_cap and attendee_counts[event.id] >= event.attendee_cap %}
+                        <button type="button" class="btn btn-secondary" disabled>{{ _('Fully booked') }}</button>
+                        {% elif locale == 'uk_UA' or event.attendee_cap %}
+                        <a href="{{ url_for('main.confirm_event', event_id=event.id) }}" class="btn btn-primary">{{ _('Review &amp; Confirm') }}</a>
                         {% else %}
                         <form method="POST" action="{{ url_for('main.signup_event', event_id=event.id) }}" style="display:inline">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -94,8 +124,24 @@
     <div class="no-events">
         <div class="empty-state">
             <span class="empty-icon">🔍</span>
-            <h3>{{ _('No events found') }}</h3>
-            <p>{{ _('Try adjusting your search or filter, or check back soon for new events!') }}</p>
+            <h3>
+                {% if locale == 'pt_BR' %}
+                    {{ _('Nothing here yet — let’s change that ✨') }}
+                {% elif locale == 'uk_UA' %}
+                    {{ _('No verified events match your filters.') }}
+                {% else %}
+                    {{ _('No events found') }}
+                {% endif %}
+            </h3>
+            <p>
+                {% if locale == 'pt_BR' %}
+                    {{ _('Try a different city or come hang out tonight! Or start your own — your friends will follow.') }}
+                {% elif locale == 'uk_UA' %}
+                    {{ _('Adjust the filters or come back later — new events are reviewed and added regularly.') }}
+                {% else %}
+                    {{ _('Try adjusting your search or filter, or check back soon for new events!') }}
+                {% endif %}
+            </p>
             {% if current_user.is_authenticated %}
             <a href="{{ url_for('main.create_event') }}" class="btn btn-primary">{{ _('Create an Event') }}</a>
             {% endif %}
@@ -108,17 +154,17 @@
     <nav class="pagination-nav" aria-label="Page navigation">
         <ul class="pagination">
             {% if pagination.has_prev %}
-            <li><a href="{{ url_for('main.events', page=pagination.prev_num, city=selected_city, search=search_query) }}" class="btn btn-secondary">&laquo; {{ _('Previous') }}</a></li>
+            <li><a href="{{ url_for('main.events', page=pagination.prev_num, city=selected_city, search=search_query, when=selected_when) }}" class="btn btn-secondary">&laquo; {{ _('Previous') }}</a></li>
             {% endif %}
             {% for p in pagination.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                 {% if p %}
-                <li><a href="{{ url_for('main.events', page=p, city=selected_city, search=search_query) }}" class="btn {% if p == pagination.page %}btn-primary{% else %}btn-secondary{% endif %}">{{ p }}</a></li>
+                <li><a href="{{ url_for('main.events', page=p, city=selected_city, search=search_query, when=selected_when) }}" class="btn {% if p == pagination.page %}btn-primary{% else %}btn-secondary{% endif %}">{{ p }}</a></li>
                 {% else %}
                 <li><span class="pagination-ellipsis">&hellip;</span></li>
                 {% endif %}
             {% endfor %}
             {% if pagination.has_next %}
-            <li><a href="{{ url_for('main.events', page=pagination.next_num, city=selected_city, search=search_query) }}" class="btn btn-secondary">{{ _('Next') }} &raquo;</a></li>
+            <li><a href="{{ url_for('main.events', page=pagination.next_num, city=selected_city, search=search_query, when=selected_when) }}" class="btn btn-secondary">{{ _('Next') }} &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>

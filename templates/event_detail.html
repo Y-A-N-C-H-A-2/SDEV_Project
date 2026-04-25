@@ -33,14 +33,47 @@
                 {% if event.organizer %}
                 <div class="meta-item">
                     <span class="meta-icon">👤</span>
-                    <span>{{ _('Organized by') }} {{ event.organizer.name }}</span>
+                    <span>{{ _('Organized by') }} {{ event.organizer.name }}{% if event.organizer.verified_host %}
+                        <span class="verified-badge" title="{{ _('Verified host') }}">✓ {{ _('Verified host') }}</span>
+                    {% endif %}</span>
                 </div>
                 {% endif %}
                 <div class="meta-item">
                     <span class="meta-icon">👥</span>
-                    <span>{{ attendee_count }} {{ _('people attending') }}</span>
+                    <span>{{ attendee_count }} {{ _('people attending') }}{% if event.attendee_cap %} · {{ _('limit %(cap)s', cap=event.attendee_cap) }}{% if seats_left is not none %} · {{ _('%(n)s seats left', n=seats_left) }}{% endif %}{% endif %}</span>
                 </div>
+                {% if event.is_recurring %}
+                <div class="meta-item">
+                    <span class="meta-icon">🔁</span>
+                    <span>{{ _('Recurring event — meets regularly') }}</span>
+                </div>
+                {% endif %}
+                {% if event.is_cooperative %}
+                <div class="meta-item">
+                    <span class="meta-icon">🤝</span>
+                    <span>{{ _('Cooperative — no competition, everyone welcome') }}</span>
+                </div>
+                {% else %}
+                <div class="meta-item">
+                    <span class="meta-icon">🏆</span>
+                    <span>{{ _('Competitive — friendly contest') }}</span>
+                </div>
+                {% endif %}
             </div>
+
+            {% if attendee_avatars %}
+            <div class="attendee-strip" aria-label="{{ _('Who is going') }}">
+                <h3 class="attendee-strip-title">{{ _("Who's going") }}</h3>
+                <ul class="attendee-avatars">
+                    {% for u in attendee_avatars %}
+                    <li class="attendee-avatar" title="{{ u.name }}">{{ (u.name or '?')[:1]|upper }}</li>
+                    {% endfor %}
+                    {% if attendee_count > attendee_avatars|length %}
+                    <li class="attendee-avatar attendee-avatar-more">+{{ attendee_count - attendee_avatars|length }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
 
             {% if event.description %}
             <div class="detail-description">
@@ -48,6 +81,22 @@
                 <p>{{ _(event.description) }}</p>
             </div>
             {% endif %}
+
+            {% if event.agenda %}
+            <div class="event-agenda">
+                <h2>{{ _('Agenda') }}</h2>
+                <ul class="event-agenda-list">
+                    {% for line in event.agenda.splitlines() %}
+                        {% if line.strip() %}
+                        <li>{{ line.strip() }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {# Two-step join confirmation for high uncertainty-avoidance flow #}
+            {% set use_confirm = (locale == 'uk_UA') or event.attendee_cap %}
 
             <div class="detail-actions">
                 {% if current_user.is_authenticated %}
@@ -59,11 +108,29 @@
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-secondary">{{ _('Cancel Signup') }}</button>
                         </form>
+                        {% elif is_full %}
+                        <button type="button" class="btn btn-secondary" disabled>{{ _('Fully booked') }}</button>
+                        {% elif use_confirm %}
+                        <a href="{{ url_for('main.confirm_event', event_id=event.id) }}" class="btn btn-primary">{{ _('Review &amp; Confirm') }}</a>
                         {% else %}
                         <form method="POST" action="{{ url_for('main.signup_event', event_id=event.id) }}" style="display:inline">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-primary">{{ _('Sign Up for Event') }}</button>
                         </form>
+                        {% endif %}
+
+                        {% if not is_organizer and not is_attending and not is_past_event %}
+                            {% if is_saved %}
+                            <form method="POST" action="{{ url_for('main.unsave_event', event_id=event.id) }}" style="display:inline">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-secondary">{{ _('Saved ✓') }}</button>
+                            </form>
+                            {% else %}
+                            <form method="POST" action="{{ url_for('main.save_event', event_id=event.id) }}" style="display:inline">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-secondary">{{ _('Save for later') }}</button>
+                            </form>
+                            {% endif %}
                         {% endif %}
                     {% else %}
                     <button type="button" class="btn btn-secondary" disabled>{{ _('Event Ended') }}</button>
@@ -72,6 +139,15 @@
                 <a href="{{ url_for('main.login', next=url_for('main.event_detail', event_id=event.id)) }}" class="btn btn-primary">{{ _('Login to Sign Up') }}</a>
                 {% endif %}
                 <a href="{{ url_for('main.events') }}" class="btn btn-secondary">{{ _('← Back to Events') }}</a>
+            </div>
+
+            <div class="invite-share">
+                <h3>{{ _('Bring a friend') }}</h3>
+                <p>{{ _('Share this event with someone who would enjoy it.') }}</p>
+                <input type="text" readonly value="{{ share_url }}"
+                       class="form-input invite-share-input"
+                       onclick="this.select(); document.execCommand && document.execCommand('copy');"
+                       aria-label="{{ _('Event link') }}">
             </div>
         </div>
     </div>

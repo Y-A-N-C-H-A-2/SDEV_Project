@@ -13,8 +13,13 @@
             <div class="profile-header">
                 <div class="profile-avatar-placeholder">{{ (user.name or '?')[:1]|upper }}</div>
                 <div class="profile-info">
-                    <h2>{{ user.name }}</h2>
+                    <h2>{{ user.name }}{% if user.verified_host %}
+                        <span class="verified-badge" title="{{ _('Verified host') }}">✓ {{ _('Verified host') }}</span>
+                    {% endif %}</h2>
                     <p class="profile-email">{{ user.email }}</p>
+                    {% if user.phone %}
+                    <p class="profile-phone">📞 {{ user.phone }}</p>
+                    {% endif %}
                     {% if user.city %}
                     <p class="profile-location">📍 {{ _('%(city)s, Ireland', city=_(user.city)) }}</p>
                     {% endif %}
@@ -72,6 +77,21 @@
                 {% for community in user.communities %}
                 <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="mini-card">
                     <h4>{{ _(community.name) }}</h4>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Saved-for-later Section -->
+        {% if user.saved_events %}
+        <section class="profile-section">
+            <h2>{{ _('Saved for later') }}</h2>
+            <div class="mini-cards">
+                {% for event in user.saved_events %}
+                <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="mini-card">
+                    <h4>{{ _(event.title) }}</h4>
+                    <p>{{ event.date_time|datetimeformat('d MMM yyyy') }}</p>
                 </a>
                 {% endfor %}
             </div>

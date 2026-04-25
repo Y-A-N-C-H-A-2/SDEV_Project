@@ -57,3 +57,25 @@ body {
     padding: 0.5rem 0;
     border-bottom: 1px solid #ecf0f1;
 }
+
+/* en_IE — Minimal, neutral defaults (sage/mint accents) */
+.attendee-avatar {
+    background: #e8f5f2;
+    color: #4a6b58;
+    border: 2px solid #fff;
+}
+
+.event-agenda {
+    background: #f4f9f7;
+    border-left: 3px solid #7EB8A8;
+}
+
+.time-chip {
+    border-color: #7EB8A8;
+    color: #4a6b58;
+}
+
+.time-chip.is-active {
+    background: #7EB8A8;
+    color: #fff;
+}

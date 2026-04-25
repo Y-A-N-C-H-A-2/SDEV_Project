@@ -192,3 +192,51 @@ body {
     line-height: 1.55;
     color: #444;
 }
+
+/* pt_BR — Collectivist + Indulgent: big, warm "who's going" emphasis */
+.attendee-strip-title::before {
+    content: "✨ ";
+}
+
+.attendee-avatar {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #FFE0B2 0%, #FF8C00 100%);
+    color: #fff;
+    font-size: 1rem;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(255, 107, 53, 0.35);
+}
+
+.attendee-avatars-card .attendee-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+    border-width: 2px;
+}
+
+.event-agenda {
+    background: #FFF3E6;
+    border-left: 4px solid #FF8C00;
+}
+
+.time-chip {
+    border-color: #FF8C00;
+    color: #FF6B35;
+    font-weight: 600;
+}
+
+.time-chip.is-active {
+    background: #FF6B35;
+    color: #fff;
+    border-color: #FF6B35;
+}
+
+.invite-share {
+    background: #FFF3E6;
+    border: 1px solid #FFC4A0;
+}
+
+.invite-share h3::before {
+    content: "🤗 ";
+}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-28 20:42+0000\n"
+"POT-Creation-Date: 2026-04-25 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -22,295 +22,411 @@ msgstr ""
 msgid "Ukrainian"
 msgstr "ucraniano"
 
-#: app/forms.py:16
+#: app/forms.py:19
 msgid "Event date and time must be in the future."
 msgstr "A data e hora do evento devem ser no futuro."
 
-#: app/forms.py:20
+#: app/forms.py:23
+msgid "Use browser language"
+msgstr "Usar idioma do navegador"
+
+#: app/forms.py:24 templates/base.html:47
+msgid "English (Ireland)"
+msgstr "Inglês (Irlanda)"
+
+#: app/forms.py:25 templates/base.html:52
+msgid "Ukrainian (interface language)"
+msgstr "Ucraniano"
+
+#: app/forms.py:26 templates/base.html:57
+msgid "Portuguese (Brazil)"
+msgstr "Português (Brasil)"
+
+#: app/forms.py:34
 msgid "Select a city..."
 msgstr "Selecione uma cidade..."
 
-#: app/forms.py:21 templates/events.html:23
+#: app/forms.py:35 templates/events.html:23
 msgid "Dublin"
 msgstr "Dublin"
 
-#: app/forms.py:22 templates/events.html:24
+#: app/forms.py:36 templates/events.html:24
 msgid "Galway"
 msgstr "Galway"
 
-#: app/forms.py:23 templates/events.html:25
+#: app/forms.py:37 templates/events.html:25
 msgid "Cork"
 msgstr "Cork"
 
-#: app/forms.py:24 templates/events.html:26
+#: app/forms.py:38 templates/events.html:26
 msgid "Limerick"
 msgstr "Limerick"
 
-#: app/forms.py:25 templates/events.html:27
+#: app/forms.py:39 templates/events.html:27
 msgid "Waterford"
 msgstr "Waterford"
 
-#: app/forms.py:29
+#: app/forms.py:43
 msgid "Select..."
 msgstr "Selecione..."
 
-#: app/forms.py:30
+#: app/forms.py:44
 msgid "Male"
 msgstr "Masculino"
 
-#: app/forms.py:31
+#: app/forms.py:45
 msgid "Female"
 msgstr "Feminino"
 
-#: app/forms.py:32
+#: app/forms.py:46
 msgid "Non-binary"
 msgstr "Não binário"
 
-#: app/forms.py:33
+#: app/forms.py:47
 msgid "Prefer not to say"
 msgstr "Prefiro não informar"
 
-#: app/forms.py:37
+#: app/forms.py:51
 msgid "Select a category..."
 msgstr "Selecione uma categoria..."
 
-#: app/forms.py:38
+#: app/forms.py:52
 msgid "Social"
 msgstr "Social"
 
-#: app/forms.py:39
+#: app/forms.py:53
 msgid "Cultural"
 msgstr "Cultural"
 
-#: app/forms.py:40
+#: app/forms.py:54
 msgid "Outdoor"
 msgstr "Ar livre"
 
-#: app/forms.py:41
+#: app/forms.py:55
 msgid "Language"
 msgstr "Idiomas"
 
-#: app/forms.py:42
+#: app/forms.py:56
 msgid "Food & Drink"
 msgstr "Comida e bebida"
 
-#: app/forms.py:43
+#: app/forms.py:57
 msgid "Art & Creative"
 msgstr "Arte e criatividade"
 
-#: app/forms.py:44 app/forms.py:59
+#: app/forms.py:58 app/forms.py:73
 msgid "Tech"
 msgstr "Tecnologia"
 
-#: app/forms.py:45 app/forms.py:60
+#: app/forms.py:59 app/forms.py:74
 msgid "Sports"
 msgstr "Esportes"
 
-#: app/forms.py:46 app/forms.py:57
+#: app/forms.py:60 app/forms.py:71
 msgid "Music"
 msgstr "Música"
 
-#: app/forms.py:47 app/forms.py:54
+#: app/forms.py:61 app/forms.py:68
 msgid "Travel"
 msgstr "Viagens"
 
-#: app/forms.py:48 app/forms.py:62
+#: app/forms.py:62 app/forms.py:76
 msgid "Nightlife"
 msgstr "Vida noturna"
 
-#: app/forms.py:49 app/forms.py:56
+#: app/forms.py:63 app/forms.py:70
 msgid "Photography"
 msgstr "Fotografia"
 
-#: app/forms.py:53
+#: app/forms.py:67
 msgid "Language exchange"
 msgstr "Intercâmbio de idiomas"
 
-#: app/forms.py:55
+#: app/forms.py:69
 msgid "Hiking"
 msgstr "Trilhas"
 
 # Date/time (word between date and time)
-#: app/forms.py:58
+#: app/forms.py:72
 msgid "Art"
 msgstr "Arte"
 
-#: app/forms.py:61
+#: app/forms.py:75
 msgid "Food and coffee"
 msgstr "Comida e café"
 
-#: app/forms.py:63
+#: app/forms.py:77
 msgid "Cultural events"
 msgstr "Eventos culturais"
 
-#: app/forms.py:73 app/forms.py:91
-msgid "Name"
-msgstr "Nome"
+#: app/forms.py:87 app/forms.py:107
+#, fuzzy
+msgid "Full name"
+msgstr "Seu nome completo"
 
-#: app/forms.py:74 app/forms.py:86
+#: app/forms.py:87 app/forms.py:107
+msgid "Please enter your name."
+msgstr "Por favor, informe seu nome."
+
+#: app/forms.py:88 app/forms.py:102
 msgid "Email"
 msgstr "E-mail"
 
-#: app/forms.py:75 app/forms.py:87
+#: app/forms.py:88 app/forms.py:102
+msgid "Please enter your email."
+msgstr "Por favor, informe seu e-mail."
+
+#: app/forms.py:88 app/forms.py:102
+msgid "Please enter a valid email address."
+msgstr "Informe um e-mail válido."
+
+#: app/forms.py:89 app/forms.py:103
 msgid "Password"
 msgstr "Senha"
 
-#: app/forms.py:76
+#: app/forms.py:89
+msgid "Please enter a password."
+msgstr "Por favor, informe uma senha."
+
+#: app/forms.py:89
+#, fuzzy
+msgid "Password must be at least 6 characters."
+msgstr "As senhas devem coincidir"
+
+#: app/forms.py:90
 msgid "Confirm Password"
 msgstr "Confirmar senha"
 
-#: app/forms.py:76
+#: app/forms.py:90
+#, fuzzy
+msgid "Please confirm your password."
+msgstr "Confirmar senha"
+
+#: app/forms.py:90
 msgid "Passwords must match"
 msgstr "As senhas devem coincidir"
 
-#: app/forms.py:77 app/forms.py:92 templates/profile.html:27
+#: app/forms.py:91 app/forms.py:108 templates/profile.html:32
 #: templates/register.html:50
 msgid "Age"
 msgstr "Idade"
 
-#: app/forms.py:78 app/forms.py:93 templates/profile.html:33
+#: app/forms.py:91 app/forms.py:108
+msgid "Age must be between 16 and 120."
+msgstr "A idade deve estar entre 16 e 120."
+
+#: app/forms.py:92 app/forms.py:109 templates/profile.html:38
 msgid "Gender"
 msgstr "Gênero"
 
-#: app/forms.py:79 app/forms.py:94 templates/profile.html:39
+#: app/forms.py:93 app/forms.py:110 templates/profile.html:44
 msgid "Nationality"
 msgstr "Nacionalidade"
 
-#: app/forms.py:80 app/forms.py:95
+#: app/forms.py:94 app/forms.py:111
+msgid "Phone (optional, with country code)"
+msgstr "Telefone (opcional, com código do país)"
+
+#: app/forms.py:94 app/forms.py:111
+msgid "Please enter a valid phone number."
+msgstr "Informe um telefone válido."
+
+#: app/forms.py:95 app/forms.py:112
 msgid "City in Ireland"
 msgstr "Cidade na Irlanda"
 
-#: app/forms.py:81 app/forms.py:96 templates/edit_profile.html:47
-#: templates/profile.html:53 templates/register.html:82
+#: app/forms.py:96 app/forms.py:113
+#, fuzzy
+msgid "Preferred language"
+msgstr "Idiomas"
+
+#: app/forms.py:97 app/forms.py:114 templates/edit_profile.html:61
+#: templates/profile.html:58 templates/register.html:99
 msgid "Interests"
 msgstr "Interesses"
 
-#: app/forms.py:82 app/forms.py:97
+#: app/forms.py:98 app/forms.py:115
 msgid "Custom Interests (comma-separated)"
 msgstr "Interesses personalizados (separados por vírgula)"
 
-#: app/forms.py:101
+#: app/forms.py:103
+#, fuzzy
+msgid "Please enter your password."
+msgstr "Sua senha"
+
+#: app/forms.py:119
 msgid "Title"
 msgstr "Título"
 
-#: app/forms.py:102
+#: app/forms.py:119
+#, fuzzy
+msgid "Please give your event a title."
+msgstr "Descreva seu evento..."
+
+#: app/forms.py:120
 msgid "Description"
 msgstr "Descrição"
 
-#: app/forms.py:103 templates/profile.html:45
+#: app/forms.py:121
+msgid "Agenda (one item per line)"
+msgstr "Programação (um item por linha)"
+
+#: app/forms.py:122 templates/create_event.html:33
+msgid "A clear schedule helps people decide whether to attend."
+msgstr "Uma programação clara ajuda as pessoas a decidirem se vão participar."
+
+#: app/forms.py:123 templates/profile.html:50
 msgid "City"
 msgstr "Cidade"
 
-#: app/forms.py:104
+#: app/forms.py:123
+msgid "Please choose a city."
+msgstr "Escolha uma cidade."
+
+#: app/forms.py:124
 msgid "Location/Venue"
 msgstr "Local / endereço"
 
-#: app/forms.py:105
+#: app/forms.py:125
 msgid "Date and Time"
 msgstr "Data e hora"
 
-#: app/forms.py:106
+#: app/forms.py:125
+#, fuzzy
+msgid "Please choose a date and time."
+msgstr "Data e hora"
+
+#: app/forms.py:126
 msgid "Category"
 msgstr "Categoria"
 
-#: app/forms.py:107
+#: app/forms.py:127
+msgid "Attendee limit (optional)"
+msgstr "Limite de participantes (opcional)"
+
+#: app/forms.py:127
+msgid "Attendee limit must be a positive number."
+msgstr "O limite deve ser um número positivo."
+
+#: app/forms.py:128
+msgid "Recurring event (meets regularly)"
+msgstr "Evento recorrente (acontece regularmente)"
+
+#: app/forms.py:129
+msgid "Cooperative event (no competition, everyone welcome)"
+msgstr "Evento cooperativo (sem competição, todos são bem-vindos)"
+
+#: app/forms.py:130
 msgid "Event Photo"
 msgstr "Foto do evento"
 
-#: app/forms.py:107
+#: app/forms.py:130
 msgid "Images only!"
 msgstr "Apenas imagens!"
 
-#: app/routes.py:167
+#: app/routes.py:231 app/routes.py:253 app/routes.py:285
 msgid "This event has already happened."
-msgstr ""
+msgstr "Este evento já aconteceu."
 
-#: app/routes.py:171
+#: app/routes.py:236 app/routes.py:261
+msgid "This event is fully booked."
+msgstr "Este evento está lotado."
+
+#: app/routes.py:257
 #, fuzzy
 msgid "You are already signed up for this event."
 msgstr "Você já é membro desta comunidade."
 
-#: app/routes.py:177
+#: app/routes.py:270
 #, fuzzy, python-format
 msgid "You are signed up for %(name)s!"
 msgstr "Você entrou em %(name)s!"
 
-#: app/routes.py:181 app/routes.py:211 app/routes.py:298 app/routes.py:317
+#: app/routes.py:274 app/routes.py:295 app/routes.py:312 app/routes.py:341
+#: app/routes.py:432 app/routes.py:451
 msgid "An error occurred. Please try again."
 msgstr "Ocorreu um erro. Tente novamente."
 
-#: app/routes.py:193
+#: app/routes.py:291
+msgid "Saved for later. We will keep it in your profile."
+msgstr "Salvo para depois! Vai ficar guardado no seu perfil."
+
+#: app/routes.py:308
+msgid "Removed from your saved list."
+msgstr "Removido da sua lista."
+
+#: app/routes.py:323
 msgid "You can only cancel signup before the event starts."
 msgstr ""
 
-#: app/routes.py:197
+#: app/routes.py:327
 msgid "As the organizer, you are automatically attending this event."
 msgstr ""
 
-#: app/routes.py:201
+#: app/routes.py:331
 msgid "You are not signed up for this event."
 msgstr ""
 
-#: app/routes.py:207
+#: app/routes.py:337
 #, python-format
 msgid "You are no longer signed up for %(name)s."
 msgstr ""
 
-#: app/routes.py:238
+#: app/routes.py:372
 msgid "Uploaded file is not a valid image."
 msgstr "O arquivo enviado não é uma imagem válida."
 
-#: app/routes.py:249
+#: app/routes.py:383
 msgid "Event created successfully!"
 msgstr "Evento criado com sucesso!"
 
-#: app/routes.py:254
+#: app/routes.py:388
 msgid "An error occurred while creating the event. Please try again."
 msgstr "Ocorreu um erro ao criar o evento. Tente novamente."
 
-#: app/routes.py:294
+#: app/routes.py:428
 #, python-format
 msgid "You joined %(name)s!"
 msgstr "Você entrou em %(name)s!"
 
-#: app/routes.py:300
+#: app/routes.py:434
 msgid "You are already a member of this community."
 msgstr "Você já é membro desta comunidade."
 
-#: app/routes.py:313
+#: app/routes.py:447
 #, python-format
 msgid "You left %(name)s."
 msgstr "Você saiu de %(name)s."
 
-#: app/routes.py:332
+#: app/routes.py:466
 msgid "Email already registered. Please log in."
 msgstr "E-mail já cadastrado. Por favor, faça login."
 
-#: app/routes.py:350
+#: app/routes.py:487
 msgid "Account created successfully! Please log in."
 msgstr "Conta criada com sucesso! Por favor, faça login."
 
-#: app/routes.py:355
+#: app/routes.py:492
 msgid "An error occurred during registration. Please try again."
 msgstr "Ocorreu um erro durante o cadastro. Tente novamente."
 
-#: app/routes.py:371
+#: app/routes.py:511
 msgid "Welcome back!"
 msgstr "Bem-vindo(a) de volta!"
 
-#: app/routes.py:377
+#: app/routes.py:517
 msgid "Invalid email or password."
 msgstr "E-mail ou senha inválidos."
 
-#: app/routes.py:387
+#: app/routes.py:527
 msgid "You have been logged out."
 msgstr "Você saiu da sua conta."
 
-#: app/routes.py:416
+#: app/routes.py:561
 msgid "Profile updated successfully!"
 msgstr "Perfil atualizado com sucesso!"
 
-#: app/routes.py:421
+#: app/routes.py:566
 msgid "An error occurred while updating your profile. Please try again."
 msgstr "Ocorreu um erro ao atualizar seu perfil. Tente novamente."
 
@@ -376,7 +492,7 @@ msgid "Communities"
 msgstr "Comunidades"
 
 #: templates/base.html:32 templates/create_event.html:8
-#: templates/create_event.html:71
+#: templates/create_event.html:99
 msgid "Create Event"
 msgstr "Criar Evento"
 
@@ -395,18 +511,6 @@ msgstr "Entrar"
 #: templates/base.html:37 templates/login.html:34
 msgid "Register"
 msgstr "Cadastrar"
-
-#: templates/base.html:47
-msgid "English (Ireland)"
-msgstr "Inglês (Irlanda)"
-
-#: templates/base.html:52
-msgid "Ukrainian (interface language)"
-msgstr "Ucraniano"
-
-#: templates/base.html:57
-msgid "Portuguese (Brazil)"
-msgstr "Português (Brasil)"
 
 #: templates/base.html:90
 msgid "Where cultures meet and friendships begin."
@@ -441,11 +545,11 @@ msgstr "Nenhuma comunidade ainda"
 msgid "Communities are coming soon!"
 msgstr "Comunidades em breve!"
 
-#: templates/communities.html:49 templates/events.html:111
+#: templates/communities.html:49 templates/events.html:157
 msgid "Previous"
 msgstr "Anterior"
 
-#: templates/communities.html:59 templates/events.html:121
+#: templates/communities.html:59 templates/events.html:167
 msgid "Next"
 msgstr "Próximo"
 
@@ -500,23 +604,41 @@ msgstr "Título do evento"
 msgid "Describe your event..."
 msgstr "Descreva seu evento..."
 
-#: templates/create_event.html:40
+#: templates/create_event.html:32
+msgid ""
+"19:00 – Welcome\n"
+"19:30 – Activity\n"
+"21:00 – Wrap up"
+msgstr ""
+"19:00 – Boas-vindas\n"
+"19:30 – Atividade\n"
+"21:00 – Encerramento"
+
+#: templates/create_event.html:49
 msgid "Venue name and address"
 msgstr "Nome e endereço do local"
 
-#: templates/create_event.html:47
+#: templates/create_event.html:56
 msgid "e.g. 2026-03-08T14:30"
 msgstr "ex.: 2026-03-08T14:30"
 
-#: templates/create_event.html:62
+#: templates/create_event.html:70
+msgid "e.g. 20"
+msgstr "ex.: 20"
+
+#: templates/create_event.html:71
+msgid "Leave blank for no limit."
+msgstr "Deixe em branco para não limitar."
+
+#: templates/create_event.html:90
 msgid "Choose file"
 msgstr "Escolher arquivo"
 
-#: templates/create_event.html:63
+#: templates/create_event.html:91
 msgid "No file chosen"
 msgstr "Nenhum arquivo escolhido"
 
-#: templates/create_event.html:65
+#: templates/create_event.html:93
 msgid "Accepted formats: JPG, PNG, GIF. Max 16MB."
 msgstr "Formatos aceitos: JPG, PNG, GIF. Máximo 16MB."
 
@@ -524,66 +646,189 @@ msgstr "Formatos aceitos: JPG, PNG, GIF. Máximo 16MB."
 msgid "Edit Profile – CrossPaths"
 msgstr "Editar Perfil – CrossPaths"
 
-#: templates/edit_profile.html:8 templates/profile.html:63
+#: templates/edit_profile.html:8 templates/profile.html:68
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: templates/edit_profile.html:59 templates/register.html:94
+#: templates/edit_profile.html:49 templates/register.html:84
+msgid "e.g. +353 87 123 4567"
+msgstr "ex.: +353 87 123 4567"
+
+#: templates/edit_profile.html:73 templates/register.html:111
 msgid "e.g. Yoga, Cooking, Board games"
 msgstr "ex.: Yoga, Culinária, Jogos de tabuleiro"
 
-#: templates/edit_profile.html:63
+#: templates/edit_profile.html:77
 msgid "Save Changes"
 msgstr "Salvar Alterações"
 
-#: templates/edit_profile.html:64
+#: templates/edit_profile.html:78
 msgid "Cancel"
 msgstr "Cancelar"
 
+#: templates/event_confirm.html:3
+#, fuzzy, python-format
+msgid "Confirm – %(name)s"
+msgstr "Você saiu de %(name)s."
+
+#: templates/event_confirm.html:8
+msgid "Review and confirm"
+msgstr "Revisar e confirmar"
+
+#: templates/event_confirm.html:9
+msgid "Please review the details below before joining."
+msgstr "Confira os detalhes abaixo antes de participar."
+
+#: templates/event_confirm.html:14
+msgid "When"
+msgstr "Quando"
+
 # Date/time (word between date and time)
-#: templates/event_detail.html:27 templates/events.html:61
-#: templates/index.html:102
+#: templates/event_confirm.html:14 templates/event_detail.html:27
+#: templates/events.html:77 templates/index.html:102
 msgid "at"
 msgstr "às"
 
-#: templates/event_detail.html:36 templates/events.html:64
+#: templates/event_confirm.html:15
+msgid "Where"
+msgstr "Onde"
+
+#: templates/event_confirm.html:17
+msgid "Host"
+msgstr "Anfitrião"
+
+#: templates/event_confirm.html:17 templates/event_detail.html:37
+#: templates/profile.html:17
+#, fuzzy
+msgid "Verified host"
+msgstr "Anfitriões Verificados"
+
+#: templates/event_confirm.html:19
+#, fuzzy
+msgid "Attending"
+msgstr "participando"
+
+#: templates/event_confirm.html:19 templates/event_detail.html:43
+#, python-format
+msgid "%(n)s seats left"
+msgstr "%(n)s vagas restantes"
+
+#: templates/event_confirm.html:21
+#, fuzzy
+msgid "Style"
+msgstr "Título"
+
+#: templates/event_confirm.html:21 templates/event_detail.html:54
+msgid "Cooperative — no competition, everyone welcome"
+msgstr "Cooperativo — sem competição, todos são bem-vindos"
+
+#: templates/event_confirm.html:26 templates/event_detail.html:87
+#, fuzzy
+msgid "Agenda"
+msgstr "Gênero"
+
+#: templates/event_confirm.html:38
+msgid "By confirming, you agree to attend at the time and place above."
+msgstr "Ao confirmar, você concorda em participar no horário e local acima."
+
+#: templates/event_confirm.html:43
+msgid "Yes, confirm my attendance"
+msgstr "Sim, confirmar minha participação"
+
+#: templates/event_confirm.html:44
+#, fuzzy
+msgid "Go back"
+msgstr "Bem-vindo(a) de volta"
+
+#: templates/event_detail.html:36 templates/events.html:80
 msgid "Organized by"
 msgstr "Organizado por"
 
-#: templates/event_detail.html:41
+#: templates/event_detail.html:43
 msgid "people attending"
 msgstr "pessoas participando"
 
-#: templates/event_detail.html:46
+#: templates/event_detail.html:43
+#, python-format
+msgid "limit %(cap)s"
+msgstr "limite %(cap)s"
+
+#: templates/event_detail.html:48
+msgid "Recurring event — meets regularly"
+msgstr "Evento recorrente — acontece regularmente"
+
+#: templates/event_detail.html:59
+msgid "Competitive — friendly contest"
+msgstr "Competitivo — competição amigável"
+
+#: templates/event_detail.html:65 templates/events.html:84
+#, fuzzy
+msgid "Who is going"
+msgstr "Quem Pode Participar?"
+
+#: templates/event_detail.html:66
+msgid "Who's going"
+msgstr "Quem vai 🎉"
+
+#: templates/event_detail.html:80
 msgid "About this event"
 msgstr "Sobre este evento"
 
-#: templates/event_detail.html:54 templates/events.html:72
+#: templates/event_detail.html:105 templates/events.html:98
 msgid "You are organizing this event"
 msgstr ""
 
-#: templates/event_detail.html:58 templates/events.html:76
+#: templates/event_detail.html:109 templates/events.html:102
 #, fuzzy
 msgid "Cancel Signup"
 msgstr "Cancelar"
 
-#: templates/event_detail.html:63
+#: templates/event_detail.html:112 templates/events.html:105
+msgid "Fully booked"
+msgstr "Lotado"
+
+#: templates/event_detail.html:114 templates/events.html:107
+msgid "Review &amp; Confirm"
+msgstr "Revisar e confirmar"
+
+#: templates/event_detail.html:118
 msgid "Sign Up for Event"
 msgstr ""
 
-#: templates/event_detail.html:67
+#: templates/event_detail.html:126
+msgid "Saved ✓"
+msgstr "Salvo ✓"
+
+#: templates/event_detail.html:131
+msgid "Save for later"
+msgstr "Salvar para depois"
+
+#: templates/event_detail.html:136
 #, fuzzy
 msgid "Event Ended"
 msgstr "Eventos Participados"
 
-#: templates/event_detail.html:70 templates/events.html:85
+#: templates/event_detail.html:139 templates/events.html:115
 #, fuzzy
 msgid "Login to Sign Up"
 msgstr "Entre para participar"
 
-#: templates/event_detail.html:72
+#: templates/event_detail.html:141
 msgid "← Back to Events"
 msgstr "← Voltar para Eventos"
+
+#: templates/event_detail.html:145
+msgid "Bring a friend"
+msgstr "Chame um amigo"
+
+#: templates/event_detail.html:146
+msgid "Share this event with someone who would enjoy it."
+msgstr "Compartilhe este evento com quem você acha que vai curtir."
+
+#: templates/event_detail.html:150
+#, fuzzy
+msgid "Event link"
+msgstr "Título do evento"
 
 #: templates/events.html:3
 msgid "Events – CrossPaths"
@@ -601,35 +846,74 @@ msgstr "Buscar eventos..."
 msgid "All Cities"
 msgstr "Todas as Cidades"
 
-#: templates/events.html:30
+#: templates/events.html:31
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/events.html:32
+#: templates/events.html:33
 msgid "Clear"
 msgstr "Limpar"
 
-#: templates/events.html:68
+#: templates/events.html:38
+msgid "Time filter"
+msgstr "Filtro por horário"
+
+#: templates/events.html:41
+msgid "All upcoming"
+msgstr "Todos os próximos"
+
+#: templates/events.html:45
+#, fuzzy
+msgid "Tonight"
+msgstr "Vida noturna"
+
+#: templates/events.html:49
+msgid "This weekend"
+msgstr "Neste fim de semana"
+
+#: templates/events.html:94
 msgid "attending"
 msgstr "participando"
 
-#: templates/events.html:69
+#: templates/events.html:95
 msgid "View Details"
 msgstr "Ver Detalhes"
 
-#: templates/events.html:81
+#: templates/events.html:111
 msgid "Sign Up"
 msgstr ""
 
-#: templates/events.html:97
+#: templates/events.html:129
+msgid "Nothing here yet — let’s change that ✨"
+msgstr "Nada por aqui ainda — vamos mudar isso ✨"
+
+#: templates/events.html:131
+msgid "No verified events match your filters."
+msgstr "Nenhum evento verificado para os filtros escolhidos."
+
+#: templates/events.html:133
 msgid "No events found"
 msgstr "Nenhum evento encontrado"
 
-#: templates/events.html:98
+#: templates/events.html:138
+msgid ""
+"Try a different city or come hang out tonight! Or start your own — your "
+"friends will follow."
+msgstr ""
+"Tenta outra cidade ou vem curtir hoje à noite! Ou crie o seu próprio — a "
+"galera vai junto."
+
+#: templates/events.html:140
+msgid ""
+"Adjust the filters or come back later — new events are reviewed and added"
+" regularly."
+msgstr "Ajuste os filtros ou volte depois — novos eventos chegam o tempo todo."
+
+#: templates/events.html:142
 msgid "Try adjusting your search or filter, or check back soon for new events!"
 msgstr "Tente ajustar sua busca ou filtro, ou volte em breve para novos eventos!"
 
-#: templates/events.html:100
+#: templates/events.html:146
 msgid "Create an Event"
 msgstr "Criar um Evento"
 
@@ -649,7 +933,7 @@ msgstr ""
 "Uma plataforma comunitária para habitantes locais, expatriados e "
 "viajantes se conectarem através de eventos pela Irlanda 😊"
 
-#: templates/index.html:23 templates/profile.html:95
+#: templates/index.html:23 templates/profile.html:115
 msgid "Browse Events"
 msgstr "Ver eventos ✨"
 
@@ -826,20 +1110,24 @@ msgstr "Perfil – CrossPaths"
 msgid "Your Profile"
 msgstr "Seu Perfil"
 
-#: templates/profile.html:19
+#: templates/profile.html:24
 #, python-format
 msgid "%(city)s, Ireland"
 msgstr "%(city)s, Irlanda"
 
-#: templates/profile.html:70
+#: templates/profile.html:75
 msgid "Your Communities"
 msgstr "Suas Comunidades"
 
-#: templates/profile.html:83
+#: templates/profile.html:89
+msgid "Saved for later"
+msgstr "Salvos para depois"
+
+#: templates/profile.html:103
 msgid "Events Attended"
 msgstr "Eventos Participados"
 
-#: templates/profile.html:94
+#: templates/profile.html:114
 msgid "No events yet. Browse upcoming events to get started!"
 msgstr "Nenhum evento ainda. Explore os próximos eventos para começar!"
 
@@ -847,7 +1135,7 @@ msgstr "Nenhum evento ainda. Explore os próximos eventos para começar!"
 msgid "Register – CrossPaths"
 msgstr "Cadastro – CrossPaths"
 
-#: templates/register.html:8 templates/register.html:97
+#: templates/register.html:8 templates/register.html:114
 msgid "Create Account"
 msgstr "Criar Conta"
 
@@ -871,11 +1159,11 @@ msgstr "Confirmar senha"
 msgid "Your nationality"
 msgstr "Sua nacionalidade"
 
-#: templates/register.html:101
+#: templates/register.html:118
 msgid "Already have an account?"
 msgstr "Já tem uma conta?"
 
-#: templates/register.html:101
+#: templates/register.html:118
 msgid "Log in"
 msgstr "Entrar"
 
@@ -1781,4 +2069,7 @@ msgstr ""
 
 #~ msgid "Ukrainian"
 #~ msgstr "Ucraniano"
+
+#~ msgid "Name"
+#~ msgstr "Nome"
 

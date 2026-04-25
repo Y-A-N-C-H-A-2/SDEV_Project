@@ -27,6 +27,15 @@
                 {% endfor %}
             </div>
 
+            <div class="form-group">
+                {{ form.agenda.label(class="form-label") }}
+                {{ form.agenda(class="form-input form-textarea", rows=4, placeholder=_('19:00 – Welcome\n19:30 – Activity\n21:00 – Wrap up')) }}
+                <p class="form-help">{{ _('A clear schedule helps people decide whether to attend.') }}</p>
+                {% for error in form.agenda.errors %}
+                <span class="form-error">{{ error }}</span>
+                {% endfor %}
+            </div>
+
             <div class="form-row">
                 <div class="form-group">
                     {{ form.city.label(class="form-label") }}
@@ -52,6 +61,25 @@
                 <div class="form-group">
                     {{ form.category.label(class="form-label") }}
                     {{ form.category(class="form-select") }}
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    {{ form.attendee_cap.label(class="form-label") }}
+                    {{ form.attendee_cap(class="form-input", placeholder=_('e.g. 20')) }}
+                    <p class="form-help">{{ _('Leave blank for no limit.') }}</p>
+                    {% for error in form.attendee_cap.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group form-group-checks">
+                    <label class="checkbox-label">
+                        {{ form.is_recurring() }} {{ form.is_recurring.label.text }}
+                    </label>
+                    <label class="checkbox-label">
+                        {{ form.is_cooperative() }} {{ form.is_cooperative.label.text }}
+                    </label>
                 </div>
             </div>
 
