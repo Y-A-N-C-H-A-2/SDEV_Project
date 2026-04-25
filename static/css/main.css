@@ -866,12 +866,27 @@ a.event-card {
 }
 
 .attendee-count {
-    background: var(--color-accent-soft);
-    color: var(--color-accent);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    color: #6b7a82;
     font-size: 0.85rem;
     font-weight: 500;
+}
+
+.event-details-link {
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 0.25rem;
+}
+
+.event-details-link:hover {
+    text-decoration: underline;
+}
+
+.event-status-text {
+    color: #6b7a82;
+    font-size: 0.875rem;
+    font-style: italic;
 }
 
 /* ==========================================
