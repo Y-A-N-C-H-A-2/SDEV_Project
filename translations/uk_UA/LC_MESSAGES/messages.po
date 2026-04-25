@@ -158,9 +158,8 @@ msgid "Cultural events"
 msgstr "Культурні події"
 
 #: app/forms.py:87 app/forms.py:107
-#, fuzzy
 msgid "Full name"
-msgstr "Ваше повне ім'я"
+msgstr "Повне ім'я"
 
 #: app/forms.py:87 app/forms.py:107
 msgid "Please enter your name."
@@ -187,18 +186,16 @@ msgid "Please enter a password."
 msgstr "Будь ласка, введіть пароль."
 
 #: app/forms.py:89
-#, fuzzy
 msgid "Password must be at least 6 characters."
-msgstr "Паролі мають збігатися"
+msgstr "Пароль має містити щонайменше 6 символів."
 
 #: app/forms.py:90
 msgid "Confirm Password"
 msgstr "Підтвердіть пароль"
 
 #: app/forms.py:90
-#, fuzzy
 msgid "Please confirm your password."
-msgstr "Підтвердьте пароль"
+msgstr "Будь ласка, підтвердьте ваш пароль."
 
 #: app/forms.py:90
 msgid "Passwords must match"
@@ -234,9 +231,8 @@ msgid "City in Ireland"
 msgstr "Місто в Ірландії"
 
 #: app/forms.py:96 app/forms.py:113
-#, fuzzy
 msgid "Preferred language"
-msgstr "Мови"
+msgstr "Бажана мова"
 
 #: app/forms.py:97 app/forms.py:114 templates/edit_profile.html:61
 #: templates/profile.html:58 templates/register.html:99
@@ -248,18 +244,16 @@ msgid "Custom Interests (comma-separated)"
 msgstr "Власні інтереси (через кому)"
 
 #: app/forms.py:103
-#, fuzzy
 msgid "Please enter your password."
-msgstr "Ваш пароль"
+msgstr "Будь ласка, введіть ваш пароль."
 
 #: app/forms.py:119
 msgid "Title"
 msgstr "Назва"
 
 #: app/forms.py:119
-#, fuzzy
 msgid "Please give your event a title."
-msgstr "Опишіть вашу подію..."
+msgstr "Будь ласка, дайте назву вашій події."
 
 #: app/forms.py:120
 msgid "Description"
@@ -290,9 +284,8 @@ msgid "Date and Time"
 msgstr "Дата та час"
 
 #: app/forms.py:125
-#, fuzzy
 msgid "Please choose a date and time."
-msgstr "Дата та час"
+msgstr "Будь ласка, оберіть дату та час."
 
 #: app/forms.py:126
 msgid "Category"
@@ -331,14 +324,13 @@ msgid "This event is fully booked."
 msgstr "На цю подію вже немає вільних місць."
 
 #: app/routes.py:257
-#, fuzzy
 msgid "You are already signed up for this event."
-msgstr "Ви вже є учасником цієї спільноти."
+msgstr "Ви вже зареєстровані на цю подію."
 
 #: app/routes.py:270
-#, fuzzy, python-format
+#, python-format
 msgid "You are signed up for %(name)s!"
-msgstr "Ви приєдналися до %(name)s!"
+msgstr "Ви зареєстровані на %(name)s!"
 
 #: app/routes.py:274 app/routes.py:295 app/routes.py:312 app/routes.py:341
 #: app/routes.py:432 app/routes.py:451
@@ -355,20 +347,20 @@ msgstr "Видалено зі збережених."
 
 #: app/routes.py:323
 msgid "You can only cancel signup before the event starts."
-msgstr ""
+msgstr "Скасувати реєстрацію можна лише до початку події."
 
 #: app/routes.py:327
 msgid "As the organizer, you are automatically attending this event."
-msgstr ""
+msgstr "Як організатор, ви автоматично є учасником цієї події."
 
 #: app/routes.py:331
 msgid "You are not signed up for this event."
-msgstr ""
+msgstr "Ви не зареєстровані на цю подію."
 
 #: app/routes.py:337
 #, python-format
 msgid "You are no longer signed up for %(name)s."
-msgstr ""
+msgstr "Ви більше не зареєстровані на %(name)s."
 
 #: app/routes.py:372
 msgid "Uploaded file is not a valid image."
@@ -443,9 +435,8 @@ msgid "Where cultures meet and friendships begin"
 msgstr "Де культури зустрічаються і дружба починається"
 
 #: templates/about.html:14 templates/index.html:156 templates/index.html:158
-#, fuzzy
 msgid "Where cultures meet"
-msgstr "Де культури зустрічаються і дружба починається"
+msgstr "Де культури зустрічаються"
 
 #: templates/about.html:22
 msgid "Get in Touch"
@@ -672,9 +663,9 @@ msgid "Cancel"
 msgstr "Скасувати"
 
 #: templates/event_confirm.html:3
-#, fuzzy, python-format
+#, python-format
 msgid "Confirm – %(name)s"
-msgstr "Ви покинули %(name)s."
+msgstr "Підтвердження – %(name)s"
 
 #: templates/event_confirm.html:8
 msgid "Review and confirm"
@@ -704,14 +695,12 @@ msgstr "Організатор"
 
 #: templates/event_confirm.html:17 templates/event_detail.html:37
 #: templates/profile.html:17
-#, fuzzy
 msgid "Verified host"
-msgstr "Перевірені організатори"
+msgstr "Перевірений організатор"
 
 #: templates/event_confirm.html:19
-#, fuzzy
 msgid "Attending"
-msgstr "відвідують"
+msgstr "Відвідують"
 
 #: templates/event_confirm.html:19 templates/event_detail.html:43
 #, python-format
@@ -719,18 +708,16 @@ msgid "%(n)s seats left"
 msgstr "Залишилось місць: %(n)s"
 
 #: templates/event_confirm.html:21
-#, fuzzy
 msgid "Style"
-msgstr "Назва"
+msgstr "Стиль"
 
 #: templates/event_confirm.html:21 templates/event_detail.html:54
 msgid "Cooperative — no competition, everyone welcome"
 msgstr "Кооперативна — без змагань, відкрита для всіх"
 
 #: templates/event_confirm.html:26 templates/event_detail.html:87
-#, fuzzy
 msgid "Agenda"
-msgstr "Стать"
+msgstr "Програма"
 
 #: templates/event_confirm.html:38
 msgid "By confirming, you agree to attend at the time and place above."
@@ -743,9 +730,8 @@ msgid "Yes, confirm my attendance"
 msgstr "Так, підтверджую участь"
 
 #: templates/event_confirm.html:44
-#, fuzzy
 msgid "Go back"
-msgstr "З поверненням"
+msgstr "Назад"
 
 #: templates/event_detail.html:36 templates/events.html:80
 msgid "Organized by"
@@ -769,9 +755,8 @@ msgid "Competitive — friendly contest"
 msgstr "Змагальна — дружній конкурс"
 
 #: templates/event_detail.html:65 templates/events.html:84
-#, fuzzy
 msgid "Who is going"
-msgstr "Хто може приєднатися?"
+msgstr "Хто йде"
 
 #: templates/event_detail.html:66
 msgid "Who's going"
@@ -783,12 +768,11 @@ msgstr "Про цей захід"
 
 #: templates/event_detail.html:105 templates/events.html:98
 msgid "You are organizing this event"
-msgstr ""
+msgstr "Ви організовуєте цю подію"
 
 #: templates/event_detail.html:109 templates/events.html:102
-#, fuzzy
 msgid "Cancel Signup"
-msgstr "Скасувати"
+msgstr "Скасувати реєстрацію"
 
 #: templates/event_detail.html:112 templates/events.html:105
 msgid "Fully booked"
@@ -800,7 +784,7 @@ msgstr "Переглянути та підтвердити"
 
 #: templates/event_detail.html:118
 msgid "Sign Up for Event"
-msgstr ""
+msgstr "Зареєструватися на подію"
 
 #: templates/event_detail.html:126
 msgid "Saved ✓"
@@ -811,14 +795,12 @@ msgid "Save for later"
 msgstr "Зберегти на потім"
 
 #: templates/event_detail.html:136
-#, fuzzy
 msgid "Event Ended"
-msgstr "Відвідані події"
+msgstr "Подія завершена"
 
 #: templates/event_detail.html:139 templates/events.html:115
-#, fuzzy
 msgid "Login to Sign Up"
-msgstr "Увійдіть, щоб приєднатися"
+msgstr "Увійдіть, щоб зареєструватися"
 
 #: templates/event_detail.html:141
 msgid "← Back to Events"
@@ -833,9 +815,8 @@ msgid "Share this event with someone who would enjoy it."
 msgstr "Поділіться цією подією з тим, кому вона сподобається."
 
 #: templates/event_detail.html:150
-#, fuzzy
 msgid "Event link"
-msgstr "Назва події"
+msgstr "Посилання на подію"
 
 # Events Page
 #: templates/events.html:3
@@ -871,9 +852,8 @@ msgid "All upcoming"
 msgstr "Всі майбутні"
 
 #: templates/events.html:45
-#, fuzzy
 msgid "Tonight"
-msgstr "Нічне життя"
+msgstr "Сьогодні ввечері"
 
 #: templates/events.html:49
 msgid "This weekend"
@@ -889,7 +869,7 @@ msgstr "Переглянути деталі"
 
 #: templates/events.html:111
 msgid "Sign Up"
-msgstr ""
+msgstr "Зареєструватися"
 
 #: templates/events.html:129
 msgid "Nothing here yet — let’s change that ✨"
@@ -993,39 +973,44 @@ msgstr ""
 "чіткими правилами, щоб знайомитися з новими людьми впевнено та безпечно."
 
 #: templates/index.html:56
-#, fuzzy
 msgid "How it works — fun & easy"
-msgstr "Як це працює"
+msgstr "Як це працює — весело та просто"
 
 #: templates/index.html:59
 msgid "Step 1 – Pick an event you love ✨"
-msgstr ""
+msgstr "Крок 1 – Оберіть подію, яка вам до вподоби ✨"
 
 #: templates/index.html:61
 msgid ""
 "Browse meetups, pub nights, hikes, and language exchanges — pick "
 "something that feels like you!"
 msgstr ""
+"Перегляньте зустрічі, вечори в пабах, походи та мовні обміни — "
+"оберіть те, що вам до душі!"
 
 #: templates/index.html:65
 msgid "Step 2 – Say hi and sign up 👋"
-msgstr ""
+msgstr "Крок 2 – Привітайтеся та зареєструйтеся 👋"
 
 #: templates/index.html:67
 msgid ""
 "Join with one click, check the vibe, and see who is going — no stress, "
 "just good energy."
 msgstr ""
+"Приєднуйтеся одним кліком, відчуйте атмосферу та подивіться, хто йде "
+"— без стресу, лише позитив."
 
 #: templates/index.html:71
 msgid "Step 3 – Show up and make friends 🤗"
-msgstr ""
+msgstr "Крок 3 – Приходьте та знаходьте друзів 🤗"
 
 #: templates/index.html:73
 msgid ""
 "Meet in welcoming public places, swap stories, and grow your circle in "
 "Dublin!"
 msgstr ""
+"Зустрічайтеся в гостинних громадських місцях, діліться історіями та "
+"розширюйте коло знайомств у Дубліні!"
 
 #: templates/index.html:84 templates/index.html:115
 msgid "View All →"
@@ -1040,9 +1025,8 @@ msgid "Discover Ireland Experiences"
 msgstr "Відкрийте враження Ірландії"
 
 #: templates/index.html:145 templates/index.html:147 templates/index.html:149
-#, fuzzy
 msgid "Outdoor adventures with fellow newcomers"
-msgstr "Пригоди на природі"
+msgstr "Пригоди на природі з іншими новоприбулими"
 
 #: templates/index.html:151
 msgid "Outdoor Adventures"
@@ -1061,9 +1045,8 @@ msgid "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
 msgstr "Відкрийте яскраві міста від Дубліна до Голвея, від Корка до Лімерика"
 
 #: templates/index.html:164
-#, fuzzy
 msgid "Culture and community"
-msgstr "Покинути спільноту"
+msgstr "Культура і спільнота"
 
 #: templates/index.html:165
 msgid "Culture & Social"
