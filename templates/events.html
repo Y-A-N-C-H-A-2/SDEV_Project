@@ -93,19 +93,19 @@
                 <div class="event-footer">
                     <span class="attendee-count">{{ attendee_counts[event.id] }}{% if event.attendee_cap %}/{{ event.attendee_cap }}{% endif %} {{ _('attending') }}</span>
                     <div class="event-footer-actions">
-                        <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="btn btn-secondary">{{ _('View Details') }}</a>
+                        <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="event-details-link">{{ _('View Details') }}</a>
                         {% if current_user.is_authenticated %}
                             {% if event.organizer_id == current_user.id %}
-                            <button type="button" class="btn btn-secondary" disabled>{{ _('You are organizing this event') }}</button>
+                            <span class="event-organizing-label">{{ _('You are organizing this event') }}</span>
                             {% elif event.id in attending_event_ids %}
                             <form method="POST" action="{{ url_for('main.leave_event', event_id=event.id) }}" style="display:inline">
                                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-secondary">{{ _('Cancel Signup') }}</button>
+                                <button type="submit" class="btn btn-primary">{{ _('Cancel Signup') }}</button>
                             </form>
                             {% elif event.attendee_cap and attendee_counts[event.id] >= event.attendee_cap %}
-                            <button type="button" class="btn btn-secondary" disabled>{{ _('Fully booked') }}</button>
+                            <span class="event-organizing-label">{{ _('Fully booked') }}</span>
                             {% elif locale == 'uk_UA' or event.attendee_cap %}
-                            <a href="{{ url_for('main.confirm_event', event_id=event.id) }}" class="btn btn-primary">{{ _('Review &amp; Confirm') }}</a>
+                            <a href="{{ url_for('main.confirm_event', event_id=event.id) }}" class="btn btn-primary">{{ _('Sign Up') }}</a>
                             {% else %}
                             <form method="POST" action="{{ url_for('main.signup_event', event_id=event.id) }}" style="display:inline">
                                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -113,7 +113,7 @@
                             </form>
                             {% endif %}
                         {% else %}
-                        <a href="{{ url_for('main.login', next=url_for('main.event_detail', event_id=event.id)) }}" class="btn btn-primary">{{ _('Login to Sign Up') }}</a>
+                        <a href="{{ url_for('main.login', next=url_for('main.event_detail', event_id=event.id)) }}" class="btn btn-primary">{{ _('Sign Up') }}</a>
                         {% endif %}
                     </div>
                 </div>

@@ -843,14 +843,8 @@ a.event-card {
 
 .event-footer-actions {
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    gap: 1rem;
     align-items: center;
-}
-
-.event-footer .btn {
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
 }
 
 .event-category-badge {
@@ -866,12 +860,24 @@ a.event-card {
 }
 
 .attendee-count {
-    background: var(--color-accent-soft);
-    color: var(--color-accent);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 500;
+    color: #6b7280;
+}
+
+.event-details-link {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.event-details-link:hover {
+    color: var(--color-primary-hover);
+}
+
+.event-organizing-label {
+    font-size: 0.875rem;
+    color: #6b7280;
 }
 
 /* ==========================================
