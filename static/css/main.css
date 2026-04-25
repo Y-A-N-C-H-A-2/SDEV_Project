@@ -1621,3 +1621,215 @@ a.community-card {
     padding: 0.4rem 0.6rem;
     color: var(--text-secondary, #888);
 }
+
+/* ==========================================
+   CULTURAL DIMENSIONS — shared components
+   ========================================== */
+
+/* Verified-host badge (Power Distance / Uncertainty Avoidance signal) */
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #2e7d32;
+    border-radius: 999px;
+    padding: 0.1rem 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+
+/* Attendee avatar strip ("Who's going" — Individualism vs Collectivism) */
+.attendee-strip {
+    margin: 1.25rem 0;
+}
+
+.attendee-strip-title {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+    color: var(--text-primary, #2c3e50);
+}
+
+.attendee-avatars {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.attendee-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-accent-soft, #eef);
+    color: var(--color-primary, #555);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    margin-left: -8px;
+}
+
+.attendee-avatar:first-child {
+    margin-left: 0;
+}
+
+.attendee-avatar-more {
+    background: #555;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.attendee-avatars-card {
+    margin: 0.5rem 1rem 0.5rem;
+}
+
+.attendee-avatars-card .attendee-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+}
+
+/* Event agenda (Uncertainty Avoidance signal) */
+.event-agenda {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--color-accent-soft, #f6f6f6);
+    border-radius: 10px;
+}
+
+.event-agenda h2 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    font-size: 1.15rem;
+}
+
+.event-agenda-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+/* Time-filter chips (Long-term vs Short-term Orientation: spontaneous "Tonight") */
+.time-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.75rem 0 1rem;
+}
+
+.time-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--color-primary, #444);
+    border: 1px solid var(--color-primary, #ccc);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+}
+
+.time-chip:hover {
+    background: var(--color-accent-soft, #eee);
+}
+
+.time-chip.is-active {
+    background: var(--color-primary, #444);
+    color: #fff;
+}
+
+/* Share / invite block (collectivist invite-a-friend prompt) */
+.invite-share {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: #fafafa;
+    border: 1px dashed #ddd;
+    border-radius: 10px;
+}
+
+.invite-share h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+}
+
+.invite-share p {
+    margin: 0 0 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.invite-share-input {
+    background: #fff;
+    font-size: 0.85rem;
+    width: 100%;
+    user-select: all;
+}
+
+/* Confirm page (uk_UA two-step join flow) */
+.confirm-summary {
+    background: var(--color-accent-soft, #f6f6f6);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.confirm-summary h2 {
+    margin: 0 0 0.75rem;
+}
+
+.confirm-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.confirm-list li {
+    border-bottom: 1px dashed #ddd;
+    padding: 0.35rem 0;
+}
+
+.confirm-checklist {
+    margin: 1rem 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+/* Profile phone line */
+.profile-phone {
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Form group with stacked checkboxes */
+.form-group-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.form-group-checks .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}

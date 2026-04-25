@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Confirm – %(name)s', name=_(event.title)) }}{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-container event-confirm">
+        <h1>{{ _('Review and confirm') }}</h1>
+        <p class="auth-subtitle">{{ _('Please review the details below before joining.') }}</p>
+
+        <div class="confirm-summary">
+            <h2>{{ _(event.title) }}</h2>
+            <ul class="confirm-list">
+                <li><strong>{{ _('When') }}:</strong> {{ event.date_time|datetimeformat('EEEE, d MMMM yyyy') }} {{ _('at') }} {{ event.date_time|datetimeformat('HH:mm') }}</li>
+                <li><strong>{{ _('Where') }}:</strong> {{ event.city }}{% if event.venue %} · {{ event.venue }}{% endif %}</li>
+                {% if event.organizer %}
+                <li><strong>{{ _('Host') }}:</strong> {{ event.organizer.name }}{% if event.organizer.verified_host %} <span class="verified-badge">✓ {{ _('Verified host') }}</span>{% endif %}</li>
+                {% endif %}
+                <li><strong>{{ _('Attending') }}:</strong> {{ attendee_count }}{% if event.attendee_cap %} / {{ event.attendee_cap }}{% endif %}{% if seats_left is not none %} · {{ _('%(n)s seats left', n=seats_left) }}{% endif %}</li>
+                {% if event.is_cooperative %}
+                <li><strong>{{ _('Style') }}:</strong> {{ _('Cooperative — no competition, everyone welcome') }}</li>
+                {% endif %}
+            </ul>
+
+            {% if event.agenda %}
+            <h3>{{ _('Agenda') }}</h3>
+            <ul class="event-agenda-list">
+                {% for line in event.agenda.splitlines() %}
+                    {% if line.strip() %}
+                    <li>{{ line.strip() }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="confirm-checklist">
+            <p>{{ _('By confirming, you agree to attend at the time and place above.') }}</p>
+        </div>
+
+        <form method="POST" action="{{ url_for('main.signup_event', event_id=event.id) }}" class="confirm-actions">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-primary">{{ _('Yes, confirm my attendance') }}</button>
+            <a href="{{ url_for('main.event_detail', event_id=event.id) }}" class="btn btn-secondary">{{ _('Go back') }}</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
