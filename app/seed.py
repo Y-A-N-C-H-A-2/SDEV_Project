@@ -19,7 +19,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Trip to Galway with a Castle Visit',
         'description': 'Join us for an amazing day trip to Galway! We will visit the historic Dunguaire Castle, explore the colorful streets of Galway city, and enjoy traditional Irish music in a local pub.',
-        'days_from_now': 14,
+        'days_from_now': 31,
         'city': 'Galway',
         'venue': 'Dunguaire Castle, Kinvara',
         'category': 'Travel',
@@ -28,7 +28,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Wicklow Mountains Hiking Trip',
         'description': 'Experience the breathtaking beauty of the Wicklow Mountains. This moderate-level hike takes us through Glendalough valley with stunning views of the upper and lower lakes.',
-        'days_from_now': 7,
+        'days_from_now': 19,
         'city': 'Dublin',
         'venue': 'Glendalough, Co. Wicklow',
         'category': 'Outdoor',
@@ -37,7 +37,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Wednesday Filming Locations Tour in Wicklow',
         'description': 'Explore the magical filming locations of the Wednesday series in County Wicklow. Visit the stunning landscapes that served as the backdrop for Nevermore Academy.',
-        'days_from_now': 21,
+        'days_from_now': 35,
         'city': 'Dublin',
         'venue': 'Killruddery House, Bray, Co. Wicklow',
         'category': 'Cultural',
@@ -46,7 +46,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'International Meetup in Dublin',
         'description': 'Meet people from all over the world living in Dublin! This casual meetup is perfect for newcomers and anyone looking to expand their social circle in the city.',
-        'days_from_now': 3,
+        'days_from_now': 10,
         'city': 'Dublin',
         'venue': 'The Bernard Shaw, Dublin 8',
         'category': 'Social',
@@ -55,7 +55,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Language Exchange Night',
         'description': 'Practice languages while making new friends! Bring your enthusiasm for learning and share your native language. All levels welcome.',
-        'days_from_now': 5,
+        'days_from_now': 16,
         'city': 'Dublin',
         'venue': 'Cafe en Seine, Dawson Street',
         'category': 'Language',
@@ -64,7 +64,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Photography Walk',
         'description': "Join fellow photography enthusiasts for a guided walk through Dublin's most photogenic spots. Bring any camera — phone cameras are welcome too!",
-        'days_from_now': 10,
+        'days_from_now': 23,
         'city': 'Dublin',
         'venue': "Meeting at Ha'penny Bridge, Dublin",
         'category': 'Photography',
@@ -73,7 +73,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Coffee Meetup for Newcomers in Ireland',
         'description': 'New to Ireland? Come for a relaxed coffee meetup and meet other newcomers. Share tips, stories, and make lasting connections over great coffee.',
-        'days_from_now': 2,
+        'days_from_now': 7,
         'city': 'Cork',
         'venue': "Filter Coffee, George's Quay, Cork",
         'category': 'Food & Drink',
@@ -82,7 +82,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Pub Social Night',
         'description': 'Experience the famous Irish pub culture! Join us for a fun night of live music, great craic, and the best Guinness in town.',
-        'days_from_now': 4,
+        'days_from_now': 13,
         'city': 'Limerick',
         'venue': "Dolan's Pub, Limerick",
         'category': 'Nightlife',
@@ -91,7 +91,7 @@ SAMPLE_EVENTS = [
     {
         'title': 'Art and Creativity Workshop',
         'description': 'Unleash your creative side in this hands-on art workshop. No experience needed — just bring your curiosity and willingness to try something new!',
-        'days_from_now': 12,
+        'days_from_now': 27,
         'city': 'Waterford',
         'venue': 'Garter Lane Arts Centre, Waterford',
         'category': 'Art & Creative',

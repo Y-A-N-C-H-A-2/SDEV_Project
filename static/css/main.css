@@ -834,9 +834,23 @@ a.event-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid #ecf0f1;
+}
+
+.event-footer-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.event-footer .btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
 }
 
 .event-category-badge {
