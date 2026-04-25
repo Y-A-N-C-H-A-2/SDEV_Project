@@ -185,6 +185,25 @@ def create_app():
         seed_database()
         click.echo('Database seeding complete.')
 
+    @app.cli.command('update-event-dates')
+    def update_event_dates_command():
+        """Shift all seeded event dates to next month from today."""
+        from app.models import Event
+        from app.utils import utcnow
+        from datetime import timedelta
+        from app.seed import SAMPLE_EVENTS
+        from sqlalchemy import select
+
+        now = utcnow()
+        titles = {e['title']: e['days_from_now'] for e in SAMPLE_EVENTS}
+        updated = 0
+        for event in db.session.scalars(select(Event)).all():
+            if event.title in titles:
+                event.date_time = now + timedelta(days=titles[event.title])
+                updated += 1
+        db.session.commit()
+        click.echo(f'Updated {updated} event date(s).')
+
     return app
 
 
