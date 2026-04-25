@@ -160,9 +160,8 @@ msgid "Cultural events"
 msgstr "Eventos culturais"
 
 #: app/forms.py:87 app/forms.py:107
-#, fuzzy
 msgid "Full name"
-msgstr "Seu nome completo"
+msgstr "Nome completo"
 
 #: app/forms.py:87 app/forms.py:107
 msgid "Please enter your name."
@@ -189,18 +188,16 @@ msgid "Please enter a password."
 msgstr "Por favor, informe uma senha."
 
 #: app/forms.py:89
-#, fuzzy
 msgid "Password must be at least 6 characters."
-msgstr "As senhas devem coincidir"
+msgstr "A senha deve ter pelo menos 6 caracteres."
 
 #: app/forms.py:90
 msgid "Confirm Password"
 msgstr "Confirmar senha"
 
 #: app/forms.py:90
-#, fuzzy
 msgid "Please confirm your password."
-msgstr "Confirmar senha"
+msgstr "Por favor, confirme sua senha."
 
 #: app/forms.py:90
 msgid "Passwords must match"
@@ -236,9 +233,8 @@ msgid "City in Ireland"
 msgstr "Cidade na Irlanda"
 
 #: app/forms.py:96 app/forms.py:113
-#, fuzzy
 msgid "Preferred language"
-msgstr "Idiomas"
+msgstr "Idioma preferido"
 
 #: app/forms.py:97 app/forms.py:114 templates/edit_profile.html:61
 #: templates/profile.html:58 templates/register.html:99
@@ -250,18 +246,16 @@ msgid "Custom Interests (comma-separated)"
 msgstr "Interesses personalizados (separados por vírgula)"
 
 #: app/forms.py:103
-#, fuzzy
 msgid "Please enter your password."
-msgstr "Sua senha"
+msgstr "Por favor, informe sua senha."
 
 #: app/forms.py:119
 msgid "Title"
 msgstr "Título"
 
 #: app/forms.py:119
-#, fuzzy
 msgid "Please give your event a title."
-msgstr "Descreva seu evento..."
+msgstr "Por favor, dê um título ao seu evento."
 
 #: app/forms.py:120
 msgid "Description"
@@ -292,9 +286,8 @@ msgid "Date and Time"
 msgstr "Data e hora"
 
 #: app/forms.py:125
-#, fuzzy
 msgid "Please choose a date and time."
-msgstr "Data e hora"
+msgstr "Por favor, escolha uma data e hora."
 
 #: app/forms.py:126
 msgid "Category"
@@ -333,14 +326,13 @@ msgid "This event is fully booked."
 msgstr "Este evento está lotado."
 
 #: app/routes.py:257
-#, fuzzy
 msgid "You are already signed up for this event."
-msgstr "Você já é membro desta comunidade."
+msgstr "Você já está inscrito neste evento."
 
 #: app/routes.py:270
-#, fuzzy, python-format
+#, python-format
 msgid "You are signed up for %(name)s!"
-msgstr "Você entrou em %(name)s!"
+msgstr "Você está inscrito em %(name)s!"
 
 #: app/routes.py:274 app/routes.py:295 app/routes.py:312 app/routes.py:341
 #: app/routes.py:432 app/routes.py:451
@@ -357,20 +349,20 @@ msgstr "Removido da sua lista."
 
 #: app/routes.py:323
 msgid "You can only cancel signup before the event starts."
-msgstr ""
+msgstr "Você só pode cancelar a inscrição antes do início do evento."
 
 #: app/routes.py:327
 msgid "As the organizer, you are automatically attending this event."
-msgstr ""
+msgstr "Como organizador, você está automaticamente participando deste evento."
 
 #: app/routes.py:331
 msgid "You are not signed up for this event."
-msgstr ""
+msgstr "Você não está inscrito neste evento."
 
 #: app/routes.py:337
 #, python-format
 msgid "You are no longer signed up for %(name)s."
-msgstr ""
+msgstr "Você não está mais inscrito em %(name)s."
 
 #: app/routes.py:372
 msgid "Uploaded file is not a valid image."
@@ -443,9 +435,8 @@ msgid "Where cultures meet and friendships begin"
 msgstr "Onde culturas se encontram e amizades começam"
 
 #: templates/about.html:14 templates/index.html:156 templates/index.html:158
-#, fuzzy
 msgid "Where cultures meet"
-msgstr "Onde culturas se encontram e amizades começam"
+msgstr "Onde culturas se encontram"
 
 #: templates/about.html:22
 msgid "Get in Touch"
@@ -667,9 +658,9 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: templates/event_confirm.html:3
-#, fuzzy, python-format
+#, python-format
 msgid "Confirm – %(name)s"
-msgstr "Você saiu de %(name)s."
+msgstr "Confirmar – %(name)s"
 
 #: templates/event_confirm.html:8
 msgid "Review and confirm"
@@ -699,14 +690,12 @@ msgstr "Anfitrião"
 
 #: templates/event_confirm.html:17 templates/event_detail.html:37
 #: templates/profile.html:17
-#, fuzzy
 msgid "Verified host"
-msgstr "Anfitriões Verificados"
+msgstr "Anfitrião verificado"
 
 #: templates/event_confirm.html:19
-#, fuzzy
 msgid "Attending"
-msgstr "participando"
+msgstr "Participando"
 
 #: templates/event_confirm.html:19 templates/event_detail.html:43
 #, python-format
@@ -714,18 +703,16 @@ msgid "%(n)s seats left"
 msgstr "%(n)s vagas restantes"
 
 #: templates/event_confirm.html:21
-#, fuzzy
 msgid "Style"
-msgstr "Título"
+msgstr "Estilo"
 
 #: templates/event_confirm.html:21 templates/event_detail.html:54
 msgid "Cooperative — no competition, everyone welcome"
 msgstr "Cooperativo — sem competição, todos são bem-vindos"
 
 #: templates/event_confirm.html:26 templates/event_detail.html:87
-#, fuzzy
 msgid "Agenda"
-msgstr "Gênero"
+msgstr "Programação"
 
 #: templates/event_confirm.html:38
 msgid "By confirming, you agree to attend at the time and place above."
@@ -736,9 +723,8 @@ msgid "Yes, confirm my attendance"
 msgstr "Sim, confirmar minha participação"
 
 #: templates/event_confirm.html:44
-#, fuzzy
 msgid "Go back"
-msgstr "Bem-vindo(a) de volta"
+msgstr "Voltar"
 
 #: templates/event_detail.html:36 templates/events.html:80
 msgid "Organized by"
@@ -762,9 +748,8 @@ msgid "Competitive — friendly contest"
 msgstr "Competitivo — competição amigável"
 
 #: templates/event_detail.html:65 templates/events.html:84
-#, fuzzy
 msgid "Who is going"
-msgstr "Quem Pode Participar?"
+msgstr "Quem vai"
 
 #: templates/event_detail.html:66
 msgid "Who's going"
@@ -776,12 +761,11 @@ msgstr "Sobre este evento"
 
 #: templates/event_detail.html:105 templates/events.html:98
 msgid "You are organizing this event"
-msgstr ""
+msgstr "Você está organizando este evento"
 
 #: templates/event_detail.html:109 templates/events.html:102
-#, fuzzy
 msgid "Cancel Signup"
-msgstr "Cancelar"
+msgstr "Cancelar inscrição"
 
 #: templates/event_detail.html:112 templates/events.html:105
 msgid "Fully booked"
@@ -793,7 +777,7 @@ msgstr "Revisar e confirmar"
 
 #: templates/event_detail.html:118
 msgid "Sign Up for Event"
-msgstr ""
+msgstr "Inscrever-se no evento"
 
 #: templates/event_detail.html:126
 msgid "Saved ✓"
@@ -804,14 +788,12 @@ msgid "Save for later"
 msgstr "Salvar para depois"
 
 #: templates/event_detail.html:136
-#, fuzzy
 msgid "Event Ended"
-msgstr "Eventos Participados"
+msgstr "Evento Encerrado"
 
 #: templates/event_detail.html:139 templates/events.html:115
-#, fuzzy
 msgid "Login to Sign Up"
-msgstr "Entre para participar"
+msgstr "Entre para se inscrever"
 
 #: templates/event_detail.html:141
 msgid "← Back to Events"
@@ -826,9 +808,8 @@ msgid "Share this event with someone who would enjoy it."
 msgstr "Compartilhe este evento com quem você acha que vai curtir."
 
 #: templates/event_detail.html:150
-#, fuzzy
 msgid "Event link"
-msgstr "Título do evento"
+msgstr "Link do evento"
 
 #: templates/events.html:3
 msgid "Events – CrossPaths"
@@ -863,9 +844,8 @@ msgid "All upcoming"
 msgstr "Todos os próximos"
 
 #: templates/events.html:45
-#, fuzzy
 msgid "Tonight"
-msgstr "Vida noturna"
+msgstr "Hoje à noite"
 
 #: templates/events.html:49
 msgid "This weekend"
@@ -881,7 +861,7 @@ msgstr "Ver Detalhes"
 
 #: templates/events.html:111
 msgid "Sign Up"
-msgstr ""
+msgstr "Inscrever-se"
 
 #: templates/events.html:129
 msgid "Nothing here yet — let’s change that ✨"
@@ -943,38 +923,44 @@ msgstr "Quero participar! 🙌"
 
 #: templates/index.html:32
 msgid "How it works for Ukrainian newcomers"
-msgstr ""
+msgstr "Como funciona para recém-chegados ucranianos"
 
 #: templates/index.html:35
-#, fuzzy
 msgid "Step 1 – Review the verified event 📋"
-msgstr "Explore Eventos Verificados"
+msgstr "Passo 1 – Revise o evento verificado 📋"
 
 #: templates/index.html:37
 msgid ""
 "Check the event agenda, location, time, and attendee limits in detail "
 "before you decide to join."
 msgstr ""
+"Confira a programação, o local, o horário e o limite de participantes "
+"do evento em detalhes antes de decidir participar."
 
 #: templates/index.html:41
 msgid "Step 2 – Confirm a verified host ✓"
-msgstr ""
+msgstr "Passo 2 – Confirme um anfitrião verificado ✓"
 
 #: templates/index.html:43
 msgid ""
 "Look for the verification badge next to the host name and review their "
 "credentials before registering."
 msgstr ""
+"Procure o selo de verificação ao lado do nome do anfitrião e confira "
+"suas credenciais antes de se cadastrar."
 
 #: templates/index.html:47
 msgid "Step 3 – Attend in a safe public place 🔒"
-msgstr ""
+msgstr "Passo 3 – Participe em um local público seguro 🔒"
 
 #: templates/index.html:49
 msgid ""
 "Only attend events held in safe, public venues with clear rules, so you "
 "can meet new people confidently and securely."
 msgstr ""
+"Participe apenas de eventos realizados em locais públicos seguros e com "
+"regras claras, para que você conheça novas pessoas com confiança e "
+"segurança."
 
 #: templates/index.html:56
 msgid "How it works — fun & easy"
@@ -1029,9 +1015,8 @@ msgid "Discover Ireland Experiences"
 msgstr "Descubra experiências na Irlanda 🍀"
 
 #: templates/index.html:145 templates/index.html:147 templates/index.html:149
-#, fuzzy
 msgid "Outdoor adventures with fellow newcomers"
-msgstr "Aventuras ao ar livre com a galera 🌲"
+msgstr "Aventuras ao ar livre com outros recém-chegados"
 
 #: templates/index.html:151
 msgid "Outdoor Adventures"
@@ -1050,9 +1035,8 @@ msgid "Discover vibrant cities from Dublin to Galway, Cork to Limerick"
 msgstr "Descubra cidades vibrantes de Dublin a Galway, Cork a Limerick"
 
 #: templates/index.html:164
-#, fuzzy
 msgid "Culture and community"
-msgstr "Sair da Comunidade"
+msgstr "Cultura e comunidade"
 
 #: templates/index.html:165
 msgid "Culture & Social"
