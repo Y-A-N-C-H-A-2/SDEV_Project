@@ -1,15 +1,21 @@
 # Render Blueprint: https://render.com/docs/blueprint-spec
 # New → Blueprint → connect repo → apply this file.
 #
-# SQLite only (no managed Postgres): omit DATABASE_URL so the app uses
-# /app/crosspaths.db inside the container. Instance disk is ephemeral on Render —
-# data is lost on redeploy unless you add a persistent disk and point the DB there
-# (e.g. set DATABASE_URL to sqlite:////data/crosspaths.db and mount /data).
-# AUTO_DB_SETUP recreates tables + seed when the file is missing or after a fresh deploy.
+# Uses a managed Postgres database so user accounts and other data persist
+# across redeploys and instance restarts. DATABASE_URL is injected from the
+# `crosspaths-db` database below; the app picks it up in app/__init__.py.
+# AUTO_DB_SETUP runs `flask init-db` + `flask seed-db` on boot — both are
+# idempotent, so they safely no-op once tables and seed data exist.
 #
 # SECRET_KEY + generateValue: Render only auto-generates if the variable is absent.
 # If deploy logs show "SECRET_KEY ... not set", add SECRET_KEY in the Dashboard
 # (openssl rand -base64 32) or delete an empty SECRET_KEY and redeploy.
+
+databases:
+  - name: crosspaths-db
+    plan: free
+    databaseName: crosspaths
+    user: crosspaths
 
 services:
   - type: web
@@ -28,3 +34,7 @@ services:
         generateValue: true
       - key: AUTO_DB_SETUP
         value: "1"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: crosspaths-db
+          property: connectionString
