@@ -15,11 +15,23 @@
 
         <div class="detail-content">
             <div class="detail-header">
-                {% if event.category %}
-                <span class="event-category-badge">{{ _(event.category) }}</span>
-                {% endif %}
+                <div class="detail-header-badges">
+                    {% if event.category %}
+                    <span class="event-category-badge">{{ _(event.category) }}</span>
+                    {% endif %}
+                    {% if event.organizer and event.organizer.verified_host %}
+                    <span class="verified-badge" title="{{ _('Verified host') }}">✓ {{ _('Verified host') }}</span>
+                    {% endif %}
+                </div>
                 <h1>{{ _(event.title) }}</h1>
             </div>
+
+            {% if locale == 'uk_UA' %}
+            <div class="cp-uk-safety-note" role="note">
+                <span aria-hidden="true">🔒</span>
+                <span>{{ _('This event is held in a safe public venue with clear conduct guidelines.') }}</span>
+            </div>
+            {% endif %}
 
             <div class="detail-meta">
                 <div class="meta-item">
@@ -33,9 +45,7 @@
                 {% if event.organizer %}
                 <div class="meta-item">
                     <span class="meta-icon">👤</span>
-                    <span>{{ _('Organized by') }} {{ event.organizer.name }}{% if event.organizer.verified_host %}
-                        <span class="verified-badge" title="{{ _('Verified host') }}">✓ {{ _('Verified host') }}</span>
-                    {% endif %}</span>
+                    <span>{{ _('Organized by') }} {{ event.organizer.name }}</span>
                 </div>
                 {% endif %}
                 <div class="meta-item">

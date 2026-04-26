@@ -114,7 +114,7 @@
             <h2>{{ _('Featured Communities') }}</h2>
             <a href="{{ url_for('main.communities') }}" class="section-link">{{ _('View All →') }}</a>
         </div>
-        <div class="cards-grid">
+        <div class="cards-grid cards-grid-communities">
             {% for community in communities %}
             <a href="{{ url_for('main.community_detail', community_id=community.id) }}" class="community-card">
                 <div class="community-card-image">
