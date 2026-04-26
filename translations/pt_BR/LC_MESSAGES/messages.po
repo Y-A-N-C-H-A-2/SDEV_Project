@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-04-25 12:08+0000\n"
+"POT-Creation-Date: 2026-04-26 23:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -16,306 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
-
-#: app/babel_strings.py:8
-msgid "Ukrainian"
-msgstr "ucraniano"
-
-#: app/forms.py:19
-msgid "Event date and time must be in the future."
-msgstr "A data e hora do evento devem ser no futuro."
-
-#: app/forms.py:23
-msgid "Use browser language"
-msgstr "Usar idioma do navegador"
-
-#: app/forms.py:24 templates/base.html:47
-msgid "English (Ireland)"
-msgstr "Inglês (Irlanda)"
-
-#: app/forms.py:25 templates/base.html:52
-msgid "Ukrainian (interface language)"
-msgstr "Ucraniano"
-
-#: app/forms.py:26 templates/base.html:57
-msgid "Portuguese (Brazil)"
-msgstr "Português (Brasil)"
-
-#: app/forms.py:34
-msgid "Select a city..."
-msgstr "Selecione uma cidade..."
-
-#: app/forms.py:35 templates/events.html:23
-msgid "Dublin"
-msgstr "Dublin"
-
-#: app/forms.py:36 templates/events.html:24
-msgid "Galway"
-msgstr "Galway"
-
-#: app/forms.py:37 templates/events.html:25
-msgid "Cork"
-msgstr "Cork"
-
-#: app/forms.py:38 templates/events.html:26
-msgid "Limerick"
-msgstr "Limerick"
-
-#: app/forms.py:39 templates/events.html:27
-msgid "Waterford"
-msgstr "Waterford"
-
-#: app/forms.py:43
-msgid "Select..."
-msgstr "Selecione..."
-
-#: app/forms.py:44
-msgid "Male"
-msgstr "Masculino"
-
-#: app/forms.py:45
-msgid "Female"
-msgstr "Feminino"
-
-#: app/forms.py:46
-msgid "Non-binary"
-msgstr "Não binário"
-
-#: app/forms.py:47
-msgid "Prefer not to say"
-msgstr "Prefiro não informar"
-
-#: app/forms.py:51
-msgid "Select a category..."
-msgstr "Selecione uma categoria..."
-
-#: app/forms.py:52
-msgid "Social"
-msgstr "Social"
-
-#: app/forms.py:53
-msgid "Cultural"
-msgstr "Cultural"
-
-#: app/forms.py:54
-msgid "Outdoor"
-msgstr "Ar livre"
-
-#: app/forms.py:55
-msgid "Language"
-msgstr "Idiomas"
-
-#: app/forms.py:56
-msgid "Food & Drink"
-msgstr "Comida e bebida"
-
-#: app/forms.py:57
-msgid "Art & Creative"
-msgstr "Arte e criatividade"
-
-#: app/forms.py:58 app/forms.py:73
-msgid "Tech"
-msgstr "Tecnologia"
-
-#: app/forms.py:59 app/forms.py:74
-msgid "Sports"
-msgstr "Esportes"
-
-#: app/forms.py:60 app/forms.py:71
-msgid "Music"
-msgstr "Música"
-
-#: app/forms.py:61 app/forms.py:68
-msgid "Travel"
-msgstr "Viagens"
-
-#: app/forms.py:62 app/forms.py:76
-msgid "Nightlife"
-msgstr "Vida noturna"
-
-#: app/forms.py:63 app/forms.py:70
-msgid "Photography"
-msgstr "Fotografia"
-
-#: app/forms.py:67
-msgid "Language exchange"
-msgstr "Intercâmbio de idiomas"
-
-#: app/forms.py:69
-msgid "Hiking"
-msgstr "Trilhas"
-
-# Date/time (word between date and time)
-#: app/forms.py:72
-msgid "Art"
-msgstr "Arte"
-
-#: app/forms.py:75
-msgid "Food and coffee"
-msgstr "Comida e café"
-
-#: app/forms.py:77
-msgid "Cultural events"
-msgstr "Eventos culturais"
-
-#: app/forms.py:87 app/forms.py:107
-msgid "Full name"
-msgstr "Nome completo"
-
-#: app/forms.py:87 app/forms.py:107
-msgid "Please enter your name."
-msgstr "Por favor, informe seu nome."
-
-#: app/forms.py:88 app/forms.py:102
-msgid "Email"
-msgstr "E-mail"
-
-#: app/forms.py:88 app/forms.py:102
-msgid "Please enter your email."
-msgstr "Por favor, informe seu e-mail."
-
-#: app/forms.py:88 app/forms.py:102
-msgid "Please enter a valid email address."
-msgstr "Informe um e-mail válido."
-
-#: app/forms.py:89 app/forms.py:103
-msgid "Password"
-msgstr "Senha"
-
-#: app/forms.py:89
-msgid "Please enter a password."
-msgstr "Por favor, informe uma senha."
-
-#: app/forms.py:89
-msgid "Password must be at least 6 characters."
-msgstr "A senha deve ter pelo menos 6 caracteres."
-
-#: app/forms.py:90
-msgid "Confirm Password"
-msgstr "Confirmar senha"
-
-#: app/forms.py:90
-msgid "Please confirm your password."
-msgstr "Por favor, confirme sua senha."
-
-#: app/forms.py:90
-msgid "Passwords must match"
-msgstr "As senhas devem coincidir"
-
-#: app/forms.py:91 app/forms.py:108 templates/profile.html:32
-#: templates/register.html:50
-msgid "Age"
-msgstr "Idade"
-
-#: app/forms.py:91 app/forms.py:108
-msgid "Age must be between 16 and 120."
-msgstr "A idade deve estar entre 16 e 120."
-
-#: app/forms.py:92 app/forms.py:109 templates/profile.html:38
-msgid "Gender"
-msgstr "Gênero"
-
-#: app/forms.py:93 app/forms.py:110 templates/profile.html:44
-msgid "Nationality"
-msgstr "Nacionalidade"
-
-#: app/forms.py:94 app/forms.py:111
-msgid "Phone (optional, with country code)"
-msgstr "Telefone (opcional, com código do país)"
-
-#: app/forms.py:94 app/forms.py:111
-msgid "Please enter a valid phone number."
-msgstr "Informe um telefone válido."
-
-#: app/forms.py:95 app/forms.py:112
-msgid "City in Ireland"
-msgstr "Cidade na Irlanda"
-
-#: app/forms.py:96 app/forms.py:113
-msgid "Preferred language"
-msgstr "Idioma preferido"
-
-#: app/forms.py:97 app/forms.py:114 templates/edit_profile.html:61
-#: templates/profile.html:58 templates/register.html:99
-msgid "Interests"
-msgstr "Interesses"
-
-#: app/forms.py:98 app/forms.py:115
-msgid "Custom Interests (comma-separated)"
-msgstr "Interesses personalizados (separados por vírgula)"
-
-#: app/forms.py:103
-msgid "Please enter your password."
-msgstr "Por favor, informe sua senha."
-
-#: app/forms.py:119
-msgid "Title"
-msgstr "Título"
-
-#: app/forms.py:119
-msgid "Please give your event a title."
-msgstr "Por favor, dê um título ao seu evento."
-
-#: app/forms.py:120
-msgid "Description"
-msgstr "Descrição"
-
-#: app/forms.py:121
-msgid "Agenda (one item per line)"
-msgstr "Programação (um item por linha)"
-
-#: app/forms.py:122 templates/create_event.html:33
-msgid "A clear schedule helps people decide whether to attend."
-msgstr "Uma programação clara ajuda as pessoas a decidirem se vão participar."
-
-#: app/forms.py:123 templates/profile.html:50
-msgid "City"
-msgstr "Cidade"
-
-#: app/forms.py:123
-msgid "Please choose a city."
-msgstr "Escolha uma cidade."
-
-#: app/forms.py:124
-msgid "Location/Venue"
-msgstr "Local / endereço"
-
-#: app/forms.py:125
-msgid "Date and Time"
-msgstr "Data e hora"
-
-#: app/forms.py:125
-msgid "Please choose a date and time."
-msgstr "Por favor, escolha uma data e hora."
-
-#: app/forms.py:126
-msgid "Category"
-msgstr "Categoria"
-
-#: app/forms.py:127
-msgid "Attendee limit (optional)"
-msgstr "Limite de participantes (opcional)"
-
-#: app/forms.py:127
-msgid "Attendee limit must be a positive number."
-msgstr "O limite deve ser um número positivo."
-
-#: app/forms.py:128
-msgid "Recurring event (meets regularly)"
-msgstr "Evento recorrente (acontece regularmente)"
-
-#: app/forms.py:129
-msgid "Cooperative event (no competition, everyone welcome)"
-msgstr "Evento cooperativo (sem competição, todos são bem-vindos)"
-
-#: app/forms.py:130
-msgid "Event Photo"
-msgstr "Foto do evento"
-
-#: app/forms.py:130
-msgid "Images only!"
-msgstr "Apenas imagens!"
+"Generated-By: Babel 2.18.0\n"
 
 #: app/routes.py:231 app/routes.py:253 app/routes.py:285
 msgid "This event has already happened."
@@ -503,21 +204,35 @@ msgstr "Entrar"
 msgid "Register"
 msgstr "Cadastrar"
 
+#: templates/base.html:47
+msgid "English (Ireland)"
+msgstr "Inglês (Irlanda)"
+
+#: templates/base.html:52
+msgid "Ukrainian (interface language)"
+msgstr "Ucraniano"
+
+#: templates/base.html:57
+msgid "Portuguese (Brazil)"
+msgstr "Português (Brasil)"
+
 #: templates/base.html:90
 msgid "Where cultures meet and friendships begin."
 msgstr "💚 Onde culturas se encontram e amizades começam."
 
 #: templates/base.html:92
 msgid "A culturally adaptive platform for international newcomers in Dublin"
-msgstr "Uma plataforma acolhedora para quem chegou em Dublin de outro canto do mundo 😊"
+msgstr ""
+"Uma plataforma acolhedora para quem chegou em Dublin de outro canto do "
+"mundo 😊"
 
 #: templates/communities.html:3
 msgid "Communities – CrossPaths"
 msgstr "Comunidades – CrossPaths"
 
 #: templates/communities.html:9
-msgid "Browse and join interest-based communities"
-msgstr "Explore e participe de comunidades baseadas em interesses"
+msgid "Find your people in Dublin"
+msgstr ""
 
 #: templates/communities.html:27 templates/community_detail.html:19
 #: templates/index.html:131
@@ -534,11 +249,11 @@ msgstr "Nenhuma comunidade ainda"
 msgid "Communities are coming soon!"
 msgstr "Comunidades em breve!"
 
-#: templates/communities.html:49 templates/events.html:157
+#: templates/communities.html:49 templates/events.html:167
 msgid "Previous"
 msgstr "Anterior"
 
-#: templates/communities.html:59 templates/events.html:167
+#: templates/communities.html:59 templates/events.html:177
 msgid "Next"
 msgstr "Próximo"
 
@@ -572,8 +287,7 @@ msgstr "← Voltar para Comunidades"
 msgid "Members"
 msgstr "Membros"
 
-#: templates/community_detail.html:66 templates/events.html:8
-#: templates/index.html:83
+#: templates/community_detail.html:66 templates/index.html:83
 msgid "Upcoming Events"
 msgstr "📅 Próximos eventos"
 
@@ -602,6 +316,10 @@ msgstr ""
 "19:00 – Boas-vindas\n"
 "19:30 – Atividade\n"
 "21:00 – Encerramento"
+
+#: templates/create_event.html:33
+msgid "A clear schedule helps people decide whether to attend."
+msgstr "Uma programação clara ajuda as pessoas a decidirem se vão participar."
 
 #: templates/create_event.html:49
 msgid "Venue name and address"
@@ -643,6 +361,11 @@ msgstr "Editar Perfil"
 msgid "e.g. +353 87 123 4567"
 msgstr "ex.: +353 87 123 4567"
 
+#: templates/edit_profile.html:61 templates/profile.html:58
+#: templates/register.html:99
+msgid "Interests"
+msgstr "Interesses"
+
 #: templates/edit_profile.html:73 templates/register.html:111
 msgid "e.g. Yoga, Cooking, Board games"
 msgstr "ex.: Yoga, Culinária, Jogos de tabuleiro"
@@ -673,8 +396,8 @@ msgid "When"
 msgstr "Quando"
 
 # Date/time (word between date and time)
-#: templates/event_confirm.html:14 templates/event_detail.html:27
-#: templates/events.html:77 templates/index.html:102
+#: templates/event_confirm.html:14 templates/event_detail.html:39
+#: templates/events.html:85 templates/index.html:102
 msgid "at"
 msgstr "às"
 
@@ -686,7 +409,7 @@ msgstr "Onde"
 msgid "Host"
 msgstr "Anfitrião"
 
-#: templates/event_confirm.html:17 templates/event_detail.html:37
+#: templates/event_confirm.html:17 templates/event_detail.html:23
 #: templates/profile.html:17
 msgid "Verified host"
 msgstr "Anfitrião verificado"
@@ -695,7 +418,7 @@ msgstr "Anfitrião verificado"
 msgid "Attending"
 msgstr "Participando"
 
-#: templates/event_confirm.html:19 templates/event_detail.html:43
+#: templates/event_confirm.html:19 templates/event_detail.html:53
 #, python-format
 msgid "%(n)s seats left"
 msgstr "%(n)s vagas restantes"
@@ -704,11 +427,11 @@ msgstr "%(n)s vagas restantes"
 msgid "Style"
 msgstr "Estilo"
 
-#: templates/event_confirm.html:21 templates/event_detail.html:54
+#: templates/event_confirm.html:21 templates/event_detail.html:64
 msgid "Cooperative — no competition, everyone welcome"
 msgstr "Cooperativo — sem competição, todos são bem-vindos"
 
-#: templates/event_confirm.html:26 templates/event_detail.html:87
+#: templates/event_confirm.html:26 templates/event_detail.html:97
 msgid "Agenda"
 msgstr "Programação"
 
@@ -724,88 +447,92 @@ msgstr "Sim, confirmar minha participação"
 msgid "Go back"
 msgstr "Voltar"
 
-#: templates/event_detail.html:36 templates/events.html:80
+#: templates/event_detail.html:32
+msgid "This event is held in a safe public venue with clear conduct guidelines."
+msgstr ""
+
+#: templates/event_detail.html:48 templates/events.html:88
 msgid "Organized by"
 msgstr "Organizado por"
 
-#: templates/event_detail.html:43
+#: templates/event_detail.html:53
 msgid "people attending"
 msgstr "pessoas participando"
 
-#: templates/event_detail.html:43
+#: templates/event_detail.html:53
 #, python-format
 msgid "limit %(cap)s"
 msgstr "limite %(cap)s"
 
-#: templates/event_detail.html:48
+#: templates/event_detail.html:58
 msgid "Recurring event — meets regularly"
 msgstr "Evento recorrente — acontece regularmente"
 
-#: templates/event_detail.html:59
+#: templates/event_detail.html:69
 msgid "Competitive — friendly contest"
 msgstr "Competitivo — competição amigável"
 
-#: templates/event_detail.html:65 templates/events.html:84
+#: templates/event_detail.html:75 templates/events.html:92
 msgid "Who is going"
 msgstr "Quem vai"
 
-#: templates/event_detail.html:66
+#: templates/event_detail.html:76
 msgid "Who's going"
 msgstr "Quem vai 🎉"
 
-#: templates/event_detail.html:80
+#: templates/event_detail.html:90
 msgid "About this event"
 msgstr "Sobre este evento"
 
-#: templates/event_detail.html:105 templates/events.html:98
+#: templates/event_detail.html:115 templates/events.html:107
 msgid "You are organizing this event"
 msgstr "Você está organizando este evento"
 
-#: templates/event_detail.html:109 templates/events.html:102
+#: templates/event_detail.html:119 templates/events.html:111
 msgid "Cancel Signup"
 msgstr "Cancelar inscrição"
 
-#: templates/event_detail.html:112 templates/events.html:105
+#: templates/event_detail.html:122 templates/events.html:114
 msgid "Fully booked"
 msgstr "Lotado"
 
-#: templates/event_detail.html:114 templates/events.html:107
+#: templates/event_detail.html:124 templates/events.html:116
 msgid "Review &amp; Confirm"
 msgstr "Revisar e confirmar"
 
-#: templates/event_detail.html:118
+#: templates/event_detail.html:128
 msgid "Sign Up for Event"
 msgstr "Inscrever-se no evento"
 
-#: templates/event_detail.html:126
+#: templates/event_detail.html:136
 msgid "Saved ✓"
 msgstr "Salvo ✓"
 
-#: templates/event_detail.html:131
+#: templates/event_detail.html:141
 msgid "Save for later"
 msgstr "Salvar para depois"
 
-#: templates/event_detail.html:136
+#: templates/event_detail.html:146
 msgid "Event Ended"
 msgstr "Evento Encerrado"
 
-#: templates/event_detail.html:139 templates/events.html:115
+#: templates/event_detail.html:149 templates/events.html:124
 msgid "Login to Sign Up"
 msgstr "Entre para se inscrever"
 
-#: templates/event_detail.html:141
+#: templates/event_detail.html:151
 msgid "← Back to Events"
 msgstr "← Voltar para Eventos"
 
-#: templates/event_detail.html:145
+#: templates/event_detail.html:155
 msgid "Bring a friend"
 msgstr "Chame um amigo"
 
-#: templates/event_detail.html:146
+#: templates/event_detail.html:156
 msgid "Share this event with someone who would enjoy it."
 msgstr "Compartilhe este evento com quem você acha que vai curtir."
 
-#: templates/event_detail.html:150
+#: templates/event_detail.html:160
 msgid "Event link"
 msgstr "Link do evento"
 
@@ -814,66 +541,98 @@ msgid "Events – CrossPaths"
 msgstr "Eventos – CrossPaths"
 
 #: templates/events.html:9
-msgid "Find events happening across Ireland"
-msgstr "Encontre eventos acontecendo pela Irlanda"
+msgid "Events in Dublin 🎉"
+msgstr "Eventos em Dublin 🎉"
 
-#: templates/events.html:17
+#: templates/events.html:10 templates/events.html:16
+msgid "Find your next favourite event!"
+msgstr "Encontre seu próximo evento favorito!"
+
+#: templates/events.html:12 templates/events.html:15
+msgid "Events in Dublin"
+msgstr "Eventos em Dublin"
+
+#: templates/events.html:13
+msgid "Verified events in safe public venues"
+msgstr "Eventos verificados em locais públicos seguros"
+
+#: templates/events.html:25
 msgid "Search events..."
 msgstr "Buscar eventos..."
 
-#: templates/events.html:22
+#: templates/events.html:30
 msgid "All Cities"
 msgstr "Todas as Cidades"
 
 #: templates/events.html:31
+msgid "Dublin"
+msgstr "Dublin"
+
+#: templates/events.html:32
+msgid "Galway"
+msgstr "Galway"
+
+#: templates/events.html:33
+msgid "Cork"
+msgstr "Cork"
+
+#: templates/events.html:34
+msgid "Limerick"
+msgstr "Limerick"
+
+#: templates/events.html:35
+msgid "Waterford"
+msgstr "Waterford"
+
+#: templates/events.html:39
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/events.html:33
+#: templates/events.html:41
 msgid "Clear"
 msgstr "Limpar"
 
-#: templates/events.html:38
+#: templates/events.html:46
 msgid "Time filter"
 msgstr "Filtro por horário"
 
-#: templates/events.html:41
+#: templates/events.html:49
 msgid "All upcoming"
 msgstr "Todos os próximos"
 
-#: templates/events.html:45
+#: templates/events.html:53
 msgid "Tonight"
 msgstr "Hoje à noite"
 
-#: templates/events.html:49
+#: templates/events.html:57
 msgid "This weekend"
 msgstr "Neste fim de semana"
 
-#: templates/events.html:94
+#: templates/events.html:102
 msgid "attending"
 msgstr "participando"
 
-#: templates/events.html:95
+#: templates/events.html:104
 msgid "View Details"
 msgstr "Ver Detalhes"
 
-#: templates/events.html:111
+#: templates/events.html:120
 msgid "Sign Up"
 msgstr "Inscrever-se"
 
-#: templates/events.html:129
+#: templates/events.html:139
 msgid "Nothing here yet — let’s change that ✨"
 msgstr "Nada por aqui ainda — vamos mudar isso ✨"
 
-#: templates/events.html:131
+#: templates/events.html:141
 msgid "No verified events match your filters."
 msgstr "Nenhum evento verificado para os filtros escolhidos."
 
-#: templates/events.html:133
+#: templates/events.html:143
 msgid "No events found"
 msgstr "Nenhum evento encontrado"
 
-#: templates/events.html:138
+#: templates/events.html:148
 msgid ""
 "Try a different city or come hang out tonight! Or start your own — your "
 "friends will follow."
@@ -881,17 +640,17 @@ msgstr ""
 "Tenta outra cidade ou vem curtir hoje à noite! Ou crie o seu próprio — a "
 "galera vai junto."
 
-#: templates/events.html:140
+#: templates/events.html:150
 msgid ""
-"Adjust the filters or come back later — new events are reviewed and added "
-"regularly."
+"Adjust the filters or come back later — new events are reviewed and added"
+" regularly."
 msgstr "Ajuste os filtros ou volte depois — novos eventos chegam o tempo todo."
 
-#: templates/events.html:142
+#: templates/events.html:152
 msgid "Try adjusting your search or filter, or check back soon for new events!"
 msgstr "Tente ajustar sua busca ou filtro, ou volte em breve para novos eventos!"
 
-#: templates/events.html:146
+#: templates/events.html:156
 msgid "Create an Event"
 msgstr "Criar um Evento"
 
@@ -905,11 +664,11 @@ msgstr "Conheça gente nova, participe de eventos e explore a Irlanda! ✨"
 
 #: templates/index.html:21
 msgid ""
-"A community platform for locals, expats, and travelers to connect through "
-"events across Ireland"
+"A community platform for locals, expats, and travelers to connect through"
+" events across Ireland"
 msgstr ""
-"Uma plataforma comunitária para habitantes locais, expatriados e viajantes se"
-" conectarem através de eventos pela Irlanda 😊"
+"Uma plataforma comunitária para habitantes locais, expatriados e "
+"viajantes se conectarem através de eventos pela Irlanda 😊"
 
 #: templates/index.html:23 templates/profile.html:115
 msgid "Browse Events"
@@ -929,8 +688,8 @@ msgstr "Passo 1 – Revise o evento verificado 📋"
 
 #: templates/index.html:37
 msgid ""
-"Check the event agenda, location, time, and attendee limits in detail before "
-"you decide to join."
+"Check the event agenda, location, time, and attendee limits in detail "
+"before you decide to join."
 msgstr ""
 "Confira a programação, o local, o horário e o limite de participantes do "
 "evento em detalhes antes de decidir participar."
@@ -944,8 +703,8 @@ msgid ""
 "Look for the verification badge next to the host name and review their "
 "credentials before registering."
 msgstr ""
-"Procure o selo de verificação ao lado do nome do anfitrião e confira suas "
-"credenciais antes de se cadastrar."
+"Procure o selo de verificação ao lado do nome do anfitrião e confira suas"
+" credenciais antes de se cadastrar."
 
 #: templates/index.html:47
 msgid "Step 3 – Attend in a safe public place 🔒"
@@ -953,11 +712,12 @@ msgstr "Passo 3 – Participe em um local público seguro 🔒"
 
 #: templates/index.html:49
 msgid ""
-"Only attend events held in safe, public venues with clear rules, so you can "
-"meet new people confidently and securely."
+"Only attend events held in safe, public venues with clear rules, so you "
+"can meet new people confidently and securely."
 msgstr ""
 "Participe apenas de eventos realizados em locais públicos seguros e com "
-"regras claras, para que você conheça novas pessoas com confiança e segurança."
+"regras claras, para que você conheça novas pessoas com confiança e "
+"segurança."
 
 #: templates/index.html:56
 msgid "How it works — fun & easy"
@@ -969,11 +729,11 @@ msgstr "Passo 1 — Escolha um evento que você vai amar ✨"
 
 #: templates/index.html:61
 msgid ""
-"Browse meetups, pub nights, hikes, and language exchanges — pick something "
-"that feels like you!"
+"Browse meetups, pub nights, hikes, and language exchanges — pick "
+"something that feels like you!"
 msgstr ""
-"Veja encontros, noites no pub, trilhas e trocas de idiomas — escolha o que "
-"combina com você! 😄"
+"Veja encontros, noites no pub, trilhas e trocas de idiomas — escolha o "
+"que combina com você! 😄"
 
 #: templates/index.html:65
 msgid "Step 2 – Say hi and sign up 👋"
@@ -981,21 +741,23 @@ msgstr "Passo 2 — Diga oi e inscreva-se 👋"
 
 #: templates/index.html:67
 msgid ""
-"Join with one click, check the vibe, and see who is going — no stress, just "
-"good energy."
+"Join with one click, check the vibe, and see who is going — no stress, "
+"just good energy."
 msgstr ""
-"Inscreva-se com um clique, sinta o clima e veja quem vai — sem estresse, só "
-"energia boa! ✌️"
+"Inscreva-se com um clique, sinta o clima e veja quem vai — sem estresse, "
+"só energia boa! ✌️"
 
 #: templates/index.html:71
 msgid "Step 3 – Show up and make friends 🤗"
 msgstr "Passo 3 — Apareça e faça amigos 🤗"
 
 #: templates/index.html:73
-msgid "Meet in welcoming public places, swap stories, and grow your circle in Dublin!"
+msgid ""
+"Meet in welcoming public places, swap stories, and grow your circle in "
+"Dublin!"
 msgstr ""
-"Encontre-se em lugares públicos acolhedores, troque histórias e amplie sua "
-"roda em Dublin! 💛"
+"Encontre-se em lugares públicos acolhedores, troque histórias e amplie "
+"sua roda em Dublin! 💛"
 
 #: templates/index.html:84 templates/index.html:115
 msgid "View All →"
@@ -1094,6 +856,22 @@ msgstr "Seu Perfil"
 msgid "%(city)s, Ireland"
 msgstr "%(city)s, Irlanda"
 
+#: templates/profile.html:32 templates/register.html:50
+msgid "Age"
+msgstr "Idade"
+
+#: templates/profile.html:38
+msgid "Gender"
+msgstr "Gênero"
+
+#: templates/profile.html:44
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#: templates/profile.html:50
+msgid "City"
+msgstr "Cidade"
+
 #: templates/profile.html:75
 msgid "Your Communities"
 msgstr "Suas Comunidades"
@@ -1152,8 +930,8 @@ msgstr "O que é o CrossPaths?"
 
 #: templates/partials/about/content_en_IE.html:4
 msgid ""
-"CrossPaths is a platform for international newcomers in Dublin to meet new "
-"people through speed-friending events."
+"CrossPaths is a platform for international newcomers in Dublin to meet "
+"new people through speed-friending events."
 msgstr ""
 "CrossPaths é uma plataforma para recém-chegados internacionais em Dublin "
 "conhecerem novas pessoas através de eventos de amizade rápida."
@@ -1188,9 +966,9 @@ msgid ""
 "social circle. Our events are particularly popular with international "
 "students, professionals, and migrants."
 msgstr ""
-"O CrossPaths está aberto a qualquer pessoa em Dublin que queira expandir seu "
-"círculo social. Nossos eventos são especialmente populares entre estudantes "
-"internacionais, profissionais e migrantes."
+"O CrossPaths está aberto a qualquer pessoa em Dublin que queira expandir "
+"seu círculo social. Nossos eventos são especialmente populares entre "
+"estudantes internacionais, profissionais e migrantes."
 
 #: templates/partials/about/content_en_IE.html:17
 msgid "Get Started"
@@ -1198,11 +976,11 @@ msgstr "Começar"
 
 #: templates/partials/about/content_en_IE.html:18
 msgid ""
-"Ready to meet new friends? Browse our upcoming events or create your profile "
-"to get started."
+"Ready to meet new friends? Browse our upcoming events or create your "
+"profile to get started."
 msgstr ""
-"Pronto para conhecer novos amigos? Explore nossos próximos eventos ou crie "
-"seu perfil para começar."
+"Pronto para conhecer novos amigos? Explore nossos próximos eventos ou "
+"crie seu perfil para começar."
 
 #: templates/partials/about/content_en_IE.html:21
 msgid "View Events"
@@ -1218,13 +996,13 @@ msgstr "Bem-vindo à Nossa Comunidade!"
 
 #: templates/partials/about/content_pt_BR.html:4
 msgid ""
-"CrossPaths connects international newcomers in Dublin through fun, friendly "
-"speed-friending events. We're all about bringing people together and building"
-" a vibrant, diverse community!"
+"CrossPaths connects international newcomers in Dublin through fun, "
+"friendly speed-friending events. We're all about bringing people together"
+" and building a vibrant, diverse community!"
 msgstr ""
-"CrossPaths conecta recém-chegados internacionais em Dublin através de eventos"
-" divertidos e amigáveis de amizade rápida. Estamos aqui para unir pessoas e "
-"construir uma comunidade vibrante e diversa!"
+"CrossPaths conecta recém-chegados internacionais em Dublin através de "
+"eventos divertidos e amigáveis de amizade rápida. Estamos aqui para unir "
+"pessoas e construir uma comunidade vibrante e diversa!"
 
 #: templates/partials/about/content_pt_BR.html:6
 msgid "Why CrossPaths?"
@@ -1260,13 +1038,13 @@ msgstr "Participe da Diversão!"
 
 #: templates/partials/about/content_pt_BR.html:26
 msgid ""
-"Whether you just arrived in Dublin or have been here for years, CrossPaths is"
-" your gateway to an amazing social circle. Come as you are, meet incredible "
-"people, and build friendships that last!"
+"Whether you just arrived in Dublin or have been here for years, "
+"CrossPaths is your gateway to an amazing social circle. Come as you are, "
+"meet incredible people, and build friendships that last!"
 msgstr ""
-"Se você acabou de chegar em Dublin ou mora aqui há anos, CrossPaths é sua "
-"porta de entrada para um círculo social incrível. Venha como você é, conheça "
-"pessoas incríveis e construa amizades duradouras!"
+"Se você acabou de chegar em Dublin ou mora aqui há anos, CrossPaths é sua"
+" porta de entrada para um círculo social incrível. Venha como você é, "
+"conheça pessoas incríveis e construa amizades duradouras!"
 
 #: templates/partials/about/content_pt_BR.html:39
 msgid "Countries"
@@ -1278,12 +1056,12 @@ msgstr "Nossa Missão"
 
 #: templates/partials/about/content_uk_UA.html:4
 msgid ""
-"CrossPaths is a verified platform designed to support the social integration "
-"of international newcomers in Dublin through structured, safe speed-friending"
-" events."
+"CrossPaths is a verified platform designed to support the social "
+"integration of international newcomers in Dublin through structured, safe"
+" speed-friending events."
 msgstr ""
-"CrossPaths é uma plataforma verificada projetada para apoiar a integração "
-"social de recém-chegados internacionais em Dublin através de eventos "
+"CrossPaths é uma plataforma verificada projetada para apoiar a integração"
+" social de recém-chegados internacionais em Dublin através de eventos "
 "estruturados e seguros de amizade rápida."
 
 #: templates/partials/about/content_uk_UA.html:6
@@ -1292,12 +1070,13 @@ msgstr "Segurança e Verificação"
 
 #: templates/partials/about/content_uk_UA.html:7
 msgid ""
-"All event hosts are verified by our team. Events take place in public venues "
-"with clear agendas and structured activities. Your safety is our priority."
+"All event hosts are verified by our team. Events take place in public "
+"venues with clear agendas and structured activities. Your safety is our "
+"priority."
 msgstr ""
-"Todos os anfitriões de eventos são verificados pela nossa equipe. Os eventos "
-"acontecem em locais públicos com agendas claras e atividades estruturadas. "
-"Sua segurança é nossa prioridade."
+"Todos os anfitriões de eventos são verificados pela nossa equipe. Os "
+"eventos acontecem em locais públicos com agendas claras e atividades "
+"estruturadas. Sua segurança é nossa prioridade."
 
 #: templates/partials/about/content_uk_UA.html:12
 msgid "Verified Hosts"
@@ -1329,12 +1108,13 @@ msgstr "Como Protegemos Sua Privacidade"
 
 #: templates/partials/about/content_uk_UA.html:28
 msgid ""
-"Your personal information is never shared publicly. Profile details are only "
-"visible to confirmed event attendees. We comply with GDPR regulations."
+"Your personal information is never shared publicly. Profile details are "
+"only visible to confirmed event attendees. We comply with GDPR "
+"regulations."
 msgstr ""
-"Suas informações pessoais nunca são compartilhadas publicamente. Os detalhes "
-"do perfil são visíveis apenas para participantes confirmados do evento. "
-"Cumprimos as regulamentações do GDPR."
+"Suas informações pessoais nunca são compartilhadas publicamente. Os "
+"detalhes do perfil são visíveis apenas para participantes confirmados do "
+"evento. Cumprimos as regulamentações do GDPR."
 
 #: templates/partials/about/content_uk_UA.html:30
 msgid "Community Guidelines"
@@ -1342,183 +1122,13 @@ msgstr "Diretrizes da Comunidade"
 
 #: templates/partials/about/content_uk_UA.html:31
 msgid ""
-"We maintain a respectful, inclusive community. All members must follow our "
-"code of conduct. Harassment or inappropriate behaviour results in immediate "
-"account suspension."
+"We maintain a respectful, inclusive community. All members must follow "
+"our code of conduct. Harassment or inappropriate behaviour results in "
+"immediate account suspension."
 msgstr ""
-"Mantemos uma comunidade respeitosa e inclusiva. Todos os membros devem seguir"
-" nosso código de conduta. Assédio ou comportamento inadequado resulta em "
-"suspensão imediata da conta."
-
-msgid ""
-"Meet people from all over the world living in Dublin! This casual meetup is "
-"perfect for newcomers and anyone looking to expand their social circle in the"
-" city."
-msgstr ""
-"Conheça pessoas do mundo todo que vivem em Dublin! Este encontro descontraído"
-" é ideal para recém-chegados e quem quer ampliar o círculo social na cidade."
-
-msgid "Photography Club"
-msgstr "Clube de fotografia"
-
-msgid "Coffee Meetup for Newcomers in Ireland"
-msgstr "Encontro de café para recém-chegados na Irlanda"
-
-msgid "Hiking Ireland"
-msgstr "Trilhas na Irlanda"
-
-msgid ""
-"Connect with tech professionals, startup founders, and anyone interested in "
-"the Irish tech scene. Networking events, talks, and hackathons."
-msgstr ""
-"Conecte-se com profissionais de tech, fundadores de startups e quem se "
-"interessa pelo cenário tech irlandês. Eventos de networking, palestras e "
-"hackathons."
-
-msgid "Language Exchange Night"
-msgstr "Noite de intercâmbio de idiomas"
-
-msgid "Art and Creativity Workshop"
-msgstr "Oficina de arte e criatividade"
-
-msgid "Trip to Galway with a Castle Visit"
-msgstr "Passeio a Galway com visita ao castelo"
-
-msgid "Photography Walk"
-msgstr "Passeio fotográfico"
-
-msgid ""
-"Connect with language learners and native speakers. Practice your target "
-"language in a friendly, supportive environment through regular meetups and "
-"events."
-msgstr ""
-"Conecte-se com quem aprende idiomas e falantes nativos. Pratique o idioma que"
-" estuda num ambiente acolhedor em encontros e eventos regulares."
-
-msgid ""
-"For photographers of all levels! Share your work, learn new techniques, and "
-"join photo walks around Ireland's most beautiful locations."
-msgstr ""
-"Para fotógrafos de todos os níveis! Compartilhe seu trabalho, aprenda novas "
-"técnicas e participe de passeios fotográficos pelos lugares mais bonitos da "
-"Irlanda."
-
-msgid "Wednesday Filming Locations Tour in Wicklow"
-msgstr "Tour das locações de Wednesday em Wicklow"
-
-msgid "International Meetup in Dublin"
-msgstr "Encontro internacional em Dublin"
-
-msgid ""
-"A space for artists, creatives, and art enthusiasts. From painting workshops "
-"to gallery visits, let creativity bring us together."
-msgstr ""
-"Um espaço para artistas, criativos e entusiastas de arte. De oficinas de "
-"pintura a visitas a galerias — a criatividade nos une."
-
-msgid ""
-"New to Ireland? Come for a relaxed coffee meetup and meet other newcomers. "
-"Share tips, stories, and make lasting connections over great coffee."
-msgstr ""
-"Recém-chegando na Irlanda? Venha a um encontro de café descontraído e conheça"
-" outros recém-chegados. Troque dicas, histórias e faça amizades tomando um "
-"ótimo café."
-
-msgid "International Friends in Dublin"
-msgstr "Amigos internacionais em Dublin"
-
-msgid ""
-"Find travel companions for adventures around Ireland and beyond. Share travel"
-" tips, plan group trips, and explore new destinations together."
-msgstr ""
-"Encontre companheiros de viagem para aventuras na Irlanda e além. Troque "
-"dicas, planeje viagens em grupo e explore novos destinos juntos."
-
-msgid "Art and Creativity"
-msgstr "Arte e criatividade"
-
-msgid ""
-"Unleash your creative side in this hands-on art workshop. No experience "
-"needed — just bring your curiosity and willingness to try something new!"
-msgstr ""
-"Solte seu lado criativo nesta oficina prática de arte. Não é preciso "
-"experiência — só curiosidade e vontade de experimentar algo novo!"
-
-msgid ""
-"Explore Ireland's stunning trails and mountains together. From gentle coastal"
-" walks to challenging mountain hikes, there's something for everyone."
-msgstr ""
-"Explore juntos as trilhas e montanhas da Irlanda. De caminhadas costeiras "
-"leves a trilhas de montanha desafiadoras — há opção para todos."
-
-msgid "Tech and Startups Ireland"
-msgstr "Tech e startups Irlanda"
-
-msgid ""
-"A welcoming community for internationals living in Dublin. Meet people from "
-"around the world, share experiences, and build lasting friendships."
-msgstr ""
-"Uma comunidade acolhedora para estrangeiros em Dublin. Conheça pessoas do "
-"mundo todo, compartilhe experiências e construa amizades duradouras."
-
-msgid ""
-"Experience the famous Irish pub culture! Join us for a fun night of live "
-"music, great craic, and the best Guinness in town."
-msgstr ""
-"Vivencie a famosa cultura dos pubs irlandeses! Junte-se a nós numa noite de "
-"música ao vivo, boa prosa e o melhor Guinness da cidade."
-
-msgid ""
-"Join us for an amazing day trip to Galway! We will visit the historic "
-"Dunguaire Castle, explore the colorful streets of Galway city, and enjoy "
-"traditional Irish music in a local pub."
-msgstr ""
-"Junte-se a nós num passeio incrível a Galway! Visitaremos o histórico Castelo"
-" Dunguaire, exploraremos as ruas coloridas da cidade e curtiremos música "
-"irlandesa tradicional num pub local."
-
-msgid "Travel Buddies"
-msgstr "Amigos de viagem"
-
-msgid ""
-"Join fellow photography enthusiasts for a guided walk through Dublin's most "
-"photogenic spots. Bring any camera — phone cameras are welcome too!"
-msgstr ""
-"Junte-se a entusiastas de fotografia num passeio guiado pelos pontos mais "
-"fotogênicos de Dublin. Qualquer câmera — inclusive do celular — é bem-vinda!"
-
-msgid "Language Exchange Community"
-msgstr "Comunidade de intercâmbio de idiomas"
-
-msgid "Wicklow Mountains Hiking Trip"
-msgstr "Trilha nas Montanhas de Wicklow"
-
-msgid ""
-"Practice languages while making new friends! Bring your enthusiasm for "
-"learning and share your native language. All levels welcome."
-msgstr ""
-"Pratique idiomas e faça novos amigos! Traga seu entusiasmo por aprender e "
-"compartilhe sua língua nativa. Todos os níveis são bem-vindos."
-
-msgid ""
-"Explore the magical filming locations of the Wednesday series in County "
-"Wicklow. Visit the stunning landscapes that served as the backdrop for "
-"Nevermore Academy."
-msgstr ""
-"Explore as locações mágicas da série Wednesday no condado de Wicklow. Visite "
-"as paisagens que serviram de cenário para a Academia Nevermore."
-
-msgid "Pub Social Night"
-msgstr "Noite social no pub"
-
-msgid ""
-"Experience the breathtaking beauty of the Wicklow Mountains. This moderate-"
-"level hike takes us through Glendalough valley with stunning views of the "
-"upper and lower lakes."
-msgstr ""
-"Vivencie a beleza das Montanhas de Wicklow. Esta trilha de nível moderado "
-"passa pelo vale de Glendalough com vistas deslumbrantes dos lagos superior e "
-"inferior."
+"Mantemos uma comunidade respeitosa e inclusiva. Todos os membros devem "
+"seguir nosso código de conduta. Assédio ou comportamento inadequado "
+"resulta em suspensão imediata da conta."
 
 # --- CrossPaths MVP (locale-prefixed) ---
 #~ msgid "Meet new people in Dublin"
@@ -1530,11 +1140,14 @@ msgstr ""
 #~ msgid "Find your people in Dublin 🎉"
 #~ msgstr "Encontre a sua galera em Dublin 🎉"
 
-#~ msgid "Warm group events for newcomers — come as you are, leave with friends ❤️"
+#~ msgid ""
+#~ "Warm group events for newcomers — "
+#~ "come as you are, leave with "
+#~ "friends ❤️"
 #~ msgstr ""
 #~ "Eventos em grupo bem acolhedores pra "
-#~ "newcomers — chega como você é, sai "
-#~ "com amigos ❤️"
+#~ "newcomers — chega como você é, sai"
+#~ " com amigos ❤️"
 
 #~ msgid "Join the Group 🎉"
 #~ msgstr "Entrar no grupo 🎉"
@@ -1578,9 +1191,6 @@ msgstr ""
 #~ msgid "Who's coming?"
 #~ msgstr "Quem vai?"
 
-#~ msgid "Events in Dublin"
-#~ msgstr "Eventos em Dublin"
-
 #~ msgid "Pick one, show up, meet someone new."
 #~ msgstr "Escolha um, apareça e conheça alguém novo."
 
@@ -1594,14 +1204,14 @@ msgstr ""
 #~ msgstr "Um jeito simples de conhecer pessoas por eventos"
 
 #~ msgid ""
-#~ "CrossPaths helps newcomers find their people"
-#~ " in Dublin — with warm group events"
-#~ " and real-life connections. 🎉"
+#~ "CrossPaths helps newcomers find their "
+#~ "people in Dublin — with warm group"
+#~ " events and real-life connections. 🎉"
 #~ msgstr ""
-#~ "O CrossPaths ajuda newcomers a encontrarem"
-#~ " sua galera em Dublin — com eventos"
-#~ " em grupo e conexões na vida real."
-#~ " 🎉"
+#~ "O CrossPaths ajuda newcomers a "
+#~ "encontrarem sua galera em Dublin — "
+#~ "com eventos em grupo e conexões na"
+#~ " vida real. 🎉"
 
 #~ msgid "No swiping — just pick a vibe, show up, and make friends. ❤️"
 #~ msgstr "Sem swiping — escolha a vibe, apareça, e faça amizade. ❤️"
@@ -1611,13 +1221,13 @@ msgstr ""
 
 #~ msgid "Friendly hosts, group energy, and plenty of moments to talk naturally."
 #~ msgstr ""
-#~ "Hosts gente boa, energia de grupo e"
-#~ " muitos momentos pra conversar naturalmente."
+#~ "Hosts gente boa, energia de grupo "
+#~ "e muitos momentos pra conversar "
+#~ "naturalmente."
 
 #~ msgid "No swiping. Just event-based connection."
 #~ msgstr "Sem swiping. Só conexão por eventos."
 
-# Form labels (app/forms.py)
 #~ msgid "Title"
 #~ msgstr "Título"
 
@@ -1625,7 +1235,7 @@ msgstr ""
 #~ msgstr "Descrição"
 
 #~ msgid "Location/Venue"
-#~ msgstr "Local/Endereço"
+#~ msgstr "Local / endereço"
 
 #~ msgid "Date and Time"
 #~ msgstr "Data e hora"
@@ -1648,7 +1258,6 @@ msgstr ""
 #~ msgid "dd/mm/yyyy, HH:MM"
 #~ msgstr "dd/mm/aaaa, hh:mm"
 
-# Event categories (for badges in templates)
 #~ msgid "Social"
 #~ msgstr "Social"
 
@@ -1656,7 +1265,7 @@ msgstr ""
 #~ msgstr "Cultural"
 
 #~ msgid "Outdoor"
-#~ msgstr "Ao ar livre"
+#~ msgstr "Ar livre"
 
 #~ msgid "Language"
 #~ msgstr "Idiomas"
@@ -1707,7 +1316,10 @@ msgstr ""
 #~ msgstr "Organizado por"
 
 #~ msgid "Join us for a fun evening! Chat, laugh, and make new friends!"
-#~ msgstr "Junte-se a nós para uma noite divertida! Converse, ria e faça novos amigos!"
+#~ msgstr ""
+#~ "Junte-se a nós para uma noite "
+#~ "divertida! Converse, ria e faça novos"
+#~ " amigos!"
 
 #~ msgid "I'm Going!"
 #~ msgstr "Eu Vou!"
@@ -1746,7 +1358,9 @@ msgstr ""
 #~ msgstr "Encontre sua próxima aventura e veja quem vai!"
 
 #~ msgid "All events are verified and hosted in safe public locations"
-#~ msgstr "Todos os eventos são verificados e realizados em locais públicos seguros"
+#~ msgstr ""
+#~ "Todos os eventos são verificados e "
+#~ "realizados em locais públicos seguros"
 
 #~ msgid "Find speed-friending events near you."
 #~ msgstr "Encontre eventos de speed-friending perto de voce."
@@ -1771,21 +1385,22 @@ msgstr ""
 
 #~ msgid "Browse exciting meetups and see who else is going!"
 #~ msgstr ""
-#~ "Explore encontros empolgantes, veja quem vai"
-#~ " estar lá e escolha os grupos que"
-#~ " combinam com você."
+#~ "Explore encontros empolgantes, veja quem "
+#~ "vai estar lá e escolha os grupos"
+#~ " que combinam com você."
 
 #~ msgid "Group Events & Community"
 #~ msgstr "Eventos em grupo e comunidade 👥"
 
 #~ msgid ""
-#~ "See who else is joining, connect with"
-#~ " the whole group, and feel part of"
-#~ " a shared community."
+#~ "See who else is joining, connect "
+#~ "with the whole group, and feel "
+#~ "part of a shared community."
 #~ msgstr ""
-#~ "Veja quem mais vai participar, conecte-"
-#~ "se com toda a galera e sinta-se"
-#~ " parte de uma comunidade acolhedora."
+#~ "Veja quem mais vai participar, "
+#~ "conecte-se com toda a galera e "
+#~ "sinta-se parte de uma comunidade "
+#~ "acolhedora."
 
 #~ msgid "Chat Before You Meet"
 #~ msgstr "Bata papo antes de se encontrar 💬"
@@ -1793,84 +1408,90 @@ msgstr ""
 #~ msgid "Join event group chats and break the ice online first."
 #~ msgstr ""
 #~ "Entre nos grupos do evento, puxe "
-#~ "assunto e quebre o gelo online antes"
-#~ " de chegar."
+#~ "assunto e quebre o gelo online "
+#~ "antes de chegar."
 
 #~ msgid "Make Real Connections"
 #~ msgstr "Crie conexões de verdade 🤝"
 
 #~ msgid "Meet face-to-face in fun, relaxed settings around Dublin."
 #~ msgstr ""
-#~ "Encontre o pessoal cara a cara em "
-#~ "lugares legais e descontraídos por toda "
-#~ "Dublin."
+#~ "Encontre o pessoal cara a cara em"
+#~ " lugares legais e descontraídos por "
+#~ "toda Dublin."
 
 #~ msgid "Find Your Tribe"
 #~ msgstr "Encontre sua turma em Dublin 🎉"
 
 #~ msgid "Build your social circle and never feel alone in a new city!"
 #~ msgstr ""
-#~ "Construa seu círculo social, faça amigos "
-#~ "e nunca se sinta sozinho em uma "
-#~ "cidade nova!"
+#~ "Construa seu círculo social, faça amigos"
+#~ " e nunca se sinta sozinho em "
+#~ "uma cidade nova!"
 
 #~ msgid ""
-#~ "Review detailed event information including "
-#~ "agenda, host credentials, and safety "
+#~ "Review detailed event information including"
+#~ " agenda, host credentials, and safety "
 #~ "details."
 #~ msgstr ""
 #~ "Revise informações detalhadas dos eventos, "
-#~ "incluindo agenda, credenciais do anfitrião e"
-#~ " detalhes de segurança."
+#~ "incluindo agenda, credenciais do anfitrião "
+#~ "e detalhes de segurança."
 
 #~ msgid "Register Securely"
 #~ msgstr "Cadastre-se com Segurança"
 
 #~ msgid ""
-#~ "RSVP with confirmed details. Receive event"
-#~ " reminders and location information."
+#~ "RSVP with confirmed details. Receive "
+#~ "event reminders and location information."
 #~ msgstr ""
-#~ "Confirme presença com detalhes verificados. "
-#~ "Receba lembretes de eventos e informações"
-#~ " de localização."
+#~ "Confirme presença com detalhes verificados."
+#~ " Receba lembretes de eventos e "
+#~ "informações de localização."
 
 #~ msgid "Follow Structured Ice-Breakers"
 #~ msgstr "Siga Dinâmicas Estruturadas"
 
-#~ msgid "Participate in timed conversation rounds with prepared topics and prompts."
+#~ msgid ""
+#~ "Participate in timed conversation rounds "
+#~ "with prepared topics and prompts."
 #~ msgstr ""
 #~ "Participe de rodadas cronometradas de "
-#~ "conversa com temas e sugestões preparados."
+#~ "conversa com temas e sugestões "
+#~ "preparados."
 
 #~ msgid "Build Your Network"
 #~ msgstr "Construa Sua Rede"
 
-#~ msgid "Connect with people you met and attend future events with your new friends."
+#~ msgid ""
+#~ "Connect with people you met and "
+#~ "attend future events with your new "
+#~ "friends."
 #~ msgstr ""
-#~ "Conecte-se com pessoas que conheceu e"
-#~ " participe de eventos futuros com seus"
-#~ " novos amigos."
+#~ "Conecte-se com pessoas que conheceu "
+#~ "e participe de eventos futuros com "
+#~ "seus novos amigos."
 
 #~ msgid ""
 #~ "Connect with international newcomers in "
 #~ "Dublin through speed-friending events."
 #~ msgstr ""
-#~ "Conecte-se com recém-chegados internacionais"
-#~ " em Dublin através de eventos de "
-#~ "amizade rápida."
+#~ "Conecte-se com recém-chegados "
+#~ "internacionais em Dublin através de "
+#~ "eventos de amizade rápida."
 
 #~ msgid "Learn More"
 #~ msgstr "Saiba Mais"
 
 #~ msgid ""
-#~ "Make new friends in Dublin! Join fun"
-#~ " speed-friending events and meet amazing"
-#~ " people from around the world."
+#~ "Make new friends in Dublin! Join "
+#~ "fun speed-friending events and meet "
+#~ "amazing people from around the world."
 #~ msgstr ""
-#~ "Faça novos amigos em Dublin! Participe "
-#~ "de eventos divertidos de amizade rápida "
-#~ "e conheça pessoas incríveis de todo o"
-#~ " mundo."
+#~ "Faça novos amigos em Dublin! Participe"
+#~ " de eventos divertidos de amizade "
+#~ "rápida e conheça pessoas incríveis de"
+#~ " todo o mundo."
 
 #~ msgid "See who's going, chat before you meet, and find your tribe! 🎉"
 #~ msgstr "Veja quem vai, converse antes de conhecer e encontre sua turma! 🎉"
@@ -1882,20 +1503,20 @@ msgstr ""
 #~ msgstr "Crie Seu Perfil"
 
 #~ msgid ""
-#~ "CrossPaths is a verified platform for "
-#~ "meeting new friends in Dublin through "
-#~ "structured speed-friending events."
+#~ "CrossPaths is a verified platform for"
+#~ " meeting new friends in Dublin "
+#~ "through structured speed-friending events."
 #~ msgstr ""
-#~ "CrossPaths é uma plataforma verificada para"
-#~ " conhecer novos amigos em Dublin através"
-#~ " de eventos estruturados de amizade "
-#~ "rápida."
+#~ "CrossPaths é uma plataforma verificada "
+#~ "para conhecer novos amigos em Dublin "
+#~ "através de eventos estruturados de "
+#~ "amizade rápida."
 
 #~ msgid "All events are hosted by verified organizers in safe, public locations."
 #~ msgstr ""
 #~ "Todos os eventos são realizados por "
-#~ "organizadores verificados em locais públicos "
-#~ "e seguros."
+#~ "organizadores verificados em locais públicos"
+#~ " e seguros."
 
 #~ msgid "Learn More About Safety"
 #~ msgstr "Saiba Mais Sobre Segurança"
@@ -1949,7 +1570,9 @@ msgstr ""
 #~ msgstr "Gerencie suas informações de perfil"
 
 #~ msgid "Show your personality and let people know the real you!"
-#~ msgstr "Mostre sua personalidade e deixe as pessoas conhecerem o verdadeiro você!"
+#~ msgstr ""
+#~ "Mostre sua personalidade e deixe as "
+#~ "pessoas conhecerem o verdadeiro você!"
 
 #~ msgid "Your information is private and only shared with event attendees"
 #~ msgstr ""
@@ -1958,8 +1581,367 @@ msgstr ""
 #~ "evento"
 
 #~ msgid "Ukrainian"
-#~ msgstr "Ucraniano"
+#~ msgstr "ucraniano"
 
 #~ msgid "Name"
 #~ msgstr "Nome"
+
+#~ msgid "Event date and time must be in the future."
+#~ msgstr "A data e hora do evento devem ser no futuro."
+
+#~ msgid "Use browser language"
+#~ msgstr "Usar idioma do navegador"
+
+#~ msgid "Select..."
+#~ msgstr "Selecione..."
+
+#~ msgid "Male"
+#~ msgstr "Masculino"
+
+#~ msgid "Female"
+#~ msgstr "Feminino"
+
+#~ msgid "Non-binary"
+#~ msgstr "Não binário"
+
+#~ msgid "Prefer not to say"
+#~ msgstr "Prefiro não informar"
+
+#~ msgid "Language exchange"
+#~ msgstr "Intercâmbio de idiomas"
+
+#~ msgid "Hiking"
+#~ msgstr "Trilhas"
+
+# Date/time (word between date and time)
+#~ msgid "Art"
+#~ msgstr "Arte"
+
+#~ msgid "Food and coffee"
+#~ msgstr "Comida e café"
+
+#~ msgid "Cultural events"
+#~ msgstr "Eventos culturais"
+
+#~ msgid "Full name"
+#~ msgstr "Nome completo"
+
+#~ msgid "Please enter your name."
+#~ msgstr "Por favor, informe seu nome."
+
+#~ msgid "Email"
+#~ msgstr "E-mail"
+
+#~ msgid "Please enter your email."
+#~ msgstr "Por favor, informe seu e-mail."
+
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Informe um e-mail válido."
+
+#~ msgid "Password"
+#~ msgstr "Senha"
+
+#~ msgid "Please enter a password."
+#~ msgstr "Por favor, informe uma senha."
+
+#~ msgid "Password must be at least 6 characters."
+#~ msgstr "A senha deve ter pelo menos 6 caracteres."
+
+#~ msgid "Confirm Password"
+#~ msgstr "Confirmar senha"
+
+#~ msgid "Please confirm your password."
+#~ msgstr "Por favor, confirme sua senha."
+
+#~ msgid "Passwords must match"
+#~ msgstr "As senhas devem coincidir"
+
+#~ msgid "Age must be between 16 and 120."
+#~ msgstr "A idade deve estar entre 16 e 120."
+
+#~ msgid "Phone (optional, with country code)"
+#~ msgstr "Telefone (opcional, com código do país)"
+
+#~ msgid "Please enter a valid phone number."
+#~ msgstr "Informe um telefone válido."
+
+#~ msgid "City in Ireland"
+#~ msgstr "Cidade na Irlanda"
+
+#~ msgid "Preferred language"
+#~ msgstr "Idioma preferido"
+
+#~ msgid "Custom Interests (comma-separated)"
+#~ msgstr "Interesses personalizados (separados por vírgula)"
+
+#~ msgid "Please enter your password."
+#~ msgstr "Por favor, informe sua senha."
+
+#~ msgid "Please give your event a title."
+#~ msgstr "Por favor, dê um título ao seu evento."
+
+#~ msgid "Agenda (one item per line)"
+#~ msgstr "Programação (um item por linha)"
+
+#~ msgid "Please choose a city."
+#~ msgstr "Escolha uma cidade."
+
+#~ msgid "Please choose a date and time."
+#~ msgstr "Por favor, escolha uma data e hora."
+
+#~ msgid "Attendee limit (optional)"
+#~ msgstr "Limite de participantes (opcional)"
+
+#~ msgid "Attendee limit must be a positive number."
+#~ msgstr "O limite deve ser um número positivo."
+
+#~ msgid "Recurring event (meets regularly)"
+#~ msgstr "Evento recorrente (acontece regularmente)"
+
+#~ msgid "Cooperative event (no competition, everyone welcome)"
+#~ msgstr "Evento cooperativo (sem competição, todos são bem-vindos)"
+
+#~ msgid "Browse and join interest-based communities"
+#~ msgstr "Explore e participe de comunidades baseadas em interesses"
+
+#~ msgid "Find events happening across Ireland"
+#~ msgstr "Encontre eventos acontecendo pela Irlanda"
+
+#~ msgid ""
+#~ "Meet people from all over the "
+#~ "world living in Dublin! This casual "
+#~ "meetup is perfect for newcomers and "
+#~ "anyone looking to expand their social"
+#~ " circle in the city."
+#~ msgstr ""
+#~ "Conheça pessoas do mundo todo que "
+#~ "vivem em Dublin! Este encontro "
+#~ "descontraído é ideal para recém-chegados"
+#~ " e quem quer ampliar o círculo "
+#~ "social na cidade."
+
+#~ msgid "Photography Club"
+#~ msgstr "Clube de fotografia"
+
+#~ msgid "Coffee Meetup for Newcomers in Ireland"
+#~ msgstr "Encontro de café para recém-chegados na Irlanda"
+
+#~ msgid "Hiking Ireland"
+#~ msgstr "Trilhas na Irlanda"
+
+#~ msgid ""
+#~ "Connect with tech professionals, startup "
+#~ "founders, and anyone interested in the"
+#~ " Irish tech scene. Networking events, "
+#~ "talks, and hackathons."
+#~ msgstr ""
+#~ "Conecte-se com profissionais de tech,"
+#~ " fundadores de startups e quem se "
+#~ "interessa pelo cenário tech irlandês. "
+#~ "Eventos de networking, palestras e "
+#~ "hackathons."
+
+#~ msgid "Language Exchange Night"
+#~ msgstr "Noite de intercâmbio de idiomas"
+
+#~ msgid "Art and Creativity Workshop"
+#~ msgstr "Oficina de arte e criatividade"
+
+#~ msgid "Trip to Galway with a Castle Visit"
+#~ msgstr "Passeio a Galway com visita ao castelo"
+
+#~ msgid "Photography Walk"
+#~ msgstr "Passeio fotográfico"
+
+#~ msgid ""
+#~ "Connect with language learners and "
+#~ "native speakers. Practice your target "
+#~ "language in a friendly, supportive "
+#~ "environment through regular meetups and "
+#~ "events."
+#~ msgstr ""
+#~ "Conecte-se com quem aprende idiomas "
+#~ "e falantes nativos. Pratique o idioma"
+#~ " que estuda num ambiente acolhedor em"
+#~ " encontros e eventos regulares."
+
+#~ msgid ""
+#~ "For photographers of all levels! Share"
+#~ " your work, learn new techniques, and"
+#~ " join photo walks around Ireland's "
+#~ "most beautiful locations."
+#~ msgstr ""
+#~ "Para fotógrafos de todos os níveis! "
+#~ "Compartilhe seu trabalho, aprenda novas "
+#~ "técnicas e participe de passeios "
+#~ "fotográficos pelos lugares mais bonitos "
+#~ "da Irlanda."
+
+#~ msgid "Wednesday Filming Locations Tour in Wicklow"
+#~ msgstr "Tour das locações de Wednesday em Wicklow"
+
+#~ msgid "International Meetup in Dublin"
+#~ msgstr "Encontro internacional em Dublin"
+
+#~ msgid ""
+#~ "A space for artists, creatives, and "
+#~ "art enthusiasts. From painting workshops "
+#~ "to gallery visits, let creativity bring"
+#~ " us together."
+#~ msgstr ""
+#~ "Um espaço para artistas, criativos e "
+#~ "entusiastas de arte. De oficinas de "
+#~ "pintura a visitas a galerias — a"
+#~ " criatividade nos une."
+
+#~ msgid ""
+#~ "New to Ireland? Come for a relaxed"
+#~ " coffee meetup and meet other "
+#~ "newcomers. Share tips, stories, and make"
+#~ " lasting connections over great coffee."
+#~ msgstr ""
+#~ "Recém-chegando na Irlanda? Venha a "
+#~ "um encontro de café descontraído e "
+#~ "conheça outros recém-chegados. Troque "
+#~ "dicas, histórias e faça amizades tomando"
+#~ " um ótimo café."
+
+#~ msgid "International Friends in Dublin"
+#~ msgstr "Amigos internacionais em Dublin"
+
+#~ msgid ""
+#~ "Find travel companions for adventures "
+#~ "around Ireland and beyond. Share travel"
+#~ " tips, plan group trips, and explore"
+#~ " new destinations together."
+#~ msgstr ""
+#~ "Encontre companheiros de viagem para "
+#~ "aventuras na Irlanda e além. Troque "
+#~ "dicas, planeje viagens em grupo e "
+#~ "explore novos destinos juntos."
+
+#~ msgid "Art and Creativity"
+#~ msgstr "Arte e criatividade"
+
+#~ msgid ""
+#~ "Unleash your creative side in this "
+#~ "hands-on art workshop. No experience "
+#~ "needed — just bring your curiosity "
+#~ "and willingness to try something new!"
+#~ msgstr ""
+#~ "Solte seu lado criativo nesta oficina"
+#~ " prática de arte. Não é preciso "
+#~ "experiência — só curiosidade e vontade"
+#~ " de experimentar algo novo!"
+
+#~ msgid ""
+#~ "Explore Ireland's stunning trails and "
+#~ "mountains together. From gentle coastal "
+#~ "walks to challenging mountain hikes, "
+#~ "there's something for everyone."
+#~ msgstr ""
+#~ "Explore juntos as trilhas e montanhas"
+#~ " da Irlanda. De caminhadas costeiras "
+#~ "leves a trilhas de montanha desafiadoras"
+#~ " — há opção para todos."
+
+#~ msgid "Tech and Startups Ireland"
+#~ msgstr "Tech e startups Irlanda"
+
+#~ msgid ""
+#~ "A welcoming community for internationals "
+#~ "living in Dublin. Meet people from "
+#~ "around the world, share experiences, and"
+#~ " build lasting friendships."
+#~ msgstr ""
+#~ "Uma comunidade acolhedora para estrangeiros"
+#~ " em Dublin. Conheça pessoas do mundo"
+#~ " todo, compartilhe experiências e construa"
+#~ " amizades duradouras."
+
+#~ msgid ""
+#~ "Experience the famous Irish pub culture!"
+#~ " Join us for a fun night of "
+#~ "live music, great craic, and the "
+#~ "best Guinness in town."
+#~ msgstr ""
+#~ "Vivencie a famosa cultura dos pubs "
+#~ "irlandeses! Junte-se a nós numa "
+#~ "noite de música ao vivo, boa prosa"
+#~ " e o melhor Guinness da cidade."
+
+#~ msgid ""
+#~ "Join us for an amazing day trip"
+#~ " to Galway! We will visit the "
+#~ "historic Dunguaire Castle, explore the "
+#~ "colorful streets of Galway city, and "
+#~ "enjoy traditional Irish music in a "
+#~ "local pub."
+#~ msgstr ""
+#~ "Junte-se a nós num passeio "
+#~ "incrível a Galway! Visitaremos o "
+#~ "histórico Castelo Dunguaire, exploraremos as"
+#~ " ruas coloridas da cidade e "
+#~ "curtiremos música irlandesa tradicional num"
+#~ " pub local."
+
+#~ msgid "Travel Buddies"
+#~ msgstr "Amigos de viagem"
+
+#~ msgid ""
+#~ "Join fellow photography enthusiasts for "
+#~ "a guided walk through Dublin's most "
+#~ "photogenic spots. Bring any camera — "
+#~ "phone cameras are welcome too!"
+#~ msgstr ""
+#~ "Junte-se a entusiastas de fotografia "
+#~ "num passeio guiado pelos pontos mais "
+#~ "fotogênicos de Dublin. Qualquer câmera —"
+#~ " inclusive do celular — é bem-"
+#~ "vinda!"
+
+#~ msgid "Language Exchange Community"
+#~ msgstr "Comunidade de intercâmbio de idiomas"
+
+#~ msgid "Wicklow Mountains Hiking Trip"
+#~ msgstr "Trilha nas Montanhas de Wicklow"
+
+#~ msgid ""
+#~ "Practice languages while making new "
+#~ "friends! Bring your enthusiasm for "
+#~ "learning and share your native language."
+#~ " All levels welcome."
+#~ msgstr ""
+#~ "Pratique idiomas e faça novos amigos!"
+#~ " Traga seu entusiasmo por aprender e"
+#~ " compartilhe sua língua nativa. Todos "
+#~ "os níveis são bem-vindos."
+
+#~ msgid ""
+#~ "Explore the magical filming locations of"
+#~ " the Wednesday series in County "
+#~ "Wicklow. Visit the stunning landscapes "
+#~ "that served as the backdrop for "
+#~ "Nevermore Academy."
+#~ msgstr ""
+#~ "Explore as locações mágicas da série "
+#~ "Wednesday no condado de Wicklow. Visite"
+#~ " as paisagens que serviram de cenário"
+#~ " para a Academia Nevermore."
+
+#~ msgid "Pub Social Night"
+#~ msgstr "Noite social no pub"
+
+#~ msgid ""
+#~ "Experience the breathtaking beauty of "
+#~ "the Wicklow Mountains. This moderate-"
+#~ "level hike takes us through Glendalough"
+#~ " valley with stunning views of the"
+#~ " upper and lower lakes."
+#~ msgstr ""
+#~ "Vivencie a beleza das Montanhas de "
+#~ "Wicklow. Esta trilha de nível moderado"
+#~ " passa pelo vale de Glendalough com"
+#~ " vistas deslumbrantes dos lagos superior"
+#~ " e inferior."
 
