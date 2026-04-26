@@ -199,7 +199,7 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 ├── requirements.txt         # Dependencies (local + production)
 ├── Dockerfile               # Optional: local / other hosts that run containers
 ├── .dockerignore            # Used only when building the Docker image
-├── render.yaml              # Render Blueprint (Docker web; SQLite, no managed DB)
+├── render.yaml              # Render Blueprint (Docker web + managed Postgres)
 ├── run.py                   # Local dev entry point
 ├── gunicorn.conf.py         # Bind + 120s timeout when start cmd is plain `gunicorn app:app`
 ├── wsgi.py                  # Production WSGI entry (e.g. gunicorn wsgi:app)
@@ -327,22 +327,22 @@ pybabel compile -d translations
 
 The `messages.pot` file is **generated** by `extract` and is listed in `.gitignore`. The app also compiles outdated `.mo` files on startup when possible.
 
-### 5.3 Production on Render (Docker, SQLite)
+### 5.3 Production on Render (Docker + managed Postgres)
 
 1. Push this repository to GitHub (or another Git host Render supports).
-2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and apply **`render.yaml`**. That creates a single **Docker** web service (no managed **PostgreSQL**): the app uses **SQLite** at **`/app/crosspaths.db`** because **`DATABASE_URL`** is not set.
+2. In the [Render Dashboard](https://dashboard.render.com), choose **New → Blueprint**, connect the repo, and apply **`render.yaml`**. That provisions **two** resources: a **managed Postgres** database (`crosspaths-db`) and a **Docker** web service (`crosspaths-web`). **`DATABASE_URL`** is injected automatically from the database into the web service via `fromDatabase`, so user accounts and other persisted data survive redeploys and instance restarts.
    - **Build:** Docker build from **`./Dockerfile`** (includes `pip install`, `pybabel compile`, **`docker-entrypoint.sh`** → gunicorn on `$PORT`)
-   - **Env:** `FLASK_APP=wsgi:app`, `FLASK_ENV=production`, generated **`SECRET_KEY`**, **`AUTO_DB_SETUP=1`**  
-   In **Environment**, confirm **`SECRET_KEY`** is non-empty; if it is missing, add one (`openssl rand -base64 32` locally). Render’s `generateValue` only applies when **`SECRET_KEY`** does not already exist.
-3. **Database:** **`AUTO_DB_SETUP`** runs **`flask init-db`** and **`flask seed-db`** before gunicorn (needed on the free tier without Shell). **Trade-off:** Render’s default instance disk is **ephemeral** — a new deploy or new instance can reset **`crosspaths.db`**; **`AUTO_DB_SETUP`** then recreates an empty seeded DB. For data that survives redeploys, add a **persistent disk** (see Render docs) and set **`DATABASE_URL`** to something like **`sqlite:////data/crosspaths.db`** with the disk mounted at **`/data`**. You may set **`AUTO_DB_SETUP=0`** after the first boot if you use a persistent file and Shell or manual init is enough.
-4. **Without `AUTO_DB_SETUP`:** From your machine with **`venv`**: `export FLASK_APP=wsgi:app FLASK_ENV=production SECRET_KEY='…'` and (if using a remote SQLite path or Postgres) the right **`DATABASE_URL`**, then `flask init-db && flask seed-db`.
+   - **Env:** `FLASK_APP=wsgi:app`, `FLASK_ENV=production`, generated **`SECRET_KEY`**, **`AUTO_DB_SETUP=1`**, **`DATABASE_URL`** (from `crosspaths-db`)
+   In **Environment**, confirm **`SECRET_KEY`** is non-empty; if it is missing, add one (`openssl rand -base64 32` locally). Render's `generateValue` only applies when **`SECRET_KEY`** does not already exist.
+3. **Database:** **`AUTO_DB_SETUP`** runs **`flask init-db`** and **`flask seed-db`** before gunicorn on every boot. Both commands are **idempotent** — they create tables and insert seed rows only if they don't already exist, so existing user data is preserved across redeploys. The app maps `postgres://` → `postgresql://` and appends `sslmode=require` automatically when needed.
+4. **Manual init (rarely needed):** From your machine with **`venv`**: `export FLASK_APP=wsgi:app FLASK_ENV=production SECRET_KEY='…' DATABASE_URL='postgresql://…'`, then `flask init-db && flask seed-db`.
 5. Optional: **`WEB_CONCURRENCY`**. **`/health`** is the health-check path.
 
-**Already created the service manually?** **Environment → Docker**, **`./Dockerfile`**, **`FLASK_APP`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, **`AUTO_DB_SETUP=1`**. Do **not** set **`DATABASE_URL`** unless you use Postgres or a custom SQLite path. Render sets **`PORT`**.
+**Already created the service manually?** **Environment → Docker**, **`./Dockerfile`**, **`FLASK_APP`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, **`AUTO_DB_SETUP=1`**, and **`DATABASE_URL`** pointing at your Postgres instance. Render sets **`PORT`**.
 
-**Ephemeral disk:** Same as above for **`static/uploads`** — use persistent disk or external storage if you need uploads to survive redeploys.
+**Ephemeral disk caveat:** The Postgres database is durable, but the web service's local filesystem is still ephemeral. **`static/uploads`** (event images) is reset on every deploy — use a persistent disk or external object storage if you need uploads to survive redeploys.
 
-**Local Docker:** `docker build` / `docker run` using **`Dockerfile`** matches what Render builds from **`render.yaml`**.
+**Local Docker:** `docker build` / `docker run` using **`Dockerfile`** matches what Render builds from **`render.yaml`** (point **`DATABASE_URL`** at a local Postgres or leave it unset to fall back to SQLite).
 
 ### 5.4 Production deployment (any host)
 
@@ -383,7 +383,8 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 |-------|-------------|
 | Missing Flask / Babel modules | Activate `venv`, then `pip install -r requirements.txt` from project root |
 | Translations not updating | Run `pybabel compile -d translations` from project root |
-| Production 500 / no tables | Ensure `SECRET_KEY` is set; run `init-db` and `seed-db` (or `AUTO_DB_SETUP`). With Postgres, set `DATABASE_URL`; with SQLite default, tables live in `crosspaths.db` |
+| Production 500 / no tables | Ensure `SECRET_KEY` is set; run `init-db` and `seed-db` (or `AUTO_DB_SETUP`). On Render, confirm `DATABASE_URL` is wired from `crosspaths-db`; with SQLite default, tables live in `crosspaths.db` |
+| User accounts disappear after redeploy | The web service's local disk is ephemeral. Confirm `DATABASE_URL` points at the managed Postgres (`crosspaths-db`) — `init-db`/`seed-db` are idempotent and won't wipe existing data |
 | Render: worker exits, `SECRET_KEY ... not set` | Dashboard → web service → **Environment** → add **`SECRET_KEY`** (random string). Remove any empty **`SECRET_KEY`** row, save, **Manual Deploy** |
 | `psycopg2` build errors locally | Local dev uses SQLite; full Postgres support may need system libs + `psycopg2-binary` |
 
