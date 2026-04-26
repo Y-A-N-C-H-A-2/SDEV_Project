@@ -5,8 +5,16 @@
 {% block content %}
 <div class="events-page">
     <header class="page-header">
-        <h1>{{ _('Upcoming Events') }}</h1>
-        <p class="page-subtitle">{{ _('Find events happening across Ireland') }}</p>
+        {% if locale == 'pt_BR' %}
+        <h1>{{ _('Events in Dublin 🎉') }}</h1>
+        <p class="page-subtitle">{{ _('Find your next favourite event!') }}</p>
+        {% elif locale == 'uk_UA' %}
+        <h1>{{ _('Events in Dublin') }}</h1>
+        <p class="page-subtitle">{{ _('Verified events in safe public venues') }}</p>
+        {% else %}
+        <h1>{{ _('Events in Dublin') }}</h1>
+        <p class="page-subtitle">{{ _('Find your next favourite event!') }}</p>
+        {% endif %}
     </header>
 
     <!-- Search and Filter -->

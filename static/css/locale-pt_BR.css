@@ -30,6 +30,11 @@ body {
     border-left: 5px solid #FF8C00;
 }
 
+/* pt_BR — Indulgent / warm: every event card carries the social-cue orange bar */
+body.locale-pt_BR .event-card {
+    border-left: 5px solid #FF8C00;
+}
+
 .event-header-warm h2 {
     color: #FF6B35;
 }

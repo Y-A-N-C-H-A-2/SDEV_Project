@@ -157,3 +157,61 @@ body {
     color: #3d4f6d;
     border-color: #7B7FC4;
 }
+
+/* uk_UA — Formal "How it works" steps: structured, square corners, restrained */
+.how-it-works-uk .section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #3d4f6d;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.how-it-works-uk .how-it-works-steps {
+    list-style: none;
+    padding: 0;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.how-it-works-uk .how-it-works-step {
+    margin-bottom: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: #fafbfd;
+    border-radius: 4px;
+    border-left: 4px solid #7B7FC4;
+    border-top: 1px solid #d8dde8;
+    border-right: 1px solid #d8dde8;
+    border-bottom: 1px solid #d8dde8;
+}
+
+.how-it-works-uk .step-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #3d4f6d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.how-it-works-uk .step-text {
+    margin: 0;
+    line-height: 1.6;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* uk_UA — Safety note on event detail page */
+.cp-uk-safety-note {
+    margin: 1rem 0 1.5rem;
+    padding: 0.85rem 1rem;
+    background: #EEF2F7;
+    border-left: 4px solid #7B7FC4;
+    border-radius: 4px;
+    color: #3d4f6d;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
