@@ -138,9 +138,9 @@ def index():
     try:
         now = utcnow()
         events = db.session.scalars(
-            select(Event).where(Event.date_time >= now).order_by(Event.date_time.asc()).limit(4)
+            select(Event).where(Event.date_time >= now).order_by(Event.date_time.asc()).limit(6)
         ).all()
-        communities = db.session.scalars(select(Community).limit(4)).all()
+        communities = db.session.scalars(select(Community).limit(6)).all()
         return render_template('index.html', events=events, communities=communities)
     except SQLAlchemyError as e:
         current_app.logger.exception("Index failed (database): %s", e)
