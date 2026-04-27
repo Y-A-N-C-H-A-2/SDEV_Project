@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN pybabel compile -d translations \
+RUN pybabel compile -d app/translations \
     && chmod +x docker-entrypoint.sh
 
 RUN useradd --create-home appuser \

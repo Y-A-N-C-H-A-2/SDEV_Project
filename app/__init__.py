@@ -78,14 +78,12 @@ def get_locale():
 
 def create_app():
     """Create and configure the Flask application"""
-    # Use absolute paths so templates/static/translations resolve regardless of CWD
-    _project_root = Path(__file__).resolve().parent.parent
-    app = Flask(
-        __name__,
-        template_folder=str(_project_root / 'templates'),
-        static_folder=str(_project_root / 'static'),
-    )
-    translation_dir = (_project_root / 'translations').resolve()
+    # templates/, static/, and translations/ live inside the app/ package, so
+    # Flask's default lookup (package_dir/templates and package_dir/static) works.
+    _app_root = Path(__file__).resolve().parent
+    _project_root = _app_root.parent
+    app = Flask(__name__)
+    translation_dir = (_app_root / 'translations').resolve()
 
     # Configuration — require SECRET_KEY in production
     secret_key = os.environ.get('SECRET_KEY')
@@ -128,7 +126,7 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Upload configuration
-    app.config['UPLOAD_FOLDER'] = str(_project_root / 'static' / 'uploads')
+    app.config['UPLOAD_FOLDER'] = str(_app_root / 'static' / 'uploads')
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 
     # Ensure upload directory exists (skip on read-only filesystem)

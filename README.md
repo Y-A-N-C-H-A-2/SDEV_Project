@@ -151,7 +151,7 @@ Irish/English-speaking users in Dublin need concise, direct content and efficien
 
 ## 4. Architecture and Structure
 
-The app lives at **repository root** (no nested app folder). Single `requirements.txt` for local and production dependencies.
+The Flask application is packaged inside the `app/` directory — `templates/`, `static/`, and `translations/` are siblings of the Python modules so Flask's default lookup works without extra configuration. Single `requirements.txt` for local and production dependencies.
 
 ```
 <repo root>/
@@ -160,42 +160,38 @@ The app lives at **repository root** (no nested app folder). Single `requirement
 │   ├── routes.py            # All route definitions
 │   ├── models.py            # Database models (User, Event, Community, Interest)
 │   ├── forms.py             # WTForms definitions
-│   └── seed.py              # Database seeding with sample data
-├── templates/
-│   ├── base.html            # Master template – shared layout, nav, lang switcher
-│   ├── index.html           # Home page
-│   ├── events.html          # Events listing page
-│   ├── profile.html         # User profile page
-│   ├── about.html           # About / community page
-│   ├── login.html           # Login page
-│   ├── register.html        # Registration page
-│   ├── create_event.html    # Event creation page
-│   ├── event_detail.html    # Single event detail page
-│   ├── edit_profile.html    # Edit profile page
-│   ├── communities.html     # Communities listing page
-│   ├── community_detail.html # Single community detail page
-│   └── partials/            # Locale-specific partial templates
-├── static/
-│   ├── css/
-│   │   ├── main.css         # Shared styles
-│   │   └── locale-*.css     # Per-locale theme (en_IE, uk_UA, pt_BR)
-│   ├── js/
-│   │   └── main.js
-│   └── img/
-│       ├── common/          # Shared images (logo, hero, discover)
-│       └── seed/            # Sample event/community images
-├── translations/
-│   ├── en_IE/
-│   │   └── LC_MESSAGES/
-│   │       └── messages.po
-│   ├── uk_UA/
-│   │   └── LC_MESSAGES/
-│   │       └── messages.po
-│   └── pt_BR/
-│       └── LC_MESSAGES/
-│           └── messages.po
+│   ├── seed.py              # Database seeding with sample data
+│   ├── utils.py             # Shared helpers
+│   ├── babel_strings.py     # Marker strings for gettext extraction
+│   ├── templates/
+│   │   ├── base.html            # Master template – shared layout, nav, lang switcher
+│   │   ├── index.html           # Home page
+│   │   ├── events.html          # Events listing page
+│   │   ├── profile.html         # User profile page
+│   │   ├── about.html           # About / community page
+│   │   ├── login.html           # Login page
+│   │   ├── register.html        # Registration page
+│   │   ├── create_event.html    # Event creation page
+│   │   ├── event_detail.html    # Single event detail page
+│   │   ├── edit_profile.html    # Edit profile page
+│   │   ├── communities.html     # Communities listing page
+│   │   ├── community_detail.html # Single community detail page
+│   │   └── partials/            # Locale-specific partial templates
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── main.css         # Shared styles
+│   │   │   └── locale-*.css     # Per-locale theme (en_IE, uk_UA, pt_BR)
+│   │   ├── js/
+│   │   │   └── main.js
+│   │   └── img/
+│   │       ├── common/          # Shared images (logo, hero, discover)
+│   │       └── seed/            # Sample event/community images
+│   └── translations/
+│       ├── en_IE/LC_MESSAGES/messages.po (+.mo)
+│       ├── uk_UA/LC_MESSAGES/messages.po (+.mo)
+│       └── pt_BR/LC_MESSAGES/messages.po (+.mo)
 ├── scripts/                 # Translation/seed helpers
-├── babel.cfg
+├── babel.cfg                # Extracts from app/**/*.py and app/templates/**/*.html
 ├── requirements.txt         # Dependencies (local + production)
 ├── Dockerfile               # Optional: local / other hosts that run containers
 ├── .dockerignore            # Used only when building the Docker image
@@ -217,7 +213,7 @@ All pages extend `base.html` using Jinja's `{% extends %}` directive. `base.html
 
 ### Static File Management
 
-Static files: shared images under `static/img/common/` and seed images under `static/img/seed/`. Shared CSS is `static/css/main.css`; each locale loads an additional file (`static/css/locale-en_IE.css`, `locale-uk_UA.css`, or `locale-pt_BR.css`) from `base.html`. JavaScript is shared in `static/js/main.js`.
+Static files: shared images under `app/static/img/common/` and seed images under `app/static/img/seed/`. Shared CSS is `app/static/css/main.css`; each locale loads an additional file (`app/static/css/locale-en_IE.css`, `locale-uk_UA.css`, or `locale-pt_BR.css`) from `base.html`. JavaScript is shared in `app/static/js/main.js`.
 
 ### Dynamic Behaviour
 
@@ -304,7 +300,7 @@ python3 -m venv venv
 source venv/bin/activate   # macOS/Linux
 
 pip install -r requirements.txt
-pybabel compile -d translations
+pybabel compile -d app/translations
 
 export FLASK_ENV=development
 python run.py
@@ -320,9 +316,9 @@ After changing translatable strings in templates or Python:
 
 ```bash
 pybabel extract -F babel.cfg -o messages.pot -k _l -k lazy_gettext .
-pybabel update -i messages.pot -d translations
-# Edit translations/*/LC_MESSAGES/messages.po, then:
-pybabel compile -d translations
+pybabel update -i messages.pot -d app/translations
+# Edit app/translations/*/LC_MESSAGES/messages.po, then:
+pybabel compile -d app/translations
 ```
 
 The `messages.pot` file is **generated** by `extract` and is listed in `.gitignore`. The app also compiles outdated `.mo` files on startup when possible.
@@ -340,7 +336,7 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 
 **Already created the service manually?** **Environment → Docker**, **`./Dockerfile`**, **`FLASK_APP`**, **`FLASK_ENV=production`**, **`SECRET_KEY`**, **`AUTO_DB_SETUP=1`**, and **`DATABASE_URL`** pointing at your Postgres instance. Render sets **`PORT`**.
 
-**Ephemeral disk caveat:** The Postgres database is durable, but the web service's local filesystem is still ephemeral. **`static/uploads`** (event images) is reset on every deploy — use a persistent disk or external object storage if you need uploads to survive redeploys.
+**Ephemeral disk caveat:** The Postgres database is durable, but the web service's local filesystem is still ephemeral. **`app/static/uploads`** (event images) is reset on every deploy — use a persistent disk or external object storage if you need uploads to survive redeploys.
 
 **Local Docker:** `docker build` / `docker run` using **`Dockerfile`** matches what Render builds from **`render.yaml`** (point **`DATABASE_URL`** at a local Postgres or leave it unset to fall back to SQLite).
 
@@ -357,7 +353,7 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 
 **Auth:** Register, login (safe relative `next` redirect), logout.
 
-**Signed-in:** Profile, edit profile (interests in one transaction), create event (optional image validated with Pillow, stored under `static/uploads`), join/leave community.
+**Signed-in:** Profile, edit profile (interests in one transaction), create event (optional image validated with Pillow, stored under `app/static/uploads`), join/leave community.
 
 | Route | Methods | Auth | Purpose |
 |-------|---------|------|--------|
@@ -382,7 +378,7 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 | Issue | What to try |
 |-------|-------------|
 | Missing Flask / Babel modules | Activate `venv`, then `pip install -r requirements.txt` from project root |
-| Translations not updating | Run `pybabel compile -d translations` from project root |
+| Translations not updating | Run `pybabel compile -d app/translations` from project root |
 | Production 500 / no tables | Ensure `SECRET_KEY` is set; run `init-db` and `seed-db` (or `AUTO_DB_SETUP`). On Render, confirm `DATABASE_URL` is wired from `crosspaths-db`; with SQLite default, tables live in `crosspaths.db` |
 | User accounts disappear after redeploy | The web service's local disk is ephemeral. Confirm `DATABASE_URL` points at the managed Postgres (`crosspaths-db`) — `init-db`/`seed-db` are idempotent and won't wipe existing data |
 | Render: worker exits, `SECRET_KEY ... not set` | Dashboard → web service → **Environment** → add **`SECRET_KEY`** (random string). Remove any empty **`SECRET_KEY`** row, save, **Manual Deploy** |

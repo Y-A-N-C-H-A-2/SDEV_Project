@@ -2,7 +2,7 @@
 from pathlib import Path
 from babel.messages import pofile
 
-BASE = Path(__file__).resolve().parent.parent / "translations"
+BASE = Path(__file__).resolve().parent.parent / "app" / "translations"
 
 PT_BR = {
     # ---- Flash messages / routes.py ----

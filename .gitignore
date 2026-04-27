@@ -60,8 +60,8 @@ htmlcov/
 *.log
 
 # Uploads (keep folder, ignore contents)
-static/uploads/*
-!static/uploads/.gitkeep
+app/static/uploads/*
+!app/static/uploads/.gitkeep
 
 # OS
 .DS_Store
