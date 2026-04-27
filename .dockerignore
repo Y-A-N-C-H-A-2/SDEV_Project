@@ -21,5 +21,5 @@ messages.pot
 .cursor
 
 # User uploads — recreated at runtime; do not bake local files into the image
-static/uploads/*
-!static/uploads/.gitkeep
+app/static/uploads/*
+!app/static/uploads/.gitkeep

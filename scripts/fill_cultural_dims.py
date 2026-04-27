@@ -7,7 +7,7 @@ from pathlib import Path
 
 from babel.messages import pofile
 
-BASE = Path(__file__).resolve().parent.parent / "translations"
+BASE = Path(__file__).resolve().parent.parent / "app" / "translations"
 
 
 UK_UA = {
