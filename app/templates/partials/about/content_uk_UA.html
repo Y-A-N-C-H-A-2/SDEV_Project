@@ -1,32 +1,79 @@
 <!-- Ukrainian: Detailed, formal, reassuring -->
-<section class="about-section-formal">
-    <h2>{{ _('Our Mission') }}</h2>
-    <p>{{ _('CrossPaths is a verified platform designed to support the social integration of international newcomers in Dublin through structured, safe speed-friending events.') }}</p>
 
-    <h2>{{ _('Safety & Verification') }}</h2>
-    <p>{{ _('All event hosts are verified by our team. Events take place in public venues with clear agendas and structured activities. Your safety is our priority.') }}</p>
+<!-- OUR MISSION -->
+<section class="about-section about-why about-section-formal">
+    <div class="about-section-inner about-two-col">
+        <div class="about-col-text">
+            <span class="about-eyebrow">{{ _('OUR MISSION') }}</span>
+            <h2 class="about-section-title">{{ _('A safe, structured way to meet people in Dublin.') }}</h2>
+            <p>{{ _('CrossPaths is a verified platform designed to support the social integration of international newcomers in Dublin through structured, safe speed-friending events. Every host is vetted. Every venue is public. Every event has a clear agenda — so you always know what to expect before you arrive.') }}</p>
+        </div>
+        <aside class="about-pullquote">
+            <span class="about-pullquote-pin">🔒</span>
+            <p class="about-pullquote-text">{{ _('"Trust is earned through verification — not promises."') }}</p>
+            <p class="about-pullquote-attr">— Yana Chulovska, {{ _('Co-founder') }}</p>
+        </aside>
+    </div>
+</section>
 
-    <div class="safety-features">
-        <div class="safety-item">
-            <span class="safety-icon">✓</span>
-            <h3>{{ _('Verified Hosts') }}</h3>
-            <p>{{ _('All hosts undergo background verification') }}</p>
+<!-- SAFETY & VERIFICATION -->
+<section class="about-section about-how">
+    <div class="about-section-inner">
+        <div class="about-section-heading">
+            <span class="about-eyebrow">{{ _('SAFETY & VERIFICATION') }}</span>
+            <h2 class="about-section-title">{{ _('How we keep events safe and predictable.') }}</h2>
         </div>
-        <div class="safety-item">
-            <span class="safety-icon">🔒</span>
-            <h3>{{ _('Public Venues') }}</h3>
-            <p>{{ _('Events are held in established public locations') }}</p>
-        </div>
-        <div class="safety-item">
-            <span class="safety-icon">📋</span>
-            <h3>{{ _('Clear Agendas') }}</h3>
-            <p>{{ _('Know exactly what to expect before attending') }}</p>
+        <div class="how-grid">
+            <article class="how-card">
+                <div class="how-card-icon">✓</div>
+                <div class="how-card-step">1</div>
+                <h3 class="how-card-title">{{ _('Verified Hosts') }}</h3>
+                <p class="how-card-text">{{ _('Every host completes identity and background verification before listing an event. Look for the verified badge on host profiles.') }}</p>
+            </article>
+            <article class="how-card">
+                <div class="how-card-icon">🔒</div>
+                <div class="how-card-step">2</div>
+                <h3 class="how-card-title">{{ _('Public Venues') }}</h3>
+                <p class="how-card-text">{{ _('All events are held in established, publicly accessible locations — cafés, libraries, community centres. No private addresses.') }}</p>
+            </article>
+            <article class="how-card">
+                <div class="how-card-icon">📋</div>
+                <div class="how-card-step">3</div>
+                <h3 class="how-card-title">{{ _('Clear Agendas') }}</h3>
+                <p class="how-card-text">{{ _('Each event lists exact start and end times, planned activities, and conversation prompts. You will never arrive without knowing what happens next.') }}</p>
+            </article>
         </div>
     </div>
+</section>
 
-    <h2>{{ _('How We Protect Your Privacy') }}</h2>
-    <p>{{ _('Your personal information is never shared publicly. Profile details are only visible to confirmed event attendees. We comply with GDPR regulations.') }}</p>
-
-    <h2>{{ _('Community Guidelines') }}</h2>
-    <p>{{ _('We maintain a respectful, inclusive community. All members must follow our code of conduct. Harassment or inappropriate behaviour results in immediate account suspension.') }}</p>
+<!-- OUR PRINCIPLES -->
+<section class="about-section about-values">
+    <div class="about-section-inner">
+        <div class="about-section-heading">
+            <span class="about-eyebrow">{{ _('OUR PRINCIPLES') }}</span>
+            <h2 class="about-section-title">{{ _('The standards we hold ourselves to.') }}</h2>
+        </div>
+        <div class="values-grid">
+            <article class="value-card">
+                <div class="value-icon">🛡️</div>
+                <h3>{{ _('Privacy by default') }}</h3>
+                <p>{{ _('Your details are visible only to confirmed event attendees. We comply with GDPR.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">📜</div>
+                <h3>{{ _('Code of conduct') }}</h3>
+                <p>{{ _('Harassment or inappropriate behaviour results in immediate account suspension.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>{{ _('Respect & inclusion') }}</h3>
+                <p>{{ _('A respectful, inclusive community for newcomers from every background.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">📍</div>
+                <h3>{{ _('Local accountability') }}</h3>
+                <p>{{ _('Based in Dublin and answerable to the community we serve.') }}</p>
+            </article>
+        </div>
+    </div>
 </section>
