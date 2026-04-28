@@ -28,6 +28,7 @@
                 <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
                 <li><a href="{{ url_for('main.events') }}">{{ _('Events') }}</a></li>
                 <li><a href="{{ url_for('main.communities') }}">{{ _('Communities') }}</a></li>
+                <li><a href="{{ url_for('main.about') }}">{{ _('About') }}</a></li>
                 {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('main.create_event') }}">{{ _('Create Event') }}</a></li>
                 <li><a href="{{ url_for('main.profile') }}">{{ _('Profile') }}</a></li>
@@ -90,6 +91,9 @@
             <p>&copy; 2026 CrossPaths. {{ _('Where cultures meet and friendships begin.') }}</p>
             <p class="footer-credits">
                 {{ _('A culturally adaptive platform for international newcomers in Dublin') }}
+            </p>
+            <p class="footer-links">
+                <a href="{{ url_for('main.about') }}">{{ _('About Us') }}</a>
             </p>
         </div>
     </footer>
