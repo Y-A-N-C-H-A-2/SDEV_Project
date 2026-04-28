@@ -188,7 +188,7 @@ msgstr ""
 
 #: app/babel_strings.py:71
 msgid "Language Exchange Community"
-msgstr "Leave Community"
+msgstr "Language Exchange Community"
 
 #: app/babel_strings.py:72
 msgid ""
@@ -199,7 +199,7 @@ msgstr "Connect with language learners and native speakers. Practice your target
 
 #: app/babel_strings.py:73
 msgid "Hiking Ireland"
-msgstr "English (Ireland)"
+msgstr "Hiking Ireland"
 
 #: app/babel_strings.py:74
 msgid ""
