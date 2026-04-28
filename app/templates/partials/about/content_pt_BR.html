@@ -1,42 +1,79 @@
 <!-- Brazilian: Warm, community-focused, inviting -->
-<section class="about-section-warm">
-    <h2>🌟 {{ _('Welcome to Our Community!') }} 🎉</h2>
-    <p>{{ _('CrossPaths connects international newcomers in Dublin through fun, friendly speed-friending events. We\'re all about bringing people together and building a vibrant, diverse community!') }}</p>
 
-    <h2>💛 {{ _('Why CrossPaths?') }} ❤️</h2>
-    <div class="why-items-warm">
-        <div class="why-item">
-            <span class="why-icon">🌍</span>
-            <h3>{{ _('Celebrate Diversity') }}</h3>
-            <p>{{ _('Meet people from all over the world!') }}</p>
+<!-- WELCOME -->
+<section class="about-section about-why about-section-warm">
+    <div class="about-section-inner about-two-col">
+        <div class="about-col-text">
+            <span class="about-eyebrow">{{ _('WELCOME TO OUR COMMUNITY!') }}</span>
+            <h2 class="about-section-title">🌟 {{ _('Friends first. Plans second. Everything else after.') }} 🎉</h2>
+            <p>{{ _('CrossPaths connects international newcomers in Dublin through fun, friendly events — language exchanges, weekend hikes, brunches, samba nights and everything in between. We\'re all about bringing people together and building a vibrant, diverse community!') }}</p>
         </div>
-        <div class="why-item">
-            <span class="why-icon">🤝</span>
-            <h3>{{ _('Make Real Friends') }}</h3>
-            <p>{{ _('Not just networking — genuine connections!') }}</p>
+        <aside class="about-pullquote">
+            <span class="about-pullquote-pin">💛</span>
+            <p class="about-pullquote-text">{{ _('"You don\'t have to know anyone to belong here."') }}</p>
+            <p class="about-pullquote-attr">— Lívia Ferreira, {{ _('Co-founder') }}</p>
+        </aside>
+    </div>
+</section>
+
+<!-- WHY CROSSPATHS -->
+<section class="about-section about-how">
+    <div class="about-section-inner">
+        <div class="about-section-heading">
+            <span class="about-eyebrow">{{ _('WHY CROSSPATHS') }}</span>
+            <h2 class="about-section-title">💛 {{ _('Three reasons people keep coming back.') }} ❤️</h2>
         </div>
-        <div class="why-item">
-            <span class="why-icon">🎊</span>
-            <h3>{{ _('Have Fun!') }}</h3>
-            <p>{{ _('No boring meetings — just good times!') }}</p>
+        <div class="how-grid">
+            <article class="how-card">
+                <div class="how-card-icon">🌍</div>
+                <div class="how-card-step">1</div>
+                <h3 class="how-card-title">{{ _('Celebrate Diversity') }}</h3>
+                <p class="how-card-text">{{ _('Meet people from all over the world! Our events bring together cultures, languages, and stories you would never cross paths with otherwise.') }}</p>
+            </article>
+            <article class="how-card">
+                <div class="how-card-icon">🤝</div>
+                <div class="how-card-step">2</div>
+                <h3 class="how-card-title">{{ _('Make Real Friends') }}</h3>
+                <p class="how-card-text">{{ _('Not just networking — genuine connections! See who else is going, vibe-check the energy, and walk in already half-knowing the room.') }}</p>
+            </article>
+            <article class="how-card">
+                <div class="how-card-icon">🎊</div>
+                <div class="how-card-step">3</div>
+                <h3 class="how-card-title">{{ _('Have Fun!') }}</h3>
+                <p class="how-card-text">{{ _('No boring meetings — just good times! Spontaneous group chats, weekend plans, and "happening now" events.') }}</p>
+            </article>
         </div>
     </div>
+</section>
 
-    <h2>🎈 {{ _('Join the Fun!') }} ✨</h2>
-    <p>{{ _('Whether you just arrived in Dublin or have been here for years, CrossPaths is your gateway to an amazing social circle. Come as you are, meet incredible people, and build friendships that last!') }}</p>
-
-    <div class="community-stats">
-        <div class="stat-item">
-            <span class="stat-number">500+</span>
-            <span class="stat-label">{{ _('Members') }}</span>
+<!-- OUR VIBE -->
+<section class="about-section about-values">
+    <div class="about-section-inner">
+        <div class="about-section-heading">
+            <span class="about-eyebrow">{{ _('OUR VIBE') }}</span>
+            <h2 class="about-section-title">🎈 {{ _('What we believe in.') }} ✨</h2>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">{{ _('Events') }}</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">30+</span>
-            <span class="stat-label">{{ _('Countries') }}</span>
+        <div class="values-grid">
+            <article class="value-card">
+                <div class="value-icon">💛</div>
+                <h3>{{ _('Warmth first') }}</h3>
+                <p>{{ _('Every interaction should feel like a friend introducing you to other friends.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">🌎</div>
+                <h3>{{ _('Open doors') }}</h3>
+                <p>{{ _('Come as you are — there is no dress code, no ticket gate, no waiting list.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">🎶</div>
+                <h3>{{ _('Energy matters') }}</h3>
+                <p>{{ _('We design for joy. Colour, music, photos, reactions — the things that make community feel alive.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">🤗</div>
+                <h3>{{ _('Show up for each other') }}</h3>
+                <p>{{ _('When someone is new, we make space. When someone is leaving, we send them off.') }}</p>
+            </article>
         </div>
     </div>
 </section>
