@@ -141,22 +141,12 @@
         <h2>{{ _('Discover Ireland Experiences') }}</h2>
         <div class="discover-grid">
             <div class="discover-card">
-                {% if locale == 'en_IE' %}
-                <img src="{{ url_for('static', filename='img/common/hero-ireland-landscape.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
-                {% elif locale == 'uk_UA' or locale == 'pt_BR' %}
                 <img src="{{ url_for('static', filename='img/common/discover-outdoor-cliffs.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
-                {% else %}
-                <img src="{{ url_for('static', filename='img/common/hero-ireland-landscape.png') }}" alt="{{ _('Outdoor adventures with fellow newcomers') }}" class="discover-img">
-                {% endif %}
                 <h3>{{ _('Outdoor Adventures') }}</h3>
                 <p>{{ _('Explore mountains, coastlines, and stunning landscapes across Ireland') }}</p>
             </div>
             <div class="discover-card">
-                {% if locale == 'pt_BR' or locale == 'uk_UA' %}
                 <img src="{{ url_for('static', filename='img/common/discover-city-cobh.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
-                {% else %}
-                <img src="{{ url_for('static', filename='img/common/discover-social-pub.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
-                {% endif %}
                 <h3>{{ _('City Life') }}</h3>
                 <p>{{ _('Discover vibrant cities from Dublin to Galway, Cork to Limerick') }}</p>
             </div>
