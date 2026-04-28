@@ -59,7 +59,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'Cafe en Seine, Dawson Street',
         'category': 'Language',
-        'photo': 'event_wicklow.png',
+        'photo': 'event_language_night.png',
     },
     {
         'title': 'Photography Walk',
