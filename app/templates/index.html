@@ -152,7 +152,7 @@
                 <p>{{ _('Explore mountains, coastlines, and stunning landscapes across Ireland') }}</p>
             </div>
             <div class="discover-card">
-                {% if locale == 'pt_BR' %}
+                {% if locale == 'pt_BR' or locale == 'uk_UA' %}
                 <img src="{{ url_for('static', filename='img/common/discover-city-cobh.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
                 {% else %}
                 <img src="{{ url_for('static', filename='img/common/discover-social-pub.png') }}" alt="{{ _('Where cultures meet') }}" class="discover-img">
