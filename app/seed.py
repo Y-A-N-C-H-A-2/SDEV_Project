@@ -50,7 +50,7 @@ SAMPLE_EVENTS = [
         'city': 'Dublin',
         'venue': 'The Bernard Shaw, Dublin 8',
         'category': 'Social',
-        'photo': 'event_galway.png',
+        'photo': 'event_international.png',
     },
     {
         'title': 'Language Exchange Night',
