@@ -1,23 +1,86 @@
 <!-- Irish/English: Concise, direct, informative -->
-<section class="about-section-minimal">
-    <h2>{{ _('What is CrossPaths?') }}</h2>
-    <p>{{ _('CrossPaths is a platform for international newcomers in Dublin to meet new people through speed-friending events.') }}</p>
 
-    <h2>{{ _('How It Works') }}</h2>
-    <ol>
-        <li>{{ _('Browse upcoming events') }}</li>
-        <li>{{ _('RSVP to events that interest you') }}</li>
-        <li>{{ _('Attend and meet new people') }}</li>
-        <li>{{ _('Build your social network') }}</li>
-    </ol>
+<!-- WHY WE EXIST -->
+<section class="about-section about-why">
+    <div class="about-section-inner about-two-col">
+        <div class="about-col-text">
+            <span class="about-eyebrow">{{ _('WHY WE EXIST') }}</span>
+            <h2 class="about-section-title">{{ _('Connection shouldn\'t require luck.') }}</h2>
+            <p>{{ _('Moving to a new country is exhilarating — and lonely. Great events happen everywhere in Dublin, but they\'re scattered, hard to find, and even harder to trust. CrossPaths brings them together in one place, with verified hosts, transparent information, and a community that actually shows up.') }}</p>
+        </div>
+        <aside class="about-pullquote">
+            <span class="about-pullquote-pin">📍</span>
+            <p class="about-pullquote-text">{{ _('"We make connection intentional — not accidental."') }}</p>
+            <p class="about-pullquote-attr">— Yana Chulovska, {{ _('Co-founder') }}</p>
+        </aside>
+    </div>
+</section>
 
-    <h2>{{ _('Who Can Join?') }}</h2>
-    <p>{{ _('CrossPaths is open to anyone living in Dublin who wants to expand their social circle. Our events are particularly popular with international students, professionals, and migrants.') }}</p>
+<!-- HOW IT WORKS -->
+<section class="about-section about-how">
+    <div class="about-section-inner">
+        <div class="about-section-heading">
+            <span class="about-eyebrow">{{ _('HOW IT WORKS') }}</span>
+            <h2 class="about-section-title">{{ _('Three steps to your Dublin social life.') }}</h2>
+        </div>
+        <div class="how-grid">
+            <article class="how-card">
+                <div class="how-card-icon">📅</div>
+                <div class="how-card-step">1</div>
+                <h3 class="how-card-title">{{ _('Browse Events') }}</h3>
+                <p class="how-card-text">{{ _('Filter by category, date, or neighbourhood. Every listing is clear about format, location, and who\'s going.') }}</p>
+            </article>
+            <article class="how-card">
+                <div class="how-card-icon">👥</div>
+                <div class="how-card-step">2</div>
+                <h3 class="how-card-title">{{ _('Join a Community') }}</h3>
+                <p class="how-card-text">{{ _('Find people who share your background, interests, or language. Communities organise their own meetups too.') }}</p>
+            </article>
+            <article class="how-card">
+                <div class="how-card-icon">✓</div>
+                <div class="how-card-step">3</div>
+                <h3 class="how-card-title">{{ _('Show Up & Connect') }}</h3>
+                <p class="how-card-text">{{ _('Verified hosts, public venues, and a welcoming crowd. No awkward cold starts — just real people.') }}</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-    <h2>{{ _('Get Started') }}</h2>
-    <p>{{ _('Ready to meet new friends? Browse our upcoming events or create your profile to get started.') }}</p>
+<!-- OUR VALUES -->
+<section class="about-section about-values">
+    <div class="about-section-inner">
+        <div class="about-section-heading">
+            <span class="about-eyebrow">{{ _('OUR VALUES') }}</span>
+            <h2 class="about-section-title">{{ _('What guides every decision we make.') }}</h2>
+        </div>
+        <div class="values-grid">
+            <article class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>{{ _('Belonging first') }}</h3>
+                <p>{{ _('Every feature is designed to lower the barrier to entry, not raise it.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3>{{ _('Safety & trust') }}</h3>
+                <p>{{ _('Host verification, public venues, and transparent event information — always.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">🌍</div>
+                <h3>{{ _('Cultural respect') }}</h3>
+                <p>{{ _('We adapt our platform to your culture, not the other way around.') }}</p>
+            </article>
+            <article class="value-card">
+                <div class="value-icon">📍</div>
+                <h3>{{ _('Local roots') }}</h3>
+                <p>{{ _('Dublin-born and community-driven. We know this city and its people.') }}</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-    <div class="cta-buttons">
+<!-- CTAs -->
+<section class="about-section about-cta">
+    <div class="about-section-inner about-cta-inner">
         <a href="{{ url_for('main.events') }}" class="btn btn-primary">{{ _('View Events') }}</a>
         <a href="{{ url_for('main.profile') }}" class="btn btn-secondary">{{ _('Create Profile') }}</a>
     </div>

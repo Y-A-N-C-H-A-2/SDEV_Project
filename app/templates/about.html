@@ -4,26 +4,115 @@
 
 {% block content %}
 <div class="about-page">
-    <header class="page-header">
-        <h1>{{ _('About CrossPaths') }}</h1>
-        <p class="page-subtitle">{{ _('Where cultures meet and friendships begin') }}</p>
-    </header>
 
-    <!-- Single unique image per page (not used in hero or discover on index) -->
-    <div class="about-banner">
-        <img src="{{ url_for('static', filename='img/common/discover-venue-templebar.png') }}" alt="{{ _('Where cultures meet') }}" class="about-banner-img">
-    </div>
+    <!-- HERO: Our Story -->
+    <section class="about-hero">
+        <div class="about-hero-inner">
+            <span class="about-eyebrow">{{ _('OUR STORY') }}</span>
+            <h1 class="about-hero-title">{{ _('Built for newcomers, by people who were once newcomers.') }}</h1>
+            <p class="about-hero-lede">{{ _('CrossPaths started as a simple idea: no one should feel lost in a new city. We built the platform we wished existed on our first day in Dublin.') }}</p>
+        </div>
+        <div class="about-stats">
+            <div class="about-stat">
+                <span class="about-stat-num">4,200+</span>
+                <span class="about-stat-label">{{ _('Newcomers connected') }}</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-num">380+</span>
+                <span class="about-stat-label">{{ _('Events hosted') }}</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-num">60+</span>
+                <span class="about-stat-label">{{ _('Communities active') }}</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-num">28</span>
+                <span class="about-stat-label">{{ _('Countries represented') }}</span>
+            </div>
+        </div>
+    </section>
 
-    <div class="about-container">
-        {% include "partials/about/content_" ~ locale ~ ".html" %}
+    <!-- Locale-specific narrative (Why we exist / How it works / Values) -->
+    {% include "partials/about/content_" ~ locale ~ ".html" %}
 
-        <!-- Contact Section (shared across all locales) -->
-        <section class="contact-section">
+    <!-- SHARED: Testimonials -->
+    <section class="about-section about-testimonials">
+        <div class="about-section-inner">
+            <span class="about-eyebrow about-eyebrow-dark">{{ _('FROM OUR COMMUNITY') }}</span>
+            <h2 class="about-section-title">{{ _('Real people, real connections.') }}</h2>
+            <div class="testimonial-grid">
+                <blockquote class="testimonial-card">
+                    <p>{{ _('"I\'d been in Dublin six months and barely knew anyone outside work. After one CrossPaths event I had plans for the next three weekends."') }}</p>
+                    <footer>
+                        <strong>Anastasiia K.</strong>
+                        <span>{{ _('Arrived from Kharkiv, 2024') }}</span>
+                    </footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>{{ _('"The verified host badge matters more than people realise. As a woman exploring a new city alone, I needed to know it was legit."') }}</p>
+                    <footer>
+                        <strong>Priya N.</strong>
+                        <span>{{ _('Software engineer, moved from Chennai') }}</span>
+                    </footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>{{ _('"I joined a language exchange and ended up making three friends who I now hike with every month. This app changed my Dublin experience."') }}</p>
+                    <footer>
+                        <strong>Marcelo F.</strong>
+                        <span>{{ _('Brazilian, living in Dún Laoghaire') }}</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARED: The Team (real students from Group 8) -->
+    <section class="about-section about-team-section">
+        <div class="about-section-inner">
+            <span class="about-eyebrow">{{ _('THE TEAM') }}</span>
+            <h2 class="about-section-title">{{ _('People who genuinely care about this.') }}</h2>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-avatar team-avatar-yc">YC</div>
+                    <h3 class="team-name">Yana Chulovska</h3>
+                    <p class="team-role">{{ _('Co-founder & Product') }}</p>
+                    <p class="team-origin">🇺🇦 {{ _('From Ukraine') }}</p>
+                    <p class="team-bio">{{ _('"Arriving in Dublin from Kharkiv, I knew exactly how isolating a new city can feel. CrossPaths is the welcome I wish I had."') }}</p>
+                </article>
+                <article class="team-card">
+                    <div class="team-avatar team-avatar-lf">LF</div>
+                    <h3 class="team-name">Lívia Ferreira Guimarães Neves</h3>
+                    <p class="team-role">{{ _('Co-founder & Community') }}</p>
+                    <p class="team-origin">🇧🇷 {{ _('From Brazil') }}</p>
+                    <p class="team-bio">{{ _('"Brazilians make community wherever we go. I wanted to give other newcomers a head start on finding theirs."') }}</p>
+                </article>
+                <article class="team-card">
+                    <div class="team-avatar team-avatar-kk">KK</div>
+                    <h3 class="team-name">Kashish Kakran</h3>
+                    <p class="team-role">{{ _('Engineering Lead') }}</p>
+                    <p class="team-origin">🇮🇳 {{ _('From India / UAE') }}</p>
+                    <p class="team-bio">{{ _('"Having moved across cultures myself, I care about building tech that adapts to people — not the other way around."') }}</p>
+                </article>
+                <article class="team-card">
+                    <div class="team-avatar team-avatar-sk">SK</div>
+                    <h3 class="team-name">Simphiwe Klassen</h3>
+                    <p class="team-role">{{ _('Design & Inclusion') }}</p>
+                    <p class="team-origin">🇿🇦 {{ _('From South Africa') }}</p>
+                    <p class="team-bio">{{ _('"Belonging is a design problem. Every screen we build is one less reason for someone to feel like an outsider."') }}</p>
+                </article>
+            </div>
+            <p class="team-footnote">{{ _('Group 8 · SDEV2004 Software for Global Market · TU Dublin') }}</p>
+        </div>
+    </section>
+
+    <!-- SHARED: Contact -->
+    <section class="about-section contact-section">
+        <div class="about-section-inner">
             <h2>{{ _('Get in Touch') }}</h2>
             <p>{{ _('Questions or feedback? We\'d love to hear from you!') }}</p>
             <p><strong>{{ _('Email:') }}</strong> hello@crosspaths.ie</p>
             <p><strong>{{ _('Based in:') }}</strong> Dublin, Ireland</p>
-        </section>
-    </div>
+        </div>
+    </section>
 </div>
 {% endblock %}
