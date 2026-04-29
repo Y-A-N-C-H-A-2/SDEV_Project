@@ -449,3 +449,72 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 #### Deviations from Group Guidelines
 None. Cultural adaptations follow the group's agreed locale-based CSS strategy 
 using `body.locale-*` class selectors consistent with the rest of the application.
+
+
+### Yana Chulovska (C24490782) – Home Page
+
+#### Pages / Features Implemented
+- `index.html` – Home page including hero section, locale-conditional
+  "How it works" strip, upcoming events grid, featured communities grid,
+  Discover Ireland section, and final call-to-action
+- `main.index` route in `routes.py` – queries upcoming events
+  (`Event.date_time >= now`, ordered ascending, limited to 6) and the first
+  4 communities, with SQLAlchemy error handling returning a 503 fallback
+- Locale-conditional hero imagery via Jinja `{% if locale %}` blocks —
+  three distinct hero backgrounds, one per locale, with no image reused
+  elsewhere on the page
+- Locale-specific "How it works" sections: `how-it-works-uk` for Ukrainian
+  users (verified-event / verified-host / safe-venue framing) and
+  `how-it-works-br` for Brazilian users (pick / sign up / show up framing)
+- `how-it-works-br` styling in `locale-pt_BR.css` – warm soft-orange
+  cards with rounded corners, generous padding, and friendly typography
+
+#### Cultural Dimensions Addressed
+- **Uncertainty Avoidance (UA):** The Ukrainian locale renders a
+  three-step "How it works for Ukrainian newcomers" section directly
+  beneath the hero, framed around verification, host credentials, and
+  safe public venues. This reflects high UA (Ukraine scores 95) by giving
+  users explicit safety cues and a structured procedural overview before
+  they engage with any event listing. The Ukrainian hero uses the
+  Ireland-landscape imagery to convey a calm, grounded, trustworthy
+  first impression rather than a social/party scene.
+- **Individualism vs Collectivism (IDV):** The Brazilian locale renders
+  a warm "How it works — fun & easy" section with emoji-led step labels
+  and informal, social-first copy ("Say hi and sign up", "Show up and
+  make friends"). This reflects Brazil's more collectivist orientation
+  (IDV 38) by emphasising social warmth and group belonging over
+  procedural caution. The Brazilian hero uses the social-pub imagery to
+  signal energy and people-first connection from the very first scroll.
+- **Low UA + High IDV (Ireland):** The Irish locale strips the "How it
+  works" section out entirely and lets users go straight from hero to
+  Upcoming Events to Discover Ireland, reflecting low UA (Ireland 35)
+  and high individualism (IDV 70) — Irish users get a fast, self-directed
+  scan-and-pick flow without procedural hand-holding.
+
+#### Hypotheses Implemented
+- **H1** – Ukrainian users will trust the platform more if explicit
+  credibility cues are present. Implemented on the home page via the
+  `how-it-works-uk` section, which surfaces verification, host
+  credentials, and venue-safety messaging *above the fold of the
+  events grid* so trust is established before any RSVP action.
+- **H2** – Brazilian users will engage more if the UI is visual and
+  social-first. Implemented via the social-pub hero image, the warm
+  emoji-driven `how-it-works-br` cards, and the prominent
+  "Featured Communities" grid showing live member counts as social proof.
+- **H5** – Irish users will complete onboarding faster with a minimal,
+  direct UI. Implemented by suppressing the "How it works" section in
+  the en_IE locale entirely so the page goes straight from a single
+  hero CTA to browsable event cards.
+- **H6** – A culturally adaptive UI will increase engagement across
+  all three cultures without fragmenting the community. Implemented on
+  the home page via a single shared template (`index.html`) whose hero
+  imagery, supporting section, and tone all swap on the `locale`
+  variable, while the underlying event and community data remains
+  shared across locales.
+
+#### Deviations from Group Guidelines
+None. Locale switching uses the agreed `body.locale-*` class strategy
+and Jinja `{% if locale %}` conditionals consistent with the rest of
+the application. All user-facing strings are wrapped in `_()` /
+`ngettext()` so the home page is fully covered by Babel extraction
+and matches the group's i18n approach.
