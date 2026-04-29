@@ -388,3 +388,108 @@ body.locale-uk_UA .member-count {
     display: inline-block;
     margin-top: 0.4rem;
 }
+
+/* ── Login / Auth page – uk_UA (sharp, editorial) ──────────────────────── */
+
+body.locale-uk_UA .auth-page {
+    background: #f4f4fb;
+}
+
+body.locale-uk_UA .auth-container {
+    border-radius: 4px;
+    border: 0.5px solid #d8d8ee;
+    box-shadow: none;
+    padding: 2.5rem;
+}
+
+body.locale-uk_UA .auth-container h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25rem;
+}
+
+body.locale-uk_UA .auth-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+body.locale-uk_UA .form-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3d4f6d;
+    font-weight: 600;
+}
+
+body.locale-uk_UA .form-input {
+    border-radius: 3px;
+    border: 1px solid #d8d8ee;
+    border-bottom: 2px solid #7B7FC4;
+    background: #fafbfd;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.875rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+body.locale-uk_UA .form-input:focus {
+    border-color: #7B7FC4;
+    border-bottom-color: #1a1a2e;
+    box-shadow: none;
+    background: #fff;
+}
+
+body.locale-uk_UA .form-input::placeholder {
+    color: #b0b8c8;
+    font-size: 0.9rem;
+}
+
+body.locale-uk_UA .btn-primary.btn-full {
+    border-radius: 3px;
+    background: #1a1a2e;
+    color: #9B9BD4;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: 0.85rem;
+    box-shadow: none;
+    transition: background 0.15s;
+}
+
+body.locale-uk_UA .btn-primary.btn-full:hover {
+    background: #7B7FC4;
+    color: #fff;
+    transform: none;
+    box-shadow: none;
+}
+
+body.locale-uk_UA .auth-switch {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1.25rem;
+}
+
+body.locale-uk_UA .auth-switch a {
+    color: #7B7FC4;
+    font-weight: 700;
+}
+
+body.locale-uk_UA .form-error {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #a32d2d;
+}
+
+/* Checkmark feature – sharp variant */
+body.locale-uk_UA .input-wrapper .field-check {
+    color: #7B7FC4;
+    font-size: 1rem;
+}
