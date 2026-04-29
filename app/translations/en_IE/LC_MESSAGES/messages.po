@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CrossPaths 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-04-28 22:10+0000\n"
+"POT-Creation-Date: 2026-04-29 09:52+0000\n"
 "PO-Revision-Date: 2026-03-08 12:00+0000\n"
 "Last-Translator: CrossPaths Team\n"
 "Language: en_IE\n"
@@ -634,146 +634,184 @@ msgid "About – CrossPaths"
 msgstr "About – CrossPaths"
 
 #: app/templates/about.html:11
-#, fuzzy
 msgid "OUR STORY"
 msgstr "Your password"
 
 #: app/templates/about.html:12
 msgid "Built for newcomers, by people who were once newcomers."
-msgstr ""
+msgstr "Built for newcomers, by people who were once newcomers."
 
 #: app/templates/about.html:13
 msgid ""
 "CrossPaths started as a simple idea: no one should feel lost in a new "
 "city. We built the platform we wished existed on our first day in Dublin."
 msgstr ""
+"CrossPaths started as a simple idea: no one should feel lost in a new "
+"city. We built the platform we wished existed on our first day in Dublin."
 
 #: app/templates/about.html:18
 msgid "Newcomers connected"
-msgstr ""
+msgstr "Newcomers connected"
 
 #: app/templates/about.html:22
-#, fuzzy
 msgid "Events hosted"
 msgstr "Event title"
 
 #: app/templates/about.html:26
-#, fuzzy
 msgid "Communities active"
 msgstr "Communities"
 
 #: app/templates/about.html:30
-#, fuzzy
 msgid "Countries represented"
 msgstr "Countries"
 
 #: app/templates/about.html:41
-#, fuzzy
 msgid "FROM OUR COMMUNITY"
 msgstr "Welcome to Our Community!"
 
 #: app/templates/about.html:42
 msgid "Real people, real connections."
-msgstr ""
+msgstr "Real people, real connections."
 
 #: app/templates/about.html:45
 msgid ""
 "\"I'd been in Dublin six months and barely knew anyone outside work. "
 "After one CrossPaths event I had plans for the next three weekends.\""
 msgstr ""
+"\"I'd been in Dublin six months and barely knew anyone outside work. "
+"After one CrossPaths event I had plans for the next three weekends.\""
+
+#: app/templates/about.html:47
+msgid "Anastasiia K."
+msgstr "Anastasiia K."
 
 #: app/templates/about.html:48
 msgid "Arrived from Kharkiv, 2024"
-msgstr ""
+msgstr "Arrived from Kharkiv, 2024"
 
 #: app/templates/about.html:52
 msgid ""
 "\"The verified host badge matters more than people realise. As a woman "
 "exploring a new city alone, I needed to know it was legit.\""
 msgstr ""
+"\"The verified host badge matters more than people realise. As a woman "
+"exploring a new city alone, I needed to know it was legit.\""
+
+#: app/templates/about.html:54
+msgid "Priya N."
+msgstr "Priya N."
 
 #: app/templates/about.html:55
 msgid "Software engineer, moved from Chennai"
-msgstr ""
+msgstr "Software engineer, moved from Chennai"
 
 #: app/templates/about.html:59
 msgid ""
 "\"I joined a language exchange and ended up making three friends who I "
 "now hike with every month. This app changed my Dublin experience.\""
 msgstr ""
+"\"I joined a language exchange and ended up making three friends who I "
+"now hike with every month. This app changed my Dublin experience.\""
+
+#: app/templates/about.html:61
+msgid "Marcelo F."
+msgstr "Marcelo F."
 
 #: app/templates/about.html:62
 msgid "Brazilian, living in Dún Laoghaire"
-msgstr ""
+msgstr "Brazilian, living in Dún Laoghaire"
 
 #: app/templates/about.html:72
 msgid "THE TEAM"
-msgstr ""
+msgstr "THE TEAM"
 
 #: app/templates/about.html:73
 msgid "People who genuinely care about this."
-msgstr ""
+msgstr "People who genuinely care about this."
+
+#: app/templates/about.html:77
+msgid "Yana Chulovska"
+msgstr "Yana Chulovska"
 
 #: app/templates/about.html:78
 msgid "Co-founder & Product"
-msgstr ""
+msgstr "Co-founder & Product"
 
 #: app/templates/about.html:79
 msgid "From Ukraine"
-msgstr ""
+msgstr "From Ukraine"
 
 #: app/templates/about.html:80
 msgid ""
 "\"Arriving in Dublin from Kharkiv, I knew exactly how isolating a new "
 "city can feel. CrossPaths is the welcome I wish I had.\""
 msgstr ""
+"\"Arriving in Dublin from Kharkiv, I knew exactly how isolating a new "
+"city can feel. CrossPaths is the welcome I wish I had.\""
+
+#: app/templates/about.html:84
+msgid "Lívia Ferreira Guimarães Neves"
+msgstr "Lívia Ferreira Guimarães Neves"
 
 #: app/templates/about.html:85
-#, fuzzy
 msgid "Co-founder & Community"
 msgstr "Join Community"
 
 #: app/templates/about.html:86
 msgid "From Brazil"
-msgstr ""
+msgstr "From Brazil"
 
 #: app/templates/about.html:87
 msgid ""
 "\"Brazilians make community wherever we go. I wanted to give other "
 "newcomers a head start on finding theirs.\""
 msgstr ""
+"\"Brazilians make community wherever we go. I wanted to give other "
+"newcomers a head start on finding theirs.\""
+
+#: app/templates/about.html:91
+msgid "Kashish Kakran"
+msgstr "Kashish Kakran"
 
 #: app/templates/about.html:92
 msgid "Engineering Lead"
-msgstr ""
+msgstr "Engineering Lead"
 
 #: app/templates/about.html:93
 msgid "From India / UAE"
-msgstr ""
+msgstr "From India / UAE"
 
 #: app/templates/about.html:94
 msgid ""
 "\"Having moved across cultures myself, I care about building tech that "
 "adapts to people — not the other way around.\""
 msgstr ""
+"\"Having moved across cultures myself, I care about building tech that "
+"adapts to people — not the other way around.\""
+
+#: app/templates/about.html:98
+msgid "Simphiwe Klassen"
+msgstr "Simphiwe Klassen"
 
 #: app/templates/about.html:99
 msgid "Design & Inclusion"
-msgstr ""
+msgstr "Design & Inclusion"
 
 #: app/templates/about.html:100
 msgid "From South Africa"
-msgstr ""
+msgstr "From South Africa"
 
 #: app/templates/about.html:101
 msgid ""
 "\"Belonging is a design problem. Every screen we build is one less reason"
 " for someone to feel like an outsider.\""
 msgstr ""
+"\"Belonging is a design problem. Every screen we build is one less reason"
+" for someone to feel like an outsider.\""
 
 #: app/templates/about.html:104
 msgid "Group 8 · SDEV2004 Software for Global Market · TU Dublin"
-msgstr ""
+msgstr "Group 8 · SDEV2004 Software for Global Market · TU Dublin"
 
 #: app/templates/about.html:111
 msgid "Get in Touch"
@@ -790,6 +828,10 @@ msgstr "Email:"
 #: app/templates/about.html:114
 msgid "Based in:"
 msgstr "Based in:"
+
+#: app/templates/about.html:114
+msgid "Dublin, Ireland"
+msgstr "Dublin, Ireland"
 
 #: app/templates/base.html:6
 msgid "CrossPaths – Where cultures meet and friendships begin"
@@ -840,7 +882,7 @@ msgstr "Logout"
 msgid "Login"
 msgstr "Login"
 
-#: app/templates/base.html:38 app/templates/login.html:34
+#: app/templates/base.html:38 app/templates/login.html:48
 msgid "Register"
 msgstr "Register"
 
@@ -1415,19 +1457,20 @@ msgstr "Welcome Back"
 msgid "Log in to your CrossPaths account"
 msgstr "Log in to your CrossPaths account"
 
-#: app/templates/login.html:16 app/templates/register.html:24
+#: app/templates/login.html:18 app/templates/login.html:22
+#: app/templates/register.html:24
 msgid "your@email.com"
 msgstr "your@email.com"
 
-#: app/templates/login.html:24
+#: app/templates/login.html:33 app/templates/login.html:37
 msgid "Your password"
 msgstr "Your password"
 
-#: app/templates/login.html:30
+#: app/templates/login.html:44
 msgid "Log In"
 msgstr "Log In"
 
-#: app/templates/login.html:34
+#: app/templates/login.html:48
 msgid "Don't have an account?"
 msgstr "Don't have an account?"
 
@@ -1498,11 +1541,11 @@ msgstr "Log in"
 
 #: app/templates/partials/about/content_en_IE.html:7
 msgid "WHY WE EXIST"
-msgstr ""
+msgstr "WHY WE EXIST"
 
 #: app/templates/partials/about/content_en_IE.html:8
 msgid "Connection shouldn't require luck."
-msgstr ""
+msgstr "Connection shouldn't require luck."
 
 #: app/templates/partials/about/content_en_IE.html:9
 msgid ""
@@ -1512,34 +1555,39 @@ msgid ""
 "verified hosts, transparent information, and a community that actually "
 "shows up."
 msgstr ""
+"Moving to a new country is exhilarating — and lonely. Great events happen"
+" everywhere in Dublin, but they're scattered, hard to find, and even "
+"harder to trust. CrossPaths brings them together in one place, with "
+"verified hosts, transparent information, and a community that actually "
+"shows up."
 
 #: app/templates/partials/about/content_en_IE.html:13
 msgid "\"We make connection intentional — not accidental.\""
-msgstr ""
+msgstr "\"We make connection intentional — not accidental.\""
 
 #: app/templates/partials/about/content_en_IE.html:14
 #: app/templates/partials/about/content_pt_BR.html:14
 #: app/templates/partials/about/content_uk_UA.html:14
 msgid "Co-founder"
-msgstr ""
+msgstr "Co-founder"
 
 #: app/templates/partials/about/content_en_IE.html:23
-#, fuzzy
 msgid "HOW IT WORKS"
 msgstr "How It Works"
 
 #: app/templates/partials/about/content_en_IE.html:24
 msgid "Three steps to your Dublin social life."
-msgstr ""
+msgstr "Three steps to your Dublin social life."
 
 #: app/templates/partials/about/content_en_IE.html:31
 msgid ""
 "Filter by category, date, or neighbourhood. Every listing is clear about "
 "format, location, and who's going."
 msgstr ""
+"Filter by category, date, or neighbourhood. Every listing is clear about "
+"format, location, and who's going."
 
 #: app/templates/partials/about/content_en_IE.html:36
-#, fuzzy
 msgid "Join a Community"
 msgstr "Join Community"
 
@@ -1548,35 +1596,38 @@ msgid ""
 "Find people who share your background, interests, or language. "
 "Communities organise their own meetups too."
 msgstr ""
+"Find people who share your background, interests, or language. "
+"Communities organise their own meetups too."
 
 #: app/templates/partials/about/content_en_IE.html:42
 msgid "Show Up & Connect"
-msgstr ""
+msgstr "Show Up & Connect"
 
 #: app/templates/partials/about/content_en_IE.html:43
 msgid ""
 "Verified hosts, public venues, and a welcoming crowd. No awkward cold "
 "starts — just real people."
 msgstr ""
+"Verified hosts, public venues, and a welcoming crowd. No awkward cold "
+"starts — just real people."
 
 #: app/templates/partials/about/content_en_IE.html:53
 msgid "OUR VALUES"
-msgstr ""
+msgstr "OUR VALUES"
 
 #: app/templates/partials/about/content_en_IE.html:54
 msgid "What guides every decision we make."
-msgstr ""
+msgstr "What guides every decision we make."
 
 #: app/templates/partials/about/content_en_IE.html:59
 msgid "Belonging first"
-msgstr ""
+msgstr "Belonging first"
 
 #: app/templates/partials/about/content_en_IE.html:60
 msgid "Every feature is designed to lower the barrier to entry, not raise it."
-msgstr ""
+msgstr "Every feature is designed to lower the barrier to entry, not raise it."
 
 #: app/templates/partials/about/content_en_IE.html:64
-#, fuzzy
 msgid "Safety & trust"
 msgstr "Safety & Verification"
 
@@ -1585,23 +1636,24 @@ msgid ""
 "Host verification, public venues, and transparent event information — "
 "always."
 msgstr ""
+"Host verification, public venues, and transparent event information — "
+"always."
 
 #: app/templates/partials/about/content_en_IE.html:69
-#, fuzzy
 msgid "Cultural respect"
 msgstr "Create Event"
 
 #: app/templates/partials/about/content_en_IE.html:70
 msgid "We adapt our platform to your culture, not the other way around."
-msgstr ""
+msgstr "We adapt our platform to your culture, not the other way around."
 
 #: app/templates/partials/about/content_en_IE.html:74
 msgid "Local roots"
-msgstr ""
+msgstr "Local roots"
 
 #: app/templates/partials/about/content_en_IE.html:75
 msgid "Dublin-born and community-driven. We know this city and its people."
-msgstr ""
+msgstr "Dublin-born and community-driven. We know this city and its people."
 
 #: app/templates/partials/about/content_en_IE.html:84
 msgid "View Events"

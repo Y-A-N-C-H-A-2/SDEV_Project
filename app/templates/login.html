@@ -20,6 +20,7 @@
                 </div>
                 {% else %}
                     {{ form.email(class="form-input", placeholder=_('your@email.com')) }}
+                {% endif %}
                 {% for error in form.email.errors %}
                     <span class="form-error">{{ error }}</span>
                 {% endfor %}
@@ -34,6 +35,7 @@
                 </div>
                 {% else %}
                     {{ form.password(class="form-input", placeholder=_('Your password')) }}
+                {% endif %}
                 {% for error in form.password.errors %}
                 <span class="form-error">{{ error }}</span>
                 {% endfor %}

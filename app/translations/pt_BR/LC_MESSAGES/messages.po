@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-04-28 22:10+0000\n"
+"POT-Creation-Date: 2026-04-29 09:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_BR\n"
@@ -686,6 +686,10 @@ msgstr ""
 "trabalho. Depois de um evento do CrossPaths, eu já tinha planos para os "
 "três fins de semana seguintes.\""
 
+#: app/templates/about.html:47
+msgid "Anastasiia K."
+msgstr "Anastasiia K."
+
 #: app/templates/about.html:48
 msgid "Arrived from Kharkiv, 2024"
 msgstr "Chegou de Kharkiv, 2024"
@@ -695,9 +699,13 @@ msgid ""
 "\"The verified host badge matters more than people realise. As a woman "
 "exploring a new city alone, I needed to know it was legit.\""
 msgstr ""
-"\"O selo de anfitrião verificado importa mais do que as pessoas "
-"percebem. Como mulher explorando uma nova cidade sozinha, eu precisava "
-"saber que era confiável.\""
+"\"O selo de anfitrião verificado importa mais do que as pessoas percebem."
+" Como mulher explorando uma nova cidade sozinha, eu precisava saber que "
+"era confiável.\""
+
+#: app/templates/about.html:54
+msgid "Priya N."
+msgstr "Priya N."
 
 #: app/templates/about.html:55
 msgid "Software engineer, moved from Chennai"
@@ -712,9 +720,13 @@ msgstr ""
 "quem hoje faço trilha todo mês. Esse app mudou a minha experiência em "
 "Dublin.\""
 
+#: app/templates/about.html:61
+msgid "Marcelo F."
+msgstr "Marcelo F."
+
 #: app/templates/about.html:62
 msgid "Brazilian, living in Dún Laoghaire"
-msgstr ""
+msgstr "Brasileiro, vive em Dún Laoghaire"
 
 #: app/templates/about.html:72
 msgid "THE TEAM"
@@ -723,6 +735,10 @@ msgstr "A EQUIPE"
 #: app/templates/about.html:73
 msgid "People who genuinely care about this."
 msgstr "Pessoas que se importam de verdade com isso."
+
+#: app/templates/about.html:77
+msgid "Yana Chulovska"
+msgstr "Yana Chulovska"
 
 #: app/templates/about.html:78
 msgid "Co-founder & Product"
@@ -741,6 +757,10 @@ msgstr ""
 "cidade nova pode parecer solitária. O CrossPaths é o acolhimento que eu "
 "queria ter recebido.\""
 
+#: app/templates/about.html:84
+msgid "Lívia Ferreira Guimarães Neves"
+msgstr "Lívia Ferreira Guimarães Neves"
+
 #: app/templates/about.html:85
 msgid "Co-founder & Community"
 msgstr "Cofundadora & Comunidade"
@@ -757,6 +777,10 @@ msgstr ""
 "\"Brasileiros fazem comunidade onde quer que vão. Eu queria dar a outros "
 "recém-chegados uma vantagem na hora de encontrar a deles.\""
 
+#: app/templates/about.html:91
+msgid "Kashish Kakran"
+msgstr "Kashish Kakran"
+
 #: app/templates/about.html:92
 msgid "Engineering Lead"
 msgstr "Líder de Engenharia"
@@ -770,6 +794,12 @@ msgid ""
 "\"Having moved across cultures myself, I care about building tech that "
 "adapts to people — not the other way around.\""
 msgstr ""
+"\"Tendo eu mesmo me mudado entre culturas, faço questão de construir "
+"tecnologia que se adapta às pessoas — e não o contrário.\""
+
+#: app/templates/about.html:98
+msgid "Simphiwe Klassen"
+msgstr "Simphiwe Klassen"
 
 #: app/templates/about.html:99
 msgid "Design & Inclusion"
@@ -789,7 +819,7 @@ msgstr ""
 
 #: app/templates/about.html:104
 msgid "Group 8 · SDEV2004 Software for Global Market · TU Dublin"
-msgstr ""
+msgstr "Grupo 8 · SDEV2004 Software para o Mercado Global · TU Dublin"
 
 #: app/templates/about.html:111
 msgid "Get in Touch"
@@ -806,6 +836,10 @@ msgstr "E-mail:"
 #: app/templates/about.html:114
 msgid "Based in:"
 msgstr "Localizado em:"
+
+#: app/templates/about.html:114
+msgid "Dublin, Ireland"
+msgstr "Dublin, Irlanda"
 
 #: app/templates/base.html:6
 msgid "CrossPaths – Where cultures meet and friendships begin"
@@ -856,7 +890,7 @@ msgstr "Sair"
 msgid "Login"
 msgstr "Entrar"
 
-#: app/templates/base.html:38 app/templates/login.html:34
+#: app/templates/base.html:38 app/templates/login.html:48
 msgid "Register"
 msgstr "Cadastrar"
 
@@ -1451,19 +1485,20 @@ msgstr "Bem-vindo(a) de volta"
 msgid "Log in to your CrossPaths account"
 msgstr "Faça login na sua conta CrossPaths"
 
-#: app/templates/login.html:16 app/templates/register.html:24
+#: app/templates/login.html:18 app/templates/login.html:22
+#: app/templates/register.html:24
 msgid "your@email.com"
 msgstr "seu@email.com"
 
-#: app/templates/login.html:24
+#: app/templates/login.html:33 app/templates/login.html:37
 msgid "Your password"
 msgstr "Sua senha"
 
-#: app/templates/login.html:30
+#: app/templates/login.html:44
 msgid "Log In"
 msgstr "Entrar"
 
-#: app/templates/login.html:34
+#: app/templates/login.html:48
 msgid "Don't have an account?"
 msgstr "Não tem uma conta?"
 
@@ -1656,16 +1691,16 @@ msgid "Friends first. Plans second. Everything else after."
 msgstr "Amigos primeiro. Planos depois. O resto vem em seguida."
 
 #: app/templates/partials/about/content_pt_BR.html:9
-#, fuzzy
 msgid ""
 "CrossPaths connects international newcomers in Dublin through fun, "
 "friendly events — language exchanges, weekend hikes, brunches, samba "
 "nights and everything in between. We're all about bringing people "
 "together and building a vibrant, diverse community!"
 msgstr ""
-"CrossPaths conecta recém-chegados internacionais em Dublin através de "
-"eventos divertidos e amigáveis de amizade rápida. Estamos aqui para unir "
-"pessoas e construir uma comunidade vibrante e diversa!"
+"A CrossPaths conecta recém-chegados internacionais em Dublin através de "
+"eventos divertidos e acolhedores — intercâmbios de idiomas, trilhas de "
+"fim de semana, brunches, noites de samba e tudo o que há entre eles. "
+"Nosso lance é unir pessoas e construir uma comunidade vibrante e diversa!"
 
 #: app/templates/partials/about/content_pt_BR.html:13
 msgid "\"You don't have to know anyone to belong here.\""
@@ -1700,6 +1735,8 @@ msgid ""
 "Not just networking — genuine connections! See who else is going, vibe-"
 "check the energy, and walk in already half-knowing the room."
 msgstr ""
+"Não é só networking — são conexões de verdade! Veja quem mais vai, sinta "
+"a energia do grupo e chegue já se sentindo em casa."
 
 #: app/templates/partials/about/content_pt_BR.html:42
 msgid "Have Fun!"
@@ -1710,6 +1747,8 @@ msgid ""
 "No boring meetings — just good times! Spontaneous group chats, weekend "
 "plans, and \"happening now\" events."
 msgstr ""
+"Nada de reuniões chatas — só momentos bons! Conversas espontâneas em "
+"grupo, planos para o fim de semana e eventos \"acontecendo agora\"."
 
 #: app/templates/partials/about/content_pt_BR.html:53
 msgid "OUR VIBE"
@@ -1736,6 +1775,8 @@ msgstr "Portas abertas"
 #: app/templates/partials/about/content_pt_BR.html:65
 msgid "Come as you are — there is no dress code, no ticket gate, no waiting list."
 msgstr ""
+"Venha como você é — sem código de vestimenta, sem catraca, sem lista de "
+"espera."
 
 #: app/templates/partials/about/content_pt_BR.html:69
 msgid "Energy matters"
@@ -1746,6 +1787,8 @@ msgid ""
 "We design for joy. Colour, music, photos, reactions — the things that "
 "make community feel alive."
 msgstr ""
+"Desenhamos para a alegria. Cor, música, fotos, reações — as coisas que "
+"fazem a comunidade ganhar vida."
 
 #: app/templates/partials/about/content_pt_BR.html:74
 msgid "Show up for each other"
@@ -1855,7 +1898,9 @@ msgstr "Código de conduta"
 msgid ""
 "Harassment or inappropriate behaviour results in immediate account "
 "suspension."
-msgstr "Assédio ou comportamento inadequado resulta em suspensão imediata da conta."
+msgstr ""
+"Assédio ou comportamento inadequado resulta em suspensão imediata da "
+"conta."
 
 #: app/templates/partials/about/content_uk_UA.html:69
 msgid "Respect & inclusion"
