@@ -575,10 +575,13 @@ conditionals (`{% if locale == 'pt_BR' %}`) consistent with the
 
 **Pages / Features Implemented**
 I implemented the login page and the About page for the Ukrainian locale. On the login page I added a field validation feature — a checkmark that appears beside each input once it's filled in. This feature is only active on translated versions of the site, controlled by a Jinja locale check so it doesn't affect the English version at all.
+
 **Cultural Dimensions Addressed**
 The Ukrainian design addresses Hofstede's uncertainty avoidance and individualism dimensions. Ukraine scores very high on uncertainty avoidance — meaning users like Oksana, our Ukrainian persona, are deterred by ambiguity and unguided flows. The design also addresses individualism, differentiating the Ukrainian locale from the Brazilian one, which leans collectivist and warm.
+
 **Hypothesis Implemented and Where It Appears**
 I implemented Hypothesis 2 — that structured entry points with visible progress reduce the disorientation that unguided platforms create for high uncertainty avoidance users. This appears directly on the login page. The field validation checkmarks give Oksana immediate, unambiguous confirmation that she has completed each step correctly before moving on — removing any doubt about whether her input is valid. This is a micro-level progress indicator: each checkmark is a small signal that says 'this step is done, you can proceed.' Beyond that, the sharp corners, uppercase labels, and structured layout of the Ukrainian login page reinforce a sense of order and predictability — the interface communicates that the process is clear and controlled, which directly addresses the anxiety that high uncertainty avoidance users feel on unfamiliar platforms.
+
 **Deviations from Group Guidelines**
 The main deviation I made was introducing a dark navy hero background on the Ukrainian About page — the group guidelines used the locale's primary colour for the hero across all versions. I justified this because the periwinkle primary colour shared with the English version made the Ukrainian page look too similar at a glance. The dark hero creates an immediately recognisable visual distinction that reinforces the more serious, structured tone appropriate for a high uncertainty avoidance user, while the periwinkle accent is still used throughout the rest of the page to stay within the locale's colour system.
 
