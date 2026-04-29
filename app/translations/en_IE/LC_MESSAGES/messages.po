@@ -21,7 +21,7 @@ msgstr ""
 
 #: app/babel_strings.py:21 app/forms.py:67
 msgid "Language exchange"
-msgstr "Save Changes"
+msgstr "Language exchange"
 
 #: app/babel_strings.py:22 app/babel_strings.py:58 app/forms.py:61
 #: app/forms.py:68
@@ -41,14 +41,13 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
-# Date/time (word between date and time)
 #: app/babel_strings.py:26 app/forms.py:72
 msgid "Art"
-msgstr "at"
+msgstr "Art"
 
 #: app/babel_strings.py:27 app/forms.py:58 app/forms.py:73
 msgid "Tech"
-msgstr "Search"
+msgstr "Tech"
 
 #: app/babel_strings.py:28 app/forms.py:59 app/forms.py:74
 msgid "Sports"
@@ -65,7 +64,7 @@ msgstr "Nightlife"
 
 #: app/babel_strings.py:31 app/forms.py:77
 msgid "Cultural events"
-msgstr "Create Event"
+msgstr "Cultural events"
 
 #: app/babel_strings.py:36
 msgid "Trip to Galway with a Castle Visit"
@@ -347,11 +346,11 @@ msgstr ""
 
 #: app/forms.py:44
 msgid "Male"
-msgstr "Email:"
+msgstr "Male"
 
 #: app/forms.py:45
 msgid "Female"
-msgstr "Email:"
+msgstr "Female"
 
 #: app/forms.py:46
 msgid "Non-binary"
@@ -367,7 +366,7 @@ msgstr ""
 
 #: app/forms.py:87 app/forms.py:107
 msgid "Full name"
-msgstr "Your full name"
+msgstr "Full name"
 
 #: app/forms.py:87 app/forms.py:107
 msgid "Please enter your name."
@@ -375,7 +374,7 @@ msgstr ""
 
 #: app/forms.py:88 app/forms.py:102
 msgid "Email"
-msgstr "Email:"
+msgstr "Email"
 
 #: app/forms.py:88 app/forms.py:102
 msgid "Please enter your email."
@@ -387,7 +386,7 @@ msgstr ""
 
 #: app/forms.py:89 app/forms.py:103
 msgid "Password"
-msgstr "Your password"
+msgstr "Password"
 
 #: app/forms.py:89
 msgid "Please enter a password."
@@ -399,11 +398,11 @@ msgstr ""
 
 #: app/forms.py:90
 msgid "Confirm Password"
-msgstr "Confirm password"
+msgstr "Confirm Password"
 
 #: app/forms.py:90
 msgid "Please confirm your password."
-msgstr "Confirm password"
+msgstr "Please confirm your password."
 
 #: app/forms.py:90
 msgid "Passwords must match"
@@ -435,9 +434,8 @@ msgid "Please enter a valid phone number."
 msgstr ""
 
 #: app/forms.py:95 app/forms.py:112
-#, fuzzy
 msgid "City in Ireland"
-msgstr "%(city)s, Ireland"
+msgstr "City in Ireland"
 
 #: app/forms.py:96 app/forms.py:113
 msgid "Preferred language"
@@ -454,7 +452,7 @@ msgstr ""
 
 #: app/forms.py:103
 msgid "Please enter your password."
-msgstr "Your password"
+msgstr "Please enter your password."
 
 #: app/forms.py:119
 msgid "Title"
