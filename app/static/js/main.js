@@ -128,3 +128,21 @@ function initializeFormValidation() {
         });
     });
 }
+
+/**
+ * Show/hide checkmark for input fields
+ */
+document.querySelectorAll('.input_wrapper .form-input').forEach(function(input) {
+    var check = input.nextElementSibling;
+
+    function update() {
+      if (input.value.trim().length > 0) {
+        check.classList.add('visible');
+      } else {
+        check.classList.remove('visible');
+      }
+    }
+
+    input.addEventListener('input', update);
+    update();
+  });
