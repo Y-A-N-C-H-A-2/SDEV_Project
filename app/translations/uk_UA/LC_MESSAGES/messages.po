@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CrossPaths 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-04-28 22:10+0000\n"
+"POT-Creation-Date: 2026-04-29 09:52+0000\n"
 "PO-Revision-Date: 2026-03-06 12:00+0000\n"
 "Last-Translator: CrossPaths Team\n"
 "Language: uk_UA\n"
@@ -648,9 +648,9 @@ msgid ""
 "CrossPaths started as a simple idea: no one should feel lost in a new "
 "city. We built the platform we wished existed on our first day in Dublin."
 msgstr ""
-"CrossPaths почався з простої ідеї: ніхто не повинен почуватися "
-"загубленим у новому місті. Ми створили платформу, якої нам бракувало у "
-"наш перший день у Дубліні."
+"CrossPaths почався з простої ідеї: ніхто не повинен почуватися загубленим"
+" у новому місті. Ми створили платформу, якої нам бракувало у наш перший "
+"день у Дубліні."
 
 #: app/templates/about.html:18
 msgid "Newcomers connected"
@@ -685,6 +685,10 @@ msgstr ""
 "Після однієї події CrossPaths у мене вже були плани на наступні три "
 "вихідні.\""
 
+#: app/templates/about.html:47
+msgid "Anastasiia K."
+msgstr "Анастасія К."
+
 #: app/templates/about.html:48
 msgid "Arrived from Kharkiv, 2024"
 msgstr "Приїхала з Харкова, 2024"
@@ -696,6 +700,10 @@ msgid ""
 msgstr ""
 "\"Значок верифікованого організатора важливіший, ніж здається. Як жінка, "
 "що сама досліджує нове місто, я мала бути впевнена, що це справжнє.\""
+
+#: app/templates/about.html:54
+msgid "Priya N."
+msgstr "Прія Н."
 
 #: app/templates/about.html:55
 msgid "Software engineer, moved from Chennai"
@@ -709,9 +717,13 @@ msgstr ""
 "\"Я приєднався до мовного обміну і знайшов трьох друзів, з якими тепер "
 "ходжу в гори щомісяця. Цей застосунок змінив моє життя в Дубліні.\""
 
+#: app/templates/about.html:61
+msgid "Marcelo F."
+msgstr "Марсело Ф."
+
 #: app/templates/about.html:62
 msgid "Brazilian, living in Dún Laoghaire"
-msgstr ""
+msgstr "Бразилець, живе в Дун Лері"
 
 #: app/templates/about.html:72
 msgid "THE TEAM"
@@ -720,6 +732,10 @@ msgstr "КОМАНДА"
 #: app/templates/about.html:73
 msgid "People who genuinely care about this."
 msgstr "Люди, яким це справді небайдуже."
+
+#: app/templates/about.html:77
+msgid "Yana Chulovska"
+msgstr "Яна Чуловська"
 
 #: app/templates/about.html:78
 msgid "Co-founder & Product"
@@ -737,6 +753,10 @@ msgstr ""
 "\"Приїхавши до Дубліна з Харкова, я добре знала, наскільки самотньо може "
 "бути в новому місті. CrossPaths — це той прийом, якого мені бракувало.\""
 
+#: app/templates/about.html:84
+msgid "Lívia Ferreira Guimarães Neves"
+msgstr "Лівія Феррейра Гімарайнс Невес"
+
 #: app/templates/about.html:85
 msgid "Co-founder & Community"
 msgstr "Співзасновниця та спільнота"
@@ -753,6 +773,10 @@ msgstr ""
 "\"Бразильці створюють спільноту скрізь, куди приходять. Я хотіла дати "
 "іншим новоприбулим фору в пошуку своєї.\""
 
+#: app/templates/about.html:91
+msgid "Kashish Kakran"
+msgstr "Кашіш Какран"
+
 #: app/templates/about.html:92
 msgid "Engineering Lead"
 msgstr "Керівник інженерії"
@@ -766,6 +790,12 @@ msgid ""
 "\"Having moved across cultures myself, I care about building tech that "
 "adapts to people — not the other way around.\""
 msgstr ""
+"\"Сам пройшовши через переїзди між культурами, я дбаю про те, щоб "
+"технології адаптувалися до людей — а не навпаки.\""
+
+#: app/templates/about.html:98
+msgid "Simphiwe Klassen"
+msgstr "Сімфіве Классен"
 
 #: app/templates/about.html:99
 msgid "Design & Inclusion"
@@ -786,6 +816,8 @@ msgstr ""
 #: app/templates/about.html:104
 msgid "Group 8 · SDEV2004 Software for Global Market · TU Dublin"
 msgstr ""
+"Група 8 · SDEV2004 Програмне забезпечення для глобального ринку · "
+"Технологічний університет Дубліна"
 
 #: app/templates/about.html:111
 msgid "Get in Touch"
@@ -802,6 +834,10 @@ msgstr "Електронна пошта:"
 #: app/templates/about.html:114
 msgid "Based in:"
 msgstr "Розташовані в:"
+
+#: app/templates/about.html:114
+msgid "Dublin, Ireland"
+msgstr "Дублін, Ірландія"
 
 # Navigation & Brand
 #: app/templates/base.html:6
@@ -854,7 +890,7 @@ msgstr "Вийти"
 msgid "Login"
 msgstr "Увійти"
 
-#: app/templates/base.html:38 app/templates/login.html:34
+#: app/templates/base.html:38 app/templates/login.html:48
 msgid "Register"
 msgstr "Реєстрація"
 
@@ -1460,19 +1496,20 @@ msgstr "З поверненням"
 msgid "Log in to your CrossPaths account"
 msgstr "Увійдіть до вашого облікового запису CrossPaths"
 
-#: app/templates/login.html:16 app/templates/register.html:24
+#: app/templates/login.html:18 app/templates/login.html:22
+#: app/templates/register.html:24
 msgid "your@email.com"
 msgstr "ваш@email.com"
 
-#: app/templates/login.html:24
+#: app/templates/login.html:33 app/templates/login.html:37
 msgid "Your password"
 msgstr "Ваш пароль"
 
-#: app/templates/login.html:30
+#: app/templates/login.html:44
 msgid "Log In"
 msgstr "Увійти"
 
-#: app/templates/login.html:34
+#: app/templates/login.html:48
 msgid "Don't have an account?"
 msgstr "Немає облікового запису?"
 
@@ -1568,7 +1605,7 @@ msgstr ""
 #: app/templates/partials/about/content_pt_BR.html:14
 #: app/templates/partials/about/content_uk_UA.html:14
 msgid "Co-founder"
-msgstr ""
+msgstr "Співзасновниця"
 
 #: app/templates/partials/about/content_en_IE.html:23
 #, fuzzy
@@ -1778,7 +1815,6 @@ msgid "A safe, structured way to meet people in Dublin."
 msgstr "Безпечний і структурований спосіб знайомитися з людьми в Дубліні."
 
 #: app/templates/partials/about/content_uk_UA.html:9
-#, fuzzy
 msgid ""
 "CrossPaths is a verified platform designed to support the social "
 "integration of international newcomers in Dublin through structured, safe"
@@ -1786,13 +1822,15 @@ msgid ""
 "Every event has a clear agenda — so you always know what to expect before"
 " you arrive."
 msgstr ""
-"CrossPaths – це перевірена платформа, призначена для підтримки соціальної"
-" інтеграції міжнародних новоприбулих у Дубліні через структуровані, "
-"безпечні події швидких знайомств."
+"CrossPaths — це перевірена платформа, створена для підтримки соціальної "
+"інтеграції міжнародних новоприбулих у Дубліні через структуровані, "
+"безпечні події швидких знайомств. Кожен організатор пройшов перевірку. "
+"Кожне місце проведення є публічним. Кожна подія має чіткий порядок денний"
+" — тож ви завжди знаєте, чого очікувати ще до приходу."
 
 #: app/templates/partials/about/content_uk_UA.html:13
 msgid "\"Trust is earned through verification — not promises.\""
-msgstr ""
+msgstr "\"Довіра здобувається перевіркою — а не обіцянками.\""
 
 #: app/templates/partials/about/content_uk_UA.html:23
 msgid "SAFETY & VERIFICATION"
@@ -1823,6 +1861,8 @@ msgid ""
 "All events are held in established, publicly accessible locations — "
 "cafés, libraries, community centres. No private addresses."
 msgstr ""
+"Усі події проводяться у відомих, публічно доступних місцях — кафе, "
+"бібліотеках, громадських центрах. Жодних приватних адрес."
 
 #: app/templates/partials/about/content_uk_UA.html:42
 msgid "Clear Agendas"
@@ -1864,7 +1904,9 @@ msgstr "Кодекс поведінки"
 msgid ""
 "Harassment or inappropriate behaviour results in immediate account "
 "suspension."
-msgstr "Домагання чи неналежна поведінка призводять до негайного блокування акаунта."
+msgstr ""
+"Домагання чи неналежна поведінка призводять до негайного блокування "
+"акаунта."
 
 #: app/templates/partials/about/content_uk_UA.html:69
 msgid "Respect & inclusion"
