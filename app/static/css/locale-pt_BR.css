@@ -245,3 +245,123 @@ body.locale-pt_BR .event-card {
 .invite-share h3::before {
     content: "🤗 ";
 }
+
+/* ── Communities page – pt_BR (Social, warm, visual-first) ──────────────── */
+
+/* Grid: multi-column, card-heavy, browseable */
+body.locale-pt_BR .communities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cards: rounded, warm shadow, orange top bar */
+body.locale-pt_BR .community-card {
+    border-radius: 16px;
+    border: none;
+    border-top: 5px solid #FF8C00;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.15);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+body.locale-pt_BR .community-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.25);
+}
+
+/* Image: large and prominent */
+body.locale-pt_BR .community-card-image {
+    width: 100%;
+    height: 160px;
+}
+
+body.locale-pt_BR .community-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Body: spacious, warm background tint */
+body.locale-pt_BR .community-card-body {
+    padding: 1rem 1.25rem 1.25rem;
+    background: linear-gradient(to bottom, #FFF3E6 0%, #fff 40%);
+    flex: 1;
+}
+
+body.locale-pt_BR .community-card-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.4rem;
+}
+
+body.locale-pt_BR .community-card-body p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.55;
+}
+
+body.locale-pt_BR .member-count {
+    display: inline-block;
+    background: #FF8C00;
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+/* Community detail – pt_BR */
+body.locale-pt_BR .detail-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.12);
+}
+
+body.locale-pt_BR .detail-image img {
+    border-radius: 0;
+}
+
+body.locale-pt_BR .detail-content {
+    background: linear-gradient(to bottom, #FFF3E6 0%, #fff 25%);
+    padding: 2rem;
+}
+
+body.locale-pt_BR .detail-content h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #E8733A;
+}
+
+body.locale-pt_BR .detail-description {
+    background: #FFF3E6;
+    border-left: 4px solid #FF8C00;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+}
+
+body.locale-pt_BR .member-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #FFE0B2 0%, #FF8C00 100%);
+    color: #fff;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(255, 107, 53, 0.35);
+    border-radius: 50%;
+}
+
+body.locale-pt_BR .member-count-large {
+    display: inline-block;
+    background: #FF8C00;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
