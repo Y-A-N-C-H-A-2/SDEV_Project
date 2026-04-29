@@ -512,9 +512,61 @@ using `body.locale-*` class selectors consistent with the rest of the applicatio
   variable, while the underlying event and community data remains
   shared across locales.
 
+
 #### Deviations from Group Guidelines
 None. Locale switching uses the agreed `body.locale-*` class strategy
 and Jinja `{% if locale %}` conditionals consistent with the rest of
 the application. All user-facing strings are wrapped in `_()` /
 `ngettext()` so the home page is fully covered by Babel extraction
 and matches the group's i18n approach.
+
+## Lívia Ferreira Guimarães Neves (C24329646) – Events Page
+
+#### Pages / Features Implemented
+- `events.html` – Events listing page with image-led event cards, city filter,
+  keyword search, and time-based quick filters (All Upcoming / Tonight / This Weekend)
+- Locale-aware Jinja conditionals in `events.html` controlling page heading, subtitle,
+  empty-state messaging, and sign-up CTA flow per locale
+- Translations for all events page strings in `uk_UA/LC_MESSAGES/messages.po`
+  and `pt_BR/LC_MESSAGES/messages.po`
+
+#### Cultural Dimensions Addressed
+- **Uncertainty Avoidance (UA):** The Ukrainian locale replaces the default subtitle
+  with "Verified events in safe public venues" and the sign-up button with a
+  "Review & Confirm" step (via `/confirm_event`) instead of a direct one-click
+  sign-up — reflecting Ukraine's high UA score (95) by adding an explicit
+  confirmation layer that lets users review all event details before committing.
+  The empty-state message also adapts: "No verified events match your filters.
+  Adjust the filters or come back later — new events are reviewed and added
+  regularly." — maintaining a reassuring, formal tone throughout.
+- **Individualism vs Collectivism (IDV):** The Brazilian locale adds a 🎉 emoji
+  to the page heading and uses warm, enthusiastic copy throughout — "Find your
+  next favourite event!" The empty-state message becomes "Nothing here yet —
+  let's change that ✨ / Try a different city or come hang out tonight! Or start
+  your own — your friends will follow." — reflecting Brazil's more collectivist,
+  relational orientation (IDV 38) by framing events as social opportunities and
+  using high-context, expressive language. The attendee avatar stack (showing
+  who is going) functions as a visible social proof signal aligned with
+  relational decision-making.
+
+#### Hypotheses Implemented
+- **H1** – Ukrainian users will trust the platform more and RSVP to events if
+  explicit credibility cues are present. Implemented via the "Review & Confirm"
+  CTA flow for uk_UA (instead of direct sign-up), the "Verified events in safe
+  public venues" subtitle, and the reassuring empty-state copy that emphasises
+  events are reviewed before being listed.
+- **H2** – Brazilian users will engage more if the UI is visual and social-first.
+  Implemented via the attendee avatar stack showing who is going, the warm and
+  enthusiastic pt_BR copy throughout, and the expressive empty-state message
+  that encourages social action ("your friends will follow").
+- **H5** – Irish users will complete tasks faster with a minimal, self-directed UI.
+  Implemented via the city dropdown, keyword search, and time-chip filters
+  (All Upcoming / Tonight / This Weekend) — all immediately accessible without
+  guidance, supporting the autonomy-first, low-friction preference of
+  high-IDV / low-UA users.
+
+#### Deviations from Group Guidelines
+None. Cultural adaptations follow the group's agreed strategy: gettext via
+`{{ _('...') }}` for all user-facing strings, and locale-aware Jinja
+conditionals (`{% if locale == 'pt_BR' %}`) consistent with the
+`body.locale-*` CSS class approach used across the application.
