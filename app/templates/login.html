@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 {{ form.email.label(class="form-label") }}
-                {% if get_locale()| string == 'ua' %}
+                {% if locale == 'uk_UA' %}
                 <div class="input_wrapper">
                     {{ form.email(class="form-input", placeholder=_('your@email.com')) }}
                     <span class="field-check" aria-hidden="true">&#10003;</span>
@@ -28,7 +28,7 @@
 
             <div class="form-group">
                 {{ form.password.label(class="form-label") }}
-                {% if get_locale()| string == 'ua' %}
+                {% if locale == 'uk_UA' %}
                 <div class="input_wrapper">
                     {{ form.password(class="form-input", placeholder=_('Your password')) }}
                     <span class="field-check" aria-hidden="true">&#10003;</span>
