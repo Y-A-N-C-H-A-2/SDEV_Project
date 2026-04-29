@@ -13,15 +13,27 @@
 
             <div class="form-group">
                 {{ form.email.label(class="form-label") }}
-                {{ form.email(class="form-input", placeholder=_('your@email.com')) }}
+                {% if get_locale()| string == 'ua' %}
+                <div class="input_wrapper">
+                    {{ form.email(class="form-input", placeholder=_('your@email.com')) }}
+                    <span class="field-check" aria-hidden="true">&#10003;</span>
+                </div>
+                {% else %}
+                    {{ form.email(class="form-input", placeholder=_('your@email.com')) }}
                 {% for error in form.email.errors %}
-                <span class="form-error">{{ error }}</span>
+                    <span class="form-error">{{ error }}</span>
                 {% endfor %}
             </div>
 
             <div class="form-group">
                 {{ form.password.label(class="form-label") }}
-                {{ form.password(class="form-input", placeholder=_('Your password')) }}
+                {% if get_locale()| string == 'ua' %}
+                <div class="input_wrapper">
+                    {{ form.password(class="form-input", placeholder=_('Your password')) }}
+                    <span class="field-check" aria-hidden="true">&#10003;</span>
+                </div>
+                {% else %}
+                    {{ form.password(class="form-input", placeholder=_('Your password')) }}
                 {% for error in form.password.errors %}
                 <span class="form-error">{{ error }}</span>
                 {% endfor %}
