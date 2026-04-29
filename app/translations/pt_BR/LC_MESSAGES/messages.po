@@ -24,7 +24,7 @@ msgstr "ucraniano"
 
 #: app/babel_strings.py:21 app/forms.py:67
 msgid "Language exchange"
-msgstr "Salvar Alterações"
+msgstr "Intercâmbio de idiomas"
 
 #: app/babel_strings.py:22 app/babel_strings.py:58 app/forms.py:61
 #: app/forms.py:68
@@ -44,14 +44,13 @@ msgstr "Fotografia"
 msgid "Music"
 msgstr "Música"
 
-# Date/time (word between date and time)
 #: app/babel_strings.py:26 app/forms.py:72
 msgid "Art"
-msgstr "às"
+msgstr "Arte"
 
 #: app/babel_strings.py:27 app/forms.py:58 app/forms.py:73
 msgid "Tech"
-msgstr "Buscar"
+msgstr "Tecnologia"
 
 #: app/babel_strings.py:28 app/forms.py:59 app/forms.py:74
 msgid "Sports"
@@ -68,7 +67,7 @@ msgstr "Vida noturna"
 
 #: app/babel_strings.py:31 app/forms.py:77
 msgid "Cultural events"
-msgstr "Criar Evento"
+msgstr "Eventos culturais"
 
 #: app/babel_strings.py:36
 msgid "Trip to Galway with a Castle Visit"
@@ -350,11 +349,11 @@ msgstr "Selecione..."
 
 #: app/forms.py:44
 msgid "Male"
-msgstr "E-mail:"
+msgstr "Masculino"
 
 #: app/forms.py:45
 msgid "Female"
-msgstr "E-mail:"
+msgstr "Feminino"
 
 #: app/forms.py:46
 msgid "Non-binary"
@@ -378,7 +377,7 @@ msgstr "Por favor, informe seu nome."
 
 #: app/forms.py:88 app/forms.py:102
 msgid "Email"
-msgstr "E-mail:"
+msgstr "E-mail"
 
 #: app/forms.py:88 app/forms.py:102
 msgid "Please enter your email."

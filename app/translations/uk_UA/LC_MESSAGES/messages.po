@@ -22,7 +22,7 @@ msgstr "українська"
 
 #: app/babel_strings.py:21 app/forms.py:67
 msgid "Language exchange"
-msgstr "Зберегти зміни"
+msgstr "Мовний обмін"
 
 #: app/babel_strings.py:22 app/babel_strings.py:58 app/forms.py:61
 #: app/forms.py:68
@@ -42,14 +42,13 @@ msgstr "Фотографія"
 msgid "Music"
 msgstr "Музика"
 
-# Date/time (word between date and time)
 #: app/babel_strings.py:26 app/forms.py:72
 msgid "Art"
-msgstr "о"
+msgstr "Мистецтво"
 
 #: app/babel_strings.py:27 app/forms.py:58 app/forms.py:73
 msgid "Tech"
-msgstr "Пошук"
+msgstr "Технології"
 
 #: app/babel_strings.py:28 app/forms.py:59 app/forms.py:74
 msgid "Sports"
@@ -347,11 +346,11 @@ msgstr "Оберіть..."
 
 #: app/forms.py:44
 msgid "Male"
-msgstr "Електронна пошта:"
+msgstr "Чоловіча"
 
 #: app/forms.py:45
 msgid "Female"
-msgstr "Електронна пошта:"
+msgstr "Жіноча"
 
 #: app/forms.py:46
 msgid "Non-binary"
@@ -375,7 +374,7 @@ msgstr "Будь ласка, введіть ваше ім’я."
 
 #: app/forms.py:88 app/forms.py:102
 msgid "Email"
-msgstr "Електронна пошта:"
+msgstr "Електронна пошта"
 
 #: app/forms.py:88 app/forms.py:102
 msgid "Please enter your email."
