@@ -417,3 +417,35 @@ The `messages.pot` file is **generated** by `extract` and is listed in `.gitigno
 - Application has not been tested on mobile devices
 - Persona-based design is grounded in Hofstede's cultural dimensions, which are national-level generalisations — individual users may not align perfectly with their culture's average scores
 - The culturally adaptive UI relies on user-selected locale as a proxy for cultural preference, which may not always be accurate.
+
+## Individual Contributions
+
+### Kashish Kakran (D24125557) – Communities Page
+
+#### Pages / Features Implemented
+- `communities.html` – Communities listing page with card-based layout
+- `community_detail.html` – Single community detail page including member list, 
+  join/leave functionality, and linked upcoming events
+- Locale-specific CSS for both pages in `locale-uk_UA.css` and `locale-pt_BR.css`
+
+#### Cultural Dimensions Addressed
+- **Uncertainty Avoidance (UA):** The Ukrainian locale renders communities as a 
+  structured single-column list with sharp corners, a purple left border, uppercase 
+  labels, and small square member avatars — reflecting high UA (Ukraine scores 95) 
+  by prioritising explicit information and formal visual structure over spontaneity.
+- **Individualism vs Collectivism (IDV):** The Brazilian locale renders communities 
+  as a warm multi-column card grid with large images, rounded corners, orange accents, 
+  and the member count as a prominent pill badge — reflecting Brazil's more collectivist 
+  orientation (IDV 38) by emphasising social proof and visual energy.
+
+#### Hypotheses Implemented
+- **H1** – Ukrainian users will trust the platform more if explicit credibility cues 
+  are present. Implemented via the structured list layout, named member list, and 
+  formal typography on the community detail page.
+- **H2** – Brazilian users will engage more if the UI is visual and social-first. 
+  Implemented via the multi-column grid, large community images, warm colour palette, 
+  and prominent member count badge on both the listing and detail pages.
+
+#### Deviations from Group Guidelines
+None. Cultural adaptations follow the group's agreed locale-based CSS strategy 
+using `body.locale-*` class selectors consistent with the rest of the application.
